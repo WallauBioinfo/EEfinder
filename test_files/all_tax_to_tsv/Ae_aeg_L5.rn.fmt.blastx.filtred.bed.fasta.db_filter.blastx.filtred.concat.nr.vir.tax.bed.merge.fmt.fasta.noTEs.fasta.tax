@@ -1,0 +1,242 @@
+Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
+Ae_aeg_L5/NC_035107.1:58015747-58017750	YP_009337090.1|YP_009177702.1|YP_009337429.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
+Ae_aeg_L5/NC_035107.1:71246683-71248668	YP_009182178.1|YP_009666257.1|YP_009337090.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035107.1:93751190-93753148	YP_009337905.1|YP_009182178.1|YP_009177702.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
+Ae_aeg_L5/NC_035107.1:144945380-144947266	YP_009337090.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NC_035107.1:206612431-206614380	YP_009182178.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035107.1:25144144-25146096	YP_009666257.1|YP_009182178.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035107.1:38192161-38194131	YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NC_035107.1:97446414-97446962	YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NC_035107.1:97447744-97449021	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+Ae_aeg_L5/NC_035107.1:250216278-250218236	YP_009337090.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NC_035107.1:89242888-89243439	YP_007641367.1|YP_009551692.1	RNA dependant RNA polymerase	Mononegavirales	Rhabdoviridae	Perhabdovirus	Unclassified
+Ae_aeg_L5/NC_035107.1:91786855-91787844	YP_009182182.1|YP_009362155.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:91794740-91795735	YP_009182182.1|YP_009362155.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:91802826-91803938	YP_009552819.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035107.1:91814790-91816097	YP_009182182.1|YP_009552816.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:91834403-91835428	YP_009388612.1|YP_009362155.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:113019572-113020012	YP_007641386.1	large polymerase protein	Mononegavirales	Rhabdoviridae	Vesiculovirus	Isfahan vesiculovirus
+Ae_aeg_L5/NC_035107.1:126703168-126704208	YP_009182182.1|YP_009362155.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:130228760-130229707	YP_009362155.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ledantevirus	Barur ledantevirus
+Ae_aeg_L5/NC_035107.1:132488974-132489450	YP_009182182.1|YP_009362155.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:132502835-132503386	YP_009182182.1|YP_009362155.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:132511579-132512298	YP_009182182.1|YP_009362155.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:141059489-141060385	YP_009388615.1|YP_009552819.1	glycoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:170702095-170703192	YP_009552816.1|YP_009182182.1|YP_009362155.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:202678971-202679355	YP_007641381.1|YP_009094017.1|YP_009664711.1	large protein	Mononegavirales	Rhabdoviridae	Vesiculovirus	Chandipura vesiculovirus
+Ae_aeg_L5/NC_035107.1:218709761-218711156	YP_009182185.1|YP_009388615.1|YP_009182185.1|YP_009388615.1	glycoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:100031365-100032498	YP_009388612.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:132494247-132494927	YP_009388612.1|YP_009552816.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210474679-210475820	YP_009552819.1|YP_009388615.1	glycoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210524452-210525580	YP_009182182.1|YP_009388612.1|YP_009362155.1|YP_009552816.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210526212-210527287	YP_009182182.1|YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210527958-210529086	YP_009182182.1|YP_009388612.1|YP_009362155.1|YP_009552816.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210549193-210549873	YP_009182182.1|YP_009388612.1|YP_009362155.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210550495-210551622	YP_009182182.1|YP_009552816.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210552198-210553295	YP_009388612.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210553917-210555005	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210555628-210556716	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210557339-210558427	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210559051-210559788	YP_009182182.1|YP_009552816.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210560764-210561891	YP_009182182.1|YP_009552816.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210562475-210563543	YP_009182182.1|YP_009552816.1|YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:210569995-210571122	YP_009182182.1|YP_009552816.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:214517647-214518927	YP_009182182.1|YP_009362155.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:245100899-245101219	YP_009552820.1|NP_056797.1	L protein	Mononegavirales	Rhabdoviridae	Lyssavirus	Unclassified
+Ae_aeg_L5/NC_035107.1:269188378-269189104	YP_009388616.1|YP_009552820.1	RdRp	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035107.1:58016077-58017753	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035107.1:71246941-71248650	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035107.1:93751436-93753145	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035107.1:141023239-141023574	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035107.1:141026489-141027551	YP_009337120.1|YP_009302386.1|YP_009302386.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035107.1:144945536-144947224	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035107.1:206612710-206614374	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035107.1:213009360-213009863	YP_009337181.1|YP_009302386.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Dipteran anphevirus
+Ae_aeg_L5/NC_035107.1:213011980-213013068	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035107.1:213014472-213014882	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035107.1:213016827-213018052	YP_009302386.1|YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035107.1:243719857-243719955	NP_056889.1	FBS	Ortervirales	Retroviridae	Alpharetrovirus	Unclassified
+Ae_aeg_L5/NC_035107.1:89243348-89243971	YP_009336837.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_L5/NC_035107.1:245100908-245101219	YP_009305117.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:469224620-469226074	YP_009350102.1	polyprotein	Amarillovirales	Flaviviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:469282097-469282615	YP_009345035.1|YP_009350102.1	polyprotein	Amarillovirales	Flaviviridae	Flavivirus	Unclassified
+Ae_aeg_L5/NC_035108.1:461307107-461312497	YP_009351861.1|YP_009351861.1|NP_891560.1|YP_009351861.1|YP_009259257.1|YP_009350102.1|YP_899469.2|YP_009222007.1|YP_009259297.1|NP_619758.1|YP_009350102.1|YP_009428568.1	non-structural protein 5	Amarillovirales	Flaviviridae	Flavivirus	Unclassified
+Ae_aeg_L5/NC_035108.1:461318299-461319555	YP_009164029.1|YP_009350102.1|YP_009345019.1|YP_009351861.1|YP_001040004.1|YP_009350102.1	RNA-dependent RNA polymerase NS5	Amarillovirales	Flaviviridae	Flavivirus	Unclassified
+Ae_aeg_L5/NC_035108.1:461326699-461327220	NP_620045.1|YP_009351861.1|YP_009350102.1	RNA-dependent RNA polymerase	Amarillovirales	Flaviviridae	Flavivirus	Unclassified
+Ae_aeg_L5/NC_035108.1:461335563-461337574	NP_937777.1|YP_009351861.1|YP_009350102.1|YP_009126871.1|YP_009351861.1|YP_009350102.1|YP_009259257.1	NS3 protein	Amarillovirales	Flaviviridae	Flavivirus	Unclassified
+Ae_aeg_L5/NC_035108.1:461338384-461338662	YP_009351861.1	polyprotein	Amarillovirales	Flaviviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:461342198-461344183	YP_009351861.1|YP_009350102.1|YP_899469.2|YP_009553010.1|YP_009222007.1|YP_009305402.1|YP_009259297.1	polyprotein	Amarillovirales	Flaviviridae	Flavivirus	Unclassified
+Ae_aeg_L5/NC_035108.1:461350745-461352207	YP_009350102.1|YP_950477.1|YP_009126874.1|YP_009345019.1|YP_009056847.1|YP_009351861.1|YP_009259273.1	polyprotein	Amarillovirales	Flaviviridae	Flavivirus	Unclassified
+Ae_aeg_L5/NC_035108.1:461357980-461358204	YP_009350102.1	polyprotein	Amarillovirales	Flaviviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:461266383-461266835	YP_009417300.1	capsid	Ghabrivirales	Totiviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:461284615-461289498	YP_009417300.1|YP_009417300.1|YP_009417300.1|YP_009417300.1	capsid	Ghabrivirales	Totiviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:124926989-124928947	YP_009182178.1|YP_009337090.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035108.1:167742982-167745711	YP_009333157.1|YP_009336866.1	RNA-dependent RNA polymerase	Jingchuvirales	Chuviridae	Mivirus	Hermit mivirus
+Ae_aeg_L5/NC_035108.1:302082518-302084386	YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NC_035108.1:325443219-325445036	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+Ae_aeg_L5/NC_035108.1:469171555-469171968	YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NC_035108.1:469172113-469172337	YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NC_035108.1:469244358-469246298	YP_009182178.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035108.1:46284613-46286583	YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NC_035108.1:83764359-83766317	YP_009337090.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NC_035108.1:294498491-294500386	YP_009337090.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035108.1:372348263-372350233	YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NC_035108.1:461300655-461301701	YP_009182178.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035108.1:461305588-461306037	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035108.1:461369507-461371410	YP_009337090.1|YP_009666257.1|YP_009337090.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035108.1:461694331-461694836	YP_009666257.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035108.1:110011645-110012874	YP_009552816.1|YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:156913074-156914463	YP_009362228.1|YP_009302018.1|YP_009094178.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:167743189-167744880	YP_002333280.1|YP_009362228.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Hapavirus	Unclassified
+Ae_aeg_L5/NC_035108.1:181327169-181328425	YP_009552816.1|YP_009388612.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:181356737-181357993	YP_009552816.1|YP_009388612.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:181460919-181462091	YP_009552816.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:247597370-247597738	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:254547078-254547740	YP_009388612.1|YP_009552816.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:257680683-257681687	YP_009182182.1|YP_009388612.1|YP_009552816.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:265407582-265408838	YP_009552816.1|YP_009388612.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:273076383-273077639	YP_009552816.1|YP_009388612.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:273336165-273337421	YP_009552816.1|YP_009388612.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:273433566-273434822	YP_009552816.1|YP_009388612.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:434222475-434223092	YP_009552816.1|YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:113415177-113416013	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:155419760-155420866	YP_009182182.1|YP_009552816.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:181342096-181343352	YP_009552816.1|YP_009388612.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:198249828-198251067	YP_009182182.1|YP_009388612.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:208065244-208065345	YP_009361959.1	polymerase	Mononegavirales	Rhabdoviridae	Hapavirus	Hart Park hapavirus
+Ae_aeg_L5/NC_035108.1:208073095-208073985	YP_009304980.1|YP_009552820.1|YP_009552820.1|YP_009513007.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:212290055-212290893	YP_009182182.1|YP_009388612.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:275678929-275679234	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:280575150-280575908	YP_009388612.1|YP_009552816.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:296982697-296983611	YP_009552816.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:297109152-297109811	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:297787766-297789022	YP_009552816.1|YP_009388612.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:297852136-297853392	YP_009552816.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:316994906-316996162	YP_009552816.1|YP_009388612.1|YP_009388612.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:317008271-317009527	YP_009552816.1|YP_009388612.1|YP_009388612.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:322748292-322749590	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:358140137-358140790	YP_009362194.1	polymerase	Mononegavirales	Rhabdoviridae	Ledantevirus	Nkolbisson ledantevirus
+Ae_aeg_L5/NC_035108.1:380350387-380351136	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:461279649-461280500	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:461315577-461316425	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035108.1:302082731-302084335	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035108.1:469170301-469170705	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035108.1:469171450-469172702	YP_009302386.1|YP_009302386.1|YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035108.1:469178039-469179035	YP_009302386.1|YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035108.1:469209330-469210601	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035108.1:461246696-461248272	YP_009302386.1|YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035108.1:461254976-461256234	YP_009302386.1|YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035108.1:461258837-461260524	YP_009302386.1|YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035108.1:461263260-461264279	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035108.1:214567032-214567136	NP_057866.1	ABL	Ortervirales	Retroviridae	Gammaretrovirus	Unclassified
+Ae_aeg_L5/NC_035108.1:156912734-156913030	YP_009336837.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:167743387-167744844	YP_009336837.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:247308984-247309496	YP_009337295.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_L5/NC_035108.1:208073782-208073973	YP_009337071.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:30343553-30343654	YP_009052252.1	putative serine threonine protein phosphatase	Algavirales	Phycodnaviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:191321096-191321521	YP_009350102.1|YP_009351861.1	polyprotein	Amarillovirales	Flaviviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:191321710-191324789	YP_009351861.1|YP_009259257.1|YP_009351861.1|YP_009305197.1|YP_009350102.1|YP_009351861.1|YP_006491219.1	NS1-NS2AN-FIFO protein	Amarillovirales	Flaviviridae	Flavivirus	Unclassified
+Ae_aeg_L5/NC_035109.1:191331651-191332076	YP_009350102.1	polyprotein	Amarillovirales	Flaviviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:191332265-191335344	YP_009351861.1|YP_009259257.1|YP_009351861.1|YP_009350102.1|YP_009305197.1|YP_009350102.1|YP_009351861.1	NS5	Amarillovirales	Flaviviridae	Flavivirus	Unclassified
+Ae_aeg_L5/NC_035109.1:313468414-313470666	YP_009351861.1|YP_003029843.1|YP_009351861.1|YP_009552767.1|YP_009351861.1|YP_009344962.1	RNA-dependent RNA polymerase NS5	Amarillovirales	Flaviviridae	Flavivirus	Unclassified
+Ae_aeg_L5/NC_035109.1:313471128-313473041	YP_009351861.1|YP_009351861.1|NP_891560.1	polyprotein	Amarillovirales	Flaviviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:105844903-105845223	YP_009505333.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
+Ae_aeg_L5/NC_035109.1:148368503-148369298	YP_009505333.1|YP_009505333.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
+Ae_aeg_L5/NC_035109.1:191302405-191302641	YP_009505333.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
+Ae_aeg_L5/NC_035109.1:34765454-34767412	YP_009337905.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei mivirus
+Ae_aeg_L5/NC_035109.1:105858039-105858260	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035109.1:105861687-105862295	YP_009182178.1|YP_009666257.1|YP_009337429.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Sanxia mivirus
+Ae_aeg_L5/NC_035109.1:105863656-105864642	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+Ae_aeg_L5/NC_035109.1:154805948-154807585	YP_009666257.1|YP_009182178.1|YP_009337429.1|YP_009337090.1|YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Sanxia mivirus
+Ae_aeg_L5/NC_035109.1:158190500-158192287	YP_009182178.1|YP_009337429.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Sanxia mivirus
+Ae_aeg_L5/NC_035109.1:223732372-223734189	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+Ae_aeg_L5/NC_035109.1:289621562-289623520	YP_009337905.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei mivirus
+Ae_aeg_L5/NC_035109.1:298924460-298926418	YP_009182178.1|YP_009666257.1|YP_009337905.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei mivirus
+Ae_aeg_L5/NC_035109.1:312726098-312728056	YP_009337905.1|YP_009182178.1|YP_009177702.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
+Ae_aeg_L5/NC_035109.1:98643026-98645058	YP_009336866.1|YP_009300663.1|YP_009300663.1|YP_009302836.1|YP_009336866.1|YP_009337428.1|YP_009300663.1|YP_009300663.1	polymerase	Jingchuvirales	Chuviridae	Mivirus	Charybdis mivirus
+Ae_aeg_L5/NC_035109.1:98646492-98647451	YP_009336866.1|YP_009300663.1	RNA-dependent RNA polymerase	Jingchuvirales	Chuviridae	Mivirus	Beetle mivirus
+Ae_aeg_L5/NC_035109.1:191498041-191499006	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NC_035109.1:213751967-213753937	YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NC_035109.1:313483534-313484226	YP_004901701.1	polymerase	Martellivirales	Kitaviridae	Blunervirus	Unclassified
+Ae_aeg_L5/NC_035109.1:72177761-72178456	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:105731399-105731950	YP_009388612.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:105913555-105914523	YP_009552819.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:105915457-105916437	YP_009388615.1|YP_009552819.1	glycoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:148375456-148376376	YP_009182185.1	putative glycoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:191328077-191329189	YP_009552819.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:191338576-191339742	YP_009388615.1|YP_009552819.1	glycoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:223732576-223734228	YP_009177723.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:233907112-233907510	YP_009552816.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:314165607-314166069	YP_009552816.1|YP_009552816.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:314193164-314194369	YP_009388615.1|YP_009552819.1	glycoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:314211825-314213037	YP_009552819.1|YP_009388615.1|YP_009552819.1|YP_009182185.1	glycoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:72094826-72095521	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:99452984-99453727	YP_009388612.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:105990291-105991085	YP_009182182.1	putative nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Tongilchon ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:106024876-106026072	YP_009388615.1	glycoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:106078808-106079801	YP_009182182.1|YP_009552816.1|YP_009388612.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:150631993-150633003	YP_009388612.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:261711268-261711927	YP_009182182.1|YP_009388612.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ohlsrhavirus	Culex ohlsrhavirus
+Ae_aeg_L5/NC_035109.1:313450417-313451681	YP_009552819.1|YP_009552819.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:313485579-313486982	YP_009552819.1|YP_009182185.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:34765700-34767409	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035109.1:105861900-105862283	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035109.1:154807199-154807582	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035109.1:158190392-158192293	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NC_035109.1:223732753-223734243	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035109.1:289621808-289623517	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035109.1:298924718-298926427	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035109.1:312726344-312728053	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035109.1:214498221-214499334	YP_009302386.1|YP_009337120.1|YP_009302386.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NC_035109.1:364434683-364435324	YP_009220475.1	collagen-like protein	Unclassified	Nimaviridae	Whispovirus	Unclassified
+Ae_aeg_L5/NC_035109.1:313482411-313482830	YP_009388582.1	RdRp	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_L5/NC_035109.1:313483261-313484262	YP_009336553.1|YP_009333216.1|YP_009333286.1	RdRp	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_L5/NW_018734587.1:59929-61893	YP_009182178.1|YP_009666257.1|YP_009337429.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Sanxia mivirus
+Ae_aeg_L5/NW_018734587.1:60598-61071	YP_009505432.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Pteromalus puparum peropuvirus
+Ae_aeg_L5/NW_018734587.1:60187-61896	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+Ae_aeg_L5/NW_018734659.1:92725-93144	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
+Ae_aeg_L5/NW_018734666.1:32286-33493	YP_009362155.1|YP_009094319.1|YP_009362160.1|YP_009505532.1|YP_009176993.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Curiovirus	Itacaiunas curiovirus
+Ae_aeg_L5/NW_018734676.1:15240-15701	YP_031695.1	DNA-directed DNA polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
+Ae_aeg_L5/NW_018734697.1:32039-32800	YP_009165599.1|NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
+Ae_aeg_L5/NW_018734697.1:4720-5055	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
+Ae_aeg_L5/NW_018734985.1:8549-9313	YP_009302384.1	ORF1	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NW_018734985.1:11494-12063	YP_009302384.1	ORF1	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NW_018735010.1:792-1136	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
+Ae_aeg_L5/NW_018735041.1:61947-62282	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
+Ae_aeg_L5/NW_018735097.1:38835-39188	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
+Ae_aeg_L5/NW_018735186.1:10244-10342	YP_004821501.1	alpha-2,6-sialyltransferases	Chitovirales	Poxviridae	Centapoxvirus	Unclassified
+Ae_aeg_L5/NW_018735210.1:82340-82435	YP_009483470.1	Histone H2B domain containing protein	Unclassified	Unclassified	Pandoravirus	Unclassified
+Ae_aeg_L5/NW_018735241.1:33944-34393	NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
+Ae_aeg_L5/NW_018735421.1:14049-14726	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+Ae_aeg_L5/NW_018735421.1:13950-15030	YP_009302386.1|YP_009302386.1|YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NW_018735421.1:17938-18273	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NW_018735467.1:15756-15872	YP_009091968.1	ecdysteroid UDP-glucosyltransferase	Unclassified	Baculoviridae	Betabaculovirus	Unclassified
+Ae_aeg_L5/NW_018735478.1:12786-13271	YP_004956864.1|YP_031695.1	DNA-directed DNA polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
+Ae_aeg_L5/NW_018735507.1:17512-18339	YP_004956864.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified
+Ae_aeg_L5/NW_018735537.1:5449-5655	YP_009259650.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NW_018735537.1:6291-6845	YP_009304559.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NW_018735537.1:6312-6845	YP_009336984.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_L5/NW_018735670.1:14023-14463	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
+Ae_aeg_L5/NW_018735670.1:4162-4995	YP_009336633.1|YP_009333176.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Barnacle mivirus
+Ae_aeg_L5/NW_018735670.1:6249-7362	YP_009302386.1|YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+Ae_aeg_L5/NW_018735941.1:300-1461	YP_009666259.1|YP_009666259.1	replicase 1a	Nidovirales	Tobaniviridae	Pregotovirus	Unclassified
+Ae_aeg_L5/NW_018736021.1:12018-12176	YP_009448906.1	Negative regulator of the PHO system	Algavirales	Phycodnaviridae	Unclassified	Unclassified
+Ae_aeg_L5/NW_018736047.1:14351-14578	YP_003517744.1	mucin-like protein	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
+Ae_aeg_L5/NW_018736057.1:12693-12917	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
+Ae_aeg_L5/NW_018736113.1:27069-28013	YP_009325514.1|YP_009094174.1|YP_006202618.1|YP_009362111.1|YP_009505498.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Lyssavirus	Unclassified
+Ae_aeg_L5/NW_018736113.1:28096-28218	YP_009305114.1	nucleocapsid	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_L5/NW_018736166.1:40417-41673	YP_009362219.1|YP_009362118.1|YP_009362144.1|YP_238528.1|YP_009552816.1|YP_009505475.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Hapavirus	Ord River hapavirus
+Ae_aeg_L5/NW_018736174.1:54529-54969	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
+Ae_aeg_L5/NW_018736214.1:9479-10469	YP_009182178.1|YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Ae_aeg_L5/NW_018736262.1:3988-6015	YP_009177219.1|YP_009337090.1|YP_009337861.1|YP_009333176.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Suffolk mivirus
+Ae_aeg_L5/NW_018736262.1:4588-5391	YP_009333448.1|YP_009333184.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Woodlouse peropuvirus
+Ae_aeg_L5/NW_018736289.1:8202-8990	YP_024968.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
+Ae_aeg_L5/NW_018736357.1:26089-27090	YP_009361998.1|YP_009362155.1|YP_009094319.1|YP_009552111.1|YP_009362195.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ledantevirus	Fukuoka ledantevirus
+Ae_aeg_L5/NW_018736442.1:34849-35434	YP_009176966.1|YP_009505480.1|YP_009094319.1	N	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_L5/NW_018736598.1:2636-3838	YP_007354197.1	collagen repeat protein	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
+Ae_aeg_L5/NW_018736600.1:1128-1694	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
+Ae_aeg_L5/NW_018736612.1:80976-81521	YP_009165599.1	polymerase	Blubervirales	Hepadnaviridae	Parahepadnavirus	Unclassified
+Ae_aeg_L5/NW_018736689.1:70172-71349	YP_009336866.1|YP_009300663.1|YP_009330113.1|YP_009300663.1	RNA-dependent RNA polymerase	Jingchuvirales	Chuviridae	Mivirus	Beetle mivirus
+Ae_aeg_L5/NW_018736699.1:18644-18904	YP_004301531.1	gp197	Caudovirales	Herelleviridae	Unclassified	Brochothrix virus A9
+Ae_aeg_L5/NW_018736703.1:42582-44243	YP_009182178.1|YP_009337857.1|YP_009337861.1|YP_009336633.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+Ae_aeg_L5/NW_018736703.1:43005-43478	YP_009505432.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Pteromalus puparum peropuvirus

@@ -1,0 +1,18 @@
+Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
+An_atr_E3/3L:19306615-19306857	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+An_atr_E3/KI421942:131184-131420	YP_009302384.1	ORF1	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+An_atr_E3/KI421943:64285-64392	YP_717541.1	protein kinase 1	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
+An_atr_E3/KI421951:131052-131750	YP_009302387.1	RNA-dependent RNA polymerase	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+An_atr_E3/KI421951:134493-135286	YP_009302387.1|YP_009666282.1|YP_009302387.1	RNA-dependent RNA polymerase	Mononegavirales	Xinmoviridae	Anphevirus	Drosophilid anphevirus
+An_atr_E3/KI421955:18344-18466	YP_009448722.1	Cyclin-dependent kinase	Algavirales	Phycodnaviridae	Unclassified	Unclassified
+An_atr_E3/KI421997:7267-8190	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+An_atr_E3/KI421998:65827-66327	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
+An_atr_E3/KI422020:91085-91584	YP_009362274.1|YP_009094323.1|YP_009664711.1	polymerase	Mononegavirales	Rhabdoviridae	Sripuvirus	Chaco sripuvirus
+An_atr_E3/KI422090:33227-33700	YP_009505432.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Pteromalus puparum peropuvirus
+An_atr_E3/KI422090:32810-34453	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+An_atr_E3/KI422180:7869-8294	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
+An_atr_E3/KI422203:632-994	YP_009336633.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Wenling mivirus
+An_atr_E3/KI422203:1126-1446	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+An_atr_E3/KI422203:467-1087	YP_009177723.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+An_atr_E3/X:7508244-7511015	YP_009417300.1|YP_009417300.1|YP_009417300.1	capsid	Ghabrivirales	Totiviridae	Unclassified	Unclassified
+An_atr_E3/X:7511155-7512916	YP_009417301.1|YP_009553182.1|YP_009417301.1	RNA-dependent RNA polymerase fusion protein	Ghabrivirales	Totiviridae	Unclassified	Unclassified

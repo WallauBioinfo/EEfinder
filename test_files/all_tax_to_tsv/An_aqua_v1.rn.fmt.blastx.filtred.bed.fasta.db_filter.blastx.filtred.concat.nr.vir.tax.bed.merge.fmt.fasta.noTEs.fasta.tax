@@ -1,0 +1,19 @@
+Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
+An_aqua_v1/NJHH01000212.1:11401-11595	YP_024638.1	ORF99	Herpesvirales	Malacoherpesviridae	Ostreavirus	Unclassified
+An_aqua_v1/NJHH01001319.1:729-1034	YP_009553311.1	RNA-dependent RNA polymerase	Durnavirales	Partitiviridae	Unclassified	Unclassified
+An_aqua_v1/NJHH01001319.1:486-1079	YP_009346039.1|YP_009329882.1	RdRp	Unclassified	Unclassified	Unclassified	Unclassified
+An_aqua_v1/NJHH01001668.1:17869-17967	YP_003969913.1	putative ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus
+An_aqua_v1/NJHH01002162.1:40491-40595	NP_073375.1	serine/threonine protein kinase US3	Herpesvirales	Herpesviridae	Mardivirus	Unclassified
+An_aqua_v1/NJHH01002972.1:23697-23927	YP_009447989.1|NP_955119.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
+An_aqua_v1/NJHH01003035.1:34583-34825	YP_003793.1	thymidylate synthase	Pimascovirales	Iridoviridae	Ranavirus	Unclassified
+An_aqua_v1/NJHH01003560.1:42162-42260	YP_009046636.1	Histone H2A-like protein	Pimascovirales	Iridoviridae	Iridovirus	Invertebrate iridescent virus 31
+An_aqua_v1/NJHH01003635.1:2166-2549	YP_009551691.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+An_aqua_v1/NJHH01003873.1:1738-2028	NP_056890.1	FOS	Ortervirales	Retroviridae	Gammaretrovirus	Unclassified
+An_aqua_v1/NJHH01004482.1:31971-32387	YP_009302452.1	pectate lyase	Caudovirales	Myoviridae	Thornevirus	Bacillus virus SP15
+An_aqua_v1/NJHH01005081.1:4714-4815	YP_004894636.1	putative ubiquitin carboxyl-terminal hydrolase	Imitervirales	Mimiviridae	Mimivirus	Unclassified
+An_aqua_v1/NJHH01005828.1:55426-56133	YP_173236.1	nsp16	Nidovirales	Coronaviridae	Betacoronavirus	Unclassified
+An_aqua_v1/NJHH01006202.1:116938-117036	YP_009325865.1	Calcium-transporting ATPase	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified
+An_aqua_v1/NJHH01006440.1:50247-50417	YP_611104.1	ptp-1	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
+An_aqua_v1/NJHH01006555.1:3357-3596	YP_008438720.1	Formate/glycerate dehydrogenase	Unclassified	Unclassified	Pandoravirus	Unclassified
+An_aqua_v1/NJHH01006679.1:18533-18631	YP_009325828.1	Ubiquitin	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified
+An_aqua_v1/NJHH01008966.1:21177-21311	YP_009325598.1	Calcium/calmodulin dependent protein kinase type	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified

@@ -1,0 +1,52 @@
+Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
+An_fun_F3/CM012070:720984-722834	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012070:10143787-10145656	YP_009337090.1|YP_009666257.1|YP_009337429.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Sanxia mivirus
+An_fun_F3/CM012070:17056507-17057604	YP_009337861.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Crustacean mivirus
+An_fun_F3/CM012070:17066103-17067885	YP_009337090.1|YP_009182178.1|YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012070:721155-722906	YP_009666281.1|YP_009337120.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Drosophilid anphevirus
+An_fun_F3/CM012070:10144027-10144452	YP_009337120.1|YP_009666281.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Drosophilid anphevirus
+An_fun_F3/CM012070:12432890-12434227	YP_052942.1|YP_008719926.1	putative RNA-dependent RNA polymerase VP1	Reovirales	Reoviridae	Orbivirus	Unclassified
+An_fun_F3/CM012071:3691556-3693496	YP_009337905.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei mivirus
+An_fun_F3/CM012071:33036963-33038969	YP_009337090.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012071:38733126-38735087	YP_009337090.1|YP_009182178.1|YP_009177219.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Suffolk mivirus
+An_fun_F3/CM012071:38890793-38892610	YP_009666257.1|YP_009182178.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+An_fun_F3/CM012071:47472083-47473992	YP_009336947.1|YP_009666257.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Odonate mivirus
+An_fun_F3/CM012071:79050478-79051782	YP_009337090.1|YP_009177702.1|YP_009337090.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
+An_fun_F3/CM012071:89983131-89985092	YP_009337090.1|YP_009182178.1|YP_009177219.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Suffolk mivirus
+An_fun_F3/CM012071:41049036-41050886	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012071:58685994-58687910	YP_009337090.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+An_fun_F3/CM012071:3691709-3693439	YP_009337181.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Dipteran anphevirus
+An_fun_F3/CM012071:33037290-33038981	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+An_fun_F3/CM012071:38733447-38735069	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+An_fun_F3/CM012071:38890967-38892676	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+An_fun_F3/CM012071:79050985-79051773	YP_009337181.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Dipteran anphevirus
+An_fun_F3/CM012071:89983452-89985149	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
+An_fun_F3/CM012071:12158884-12158982	YP_001031233.1	viral inexin-like protein	Unclassified	Polydnaviridae	Ichnovirus	Unclassified
+An_fun_F3/CM012072:62385287-62386750	YP_009417300.1	capsid	Ghabrivirales	Totiviridae	Unclassified	Unclassified
+An_fun_F3/CM012072:62388169-62389647	YP_009417300.1	capsid	Ghabrivirales	Totiviridae	Unclassified	Unclassified
+An_fun_F3/CM012072:7220583-7222433	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:9671271-9672428	YP_009337905.1|YP_009182178.1|YP_009177219.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei mivirus
+An_fun_F3/CM012072:9672564-9673382	YP_009182178.1|YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:16686449-16688455	YP_009337090.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:39920637-39922505	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:39929593-39930351	YP_009177702.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
+An_fun_F3/CM012072:39931210-39932421	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:39944857-39946395	YP_009666257.1|YP_009177702.1|YP_009182178.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
+An_fun_F3/CM012072:39964415-39965953	YP_009666257.1|YP_009177702.1|YP_009182178.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
+An_fun_F3/CM012072:51630253-51631704	YP_009182178.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+An_fun_F3/CM012072:51632188-51632769	YP_009666257.1|YP_009337090.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+An_fun_F3/CM012072:53179388-53181304	YP_009337090.1|YP_009666257.1|YP_009337905.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+An_fun_F3/CM012072:62576559-62578487	YP_009337090.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:72733192-72734995	YP_009666257.1|YP_009182178.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+An_fun_F3/CM012072:11360992-11362911	YP_009337090.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:14190660-14192333	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:14256682-14257410	YP_009177219.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Suffolk mivirus
+An_fun_F3/CM012072:34740645-34742573	YP_009337090.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:39937683-39938576	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:39981525-39983237	YP_009666257.1|YP_009182178.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
+An_fun_F3/CM012072:74570424-74572217	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:79222606-79224456	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
+An_fun_F3/CM012072:39981907-39982413	YP_009177723.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+An_fun_F3/CM012072:55278044-55282062	YP_009552115.1|YP_009182186.1|YP_009304479.1|YP_009176999.1|YP_009362238.1|YP_009204560.1|YP_009362166.1|YP_009664711.1|YP_009362117.1|YP_009664711.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+An_fun_F3/CM012072:55283597-55285069	YP_009505536.1|YP_009176999.1|YP_009344978.1|YP_009094143.1|YP_009094017.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Vesiculovirus	Piry vesiculovirus
+An_fun_F3/CM012072:55278836-55281706	YP_009337799.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified

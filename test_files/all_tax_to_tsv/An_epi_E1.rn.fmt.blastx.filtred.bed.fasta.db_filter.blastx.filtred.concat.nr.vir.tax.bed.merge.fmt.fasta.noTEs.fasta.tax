@@ -1,0 +1,33 @@
+Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
+An_epi_E1/APCJ01000004.1:571008-571127	YP_025114.1	trypsin-like protein	Unclassified	Baculoviridae	Gammabaculovirus	Unclassified
+An_epi_E1/APCJ01000220.1:227401-227685	YP_009305133.1	nucleopasid protein	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuhan mosquito orthophasmavirus 1
+An_epi_E1/APCJ01000260.1:107760-107873	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
+An_epi_E1/APCJ01000300.1:107231-107791	YP_009052475.1	pp1ab	Nidovirales	Tobaniviridae	Pregotovirus	Unclassified
+An_epi_E1/APCJ01000471.1:4098-4292	YP_007354741.1	Protein Tyrosine Kinase (PTK) family protein	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
+An_epi_E1/APCJ01000514.1:227116-227520	YP_004894802.1	collagen-like protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
+An_epi_E1/APCJ01000514.1:227098-227577	YP_009342201.1	collagen triple helix repeat	Pimascovirales	Iridoviridae	Lymphocystivirus	Unclassified
+An_epi_E1/APCJ01000665.1:170663-172243	YP_009305131.1|YP_009305132.1|YP_009329872.1|YP_009507891.1|YP_009305131.1|YP_009329872.1|YP_009305131.1	glycoprotein precursor	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuhan mosquito orthophasmavirus 2
+An_epi_E1/APCJ01000818.1:110695-110793	YP_009665657.1	FirrV-1-B44	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified
+An_epi_E1/APCJ01000979.1:15033-15830	YP_009505333.1|YP_009304999.1|YP_009551636.1|YP_009346024.1|YP_009512942.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
+An_epi_E1/APCJ01001043.1:26085-26183	NP_938400.1	149R	Chitovirales	Poxviridae	Yatapoxvirus	Unclassified
+An_epi_E1/APCJ01001121.1:146933-147681	YP_009302387.1|YP_009302387.1|YP_009302387.1	RNA-dependent RNA polymerase	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+An_epi_E1/APCJ01001121.1:148016-148455	YP_009302387.1|YP_009302387.1	RNA-dependent RNA polymerase	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+An_epi_E1/APCJ01001172.1:45240-45341	YP_002854658.1	ubiquitin	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
+An_epi_E1/APCJ01001220.1:111699-111929	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
+An_epi_E1/APCJ01001233.1:51089-51553	YP_009505329.1	nucleocapsid protein	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
+An_epi_E1/APCJ01001244.1:70982-71080	NP_570501.1	CMLV111	Chitovirales	Poxviridae	Orthopoxvirus	Unclassified
+An_epi_E1/APCJ01002478.1:20950-21048	YP_008319563.1	Morn repeat domain containing protein	Unclassified	Unclassified	Pandoravirus	Unclassified
+An_epi_E1/APCJ01002764.1:3022-3504	YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
+An_epi_E1/APCJ01002764.1:3018-3644	YP_009120672.1	collagen triple helix repeat protein	Unclassified	Unclassified	Pandoravirus	Unclassified
+An_epi_E1/APCJ01003072.1:27565-30403	YP_009293591.1|YP_009505331.1|YP_008003508.1|YP_008719917.1|YP_009505331.1|YP_009505331.1|YP_009305141.1	glycoprotein precursor	Bunyavirales	Phenuiviridae	Phlebovirus	Unclassified
+An_epi_E1/APCJ01003072.1:32163-32759	YP_009417300.1	capsid	Ghabrivirales	Totiviridae	Unclassified	Unclassified
+An_epi_E1/APCJ01003072.1:36668-36982	YP_009337181.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Dipteran anphevirus
+An_epi_E1/APCJ01003323.1:26175-26273	NP_068225.1	PxORF6 peptide	Unclassified	Baculoviridae	Betabaculovirus	Unclassified
+An_epi_E1/APCJ01003384.1:7248-7583	YP_006382770.1	phage tail fiber protein	Caudovirales	Myoviridae	Unclassified	Unclassified
+An_epi_E1/APCJ01003492.1:8712-8975	YP_009417300.1	capsid	Ghabrivirales	Totiviridae	Unclassified	Unclassified
+An_epi_E1/APCJ01003492.1:9833-10766	YP_009302387.1|YP_009302387.1	RNA-dependent RNA polymerase	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
+An_epi_E1/APCJ01003492.1:3787-4161	YP_009256211.1|YP_009552708.1	putative nonstructural protein NS1	Piccovirales	Parvoviridae	Ambidensovirus	Unclassified
+An_epi_E1/APCJ01003492.1:10359-10766	YP_009388622.1	RdRp	Unclassified	Unclassified	Unclassified	Unclassified
+An_epi_E1/APCJ01003752.1:15486-15587	NP_039011.1	GNS1/SUR4 protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
+An_epi_E1/APCJ01004109.1:29822-29923	YP_007354522.1	Serine/Threonine kinase	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
+An_epi_E1/APCJ01004416.1:8318-8614	YP_009665584.1	ankyrin repeat PH and SEC7 domain containing	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified

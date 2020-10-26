@@ -1,0 +1,25 @@
+Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
+Ae_aeg_BV/JXPU01002032.1:13784-14303	YP_009094319.1|NP_065398.1|YP_009666834.1|YP_009176966.1|YP_009505527.1	nucleoprotein N	Mononegavirales	Rhabdoviridae	Ephemerovirus	Bovine fever ephemerovirus
+Ae_aeg_BV/JXPU01009003.1:12824-14033	YP_009505525.1|YP_009551691.1|YP_009094370.1|YP_009094266.1|YP_009094026.1|YP_009362249.1	glycoprotein	Mononegavirales	Rhabdoviridae	Tupavirus	Durham tupavirus
+Ae_aeg_BV/JXPU01009003.1:12618-12734	YP_009305106.1	glycoprotein	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_BV/JXPU01016003.1:5154-5642	YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
+Ae_aeg_BV/JXPU01024140.1:12498-14029	NP_937773.1|NP_891560.1|NP_872627.1|NP_041726.1|YP_003029843.1|YP_003029843.1|YP_009256193.1	envelope protein	Amarillovirales	Flaviviridae	Flavivirus	Unclassified
+Ae_aeg_BV/JXPU01024140.1:10191-10726	YP_009094319.1|YP_009666834.1|YP_009664712.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_BV/JXPU01024140.1:11256-12363	YP_009552816.1|YP_009552816.1|YP_009094273.1|YP_009182182.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
+Ae_aeg_BV/JXPU01024140.1:8183-8788	YP_460030.1|NP_694479.1|NP_694473.1|YP_460030.1	VP6	Reovirales	Reoviridae	Seadornavirus	Banna virus
+Ae_aeg_BV/JXPU01025839.1:6666-9655	YP_009293517.1|YP_009293517.1	Tn3-like element TnAs1 family transposase	Caudovirales	Myoviridae	Punavirus	Salmonella virus SJ46
+Ae_aeg_BV/JXPU01025839.1:1830-2048	YP_009325303.1	single-stranded DNA-binding protein	Caudovirales	Podoviridae	Lederbergvirus	Unclassified
+Ae_aeg_BV/JXPU01025839.1:5896-6438	YP_005102530.1	putative resolvase	Caudovirales	Siphoviridae	Unclassified	Unclassified
+Ae_aeg_BV/JXPU01025839.1:1755-2057	YP_006560684.1	single-stranded DNA-binding protein	Caudovirales	Siphoviridae	Unclassified	Unclassified
+Ae_aeg_BV/JXPU01025839.1:11085-12457	YP_007238154.1|NP_046569.1|YP_006560838.1	DNA polymerase	Caudovirales	Siphoviridae	Unclassified	Unclassified
+Ae_aeg_BV/JXPU01057842.1:2708-2812	YP_009506692.1	neurofilament triplet H1-like protein	Pimascovirales	Iridoviridae	Ranavirus	Frog virus 3
+Ae_aeg_BV/JXPU01060089.1:2264-2512	YP_009010305.1	Putative ubiquitin thioesteraseVirion core	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified
+Ae_aeg_BV/JXPU01068357.1:2055-3320	YP_009350102.1|YP_009164029.1	polyprotein	Amarillovirales	Flaviviridae	Unclassified	Unclassified
+Ae_aeg_BV/JXPU01068357.1:2268-3110	YP_009179403.1	NS5-like protein	Unclassified	Unclassified	Unclassified	Unclassified
+Ae_aeg_BV/JXPU01077776.1:5007-5501	NP_071802.1	bifunctional phosphopantothenoylcysteine	Methanobacteriales	Methanobacteriaceae	Methanothermobacter	Unclassified
+Ae_aeg_BV/JXPU01084308.1:8085-8225	YP_009162415.1	serine/threonine protein kinase; probable	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
+Ae_aeg_BV/JXPU01086619.1:6896-7888	YP_009505504.1|YP_009362111.1|YP_009094384.1|YP_009094389.1|YP_009666511.1	N protein	Mononegavirales	Rhabdoviridae	Tibrovirus	Ekpoma 1 tibrovirus
+Ae_aeg_BV/JXPU01090600.1:283-621	YP_004306850.1|YP_009293494.1	gp6	Caudovirales	Myoviridae	Kisquattuordecimvirus	Burkholderia virus KS14
+Ae_aeg_BV/JXPU01101729.1:146-313	YP_006383531.1	gp26	Caudovirales	Siphoviridae	Unclassified	Unclassified
+Ae_aeg_BV/JXPU01136677.1:7483-8034	YP_002154763.1|YP_009665744.1	putative hybrid sensor histdine kinase	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified
+Ae_aeg_BV/JXPU01136677.1:6882-7305	YP_009015565.1|YP_009015565.1	gp262	Caudovirales	Myoviridae	Unclassified	Unclassified
