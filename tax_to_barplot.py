@@ -40,15 +40,15 @@ df = pd.read_csv(input_file, sep='\t',header = 0)
 if specific_tax != None:
     df = df.loc[df['Family'].isin(specific_tax)]
 #grouping families with less than 5 elements to 'Others'
-family_count = df['Family'].value_counts()
+family_count = df[plot_mode].value_counts()
 family_low = family_count[family_count <= group_value]
 family_low_list = family_low.index
 for i in family_low_list:
-    df['Family'] = df['Family'].replace({i:'Others'})
+    df[plot_mode] = df[plot_mode].replace({i:'Others'})
 df.insert(0,'Genome',df['Element-ID'])
 df['Genome'] = df['Genome'].apply(get_prefix)
 df2 = df.groupby(["Genome", plot_mode]).size().reset_index(name="Count")
-df3 = df2.pivot_table('Count', ['Genome'], 'Family').fillna(0)
+df3 = df2.pivot_table('Count', ['Genome'], plot_mode).fillna(0)
 try:
     df3.drop(['Element-ID'], inplace=True)
     df3.drop([plot_mode], axis=1,inplace=True)
