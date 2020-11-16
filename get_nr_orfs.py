@@ -135,7 +135,7 @@ with open(getorf_out,'r') as getorf_file:
                 ORF_length = int(ORF_end) - int(ORF_start)
                 sense = 'pos'
                 getorf_info_list.append([ORF_id,Element_id,ORF,ORF_start,ORF_end,ORF_length,sense])
-            #print(ORF_id,Element_id,ORF,ORF_start,ORF_end,sense)
+                
 getorf_csv_writer.writerows(getorf_info_list)
 getorf_csv.close()
 Element_id_list = []
