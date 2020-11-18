@@ -162,15 +162,15 @@ for element in Element_id_list:
             if seq.id in orf_ids:
                 SeqIO.write([seq], element_output, "fasta")
     with open(element_output_orfs+'.cd-hit.log','w') as cd_hit_log:
-        cd_hit_out = element_output_orfs+'.cd'
+        cd_hit_out = element_output_orfs+'.orf_cd'
         cd_hit_est_cmd = 'cd-hit -i '+element_output_orfs+' -o '+cd_hit_out+' -c 0.9 -aL 0.1 -M '+str(var_memory)+' -T '+str(var_threads)+' -d 200'
         cd_hit_est_cmd = shlex.split(cd_hit_est_cmd)
         cd_hit_est_cmd_process = subprocess.Popen(cd_hit_est_cmd,stdout = cd_hit_log)
         cd_hit_est_cmd_process.wait()
 
-nr_orfs = "cat *.cd > non_redudant_orfs.fasta"
+nr_orfs = "cat *orf_cd > non_redudant_orfs.fasta"
 subprocess.call(nr_orfs,shell=True)
-clstr = "cat *.clstr > cd_hit_clstrs.txt"
+clstr = "cat *orf_cd.clstr > cd_hit_clstrs.txt"
 subprocess.call(clstr,shell=True)
 cd_hit_log = "cat *.cd-hit.log > cd_hit_logs.txt"
 subprocess.call(cd_hit_log,shell=True)
@@ -182,7 +182,7 @@ for filePath in fileList:
     except OSError:
         print("Error while deleting file")
 
-fileList = glob.glob('./*.cd*', recursive=True)
+fileList = glob.glob('./orf_cd.cd*', recursive=True)
 for filePath in fileList:
     try:
         os.remove(filePath)
