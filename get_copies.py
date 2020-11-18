@@ -38,7 +38,7 @@ var_memory = args.memory
 #Creating lists to store genome assemblies and viral taxonomy
 with open(input_file+'.cd-hit.log','w') as cd_hit_log:
     cd_hit_out = input_file+'.cd'
-    cd_hit_est_cmd = 'cd-hit-est -i '+input_file+' -o '+cd_hit_out+' -c 0.8 -aL 0.8 -g 1 -n 8 -M '+var_memory+' -T '+var_threads+' -d 200'
+    cd_hit_est_cmd = 'cd-hit-est -i '+input_file+' -o '+cd_hit_out+' -c 0.8 -aL 0.8 -g 1 -n 8 -M '+str(var_memory)+' -T '+str(var_threads)+' -d 200'
     cd_hit_est_cmd = shlex.split(cd_hit_est_cmd)
     cd_hit_est_cmd_process = subprocess.Popen(cd_hit_est_cmd,stdout = cd_hit_log)
     cd_hit_est_cmd_process.wait()
