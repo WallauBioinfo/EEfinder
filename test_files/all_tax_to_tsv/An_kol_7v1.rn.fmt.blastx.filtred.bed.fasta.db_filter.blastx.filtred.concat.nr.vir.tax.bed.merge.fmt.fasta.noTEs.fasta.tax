@@ -1,8 +1,8 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_kol_7v1/JXXB01012598.1:713-877	YP_009010565.1	immune reactive putative protease inhibitor	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified
-An_kol_7v1/JXXB01020716.1:1-159	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_kol_7v1/JXXB01030136.1:10564-10704	NP_612245.1	ORF023R	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified
-An_kol_7v1/JXXB01031442.1:8588-8689	YP_009143478.1	Thymidylate kinase	Chitovirales	Poxviridae	Orthopoxvirus	Unclassified
-An_kol_7v1/JXXB01033327.1:8595-8789	YP_009481560.1	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_kol_7v1/JXXB01038888.1:4717-4815	YP_009483283.1	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_kol_7v1/JXXB01039738.1:77-382	YP_008319984.2	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_kol_7v1/JXXB01012598.1:713-877	164	YP_009010565.1	immune reactive putative protease inhibitor	Viruses	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified	neg
+An_kol_7v1/JXXB01020716.1:1-159	158	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+An_kol_7v1/JXXB01030136.1:10564-10704	140	NP_612245.1	ORF023R	Viruses	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified	pos
+An_kol_7v1/JXXB01031442.1:8588-8689	101	YP_009143478.1	Thymidylate kinase	Viruses	Chitovirales	Poxviridae	Orthopoxvirus	Unclassified	neg
+An_kol_7v1/JXXB01033327.1:8595-8789	194	YP_009481560.1	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+An_kol_7v1/JXXB01038888.1:4717-4815	98	YP_009483283.1	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	neg
+An_kol_7v1/JXXB01039738.1:77-382	305	YP_008319984.2	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos

@@ -1,48 +1,48 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_fun_Fv1/KB668333.1:1478579-1478677	YP_009249985.1	protein kinase 1	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_fun_Fv1/KB668555.1:999901-999999	YP_001031233.1	viral inexin-like protein	Unclassified	Polydnaviridae	Ichnovirus	Unclassified
-An_fun_Fv1/KB668659.1:607147-608605	YP_009417300.1|YP_009417300.1	capsid	Ghabrivirales	Totiviridae	Unclassified	Unclassified
-An_fun_Fv1/KB668659.1:1398041-1398367	YP_009302385.1	ORF2	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_fun_Fv1/KB668791.1:76175-76273	NP_955595.1	ABL	Ortervirales	Retroviridae	Gammaretrovirus	Unclassified
-An_fun_Fv1/KB668797.1:249172-250143	YP_009507718.1	VP1	Reovirales	Reoviridae	Orbivirus	Unclassified
-An_fun_Fv1/KB668803.1:93962-94060	YP_009606411.1	putative tail fiber protein	Caudovirales	Myoviridae	Agricanvirus	Erwinia virus SpecialG
-An_fun_Fv1/KB668806.1:179830-180048	YP_009010565.1	immune reactive putative protease inhibitor	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified
-An_fun_Fv1/KB668892.1:391573-391803	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_fun_Fv1/KB668905.1:15457-16164	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_fun_Fv1/KB668929.1:61661-61771	NP_955091.1	CNPV068 GNS1/SUR4-like protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_fun_Fv1/KB668966.1:210406-210951	YP_024974.1	polymerase protein	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-An_fun_Fv1/KB668973.1:53889-54266	YP_009337090.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_fun_Fv1/KB668973.1:66458-67696	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
-An_fun_Fv1/KB668993.1:4393-4901	YP_009666281.1|YP_009302386.1|YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_fun_Fv1/KB668993.1:12369-12842	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_fun_Fv1/KB668998.1:31354-32532	YP_009508516.1	L	Mononegavirales	Paramyxoviridae	Orthoavulavirus	Avian orthoavulavirus 18
-An_fun_Fv1/KB668998.1:28362-32802	YP_009551692.1|YP_009505531.1|YP_009552125.1|YP_003518294.1|YP_238534.1|YP_009552115.1|YP_009508527.1|YP_009305112.1|YP_009300674.1|NP_042286.1|YP_009204560.1|YP_009664709.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
-An_fun_Fv1/KB668998.1:33147-34496	YP_009552115.1|YP_009094394.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
-An_fun_Fv1/KB668998.1:30321-30872	YP_009337139.1|YP_009336589.1|YP_009342285.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
-An_fun_Fv1/KB668998.1:33330-33773	YP_009300677.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
-An_fun_Fv1/KB669028.1:19842-20360	YP_004956864.1|NP_671813.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified
-An_fun_Fv1/KB669066.1:788-1213	YP_007677999.1	polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-An_fun_Fv1/KB669114.1:3899-4018	YP_008319603.1|YP_009482546.1	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_fun_Fv1/KB669161.1:6-1289	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
-An_fun_Fv1/KB669161.1:13198-13779	YP_009666257.1|YP_009337090.1|YP_009337857.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Brunnich mivirus
-An_fun_Fv1/KB669161.1:285-1190	YP_009333184.1|YP_009333448.1	putative glycoprotein	Mononegavirales	Artoviridae	Hexartovirus	Barnacle hexartovirus
-An_fun_Fv1/KB669161.1:186-1244	YP_009666281.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Drosophilid anphevirus
-An_fun_Fv1/KB669169.1:446669-446896	NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_fun_Fv1/KB669203.1:29980-30702	YP_024974.1|NP_040998.1	polymerase protein	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-An_fun_Fv1/KB669203.1:18697-20245	YP_009666257.1|YP_009177702.1|YP_009182178.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
-An_fun_Fv1/KB669203.1:1286-2152	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
-An_fun_Fv1/KB669203.1:10182-10763	YP_009337090.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_fun_Fv1/KB669203.1:11460-12416	YP_009337090.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
-An_fun_Fv1/KB669203.1:35025-36737	YP_009666257.1|YP_009182178.1|YP_009337861.1|YP_009666257.1|YP_009336633.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Wenling mivirus
-An_fun_Fv1/KB669203.1:35407-35913	YP_009177723.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
-An_fun_Fv1/KB669203.1:35275-36395	YP_009337120.1|YP_009666281.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Drosophilid anphevirus
-An_fun_Fv1/KB669236.1:8420-8533	NP_612800.1	envelope protein US28	Herpesvirales	Herpesviridae	Cytomegalovirus	Unclassified
-An_fun_Fv1/KB669305.1:11277-12170	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
-An_fun_Fv1/KB669414.1:25007-26211	YP_009666257.1|YP_009337861.1|YP_009337429.1|YP_009182178.1|YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Sanxia mivirus
-An_fun_Fv1/KB669469.1:754593-755513	YP_009337090.1|YP_009666257.1|YP_009337905.1|YP_009337861.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_fun_Fv1/KB669469.1:756240-756632	YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
-An_fun_Fv1/KB669469.1:754812-755516	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
-An_fun_Fv1/KB669491.1:270664-271824	YP_009362201.1|YP_009362144.1|YP_009177239.1|YP_009664712.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Hapavirus	Gray Lodge hapavirus
-An_fun_Fv1/KB669591.1:53800-53901	YP_009173309.1	ubiquitin conjugating enzyme E2	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_fun_Fv1/KB669591.1:53794-53895	YP_007354326.1	Ubiquitin-conjugating enzyme	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-An_fun_Fv1/KB669602.1:203064-203273	NP_051009.1	putative tail fibre protein	Caudovirales	Podoviridae	Unclassified	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_fun_Fv1/KB668333.1:1478579-1478677	98	YP_009249985.1	protein kinase 1	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	neg
+An_fun_Fv1/KB668555.1:999901-999999	98	YP_001031233.1	viral inexin-like protein	Viruses	Unclassified	Polydnaviridae	Ichnovirus	Unclassified	pos
+An_fun_Fv1/KB668659.1:1398041-1398367	326	YP_009302385.1	ORF2	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	neg
+An_fun_Fv1/KB668659.1:607147-608605	1458	YP_009417300.1|YP_009417300.1	capsid	Viruses	Ghabrivirales	Totiviridae	Unclassified	Unclassified	pos
+An_fun_Fv1/KB668791.1:76175-76273	98	NP_955595.1	ABL	Viruses	Ortervirales	Retroviridae	Gammaretrovirus	Unclassified	neg
+An_fun_Fv1/KB668797.1:249172-250143	971	YP_009507718.1	VP1	Viruses	Reovirales	Reoviridae	Orbivirus	Unclassified	pos
+An_fun_Fv1/KB668803.1:93962-94060	98	YP_009606411.1	putative tail fiber protein	Viruses	Caudovirales	Myoviridae	Agricanvirus	Erwinia virus SpecialG	pos
+An_fun_Fv1/KB668806.1:179830-180048	218	YP_009010565.1	immune reactive putative protease inhibitor	Viruses	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified	neg
+An_fun_Fv1/KB668892.1:391573-391803	230	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+An_fun_Fv1/KB668905.1:15457-16164	707	YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	pos
+An_fun_Fv1/KB668929.1:61661-61771	110	NP_955091.1	CNPV068 GNS1/SUR4-like protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_fun_Fv1/KB668966.1:210406-210951	545	YP_024974.1	polymerase protein	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	pos
+An_fun_Fv1/KB668973.1:53889-54266	377	YP_009337090.1|YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	neg
+An_fun_Fv1/KB668973.1:66458-67696	1238	YP_009182178.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus	neg
+An_fun_Fv1/KB668993.1:12369-12842	473	YP_009302386.1	glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	pos
+An_fun_Fv1/KB668993.1:4393-4901	508	YP_009666281.1|YP_009302386.1|YP_009302386.1	glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	pos
+An_fun_Fv1/KB668998.1:28362-32802*	4440	YP_009551692.1|YP_009505531.1|YP_009552125.1|YP_003518294.1|YP_238534.1|YP_009552115.1|YP_009508527.1|YP_009305112.1|YP_009300674.1|NP_042286.1|YP_009204560.1|YP_009664709.1	RNA-dependent RNA polymerase	Viruses	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified	neg
+An_fun_Fv1/KB668998.1:30321-30872	551	YP_009337139.1|YP_009336589.1|YP_009342285.1	RNA-dependent RNA polymerase	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	neg
+An_fun_Fv1/KB668998.1:31354-32532	1178	YP_009508516.1	L	Viruses	Mononegavirales	Paramyxoviridae	Orthoavulavirus	Avian orthoavulavirus 18	neg
+An_fun_Fv1/KB668998.1:33147-34496	1349	YP_009552115.1|YP_009094394.1	RNA-dependent RNA polymerase	Viruses	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified	neg
+An_fun_Fv1/KB668998.1:33330-33773	443	YP_009300677.1	RNA-dependent RNA polymerase	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	neg
+An_fun_Fv1/KB669028.1:19842-20360	518	YP_004956864.1|NP_671813.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified	pos
+An_fun_Fv1/KB669066.1:788-1213	425	YP_007677999.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+An_fun_Fv1/KB669114.1:3899-4018	119	YP_008319603.1|YP_009482546.1	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+An_fun_Fv1/KB669161.1:13198-13779	581	YP_009666257.1|YP_009337090.1|YP_009337857.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Brunnich mivirus	neg
+An_fun_Fv1/KB669161.1:186-1244	1058	YP_009666281.1	glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Drosophilid anphevirus	neg
+An_fun_Fv1/KB669161.1:285-1190	905	YP_009333184.1|YP_009333448.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Hexartovirus	Barnacle hexartovirus	neg
+An_fun_Fv1/KB669161.1:6-1289*	1283	YP_009182178.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus	neg
+An_fun_Fv1/KB669169.1:446669-446896	227	NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+An_fun_Fv1/KB669203.1:10182-10763	581	YP_009337090.1|YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	pos
+An_fun_Fv1/KB669203.1:11460-12416	956	YP_009337090.1|YP_009182178.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus	pos
+An_fun_Fv1/KB669203.1:1286-2152	866	YP_009182178.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus	pos
+An_fun_Fv1/KB669203.1:18697-20245	1548	YP_009666257.1|YP_009177702.1|YP_009182178.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus	neg
+An_fun_Fv1/KB669203.1:29980-30702	722	YP_024974.1|NP_040998.1	polymerase protein	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	neg
+An_fun_Fv1/KB669203.1:35025-36737*	1712	YP_009666257.1|YP_009182178.1|YP_009337861.1|YP_009666257.1|YP_009336633.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Wenling mivirus	pos
+An_fun_Fv1/KB669203.1:35275-36395	1120	YP_009337120.1|YP_009666281.1	glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Drosophilid anphevirus	pos
+An_fun_Fv1/KB669203.1:35407-35913	506	YP_009177723.1	glycoprotein	Viruses	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified	pos
+An_fun_Fv1/KB669236.1:8420-8533	113	NP_612800.1	envelope protein US28	Viruses	Herpesvirales	Herpesviridae	Cytomegalovirus	Unclassified	neg
+An_fun_Fv1/KB669305.1:11277-12170	893	YP_009182178.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus	neg
+An_fun_Fv1/KB669414.1:25007-26211	1204	YP_009666257.1|YP_009337861.1|YP_009337429.1|YP_009182178.1|YP_009337090.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Sanxia mivirus	neg
+An_fun_Fv1/KB669469.1:754593-755513*	920	YP_009337090.1|YP_009666257.1|YP_009337905.1|YP_009337861.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	neg
+An_fun_Fv1/KB669469.1:754812-755516	704	YP_009337120.1	putative glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus	neg
+An_fun_Fv1/KB669469.1:756240-756632	392	YP_009337090.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus	neg
+An_fun_Fv1/KB669491.1:270664-271824	1160	YP_009362201.1|YP_009362144.1|YP_009177239.1|YP_009664712.1	nucleoprotein	Viruses	Mononegavirales	Rhabdoviridae	Hapavirus	Gray Lodge hapavirus	neg
+An_fun_Fv1/KB669591.1:53794-53895*	101	YP_007354326.1	Ubiquitin-conjugating enzyme	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	pos
+An_fun_Fv1/KB669591.1:53800-53901	101	YP_009173309.1	ubiquitin conjugating enzyme E2	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+An_fun_Fv1/KB669602.1:203064-203273	209	NP_051009.1	putative tail fibre protein	Viruses	Caudovirales	Podoviridae	Unclassified	Unclassified	pos

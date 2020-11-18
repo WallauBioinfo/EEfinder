@@ -1,25 +1,25 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_sin_S2/AXCK02000050.1:64-522	NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_sin_S2/AXCK02000633.1:16411-16587	YP_009408000.1	Ribonucleotide reductase large subunit	Chitovirales	Poxviridae	Vespertilionpoxvirus	Unclassified
-An_sin_S2/AXCK02000683.1:10864-11118	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_sin_S2/AXCK02000872.1:43822-43926	YP_009665657.1	FirrV-1-B44	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified
-An_sin_S2/AXCK02000969.1:8986-9162	YP_009032490.1	collagen-like protein	Caudovirales	Siphoviridae	Fromanvirus	Unclassified
-An_sin_S2/AXCK02001233.1:163-261	YP_009305131.1	glycoprotein precursor	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuhan mosquito orthophasmavirus 1
-An_sin_S2/AXCK02002809.1:23123-23254	YP_001029418.1	GfV-C16-ORF1	Unclassified	Polydnaviridae	Ichnovirus	Unclassified
-An_sin_S2/AXCK02003680.1:640-732	YP_009177036.1	ankyrin repeat family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_sin_S2/AXCK02004202.1:5131-5232	NP_051854.1	m140R	Chitovirales	Poxviridae	Leporipoxvirus	Unclassified
-An_sin_S2/AXCK02004890.1:64816-64914	YP_001031233.1	viral inexin-like protein	Unclassified	Polydnaviridae	Ichnovirus	Unclassified
-An_sin_S2/AXCK02005055.1:1-225	NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_sin_S2/AXCK02005091.1:12492-12593	YP_009052149.1	putative cyclophilin type peptydyl-prolyl	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_sin_S2/AXCK02006946.1:123-866	YP_009329143.1	Collagen-binding collagen-like	Unclassified	Pithoviridae	Unclassified	Unclassified
-An_sin_S2/AXCK02008053.1:9544-10759	YP_009177219.1|YP_009182178.1|YP_009336633.1|YP_009666257.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Wenling mivirus
-An_sin_S2/AXCK02008053.1:9784-10500	YP_009666281.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Drosophilid anphevirus
-An_sin_S2/AXCK02008370.1:35280-35393	YP_009481279.1	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_sin_S2/AXCK02008644.1:46408-46512	YP_009483380.1	Glycosyl hydrolase family 1 protein	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_sin_S2/AXCK02008865.1:18853-19752	YP_009052475.1	pp1ab	Nidovirales	Tobaniviridae	Pregotovirus	Unclassified
-An_sin_S2/AXCK02009078.1:20058-20207	YP_008052529.1	DNA-directed RNA polymerase II subunit RPB10	Algavirales	Phycodnaviridae	Prymnesiovirus	Unclassified
-An_sin_S2/AXCK02009079.1:35856-36164	NP_077684.1	EsV-1-199	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified
-An_sin_S2/AXCK02010841.1:12585-12815	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_sin_S2/AXCK02010951.1:36633-36731	NP_077596.1	EsV-1-111	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified
-An_sin_S2/AXCK02011798.1:12194-12292	YP_003969913.1	putative ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus
-An_sin_S2/AXCK02014851.1:15497-15631	NP_039125.1	ankyrin repeat protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_sin_S2/AXCK02000050.1:64-522	458	NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_sin_S2/AXCK02000633.1:16411-16587	176	YP_009408000.1	Ribonucleotide reductase large subunit	Viruses	Chitovirales	Poxviridae	Vespertilionpoxvirus	Unclassified	neg
+An_sin_S2/AXCK02000683.1:10864-11118	254	YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	neg
+An_sin_S2/AXCK02000872.1:43822-43926	104	YP_009665657.1	FirrV-1-B44	Viruses	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified	pos
+An_sin_S2/AXCK02000969.1:8986-9162	176	YP_009032490.1	collagen-like protein	Viruses	Caudovirales	Siphoviridae	Fromanvirus	Unclassified	pos
+An_sin_S2/AXCK02001233.1:163-261	98	YP_009305131.1	glycoprotein precursor	Viruses	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuhan mosquito orthophasmavirus 1	pos
+An_sin_S2/AXCK02002809.1:23123-23254	131	YP_001029418.1	GfV-C16-ORF1	Viruses	Unclassified	Polydnaviridae	Ichnovirus	Unclassified	neg
+An_sin_S2/AXCK02003680.1:640-732	92	YP_009177036.1	ankyrin repeat family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_sin_S2/AXCK02004202.1:5131-5232	101	NP_051854.1	m140R	Viruses	Chitovirales	Poxviridae	Leporipoxvirus	Unclassified	neg
+An_sin_S2/AXCK02004890.1:64816-64914	98	YP_001031233.1	viral inexin-like protein	Viruses	Unclassified	Polydnaviridae	Ichnovirus	Unclassified	pos
+An_sin_S2/AXCK02005055.1:1-225	224	NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_sin_S2/AXCK02005091.1:12492-12593	101	YP_009052149.1	putative cyclophilin type peptydyl-prolyl	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+An_sin_S2/AXCK02006946.1:123-866	743	YP_009329143.1	Collagen-binding collagen-like	Viruses	Unclassified	Pithoviridae	Unclassified	Unclassified	neg
+An_sin_S2/AXCK02008053.1:9544-10759*	1215	YP_009177219.1|YP_009182178.1|YP_009336633.1|YP_009666257.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Wenling mivirus	pos
+An_sin_S2/AXCK02008053.1:9784-10500	716	YP_009666281.1	glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Drosophilid anphevirus	pos
+An_sin_S2/AXCK02008370.1:35280-35393	113	YP_009481279.1	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+An_sin_S2/AXCK02008644.1:46408-46512	104	YP_009483380.1	Glycosyl hydrolase family 1 protein	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	neg
+An_sin_S2/AXCK02008865.1:18853-19752	899	YP_009052475.1	pp1ab	Viruses	Nidovirales	Tobaniviridae	Pregotovirus	Unclassified	neg
+An_sin_S2/AXCK02009078.1:20058-20207	149	YP_008052529.1	DNA-directed RNA polymerase II subunit RPB10	Viruses	Algavirales	Phycodnaviridae	Prymnesiovirus	Unclassified	pos
+An_sin_S2/AXCK02009079.1:35856-36164	308	NP_077684.1	EsV-1-199	Viruses	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified	neg
+An_sin_S2/AXCK02010841.1:12585-12815	230	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_sin_S2/AXCK02010951.1:36633-36731	98	NP_077596.1	EsV-1-111	Viruses	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified	neg
+An_sin_S2/AXCK02011798.1:12194-12292	98	YP_003969913.1	putative ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus	pos
+An_sin_S2/AXCK02014851.1:15497-15631	134	NP_039125.1	ankyrin repeat protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos

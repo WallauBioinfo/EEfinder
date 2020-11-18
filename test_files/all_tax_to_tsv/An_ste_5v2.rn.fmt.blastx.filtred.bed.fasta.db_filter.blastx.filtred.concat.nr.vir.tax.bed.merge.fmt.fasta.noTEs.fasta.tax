@@ -1,9 +1,9 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_ste_5v2/CP032231.1:16340397-16341428	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_ste_5v2/CP032231.1:16342242-16342508	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
-An_ste_5v2/CP032231.1:15675494-15677029	YP_009337861.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Crustacean mivirus
-An_ste_5v2/CP032231.1:16340517-16341425	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
-An_ste_5v2/CP032232.1:18813752-18814210	NP_955119.1|YP_009447989.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_ste_5v2/CP032234.1:38918835-38920753	YP_009177702.1|YP_009666257.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
-An_ste_5v2/CP032234.1:38939784-38940446	YP_009177702.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
-An_ste_5v2/CP032234.1:38940902-38941483	YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_ste_5v2/CP032231.1:16340397-16341428*	1031	YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	neg
+An_ste_5v2/CP032231.1:16342242-16342508	266	YP_009182178.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus	neg
+An_ste_5v2/CP032231.1:15675494-15677029	1535	YP_009337861.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Crustacean mivirus	pos
+An_ste_5v2/CP032231.1:16340517-16341425	908	YP_009337120.1	putative glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus	neg
+An_ste_5v2/CP032232.1:18813752-18814210	458	NP_955119.1|YP_009447989.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+An_ste_5v2/CP032234.1:38918835-38920753	1918	YP_009177702.1|YP_009666257.1|YP_009182178.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus	neg
+An_ste_5v2/CP032234.1:38939784-38940446	662	YP_009177702.1|YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus	neg
+An_ste_5v2/CP032234.1:38940902-38941483	581	YP_009337090.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus	neg

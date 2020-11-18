@@ -1,2 +1,2 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_mac_M1/KI433718:628-1131	YP_009052475.1	pp1ab	Nidovirales	Tobaniviridae	Pregotovirus	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_mac_M1/KI433718:628-1131	503	YP_009052475.1	pp1ab	Viruses	Nidovirales	Tobaniviridae	Pregotovirus	Unclassified	neg

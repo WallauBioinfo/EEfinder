@@ -1,7 +1,7 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_bwa_2/SIXB01004628.1:9004-9396	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_bwa_2/SIXB01005522.1:10279-10509	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_bwa_2/SIXB01006345.1:3600-4034	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_bwa_2/SIXB01006511.1:9190-9798	YP_009666523.1	polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-An_bwa_2/SIXB01007189.1:62-520	NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_bwa_2/SIXB01007332.1:6045-6149	YP_003969690.1	putative ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_bwa_2/SIXB01004628.1:9004-9396	392	YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	pos
+An_bwa_2/SIXB01005522.1:10279-10509	230	YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	neg
+An_bwa_2/SIXB01006345.1:3600-4034	434	YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	neg
+An_bwa_2/SIXB01006511.1:9190-9798	608	YP_009666523.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+An_bwa_2/SIXB01007189.1:62-520	458	NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+An_bwa_2/SIXB01007332.1:6045-6149	104	YP_003969690.1	putative ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus	neg

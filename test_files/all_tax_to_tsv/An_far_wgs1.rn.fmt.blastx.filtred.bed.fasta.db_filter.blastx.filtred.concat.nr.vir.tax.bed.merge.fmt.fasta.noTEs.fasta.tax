@@ -1,16 +1,16 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_far_wgs1/JXXC01002203.1:7692-7808	YP_009553152.1	putative deoxynucleoside kinase protein	Unclassified	Nudiviridae	Unclassified	Unclassified
-An_far_wgs1/JXXC01003106.1:1726-1956	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_far_wgs1/JXXC01005814.1:3341-3526	YP_009664398.1	collagen-like domain containing protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-An_far_wgs1/JXXC01006731.1:9678-9788	YP_009553383.1	calcineurin-like phosphoesterase-like protein	Unclassified	Nudiviridae	Unclassified	Unclassified
-An_far_wgs1/JXXC01007834.1:6-329	YP_009162460.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-An_far_wgs1/JXXC01009679.1:3048-3146	YP_003517877.1	RR2b	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_far_wgs1/JXXC01011139.1:9797-10447	YP_009505333.1|YP_009505329.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
-An_far_wgs1/JXXC01012721.1:7187-7414	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_far_wgs1/JXXC01016647.1:8353-8511	YP_007676278.1	ubiquitin	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_far_wgs1/JXXC01017473.1:1261-1359	YP_874315.1	ecdysteroid UDP-glucosyltransferase	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_far_wgs1/JXXC01018414.1:5496-5639	NP_612245.1	ORF023R	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified
-An_far_wgs1/JXXC01019212.1:10699-10797	YP_009281787.1	kelch-like protein	Chitovirales	Poxviridae	Orthopoxvirus	Unclassified
-An_far_wgs1/JXXC01019697.1:11573-11683	YP_009325851.1	CTP synthetase	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified
-An_far_wgs1/JXXC01026422.1:20873-21522	YP_009447989.1|YP_009447989.1|YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_far_wgs1/JXXC01026889.1:5208-5363	YP_009430186.1	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_far_wgs1/JXXC01002203.1:7692-7808	116	YP_009553152.1	putative deoxynucleoside kinase protein	Viruses	Unclassified	Nudiviridae	Unclassified	Unclassified	neg
+An_far_wgs1/JXXC01003106.1:1726-1956	230	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+An_far_wgs1/JXXC01005814.1:3341-3526	185	YP_009664398.1	collagen-like domain containing protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	pos
+An_far_wgs1/JXXC01006731.1:9678-9788	110	YP_009553383.1	calcineurin-like phosphoesterase-like protein	Viruses	Unclassified	Nudiviridae	Unclassified	Unclassified	neg
+An_far_wgs1/JXXC01007834.1:6-329	323	YP_009162460.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+An_far_wgs1/JXXC01009679.1:3048-3146	98	YP_003517877.1	RR2b	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	neg
+An_far_wgs1/JXXC01011139.1:9797-10447	650	YP_009505333.1|YP_009505329.1	Nucleocapsid	Viruses	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified	neg
+An_far_wgs1/JXXC01012721.1:7187-7414	227	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_far_wgs1/JXXC01016647.1:8353-8511	158	YP_007676278.1	ubiquitin	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	neg
+An_far_wgs1/JXXC01017473.1:1261-1359	98	YP_874315.1	ecdysteroid UDP-glucosyltransferase	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	neg
+An_far_wgs1/JXXC01018414.1:5496-5639	143	NP_612245.1	ORF023R	Viruses	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified	pos
+An_far_wgs1/JXXC01019212.1:10699-10797	98	YP_009281787.1	kelch-like protein	Viruses	Chitovirales	Poxviridae	Orthopoxvirus	Unclassified	neg
+An_far_wgs1/JXXC01019697.1:11573-11683	110	YP_009325851.1	CTP synthetase	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified	pos
+An_far_wgs1/JXXC01026422.1:20873-21522	649	YP_009447989.1|YP_009447989.1|YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+An_far_wgs1/JXXC01026889.1:5208-5363	155	YP_009430186.1	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	neg

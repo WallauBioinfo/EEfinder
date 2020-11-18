@@ -1,5 +1,5 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_alb_S2/2R:13711531-13711629	YP_009449015.1	GTP ras-related protein Rac1	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_alb_S2/2R:21000373-21000603	NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_alb_S2/2R:36664692-36664943	NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_alb_S2/2R:3453871-3453969	YP_001031233.1	viral inexin-like protein	Unclassified	Polydnaviridae	Ichnovirus	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_alb_S2/2R:13711531-13711629	98	YP_009449015.1	GTP ras-related protein Rac1	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+An_alb_S2/2R:21000373-21000603	230	NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+An_alb_S2/2R:3453871-3453969	98	YP_001031233.1	viral inexin-like protein	Viruses	Unclassified	Polydnaviridae	Ichnovirus	Unclassified	neg
+An_alb_S2/2R:36664692-36664943	251	NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos

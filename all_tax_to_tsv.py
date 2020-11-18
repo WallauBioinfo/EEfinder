@@ -23,7 +23,7 @@ import argparse, csv, os, subprocess, shlex, sys, time, re
 
 ###############################>ARGUMENTS<###############################
 parser = argparse.ArgumentParser(description = 'This scripts receives a list file with taxonomy results of PEVEI, and returns a tsv file with the taxonomy organized by assembly',formatter_class=argparse.RawTextHelpFormatter)
-parser.add_argument("-in", "--input", help="List with taxonomy file names. e.g.: fasta.lst", required=True)
+parser.add_argument("-in", "--input", help="List with taxonomy file names. e.g.: tax.lst", required=True)
 #Storing argument on variables
 args = parser.parse_args()
 input_file = args.input
@@ -40,7 +40,7 @@ with open(input_file,'r') as tax_list:
                 assembly = re.sub(r"/.*","",line[0]).rstrip('\n')
                 if assembly not in assembly_list:
                     assembly_list.append(assembly)
-                taxonomy = '-'.join([line[3],line[4]]).rstrip('\n')
+                taxonomy = '-'.join([line[5],line[6]]).rstrip('\n')
                 if taxonomy not in taxonomy_list:
                     taxonomy_list.append(taxonomy)
 taxonomy_list.remove("Order-Family")

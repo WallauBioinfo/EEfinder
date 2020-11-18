@@ -1,26 +1,26 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_min_M1/APHL01000105.1:6591-6698	YP_009552663.1	EGT	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_min_M1/APHL01000154.1:70643-71122	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_min_M1/APHL01000154.1:71456-72016	YP_009337181.1|YP_009302386.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Dipteran anphevirus
-An_min_M1/APHL01000195.1:422930-423160	YP_009505329.1	nucleocapsid protein	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
-An_min_M1/APHL01000222.1:41889-42023	YP_009513065.1	cathepsin	Unclassified	Baculoviridae	Betabaculovirus	Unclassified
-An_min_M1/APHL01000225.1:18566-18796	NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_min_M1/APHL01000539.1:52-507	NP_955119.1|YP_009447989.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_min_M1/APHL01000617.1:101189-101287	YP_009448511.1	Protein kinase	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_min_M1/APHL01000619.1:129611-129709	YP_009162415.1	serine/threonine protein kinase; probable	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-An_min_M1/APHL01000633.1:424884-424982	YP_009483771.1	Threonylcarbamoyl AMP synthase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_min_M1/APHL01000778.1:239337-239435	YP_007354705.1	cyclin-domain fused to serine-threonine kinase	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-An_min_M1/APHL01000872.1:256826-256945	YP_007354317.1	uridine kinase	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-An_min_M1/APHL01000954.1:108970-109068	NP_570501.1	CMLV111	Chitovirales	Poxviridae	Orthopoxvirus	Unclassified
-An_min_M1/APHL01001753.1:1545-2271	YP_009337090.1|YP_009182178.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
-An_min_M1/APHL01002202.1:52118-52258	YP_009481511.1	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_min_M1/APHL01002214.1:32655-32885	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_min_M1/APHL01003082.1:5512-5631	NP_955091.1	CNPV068 GNS1/SUR4-like protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_min_M1/APHL01003396.1:113088-113480	YP_009666257.1|YP_009182178.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_min_M1/APHL01003873.1:25340-26884	YP_009666257.1|YP_009182178.1|YP_009177219.1|YP_009333176.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_min_M1/APHL01003873.1:25964-26509	YP_009505432.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Pteromalus puparum peropuvirus
-An_min_M1/APHL01003873.1:25616-26902	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
-An_min_M1/APHL01003873.1:27123-27311	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_min_M1/APHL01003906.1:3855-3983	YP_008437181.2	Dihydrofolate reductase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_min_M1/APHL01004624.1:55160-55261	YP_009448213.1	3\'5\'-cyclic nucleotide phosphodiesterase	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_min_M1/APHL01004629.1:478-1095	YP_009259541.1|YP_009173866.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_min_M1/APHL01000105.1:6591-6698	107	YP_009552663.1	EGT	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+An_min_M1/APHL01000154.1:70643-71122	479	YP_009302386.1	glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	neg
+An_min_M1/APHL01000154.1:71456-72016	560	YP_009337181.1|YP_009302386.1	putative glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Dipteran anphevirus	neg
+An_min_M1/APHL01000195.1:422930-423160	230	YP_009505329.1	nucleocapsid protein	Viruses	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified	pos
+An_min_M1/APHL01000222.1:41889-42023	134	YP_009513065.1	cathepsin	Viruses	Unclassified	Baculoviridae	Betabaculovirus	Unclassified	neg
+An_min_M1/APHL01000225.1:18566-18796	230	NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_min_M1/APHL01000539.1:52-507	455	NP_955119.1|YP_009447989.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_min_M1/APHL01000617.1:101189-101287	98	YP_009448511.1	Protein kinase	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+An_min_M1/APHL01000619.1:129611-129709	98	YP_009162415.1	serine/threonine protein kinase; probable	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+An_min_M1/APHL01000633.1:424884-424982	98	YP_009483771.1	Threonylcarbamoyl AMP synthase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+An_min_M1/APHL01000778.1:239337-239435	98	YP_007354705.1	cyclin-domain fused to serine-threonine kinase	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	pos
+An_min_M1/APHL01000872.1:256826-256945	119	YP_007354317.1	uridine kinase	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	neg
+An_min_M1/APHL01000954.1:108970-109068	98	NP_570501.1	CMLV111	Viruses	Chitovirales	Poxviridae	Orthopoxvirus	Unclassified	neg
+An_min_M1/APHL01001753.1:1545-2271	726	YP_009337090.1|YP_009182178.1|YP_009182178.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus	pos
+An_min_M1/APHL01002202.1:52118-52258	140	YP_009481511.1	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+An_min_M1/APHL01002214.1:32655-32885	230	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_min_M1/APHL01003082.1:5512-5631	119	NP_955091.1	CNPV068 GNS1/SUR4-like protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_min_M1/APHL01003396.1:113088-113480	392	YP_009666257.1|YP_009182178.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	pos
+An_min_M1/APHL01003873.1:25340-26884*	1544	YP_009666257.1|YP_009182178.1|YP_009177219.1|YP_009333176.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	neg
+An_min_M1/APHL01003873.1:25616-26902	1286	YP_009337120.1	putative glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus	neg
+An_min_M1/APHL01003873.1:25964-26509	545	YP_009505432.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Peropuvirus	Pteromalus puparum peropuvirus	neg
+An_min_M1/APHL01003873.1:27123-27311	188	YP_009302386.1	glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	neg
+An_min_M1/APHL01003906.1:3855-3983	128	YP_008437181.2	Dihydrofolate reductase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+An_min_M1/APHL01004624.1:55160-55261	101	YP_009448213.1	3\'5\'-cyclic nucleotide phosphodiesterase	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+An_min_M1/APHL01004629.1:478-1095	617	YP_009259541.1|YP_009173866.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos

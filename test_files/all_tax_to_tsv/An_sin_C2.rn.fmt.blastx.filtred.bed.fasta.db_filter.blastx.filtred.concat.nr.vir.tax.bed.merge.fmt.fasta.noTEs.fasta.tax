@@ -1,34 +1,34 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_sin_C2/ATLV01000833.1:27373-27471	YP_007003913.1	protein ORF94	Herpesvirales	Alloherpesviridae	Cyprinivirus	Unclassified
-An_sin_C2/ATLV01005311.1:5511-5672	YP_009186748.1	helicase-2	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_sin_C2/ATLV01010700.1:2680-3435	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-An_sin_C2/ATLV01011162.1:4477-4572	YP_004895060.1	putative serine/threonine-protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_sin_C2/ATLV01011319.1:3585-4754	YP_009361998.1|YP_009362201.1|YP_009094097.1|YP_009552120.1|YP_009094389.1|YP_009094384.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ledantevirus	Fukuoka ledantevirus
-An_sin_C2/ATLV01011319.1:3474-4493	YP_009336832.1	putative nucleoprotein	Unclassified	Unclassified	Unclassified	Unclassified
-An_sin_C2/ATLV01011364.1:4276-4893	YP_009259545.1	polymerase	Blubervirales	Hepadnaviridae	Herpetohepadnavirus	Unclassified
-An_sin_C2/ATLV01013177.1:214401-214856	NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_sin_C2/ATLV01013410.1:46240-46353	YP_009481279.1	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_sin_C2/ATLV01013905.1:4145-4255	YP_009133216.1	egt	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_sin_C2/ATLV01014483.1:5464-5568	YP_009483380.1	Glycosyl hydrolase family 1 protein	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_sin_C2/ATLV01014601.1:4889-5035	YP_009448762.1	Cyclin-dependent kinase	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_sin_C2/ATLV01014613.1:42369-42467	YP_009273447.1	DNA helicase	Caudovirales	Siphoviridae	Woesvirus	Gordonia virus Woes
-An_sin_C2/ATLV01017403.1:9467-9565	YP_001031233.1	viral inexin-like protein	Unclassified	Polydnaviridae	Ichnovirus	Unclassified
-An_sin_C2/ATLV01018382.1:692-1096	NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-An_sin_C2/ATLV01018919.1:3313-4152	YP_009389524.1	DNA polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified
-An_sin_C2/ATLV01019471.1:62109-62240	NP_059206.1	ORF58	Unclassified	Baculoviridae	Betabaculovirus	Unclassified
-An_sin_C2/ATLV01019499.1:10462-10560	NP_619997.1	CPXV217 protein	Chitovirales	Poxviridae	Orthopoxvirus	Unclassified
-An_sin_C2/ATLV01019703.1:23402-23551	NP_048276.1	ORF MSV205 tryptophan repeat gene family	Chitovirales	Poxviridae	Deltaentomopoxvirus	Unclassified
-An_sin_C2/ATLV01020330.1:115554-115688	NP_039125.1	ankyrin repeat protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_sin_C2/ATLV01020717.1:53068-53244	YP_009408000.1	Ribonucleotide reductase large subunit	Chitovirales	Poxviridae	Vespertilionpoxvirus	Unclassified
-An_sin_C2/ATLV01021281.1:914-1113	YP_009305131.1|YP_009305131.1	glycoprotein precursor	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuhan mosquito orthophasmavirus 1
-An_sin_C2/ATLV01022938.1:8426-8521	YP_293904.1	putative serine protease	Algavirales	Phycodnaviridae	Coccolithovirus	Unclassified
-An_sin_C2/ATLV01023436.1:24971-25063	YP_009177036.1	ankyrin repeat family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_sin_C2/ATLV01023452.1:6202-6294	YP_003987364.1	putative serine/threonine-protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_sin_C2/ATLV01023967.1:45742-46050	NP_077684.1	EsV-1-199	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified
-An_sin_C2/ATLV01023972.1:46856-47005	YP_008052529.1	DNA-directed RNA polymerase II subunit RPB10	Algavirales	Phycodnaviridae	Prymnesiovirus	Unclassified
-An_sin_C2/ATLV01024090.1:34676-34780	YP_009217026.1	AAA ATPase	Unclassified	Unclassified	Unclassified	Unclassified
-An_sin_C2/ATLV01024164.1:26407-26937	YP_008239431.1	agglutinating adhesin	Caudovirales	Podoviridae	Ithacavirus	Salmonella virus FSL SP-058
-An_sin_C2/ATLV01024644.1:1285-1383	YP_003969913.1	putative ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus
-An_sin_C2/ATLV01025286.1:22530-22880	YP_009004875.1	RNA 2\'-phosphotransferase	Caudovirales	Myoviridae	Agricanvirus	Erwinia virus Ea35-70
-An_sin_C2/ATLV01025642.1:28238-28408	YP_007354197.1	collagen repeat protein	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-An_sin_C2/ATLV01026872.1:113-358	NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_sin_C2/ATLV01000833.1:27373-27471	98	YP_007003913.1	protein ORF94	Viruses	Herpesvirales	Alloherpesviridae	Cyprinivirus	Unclassified	neg
+An_sin_C2/ATLV01005311.1:5511-5672	161	YP_009186748.1	helicase-2	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+An_sin_C2/ATLV01010700.1:2680-3435	755	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+An_sin_C2/ATLV01011162.1:4477-4572	95	YP_004895060.1	putative serine/threonine-protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+An_sin_C2/ATLV01011319.1:3474-4493	1019	YP_009336832.1	putative nucleoprotein	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	pos
+An_sin_C2/ATLV01011319.1:3585-4754*	1169	YP_009361998.1|YP_009362201.1|YP_009094097.1|YP_009552120.1|YP_009094389.1|YP_009094384.1	nucleoprotein	Viruses	Mononegavirales	Rhabdoviridae	Ledantevirus	Fukuoka ledantevirus	pos
+An_sin_C2/ATLV01011364.1:4276-4893	617	YP_009259545.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Herpetohepadnavirus	Unclassified	neg
+An_sin_C2/ATLV01013177.1:214401-214856	455	NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+An_sin_C2/ATLV01013410.1:46240-46353	113	YP_009481279.1	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	neg
+An_sin_C2/ATLV01013905.1:4145-4255	110	YP_009133216.1	egt	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+An_sin_C2/ATLV01014483.1:5464-5568	104	YP_009483380.1	Glycosyl hydrolase family 1 protein	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+An_sin_C2/ATLV01014601.1:4889-5035	146	YP_009448762.1	Cyclin-dependent kinase	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+An_sin_C2/ATLV01014613.1:42369-42467	98	YP_009273447.1	DNA helicase	Viruses	Caudovirales	Siphoviridae	Woesvirus	Gordonia virus Woes	neg
+An_sin_C2/ATLV01017403.1:9467-9565	98	YP_001031233.1	viral inexin-like protein	Viruses	Unclassified	Polydnaviridae	Ichnovirus	Unclassified	pos
+An_sin_C2/ATLV01018382.1:692-1096	404	NP_671813.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+An_sin_C2/ATLV01018919.1:3313-4152	839	YP_009389524.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified	neg
+An_sin_C2/ATLV01019471.1:62109-62240	131	NP_059206.1	ORF58	Viruses	Unclassified	Baculoviridae	Betabaculovirus	Unclassified	neg
+An_sin_C2/ATLV01019499.1:10462-10560	98	NP_619997.1	CPXV217 protein	Viruses	Chitovirales	Poxviridae	Orthopoxvirus	Unclassified	pos
+An_sin_C2/ATLV01019703.1:23402-23551	149	NP_048276.1	ORF MSV205 tryptophan repeat gene family	Viruses	Chitovirales	Poxviridae	Deltaentomopoxvirus	Unclassified	neg
+An_sin_C2/ATLV01020330.1:115554-115688	134	NP_039125.1	ankyrin repeat protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_sin_C2/ATLV01020717.1:53068-53244	176	YP_009408000.1	Ribonucleotide reductase large subunit	Viruses	Chitovirales	Poxviridae	Vespertilionpoxvirus	Unclassified	pos
+An_sin_C2/ATLV01021281.1:914-1113	199	YP_009305131.1|YP_009305131.1	glycoprotein precursor	Viruses	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuhan mosquito orthophasmavirus 1	neg
+An_sin_C2/ATLV01022938.1:8426-8521	95	YP_293904.1	putative serine protease	Viruses	Algavirales	Phycodnaviridae	Coccolithovirus	Unclassified	neg
+An_sin_C2/ATLV01023436.1:24971-25063	92	YP_009177036.1	ankyrin repeat family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+An_sin_C2/ATLV01023452.1:6202-6294	92	YP_003987364.1	putative serine/threonine-protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+An_sin_C2/ATLV01023967.1:45742-46050	308	NP_077684.1	EsV-1-199	Viruses	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified	pos
+An_sin_C2/ATLV01023972.1:46856-47005	149	YP_008052529.1	DNA-directed RNA polymerase II subunit RPB10	Viruses	Algavirales	Phycodnaviridae	Prymnesiovirus	Unclassified	neg
+An_sin_C2/ATLV01024090.1:34676-34780	104	YP_009217026.1	AAA ATPase	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	pos
+An_sin_C2/ATLV01024164.1:26407-26937	530	YP_008239431.1	agglutinating adhesin	Viruses	Caudovirales	Podoviridae	Ithacavirus	Salmonella virus FSL SP-058	neg
+An_sin_C2/ATLV01024644.1:1285-1383	98	YP_003969913.1	putative ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus	pos
+An_sin_C2/ATLV01025286.1:22530-22880	350	YP_009004875.1	RNA 2\'-phosphotransferase	Viruses	Caudovirales	Myoviridae	Agricanvirus	Erwinia virus Ea35-70	pos
+An_sin_C2/ATLV01025642.1:28238-28408	170	YP_007354197.1	collagen repeat protein	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	neg
+An_sin_C2/ATLV01026872.1:113-358	245	NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos

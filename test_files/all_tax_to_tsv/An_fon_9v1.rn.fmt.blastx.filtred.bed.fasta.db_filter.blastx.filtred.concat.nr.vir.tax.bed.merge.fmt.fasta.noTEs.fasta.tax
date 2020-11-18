@@ -1,26 +1,26 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_fon_9v1/VTWG01000080.1:6141-6248	YP_009703037.1	BA71V-I215L (k13L)	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-An_fon_9v1/VTWG01000485.1:15524-15622	YP_009701850.1	ankyrin repeat PH and SEC7 domain containing	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1
-An_fon_9v1/VTWG01000645.1:13200-14114	NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_fon_9v1/VTWG01000838.1:13401-13499	YP_008319603.1	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_fon_9v1/VTWG01001409.1:78820-79050	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_fon_9v1/VTWG01001697.1:1502-1651	YP_009119718.1	Morn repeat protein	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_fon_9v1/VTWG01002139.1:125543-125647	NP_077596.1	EsV-1-111	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified
-An_fon_9v1/VTWG01002148.1:25057-25155	YP_001031233.1	viral inexin-like protein	Unclassified	Polydnaviridae	Ichnovirus	Unclassified
-An_fon_9v1/VTWG01003533.1:22812-24011	YP_009220475.1	collagen-like protein	Unclassified	Nimaviridae	Whispovirus	Unclassified
-An_fon_9v1/VTWG01004214.1:7549-7824	YP_009032490.1|YP_002274283.1	protail fiber N-terminal domain-containing	Caudovirales	Siphoviridae	Unclassified	Unclassified
-An_fon_9v1/VTWG01004763.1:20-247	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_fon_9v1/VTWG01005136.1:61802-62041	NP_043957.1	MC006L	Chitovirales	Poxviridae	Molluscipoxvirus	Molluscum contagiosum virus
-An_fon_9v1/VTWG01006301.1:61-927	YP_009551692.1|YP_009508527.1|YP_009344989.1|YP_009094372.1	polymerase	Mononegavirales	Rhabdoviridae	Ledantevirus	Kanyawara ledantevirus
-An_fon_9v1/VTWG01006301.1:448-864	YP_009344982.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
-An_fon_9v1/VTWG01006476.1:17412-17609	YP_003517744.1	mucin-like protein	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_fon_9v1/VTWG01007613.1:11283-11381	YP_007003686.1	thymidylate kinase	Herpesvirales	Alloherpesviridae	Cyprinivirus	Unclassified
-An_fon_9v1/VTWG01008714.1:19116-19493	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
-An_fon_9v1/VTWG01010777.1:2926-3033	YP_003987358.1	putative serine/threonine-protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_fon_9v1/VTWG01014080.1:17515-17616	YP_009165276.1	DNA-directed RNA polymerase II subunit RPB1	Unclassified	Unclassified	Unclassified	Unclassified
-An_fon_9v1/VTWG01015379.1:1912-2058	YP_009137147.1	tegument protein US11	Herpesvirales	Herpesviridae	Simplexvirus	Unclassified
-An_fon_9v1/VTWG01018116.1:14309-14812	YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-An_fon_9v1/VTWG01018170.1:6883-6981	YP_717560.1	ubiquitin	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_fon_9v1/VTWG01025656.1:52024-52122	NP_955595.1	ABL	Ortervirales	Retroviridae	Gammaretrovirus	Unclassified
-An_fon_9v1/VTWG01026688.1:10249-10706	YP_009337090.1|YP_009666257.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
-An_fon_9v1/VTWG01048203.1:4273-4446	YP_009032490.1	collagen-like protein	Caudovirales	Siphoviridae	Fromanvirus	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_fon_9v1/VTWG01000080.1:6141-6248	107	YP_009703037.1	BA71V-I215L (k13L)	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	pos
+An_fon_9v1/VTWG01000485.1:15524-15622	98	YP_009701850.1	ankyrin repeat PH and SEC7 domain containing	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1	pos
+An_fon_9v1/VTWG01000645.1:13200-14114	914	NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_fon_9v1/VTWG01000838.1:13401-13499	98	YP_008319603.1	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	neg
+An_fon_9v1/VTWG01001409.1:78820-79050	230	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_fon_9v1/VTWG01001697.1:1502-1651	149	YP_009119718.1	Morn repeat protein	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	neg
+An_fon_9v1/VTWG01002139.1:125543-125647	104	NP_077596.1	EsV-1-111	Viruses	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified	pos
+An_fon_9v1/VTWG01002148.1:25057-25155	98	YP_001031233.1	viral inexin-like protein	Viruses	Unclassified	Polydnaviridae	Ichnovirus	Unclassified	pos
+An_fon_9v1/VTWG01003533.1:22812-24011	1199	YP_009220475.1	collagen-like protein	Viruses	Unclassified	Nimaviridae	Whispovirus	Unclassified	pos
+An_fon_9v1/VTWG01004214.1:7549-7824	275	YP_009032490.1|YP_002274283.1	protail fiber N-terminal domain-containing	Viruses	Caudovirales	Siphoviridae	Unclassified	Unclassified	pos
+An_fon_9v1/VTWG01004763.1:20-247	227	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_fon_9v1/VTWG01005136.1:61802-62041	239	NP_043957.1	MC006L	Viruses	Chitovirales	Poxviridae	Molluscipoxvirus	Molluscum contagiosum virus	neg
+An_fon_9v1/VTWG01006301.1:448-864	416	YP_009344982.1	RNA-dependent RNA polymerase	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	pos
+An_fon_9v1/VTWG01006301.1:61-927*	866	YP_009551692.1|YP_009508527.1|YP_009344989.1|YP_009094372.1	polymerase	Viruses	Mononegavirales	Rhabdoviridae	Ledantevirus	Kanyawara ledantevirus	pos
+An_fon_9v1/VTWG01006476.1:17412-17609	197	YP_003517744.1	mucin-like protein	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	neg
+An_fon_9v1/VTWG01007613.1:11283-11381	98	YP_007003686.1	thymidylate kinase	Viruses	Herpesvirales	Alloherpesviridae	Cyprinivirus	Unclassified	neg
+An_fon_9v1/VTWG01008714.1:19116-19493	377	YP_004300280.1	putative rve super family integrase	Viruses	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus	pos
+An_fon_9v1/VTWG01010777.1:2926-3033	107	YP_003987358.1	putative serine/threonine-protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	neg
+An_fon_9v1/VTWG01014080.1:17515-17616	101	YP_009165276.1	DNA-directed RNA polymerase II subunit RPB1	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	neg
+An_fon_9v1/VTWG01015379.1:1912-2058	146	YP_009137147.1	tegument protein US11	Viruses	Herpesvirales	Herpesviridae	Simplexvirus	Unclassified	neg
+An_fon_9v1/VTWG01018116.1:14309-14812	503	YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	pos
+An_fon_9v1/VTWG01018170.1:6883-6981	98	YP_717560.1	ubiquitin	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+An_fon_9v1/VTWG01025656.1:52024-52122	98	NP_955595.1	ABL	Viruses	Ortervirales	Retroviridae	Gammaretrovirus	Unclassified	neg
+An_fon_9v1/VTWG01026688.1:10249-10706	457	YP_009337090.1|YP_009666257.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus	neg
+An_fon_9v1/VTWG01048203.1:4273-4446	173	YP_009032490.1	collagen-like protein	Viruses	Caudovirales	Siphoviridae	Fromanvirus	Unclassified	pos

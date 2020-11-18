@@ -1,119 +1,119 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_cra_4v1/KZ067125.1:29487-29984	YP_009329889.1|YP_009329872.1	putative glycoprotein	Bunyavirales	Phasmaviridae	Orthophasmavirus	Odonate orthophasmavirus
-An_cra_4v1/KZ067125.1:31797-31907	YP_009304996.1	glycoprotein precursor	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuchang cockroach orthophasmavirus 1
-An_cra_4v1/KZ067125.1:30445-31065	YP_009505331.1	glycoprotein	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
-An_cra_4v1/KZ067292.1:5191-5751	YP_009238657.1	DNA topoisomerase II	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified
-An_cra_4v1/KZ067293.1:35813-36055	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_cra_4v1/KZ067320.1:60756-60989	YP_009505333.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
-An_cra_4v1/KZ067620.1:9853-10676	YP_009110687.1|YP_009508040.1|YP_009110687.1	polymerase PA	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified
-An_cra_4v1/KZ067709.1:15639-15929	YP_009417300.1	capsid	Ghabrivirales	Totiviridae	Unclassified	Unclassified
-An_cra_4v1/KZ067709.1:20407-20697	YP_009417300.1	capsid	Ghabrivirales	Totiviridae	Unclassified	Unclassified
-An_cra_4v1/KZ067768.1:145166-145270	YP_009704093.1	I215L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-An_cra_4v1/KZ067768.1:147128-147232	YP_009704093.1	I215L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-An_cra_4v1/KZ067768.1:148134-148256	YP_009703197.1	I215L	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-An_cra_4v1/KZ067777.1:37228-37732	YP_009361995.1|YP_009552115.1	polymerase	Mononegavirales	Rhabdoviridae	Ledantevirus	Kern Canyon ledantevirus
-An_cra_4v1/KZ067777.1:9970-10510	YP_009505531.1|YP_009361995.1|YP_009305102.1|YP_009361995.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Ledantevirus	Wuhan ledantevirus
-An_cra_4v1/KZ067795.1:109137-109247	YP_009703037.1	BA71V-I215L (k13L)	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-An_cra_4v1/KZ067859.1:20820-22024	YP_009302384.1|YP_009302384.1	ORF1	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_cra_4v1/KZ068029.1:54295-54618	YP_009174603.1	putative DNA topoisomerase II	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_cra_4v1/KZ068029.1:54780-54974	YP_009665538.1	DNA topoisomerase II	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified
-An_cra_4v1/KZ068029.1:55860-56480	YP_009507473.1|YP_009174603.1	putative DNA topoisomerase II	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_cra_4v1/KZ068029.1:54112-54582	NP_149508.1	045L	Pimascovirales	Iridoviridae	Iridovirus	Unclassified
-An_cra_4v1/KZ068029.1:55974-56444	NP_149508.1|YP_009046706.1	DNA topoisomerase II	Pimascovirales	Iridoviridae	Iridovirus	Invertebrate iridescent virus 31
-An_cra_4v1/KZ068260.1:9013-9348	YP_003517744.1	mucin-like protein	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_cra_4v1/KZ068374.1:4929-6674	YP_009325819.1	DNA topoisomerase II	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified
-An_cra_4v1/KZ068475.1:13990-14496	YP_009701907.1	DNA topoisomerase II	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1
-An_cra_4v1/KZ068475.1:16231-16416	YP_009173327.1	DNA topoisomerase II	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_cra_4v1/KZ068475.1:16038-16416	YP_003970179.1|YP_003970179.1	putative DNA topoisomerase IIA	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus
-An_cra_4v1/KZ068479.1:6241-6537	YP_009701850.1	ankyrin repeat PH and SEC7 domain containing	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1
-An_cra_4v1/KZ068479.1:14619-14915	YP_009701850.1	ankyrin repeat PH and SEC7 domain containing	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1
-An_cra_4v1/KZ068608.1:45494-45610	NP_203195.1	IAP-3	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_cra_4v1/KZ068692.1:33752-34119	YP_009505333.1|YP_009505333.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
-An_cra_4v1/KZ068927.1:429-731	YP_009665204.1	polymerase PB1	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified
-An_cra_4v1/KZ068927.1:1657-1974	YP_009665204.1	polymerase PB1	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified
-An_cra_4v1/KZ068976.1:45452-46070	YP_009665204.1|YP_009665204.1	polymerase PB1	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified
-An_cra_4v1/KZ068976.1:1403-1585	YP_009664711.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Sigmavirus	Unclassified
-An_cra_4v1/KZ068976.1:3718-3888	YP_009094323.1	large protein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
-An_cra_4v1/KZ068976.1:4038-4253	YP_009552115.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
-An_cra_4v1/KZ068976.1:5385-5600	YP_009552115.1	RNA-dependent RNA polymerase	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
-An_cra_4v1/KZ069112.1:13530-13928	YP_009302385.1	ORF2	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_cra_4v1/KZ069208.1:20802-21293	YP_009094267.1|YP_009300674.1	RNA polymerase	Mononegavirales	Rhabdoviridae	Sprivivirus	Pike fry sprivivirus
-An_cra_4v1/KZ069208.1:21360-21935	YP_009094476.1|YP_009362258.1	large protein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
-An_cra_4v1/KZ069294.1:63744-63854	YP_009162415.1	serine/threonine protein kinase; probable	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-An_cra_4v1/KZ069349.1:848667-848765	YP_009611793.1	Clp protease-like protein	Caudovirales	Myoviridae	Polybotosvirus	Agrobacterium virus Atuph07
-An_cra_4v1/KZ069550.1:10801-11637	YP_009174654.1|YP_009174728.1	putative DNA topoisomerase II	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_cra_4v1/KZ069550.1:10141-10338	NP_149508.1	045L	Pimascovirales	Iridoviridae	Iridovirus	Unclassified
-An_cra_4v1/KZ069550.1:10204-10338	YP_004347024.1	DNA topoisomerase II	Pimascovirales	Marseilleviridae	Unclassified	Unclassified
-An_cra_4v1/KZ069562.1:70123-70512	YP_009110687.1	polymerase acidic protein	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified
-An_cra_4v1/KZ069562.1:12389-12871	YP_009665204.1	polymerase PB1	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified
-An_cra_4v1/KZ069562.1:58915-59304	YP_009110687.1	polymerase acidic protein	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified
-An_cra_4v1/KZ069668.1:4905-5537	YP_009417300.1	capsid	Ghabrivirales	Totiviridae	Unclassified	Unclassified
-An_cra_4v1/KZ069765.1:3429-3968	YP_009208408.1	recombinase family protein	Caudovirales	Siphoviridae	Unclassified	Unclassified
-An_cra_4v1/KZ069765.1:14815-15354	YP_009208408.1|YP_009013636.1	PinR	Caudovirales	Siphoviridae	Unclassified	Unclassified
-An_cra_4v1/KZ069765.1:10808-11158	YP_460005.1	putative mannose 6-phosphate isomerase	Caudovirales	Siphoviridae	Wbetavirus	Unclassified
-An_cra_4v1/KZ069934.1:162425-162529	YP_004895060.1	putative serine/threonine-protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_cra_4v1/KZ070196.1:129437-129535	YP_009163874.1	ORF_113R	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified
-An_cra_4v1/KZ070230.1:7794-8560	YP_009665538.1|YP_009701907.1	DNA topoisomerase II	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified
-An_cra_4v1/KZ070230.1:8675-8923	YP_007349169.1	DNA topoisomerase II large subunit	Caudovirales	Ackermannviridae	Unclassified	Serratia virus MAM1
-An_cra_4v1/KZ070230.1:7863-8132	YP_004894454.1	DNA topoisomerase 2	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_cra_4v1/KZ070230.1:7338-8132	YP_009238657.1	DNA topoisomerase II	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified
-An_cra_4v1/KZ070274.1:10522-12674	YP_009701907.1|YP_009701907.1	DNA topoisomerase II	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1
-An_cra_4v1/KZ070370.1:166017-166124	YP_009483521.1	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_cra_4v1/KZ070370.1:214461-214568	YP_009483521.1	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_cra_4v1/KZ070631.1:116056-116676	YP_009325819.1|YP_009507473.1	DNA topoisomerase II	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified
-An_cra_4v1/KZ070631.1:116654-116998	YP_003359073.1	gp52 topoisomerase II medium subunit	Caudovirales	Myoviridae	Ionavirus	Delftia virus PhiW14
-An_cra_4v1/KZ070655.1:13660-13758	YP_009345450.1	eukaryotic peptide chain release factor subunit	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified
-An_cra_4v1/KZ070750.1:15791-16621	YP_009325819.1	DNA topoisomerase II	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified
-An_cra_4v1/KZ070750.1:14528-14899	YP_003986988.1	DNA topoisomerase 2	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_cra_4v1/KZ071001.1:186-488	YP_009701907.1	DNA topoisomerase II	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1
-An_cra_4v1/KZ071001.1:1344-1785	YP_009507473.1|YP_009701907.1	putative DNA topoisomerase II	Algavirales	Phycodnaviridae	Raphidovirus	Unclassified
-An_cra_4v1/KZ071001.1:588-1499	YP_009001040.1	topoisomerase IIA	Unclassified	Pithoviridae	Pithovirus	Unclassified
-An_cra_4v1/KZ071204.1:283259-283642	YP_009305111.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
-An_cra_4v1/KZ071301.1:12834-12947	YP_009174728.1	putative DNA topoisomerase II	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_cra_4v1/KZ071382.1:37943-38257	YP_004063644.1	DNA topoisomerase II	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_cra_4v1/KZ071453.1:108938-109615	YP_009362228.1|YP_008686607.1|YP_009315873.1	polymerase	Mononegavirales	Rhabdoviridae	Hapavirus	Ord River hapavirus
-An_cra_4v1/KZ071453.1:109789-110465	YP_009552115.1|YP_009094323.1|YP_009664711.1|NP_116748.1	large protein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
-An_cra_4v1/KZ071453.1:109184-109615	YP_009337139.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
-An_cra_4v1/KZ071482.1:33633-33752	YP_003969913.1	putative ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus
-An_cra_4v1/KZ071516.1:56900-58615	NP_048939.2|YP_009665540.1	DNA topoisomerase II	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified
-An_cra_4v1/KZ071516.1:58247-58618	YP_003986988.1	DNA topoisomerase 2	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_cra_4v1/KZ071556.1:11174-12241	YP_173236.1|YP_173236.1|YP_173236.1|YP_173236.1|YP_173236.1	nsp16	Nidovirales	Coronaviridae	Betacoronavirus	Unclassified
-An_cra_4v1/KZ071574.1:4442-4825	YP_007238067.1	DNA invertase-like protein	Caudovirales	Myoviridae	Entnonagintavirus	Erwinia virus ENT90
-An_cra_4v1/KZ071574.1:6678-7025	YP_009293518.1	resolvase	Caudovirales	Myoviridae	Punavirus	Salmonella virus SJ46
-An_cra_4v1/KZ071574.1:4304-4651	YP_950693.1	putative site-specific recombinase	Caudovirales	Siphoviridae	Phietavirus	Unclassified
-An_cra_4v1/KZ071574.1:6594-6905	YP_001285832.1	putative recombinase	Caudovirales	Siphoviridae	Unclassified	Unclassified
-An_cra_4v1/KZ071574.1:8699-9418	YP_009124587.1	integrase	Caudovirales	Siphoviridae	Cheoctovirus	Unclassified
-An_cra_4v1/KZ071641.1:320539-320640	YP_589075.1	viral inexin-like protein	Unclassified	Polydnaviridae	Ichnovirus	Unclassified
-An_cra_4v1/KZ071647.1:2660-3103	YP_001718725.1|YP_009591451.1	DNA-invertase	Caudovirales	Myoviridae	Felsduovirus	Unclassified
-An_cra_4v1/KZ071647.1:694-1011	YP_004306379.1	IS5-like element ISBmu23 family transposase	Caudovirales	Myoviridae	Kisquinquevirus	Burkholderia virus KS5
-An_cra_4v1/KZ071647.1:2594-3100	YP_009208408.1	recombinase family protein	Caudovirales	Siphoviridae	Unclassified	Unclassified
-An_cra_4v1/KZ071759.1:40442-40621	YP_009010565.1	immune reactive putative protease inhibitor	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified
-An_cra_4v1/KZ071759.1:48101-48265	YP_009010565.1	immune reactive putative protease inhibitor	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified
-An_cra_4v1/KZ071759.1:2340-2504	YP_009010565.1	immune reactive putative protease inhibitor	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified
-An_cra_4v1/KZ071829.1:251601-251906	YP_009304996.1	glycoprotein precursor	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuchang cockroach orthophasmavirus 1
-An_cra_4v1/KZ071880.1:4070-4384	YP_009505333.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
-An_cra_4v1/KZ071880.1:6614-6928	YP_009505333.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
-An_cra_4v1/KZ071880.1:1942-2256	YP_009505333.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
-An_cra_4v1/KZ072282.1:511230-511826	YP_009302386.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_cra_4v1/KZ072303.1:15035-15262	YP_008240161.1	agglutinating adhesin	Caudovirales	Podoviridae	Ithacavirus	Salmonella virus FSL SP-076
-An_cra_4v1/KZ072372.1:80796-81440	YP_173236.1|YP_173236.1	nsp16	Nidovirales	Coronaviridae	Betacoronavirus	Unclassified
-An_cra_4v1/KZ072484.1:9441-9539	YP_874315.1	ecdysteroid UDP-glucosyltransferase	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_cra_4v1/KZ072491.1:686-1965	YP_009176966.1|YP_009362144.1|YP_009362111.1|YP_009047081.1|YP_009362155.1|YP_009305098.1	nucleoprotein	Mononegavirales	Rhabdoviridae	Ledantevirus	Barur ledantevirus
-An_cra_4v1/KZ072538.1:307715-308203	YP_009665024.1	DNA topoisomerase IIB	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_cra_4v1/KZ072538.1:118011-118310	YP_009505333.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
-An_cra_4v1/KZ072604.1:9759-10574	YP_009182186.1|YP_009552115.1|YP_006742184.1|YP_006200965.1	L protein	Mononegavirales	Rhabdoviridae	Ephemerovirus	Obodhiang ephemerovirus
-An_cra_4v1/KZ072604.1:11714-12332	YP_009508527.1|YP_009505503.1|YP_009552115.1	polymerase	Mononegavirales	Rhabdoviridae	Ledantevirus	Kanyawara ledantevirus
-An_cra_4v1/KZ072604.1:13837-14558	YP_009552115.1|YP_006742184.1|YP_009362189.1|YP_006200965.1|YP_006200965.1	polymerase	Mononegavirales	Rhabdoviridae	Hapavirus	Joinjakaka hapavirus
-An_cra_4v1/KZ072604.1:15585-16251	YP_009512997.1|YP_009505503.1|YP_009552115.1	polymerase	Mononegavirales	Rhabdoviridae	Hapavirus	Unclassified
-An_cra_4v1/KZ072604.1:48555-48971	YP_009302385.1	ORF2	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_cra_4v1/KZ072604.1:52102-52518	YP_009302385.1	ORF2	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_cra_4v1/KZ072604.1:10002-10517	YP_009305117.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
-An_cra_4v1/KZ072604.1:11696-11881	YP_009336837.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
-An_cra_4v1/KZ072604.1:15732-15917	YP_009336837.1	RNA-dependent RNA polymerase	Unclassified	Unclassified	Unclassified	Unclassified
-An_cra_4v1/KZ072604.1:47860-48270	YP_003800002.1	proline-alanine-rich protein	Unclassified	Unclassified	Unclassified	Unclassified
-An_cra_4v1/KZ072604.1:51407-51817	YP_003800002.1	proline-alanine-rich protein	Unclassified	Unclassified	Unclassified	Unclassified
-An_cra_4v1/KZ072756.1:190563-190790	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_cra_4v1/KZ073025.1:189267-189809	YP_009505333.1|YP_009666333.1|YP_009480532.1	Nucleocapsid	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified
-An_cra_4v1/KZ073152.1:8949-9158	YP_007676289.1	DNA topoisomerase IIB	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_cra_4v1/KZ073152.1:9374-10267	YP_009665024.1|YP_009701907.1|YP_009174654.1	DNA topoisomerase IIB	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_cra_4v1/KZ073232.1:50480-50584	YP_009177047.1	GNS1/SUR4-like protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_cra_4v1/KZ067125.1:29487-29984	497	YP_009329889.1|YP_009329872.1	putative glycoprotein	Viruses	Bunyavirales	Phasmaviridae	Orthophasmavirus	Odonate orthophasmavirus	neg
+An_cra_4v1/KZ067125.1:30445-31065	620	YP_009505331.1	glycoprotein	Viruses	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified	neg
+An_cra_4v1/KZ067125.1:31797-31907	110	YP_009304996.1	glycoprotein precursor	Viruses	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuchang cockroach orthophasmavirus 1	neg
+An_cra_4v1/KZ067292.1:5191-5751	560	YP_009238657.1	DNA topoisomerase II	Viruses	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified	pos
+An_cra_4v1/KZ067293.1:35813-36055	242	YP_009302386.1	glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	neg
+An_cra_4v1/KZ067320.1:60756-60989	233	YP_009505333.1	Nucleocapsid	Viruses	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified	pos
+An_cra_4v1/KZ067620.1:9853-10676	823	YP_009110687.1|YP_009508040.1|YP_009110687.1	polymerase PA	Viruses	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified	neg
+An_cra_4v1/KZ067709.1:15639-15929	290	YP_009417300.1	capsid	Viruses	Ghabrivirales	Totiviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ067709.1:20407-20697	290	YP_009417300.1	capsid	Viruses	Ghabrivirales	Totiviridae	Unclassified	Unclassified	pos
+An_cra_4v1/KZ067768.1:145166-145270	104	YP_009704093.1	I215L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	neg
+An_cra_4v1/KZ067768.1:147128-147232	104	YP_009704093.1	I215L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	neg
+An_cra_4v1/KZ067768.1:148134-148256	122	YP_009703197.1	I215L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	neg
+An_cra_4v1/KZ067777.1:37228-37732	504	YP_009361995.1|YP_009552115.1	polymerase	Viruses	Mononegavirales	Rhabdoviridae	Ledantevirus	Kern Canyon ledantevirus	neg
+An_cra_4v1/KZ067777.1:9970-10510	540	YP_009505531.1|YP_009361995.1|YP_009305102.1|YP_009361995.1	RNA-dependent RNA polymerase	Viruses	Mononegavirales	Rhabdoviridae	Ledantevirus	Wuhan ledantevirus	pos
+An_cra_4v1/KZ067795.1:109137-109247	110	YP_009703037.1	BA71V-I215L (k13L)	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	pos
+An_cra_4v1/KZ067859.1:20820-22024	1204	YP_009302384.1|YP_009302384.1	ORF1	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	neg
+An_cra_4v1/KZ068029.1:54112-54582*	470	NP_149508.1	045L	Viruses	Pimascovirales	Iridoviridae	Iridovirus	Unclassified	pos
+An_cra_4v1/KZ068029.1:54295-54618	323	YP_009174603.1	putative DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	pos
+An_cra_4v1/KZ068029.1:54780-54974	194	YP_009665538.1	DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified	pos
+An_cra_4v1/KZ068029.1:55860-56480*	620	YP_009507473.1|YP_009174603.1	putative DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	pos
+An_cra_4v1/KZ068029.1:55974-56444	470	NP_149508.1|YP_009046706.1	DNA topoisomerase II	Viruses	Pimascovirales	Iridoviridae	Iridovirus	Invertebrate iridescent virus 31	pos
+An_cra_4v1/KZ068260.1:9013-9348	335	YP_003517744.1	mucin-like protein	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	neg
+An_cra_4v1/KZ068374.1:4929-6674	1745	YP_009325819.1	DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified	neg
+An_cra_4v1/KZ068475.1:13990-14496	506	YP_009701907.1	DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1	neg
+An_cra_4v1/KZ068475.1:16038-16416*	378	YP_003970179.1|YP_003970179.1	putative DNA topoisomerase IIA	Viruses	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus	neg
+An_cra_4v1/KZ068475.1:16231-16416	185	YP_009173327.1	DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ068479.1:14619-14915	296	YP_009701850.1	ankyrin repeat PH and SEC7 domain containing	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1	pos
+An_cra_4v1/KZ068479.1:6241-6537	296	YP_009701850.1	ankyrin repeat PH and SEC7 domain containing	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1	neg
+An_cra_4v1/KZ068608.1:45494-45610	116	NP_203195.1	IAP-3	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+An_cra_4v1/KZ068692.1:33752-34119	367	YP_009505333.1|YP_009505333.1	Nucleocapsid	Viruses	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified	neg
+An_cra_4v1/KZ068927.1:1657-1974	317	YP_009665204.1	polymerase PB1	Viruses	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified	pos
+An_cra_4v1/KZ068927.1:429-731	302	YP_009665204.1	polymerase PB1	Viruses	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified	pos
+An_cra_4v1/KZ068976.1:1403-1585	182	YP_009664711.1	RNA-dependent RNA polymerase	Viruses	Mononegavirales	Rhabdoviridae	Sigmavirus	Unclassified	neg
+An_cra_4v1/KZ068976.1:3718-3888	170	YP_009094323.1	large protein	Viruses	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ068976.1:4038-4253	215	YP_009552115.1	RNA-dependent RNA polymerase	Viruses	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ068976.1:45452-46070	618	YP_009665204.1|YP_009665204.1	polymerase PB1	Viruses	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified	neg
+An_cra_4v1/KZ068976.1:5385-5600	215	YP_009552115.1	RNA-dependent RNA polymerase	Viruses	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ069112.1:13530-13928	398	YP_009302385.1	ORF2	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	pos
+An_cra_4v1/KZ069208.1:20802-21293	491	YP_009094267.1|YP_009300674.1	RNA polymerase	Viruses	Mononegavirales	Rhabdoviridae	Sprivivirus	Pike fry sprivivirus	neg
+An_cra_4v1/KZ069208.1:21360-21935*	575	YP_009094476.1|YP_009362258.1	large protein	Viruses	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified	pos
+An_cra_4v1/KZ069294.1:63744-63854	110	YP_009162415.1	serine/threonine protein kinase; probable	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+An_cra_4v1/KZ069349.1:848667-848765	98	YP_009611793.1	Clp protease-like protein	Viruses	Caudovirales	Myoviridae	Polybotosvirus	Agrobacterium virus Atuph07	pos
+An_cra_4v1/KZ069550.1:10141-10338	197	NP_149508.1	045L	Viruses	Pimascovirales	Iridoviridae	Iridovirus	Unclassified	neg
+An_cra_4v1/KZ069550.1:10204-10338	134	YP_004347024.1	DNA topoisomerase II	Viruses	Pimascovirales	Marseilleviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ069550.1:10801-11637*	836	YP_009174654.1|YP_009174728.1	putative DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	neg
+An_cra_4v1/KZ069562.1:12389-12871	482	YP_009665204.1	polymerase PB1	Viruses	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified	pos
+An_cra_4v1/KZ069562.1:58915-59304	389	YP_009110687.1	polymerase acidic protein	Viruses	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified	pos
+An_cra_4v1/KZ069562.1:70123-70512	389	YP_009110687.1	polymerase acidic protein	Viruses	Articulavirales	Orthomyxoviridae	Quaranjavirus	Unclassified	neg
+An_cra_4v1/KZ069668.1:4905-5537	632	YP_009417300.1	capsid	Viruses	Ghabrivirales	Totiviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ069765.1:10808-11158	350	YP_460005.1	putative mannose 6-phosphate isomerase	Viruses	Caudovirales	Siphoviridae	Wbetavirus	Unclassified	pos
+An_cra_4v1/KZ069765.1:14815-15354	539	YP_009208408.1|YP_009013636.1	PinR	Viruses	Caudovirales	Siphoviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ069765.1:3429-3968	539	YP_009208408.1	recombinase family protein	Viruses	Caudovirales	Siphoviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ069934.1:162425-162529	104	YP_004895060.1	putative serine/threonine-protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	neg
+An_cra_4v1/KZ070196.1:129437-129535	98	YP_009163874.1	ORF_113R	Viruses	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified	pos
+An_cra_4v1/KZ070230.1:7338-8132*	794	YP_009238657.1	DNA topoisomerase II	Viruses	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified	pos
+An_cra_4v1/KZ070230.1:7794-8560	766	YP_009665538.1|YP_009701907.1	DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified	pos
+An_cra_4v1/KZ070230.1:7863-8132	269	YP_004894454.1	DNA topoisomerase 2	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+An_cra_4v1/KZ070230.1:8675-8923	248	YP_007349169.1	DNA topoisomerase II large subunit	Viruses	Caudovirales	Ackermannviridae	Unclassified	Serratia virus MAM1	pos
+An_cra_4v1/KZ070274.1:10522-12674	2152	YP_009701907.1|YP_009701907.1	DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1	pos
+An_cra_4v1/KZ070370.1:166017-166124	107	YP_009483521.1	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	neg
+An_cra_4v1/KZ070370.1:214461-214568	107	YP_009483521.1	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+An_cra_4v1/KZ070631.1:116056-116676*	620	YP_009325819.1|YP_009507473.1	DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified	neg
+An_cra_4v1/KZ070631.1:116654-116998	344	YP_003359073.1	gp52 topoisomerase II medium subunit	Viruses	Caudovirales	Myoviridae	Ionavirus	Delftia virus PhiW14	neg
+An_cra_4v1/KZ070655.1:13660-13758	98	YP_009345450.1	eukaryotic peptide chain release factor subunit	Viruses	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified	pos
+An_cra_4v1/KZ070750.1:14528-14899	371	YP_003986988.1	DNA topoisomerase 2	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+An_cra_4v1/KZ070750.1:15791-16621	830	YP_009325819.1	DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified	pos
+An_cra_4v1/KZ071001.1:1344-1785	441	YP_009507473.1|YP_009701907.1	putative DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Raphidovirus	Unclassified	pos
+An_cra_4v1/KZ071001.1:186-488	302	YP_009701907.1	DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Paramecium bursaria Chlorella virus A1	pos
+An_cra_4v1/KZ071001.1:588-1499	911	YP_009001040.1	topoisomerase IIA	Viruses	Unclassified	Pithoviridae	Pithovirus	Unclassified	pos
+An_cra_4v1/KZ071204.1:283259-283642	383	YP_009305111.1	glycoprotein	Viruses	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ071301.1:12834-12947	113	YP_009174728.1	putative DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	neg
+An_cra_4v1/KZ071382.1:37943-38257	314	YP_004063644.1	DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	pos
+An_cra_4v1/KZ071453.1:108938-109615*	677	YP_009362228.1|YP_008686607.1|YP_009315873.1	polymerase	Viruses	Mononegavirales	Rhabdoviridae	Hapavirus	Ord River hapavirus	neg
+An_cra_4v1/KZ071453.1:109184-109615	431	YP_009337139.1	RNA-dependent RNA polymerase	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	neg
+An_cra_4v1/KZ071453.1:109789-110465	676	YP_009552115.1|YP_009094323.1|YP_009664711.1|NP_116748.1	large protein	Viruses	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ071482.1:33633-33752	119	YP_003969913.1	putative ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus	pos
+An_cra_4v1/KZ071516.1:56900-58615*	1715	NP_048939.2|YP_009665540.1	DNA topoisomerase II	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified	neg
+An_cra_4v1/KZ071516.1:58247-58618	371	YP_003986988.1	DNA topoisomerase 2	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	neg
+An_cra_4v1/KZ071556.1:11174-12241	1067	YP_173236.1|YP_173236.1|YP_173236.1|YP_173236.1|YP_173236.1	nsp16	Viruses	Nidovirales	Coronaviridae	Betacoronavirus	Unclassified	pos
+An_cra_4v1/KZ071574.1:4304-4651	347	YP_950693.1	putative site-specific recombinase	Viruses	Caudovirales	Siphoviridae	Phietavirus	Unclassified	pos
+An_cra_4v1/KZ071574.1:4442-4825*	383	YP_007238067.1	DNA invertase-like protein	Viruses	Caudovirales	Myoviridae	Entnonagintavirus	Erwinia virus ENT90	pos
+An_cra_4v1/KZ071574.1:6594-6905	311	YP_001285832.1	putative recombinase	Viruses	Caudovirales	Siphoviridae	Unclassified	Unclassified	pos
+An_cra_4v1/KZ071574.1:6678-7025*	347	YP_009293518.1	resolvase	Viruses	Caudovirales	Myoviridae	Punavirus	Salmonella virus SJ46	pos
+An_cra_4v1/KZ071574.1:8699-9418	719	YP_009124587.1	integrase	Viruses	Caudovirales	Siphoviridae	Cheoctovirus	Unclassified	pos
+An_cra_4v1/KZ071641.1:320539-320640	101	YP_589075.1	viral inexin-like protein	Viruses	Unclassified	Polydnaviridae	Ichnovirus	Unclassified	neg
+An_cra_4v1/KZ071647.1:2594-3100*	506	YP_009208408.1	recombinase family protein	Viruses	Caudovirales	Siphoviridae	Unclassified	Unclassified	neg
+An_cra_4v1/KZ071647.1:2660-3103	443	YP_001718725.1|YP_009591451.1	DNA-invertase	Viruses	Caudovirales	Myoviridae	Felsduovirus	Unclassified	neg
+An_cra_4v1/KZ071647.1:694-1011	317	YP_004306379.1	IS5-like element ISBmu23 family transposase	Viruses	Caudovirales	Myoviridae	Kisquinquevirus	Burkholderia virus KS5	pos
+An_cra_4v1/KZ071759.1:2340-2504	164	YP_009010565.1	immune reactive putative protease inhibitor	Viruses	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified	pos
+An_cra_4v1/KZ071759.1:40442-40621	179	YP_009010565.1	immune reactive putative protease inhibitor	Viruses	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified	neg
+An_cra_4v1/KZ071759.1:48101-48265	164	YP_009010565.1	immune reactive putative protease inhibitor	Viruses	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified	neg
+An_cra_4v1/KZ071829.1:251601-251906	305	YP_009304996.1	glycoprotein precursor	Viruses	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuchang cockroach orthophasmavirus 1	neg
+An_cra_4v1/KZ071880.1:1942-2256	314	YP_009505333.1	Nucleocapsid	Viruses	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified	pos
+An_cra_4v1/KZ071880.1:4070-4384	314	YP_009505333.1	Nucleocapsid	Viruses	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified	neg
+An_cra_4v1/KZ071880.1:6614-6928	314	YP_009505333.1	Nucleocapsid	Viruses	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified	neg
+An_cra_4v1/KZ072282.1:511230-511826	596	YP_009302386.1	glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	neg
+An_cra_4v1/KZ072303.1:15035-15262	227	YP_008240161.1	agglutinating adhesin	Viruses	Caudovirales	Podoviridae	Ithacavirus	Salmonella virus FSL SP-076	neg
+An_cra_4v1/KZ072372.1:80796-81440	644	YP_173236.1|YP_173236.1	nsp16	Viruses	Nidovirales	Coronaviridae	Betacoronavirus	Unclassified	pos
+An_cra_4v1/KZ072484.1:9441-9539	98	YP_874315.1	ecdysteroid UDP-glucosyltransferase	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+An_cra_4v1/KZ072491.1:686-1965	1279	YP_009176966.1|YP_009362144.1|YP_009362111.1|YP_009047081.1|YP_009362155.1|YP_009305098.1	nucleoprotein	Viruses	Mononegavirales	Rhabdoviridae	Ledantevirus	Barur ledantevirus	neg
+An_cra_4v1/KZ072538.1:118011-118310	299	YP_009505333.1	Nucleocapsid	Viruses	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified	pos
+An_cra_4v1/KZ072538.1:307715-308203	488	YP_009665024.1	DNA topoisomerase IIB	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	neg
+An_cra_4v1/KZ072604.1:10002-10517	515	YP_009305117.1	RNA-dependent RNA polymerase	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	neg
+An_cra_4v1/KZ072604.1:11696-11881	185	YP_009336837.1	RNA-dependent RNA polymerase	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	neg
+An_cra_4v1/KZ072604.1:11714-12332*	618	YP_009508527.1|YP_009505503.1|YP_009552115.1	polymerase	Viruses	Mononegavirales	Rhabdoviridae	Ledantevirus	Kanyawara ledantevirus	neg
+An_cra_4v1/KZ072604.1:13837-14558	721	YP_009552115.1|YP_006742184.1|YP_009362189.1|YP_006200965.1|YP_006200965.1	polymerase	Viruses	Mononegavirales	Rhabdoviridae	Hapavirus	Joinjakaka hapavirus	neg
+An_cra_4v1/KZ072604.1:15585-16251*	666	YP_009512997.1|YP_009505503.1|YP_009552115.1	polymerase	Viruses	Mononegavirales	Rhabdoviridae	Hapavirus	Unclassified	neg
+An_cra_4v1/KZ072604.1:15732-15917	185	YP_009336837.1	RNA-dependent RNA polymerase	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	neg
+An_cra_4v1/KZ072604.1:47860-48270	410	YP_003800002.1	proline-alanine-rich protein	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	neg
+An_cra_4v1/KZ072604.1:48555-48971	416	YP_009302385.1	ORF2	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	neg
+An_cra_4v1/KZ072604.1:51407-51817	410	YP_003800002.1	proline-alanine-rich protein	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	neg
+An_cra_4v1/KZ072604.1:52102-52518	416	YP_009302385.1	ORF2	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	neg
+An_cra_4v1/KZ072604.1:9759-10574	815	YP_009182186.1|YP_009552115.1|YP_006742184.1|YP_006200965.1	L protein	Viruses	Mononegavirales	Rhabdoviridae	Ephemerovirus	Obodhiang ephemerovirus	neg
+An_cra_4v1/KZ072756.1:190563-190790	227	YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	neg
+An_cra_4v1/KZ073025.1:189267-189809	542	YP_009505333.1|YP_009666333.1|YP_009480532.1	Nucleocapsid	Viruses	Bunyavirales	Phenuiviridae	Phasivirus	Unclassified	neg
+An_cra_4v1/KZ073152.1:8949-9158	209	YP_007676289.1	DNA topoisomerase IIB	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	pos
+An_cra_4v1/KZ073152.1:9374-10267	893	YP_009665024.1|YP_009701907.1|YP_009174654.1	DNA topoisomerase IIB	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	pos
+An_cra_4v1/KZ073232.1:50480-50584	104	YP_009177047.1	GNS1/SUR4-like protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos

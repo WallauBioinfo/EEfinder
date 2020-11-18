@@ -1,147 +1,147 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_gam_pims/LCWJ01000018.1:539-637	YP_004956814.1	serine hydroxymethyltransferase	Unclassified	Nudiviridae	Betanudivirus	Heliothis zea nudivirus
-An_gam_pims/LCWJ01000023.1:14425-14616	YP_009032490.1	collagen-like protein	Caudovirales	Siphoviridae	Fromanvirus	Unclassified
-An_gam_pims/LCWJ01000027.1:593156-593254	YP_003986758.1	DnaJ-like protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_gam_pims/LCWJ01000175.1:123685-123783	YP_009482443.1	S-phase kinase-associated protein 1	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_gam_pims/LCWJ01000402.1:3835-4110	YP_009333413.1	RNA-dependent RNA polymerase	Mononegavirales	Nyamiviridae	Crustavirus	Beihai crustavirus
-An_gam_pims/LCWJ01000402.1:2891-4366	YP_009302387.1|YP_009302387.1|YP_009302387.1|YP_009302387.1|YP_009302387.1|YP_009302387.1	RNA-dependent RNA polymerase	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus
-An_gam_pims/LCWJ01000402.1:2915-3085	YP_009388622.1	RdRp	Unclassified	Unclassified	Unclassified	Unclassified
-An_gam_pims/LCWJ01000402.1:3491-3721	YP_009388622.1	RdRp	Unclassified	Unclassified	Unclassified	Unclassified
-An_gam_pims/LCWJ01000439.1:10385-10929	YP_009337090.1|YP_009666257.1|YP_009666257.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
-An_gam_pims/LCWJ01000599.1:10868-10963	YP_009329718.1	cell surface-binding protein	Chitovirales	Poxviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01000658.1:135990-136088	YP_009001498.1	putative ATP-binding cassette transporter	Chitovirales	Poxviridae	Alphaentomopoxvirus	Unclassified
-An_gam_pims/LCWJ01000777.1:41920-42030	YP_009052149.1	putative cyclophilin type peptydyl-prolyl	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01000951.1:3658-4086	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-An_gam_pims/LCWJ01000985.1:3890-4774	YP_009173866.1	polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-An_gam_pims/LCWJ01000985.1:31309-31629	NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-An_gam_pims/LCWJ01001040.1:9438-11398	YP_009666257.1|YP_009337861.1|YP_009337090.1|YP_009337905.1|YP_009177702.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
-An_gam_pims/LCWJ01001040.1:17266-17598	YP_009337905.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei mivirus
-An_gam_pims/LCWJ01001040.1:10017-10583	YP_009333448.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Woodlouse peropuvirus
-An_gam_pims/LCWJ01001040.1:9708-10577	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
-An_gam_pims/LCWJ01001066.1:21389-21898	YP_009703687.1|YP_009702646.1|YP_009703532.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-An_gam_pims/LCWJ01001157.1:14825-14923	YP_009001306.1	Ser/Thr protein kinase	Unclassified	Pithoviridae	Pithovirus	Unclassified
-An_gam_pims/LCWJ01001357.1:13180-13314	NP_057859.1	MOS	Ortervirales	Retroviridae	Gammaretrovirus	Unclassified
-An_gam_pims/LCWJ01001379.1:5864-6219	YP_009702646.1|YP_009702646.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-An_gam_pims/LCWJ01001432.1:12539-12637	YP_004894687.1	putative serine threonine-protein kinase	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_gam_pims/LCWJ01001529.1:10710-10820	YP_009513242.1	pol	Ortervirales	Retroviridae	Simiispumavirus	Unclassified
-An_gam_pims/LCWJ01001650.1:93-257	YP_232995.1	IMV membrane protein	Chitovirales	Poxviridae	Orthopoxvirus	Unclassified
-An_gam_pims/LCWJ01001722.1:101686-101790	YP_009162415.1	serine/threonine protein kinase; probable	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-An_gam_pims/LCWJ01002094.1:11644-11856	YP_762450.1	26.3 kDa RecD exoV/alpha subunit	Pimascovirales	Ascoviridae	Ascovirus	Unclassified
-An_gam_pims/LCWJ01002372.1:16497-16595	NP_042289.1	P68 protein	Ortervirales	Retroviridae	Alpharetrovirus	Unclassified
-An_gam_pims/LCWJ01002441.1:52426-52902	YP_009220475.1	collagen-like protein	Unclassified	Nimaviridae	Whispovirus	Unclassified
-An_gam_pims/LCWJ01002514.1:5450-5659	YP_009448762.1	Cyclin-dependent kinase	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01002525.1:20685-20804	YP_007676316.1	ATP-dependent metalloprotease FtsH	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_gam_pims/LCWJ01002527.1:3925-4479	YP_009703687.1|YP_009703532.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-An_gam_pims/LCWJ01002616.1:18739-18879	YP_009305131.1	glycoprotein precursor	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuhan mosquito orthophasmavirus 1
-An_gam_pims/LCWJ01002616.1:7864-8405	YP_009337090.1|YP_009337429.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Sanxia mivirus
-An_gam_pims/LCWJ01002654.1:20447-20815	YP_009702646.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-An_gam_pims/LCWJ01002808.1:1307-1945	YP_009173866.1	polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-An_gam_pims/LCWJ01002836.1:5922-6341	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-An_gam_pims/LCWJ01002844.1:7998-8171	YP_762450.1	26.3 kDa RecD exoV/alpha subunit	Pimascovirales	Ascoviridae	Ascovirus	Unclassified
-An_gam_pims/LCWJ01002852.1:6170-6265	YP_007354522.1	Serine/Threonine kinase	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-An_gam_pims/LCWJ01002865.1:20727-21194	YP_173236.1	nsp16	Nidovirales	Coronaviridae	Betacoronavirus	Unclassified
-An_gam_pims/LCWJ01002872.1:2457-2558	YP_008059249.1	carbamoyl phosphate synthase small subunit	Unclassified	Unclassified	Unclassified	Unclassified
-An_gam_pims/LCWJ01002875.1:28196-28660	YP_003517744.1	mucin-like protein	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_gam_pims/LCWJ01002916.1:4830-5078	NP_043957.1	MC006L	Chitovirales	Poxviridae	Molluscipoxvirus	Molluscum contagiosum virus
-An_gam_pims/LCWJ01002942.1:3873-4382	YP_009702646.1|YP_009703687.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-An_gam_pims/LCWJ01003137.1:24301-24822	YP_009703687.1|YP_009703532.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-An_gam_pims/LCWJ01003238.1:11105-11374	YP_004063462.1	putative 3-methyl-2-oxobutanoate	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_gam_pims/LCWJ01003238.1:11651-11890	YP_004063462.1	putative 3-methyl-2-oxobutanoate	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_gam_pims/LCWJ01003359.1:7239-7442	YP_009173284.1	Uracil-DNA glycosylase	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01003359.1:7059-7421	YP_009010988.1|YP_053105.1	uracil-DNA glycosylase	Herpesvirales	Herpesviridae	Simplexvirus	Panine alphaherpesvirus 3
-An_gam_pims/LCWJ01003359.1:7465-7710	YP_008438547.1	Uracil-DNA glycosylase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_gam_pims/LCWJ01003407.1:11239-11724	YP_009448872.1	Bi-functional 3,4-dihydroxy-2-butanone	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01003408.1:7819-8456	YP_004894381.1|YP_007354235.1	putative zinc protease	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_gam_pims/LCWJ01003409.1:2132-2860	YP_009448418.1	Arginyl-tRNA synthetase	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01003409.1:3013-3294	YP_009448418.1	Arginyl-tRNA synthetase	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01003409.1:1873-2043	YP_003987185.1	arginyl-tRNA synthetase	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_gam_pims/LCWJ01003441.1:9781-9909	YP_002241934.1	gp40	Caudovirales	Siphoviridae	Plotvirus	Mycobacterium virus Plot
-An_gam_pims/LCWJ01003625.1:64082-64411	NP_043957.1	MC006L	Chitovirales	Poxviridae	Molluscipoxvirus	Molluscum contagiosum virus
-An_gam_pims/LCWJ01003634.1:13554-13721	YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
-An_gam_pims/LCWJ01003634.1:23774-24753	YP_009337090.1|YP_009666257.1|YP_009337905.1|YP_009177702.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
-An_gam_pims/LCWJ01003645.1:12192-12557	YP_009702646.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-An_gam_pims/LCWJ01003701.1:18667-18765	NP_047715.1	cathepsin-like proteinase	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_gam_pims/LCWJ01003732.1:1663463-1663561	YP_003987440.1	probable cholinesterase	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-An_gam_pims/LCWJ01003889.1:1020085-1020647	NP_955119.1|NP_955119.1|YP_009447989.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_gam_pims/LCWJ01003889.1:1020767-1022920	NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|YP_009447989.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_gam_pims/LCWJ01003889.1:1023045-1024184	NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_gam_pims/LCWJ01003909.1:4244093-4244191	YP_001031233.1	viral inexin-like protein	Unclassified	Polydnaviridae	Ichnovirus	Unclassified
-An_gam_pims/LCWJ01003927.1:6959-7384	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-An_gam_pims/LCWJ01003968.1:173469-173585	YP_009052252.1	putative serine threonine protein phosphatase	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01004202.1:11407-11730	YP_009702978.1	BA71V-B602L (9RL)	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-An_gam_pims/LCWJ01004217.1:69483-69653	YP_009666655.1|YP_308891.1	protein kinase-1	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_gam_pims/LCWJ01004234.1:239918-240016	NP_075195.1	egt	Unclassified	Baculoviridae	Alphabaculovirus	Helicoverpa armigera nucleopolyhedrovirus
-An_gam_pims/LCWJ01004258.1:45473-45580	YP_009186810.1	egt	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_gam_pims/LCWJ01004334.1:14128-14700	YP_009173866.1	polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-An_gam_pims/LCWJ01004389.1:8872-9099	YP_009173411.1	Ubiquitin	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01004389.1:7735-8649	NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_gam_pims/LCWJ01004389.1:9097-9204	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_gam_pims/LCWJ01004389.1:9351-9779	NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_gam_pims/LCWJ01004389.1:10004-11602	NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_gam_pims/LCWJ01004389.1:2341184-2341291	YP_003969699.1	putative metalloendopeptidase	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus
-An_gam_pims/LCWJ01004389.1:3113060-3115075	YP_009336947.1|YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Odonate mivirus
-An_gam_pims/LCWJ01004389.1:3113624-3114388	YP_009333184.1	putative glycoprotein	Mononegavirales	Artoviridae	Hexartovirus	Barnacle hexartovirus
-An_gam_pims/LCWJ01004389.1:3113363-3115069	YP_009337120.1|YP_009666281.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
-An_gam_pims/LCWJ01004389.1:11579-11686	NP_258300.1	ubiquitin GP37 fusion protein	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_gam_pims/LCWJ01004391.1:1209-2989	YP_009337090.1|YP_009177702.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
-An_gam_pims/LCWJ01004391.1:1604-2365	YP_009333184.1|YP_009505432.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Pteromalus puparum peropuvirus
-An_gam_pims/LCWJ01004391.1:1574-3028	YP_009666281.1	glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Drosophilid anphevirus
-An_gam_pims/LCWJ01004419.1:16891-17457	YP_009259545.1	polymerase	Blubervirales	Hepadnaviridae	Herpetohepadnavirus	Unclassified
-An_gam_pims/LCWJ01004452.1:6368-7957	YP_009337090.1|YP_009177219.1|YP_009337857.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Suffolk mivirus
-An_gam_pims/LCWJ01004452.1:6800-7564	YP_009333184.1|YP_009333448.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Woodlouse peropuvirus
-An_gam_pims/LCWJ01004452.1:6443-7939	YP_009177723.1	glycoprotein	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01004492.1:38712-39218	YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
-An_gam_pims/LCWJ01004571.1:141851-141949	YP_009013838.1	helicase	Caudovirales	Siphoviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01004605.1:10943-11608	YP_024968.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-An_gam_pims/LCWJ01004655.1:1836-2264	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-An_gam_pims/LCWJ01004709.1:4767-5210	YP_009702646.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-An_gam_pims/LCWJ01004740.1:46047-46148	YP_003407062.1	thioredoxin	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified
-An_gam_pims/LCWJ01004747.1:7571-7915	YP_024968.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-An_gam_pims/LCWJ01004748.1:5988-6671	YP_024968.1|YP_009259545.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-An_gam_pims/LCWJ01004753.1:6755-6964	YP_024968.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-An_gam_pims/LCWJ01004800.1:181485-181595	YP_009052194.1	putative translation elongation factor EF-1	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01004876.1:962-1408	YP_009703687.1|YP_009703532.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-An_gam_pims/LCWJ01004945.1:8301-8426	YP_009665799.1	protein tyrosine phosphatase	Unclassified	Polydnaviridae	Bracovirus	Unclassified
-An_gam_pims/LCWJ01005081.1:9501-9599	YP_024974.1	polymerase protein	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-An_gam_pims/LCWJ01005089.1:4173-4601	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-An_gam_pims/LCWJ01005101.1:7621-8019	YP_004956864.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified
-An_gam_pims/LCWJ01005107.1:3911-4012	YP_024974.1	polymerase protein	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-An_gam_pims/LCWJ01005146.1:31127-31605	YP_009666257.1|YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-An_gam_pims/LCWJ01005146.1:21028-21779	YP_009666292.1|YP_009666283.1	RNA-dependent RNA polymerase	Mononegavirales	Nyamiviridae	Berhavirus	Sipunculid berhavirus
-An_gam_pims/LCWJ01005146.1:20755-21129	YP_009177021.1	polymerase protein	Mononegavirales	Rhabdoviridae	Cytorhabdovirus	Alfalfa dwarf cytorhabdovirus
-An_gam_pims/LCWJ01005146.1:20341-21824	YP_009302387.1|YP_009336728.1|YP_009666282.1|YP_009302387.1	RNA-dependent RNA polymerase	Mononegavirales	Xinmoviridae	Anphevirus	Orthopteran anphevirus
-An_gam_pims/LCWJ01005147.1:23257-23892	YP_009182178.1|YP_009337905.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
-An_gam_pims/LCWJ01005168.1:15301-15612	NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-An_gam_pims/LCWJ01005258.1:3721-4149	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-An_gam_pims/LCWJ01005258.1:10701-11252	YP_024974.1	polymerase protein	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-An_gam_pims/LCWJ01005359.1:14227-14586	YP_009702646.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-An_gam_pims/LCWJ01005440.1:278-775	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-An_gam_pims/LCWJ01005510.1:3600-3698	YP_007676316.1	ATP-dependent metalloprotease FtsH	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified
-An_gam_pims/LCWJ01005552.1:8672-8884	YP_024974.1	polymerase protein	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-An_gam_pims/LCWJ01005558.1:10663-11091	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-An_gam_pims/LCWJ01005592.1:51380-51478	YP_002332722.1	EGT	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_gam_pims/LCWJ01005669.1:301-981	YP_024974.1|YP_009259541.1	polymerase protein	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-An_gam_pims/LCWJ01005811.1:1029575-1031542	YP_009337090.1|YP_009666257.1|YP_009337861.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
-An_gam_pims/LCWJ01005811.1:1030259-1030978	YP_009333184.1	putative glycoprotein	Mononegavirales	Artoviridae	Hexartovirus	Barnacle hexartovirus
-An_gam_pims/LCWJ01005814.1:12747-12845	YP_003969734.1	putative ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus
-An_gam_pims/LCWJ01005815.1:356375-356485	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_gam_pims/LCWJ01005849.1:5300-5749	NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-An_gam_pims/LCWJ01005854.1:163137-163511	YP_008241029.1	putative phage tail fiber	Caudovirales	Siphoviridae	Helsingorvirus	Cellulophaga virus Cba121
-An_gam_pims/LCWJ01005854.1:163582-163755	YP_009220475.1	collagen-like protein	Unclassified	Nimaviridae	Whispovirus	Unclassified
-An_gam_pims/LCWJ01005913.1:17979-18086	YP_008437707.2	Serine/threonine protein kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_gam_pims/LCWJ01005949.1:7727-7831	NP_077596.1	EsV-1-111	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified
-An_gam_pims/LCWJ01005956.1:12031-12132	YP_009173627.1	Hsp70 protein	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01006150.1:15279-15644	YP_007354525.1	ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-An_gam_pims/LCWJ01006152.1:4096-4212	YP_009666709.1	RR2	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-An_gam_pims/LCWJ01006218.1:8744-9172	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-An_gam_pims/LCWJ01006510.1:4391-4741	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
-An_gam_pims/LCWJ01006559.1:7586-7696	YP_009310235.1	serine/threonine protein kinase	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified
-An_gam_pims/LCWJ01006791.1:8791-9540	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-An_gam_pims/LCWJ01007053.1:51531-51629	YP_009448911.1	Negative regulator of the PHO system	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-An_gam_pims/LCWJ01007053.1:26873-26977	YP_007354399.1	HSP70-like protein	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-An_gam_pims/LCWJ01007192.1:5514-6032	YP_009259545.1	polymerase	Blubervirales	Hepadnaviridae	Herpetohepadnavirus	Unclassified
-An_gam_pims/LCWJ01007261.1:1314-1427	YP_009389524.1	DNA polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified
-An_gam_pims/LCWJ01007419.1:1978-2580	NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-An_gam_pims/LCWJ01007431.1:17624-17872	YP_762450.1	26.3 kDa RecD exoV/alpha subunit	Pimascovirales	Ascoviridae	Ascovirus	Unclassified
-An_gam_pims/LCWJ01007887.1:159842-160279	YP_009703687.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-An_gam_pims/LCWJ01007887.1:453361-453459	NP_612245.1	ORF023R	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_gam_pims/LCWJ01000018.1:539-637	98	YP_004956814.1	serine hydroxymethyltransferase	Viruses	Unclassified	Nudiviridae	Betanudivirus	Heliothis zea nudivirus	pos
+An_gam_pims/LCWJ01000023.1:14425-14616	191	YP_009032490.1	collagen-like protein	Viruses	Caudovirales	Siphoviridae	Fromanvirus	Unclassified	neg
+An_gam_pims/LCWJ01000027.1:593156-593254	98	YP_003986758.1	DnaJ-like protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+An_gam_pims/LCWJ01000175.1:123685-123783	98	YP_009482443.1	S-phase kinase-associated protein 1	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	neg
+An_gam_pims/LCWJ01000402.1:2891-4366	1475	YP_009302387.1|YP_009302387.1|YP_009302387.1|YP_009302387.1|YP_009302387.1|YP_009302387.1	RNA-dependent RNA polymerase	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Xincheng anphevirus	pos
+An_gam_pims/LCWJ01000402.1:2915-3085	170	YP_009388622.1	RdRp	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	pos
+An_gam_pims/LCWJ01000402.1:3491-3721	230	YP_009388622.1	RdRp	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	pos
+An_gam_pims/LCWJ01000402.1:3835-4110	275	YP_009333413.1	RNA-dependent RNA polymerase	Viruses	Mononegavirales	Nyamiviridae	Crustavirus	Beihai crustavirus	pos
+An_gam_pims/LCWJ01000439.1:10385-10929	544	YP_009337090.1|YP_009666257.1|YP_009666257.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus	neg
+An_gam_pims/LCWJ01000599.1:10868-10963	95	YP_009329718.1	cell surface-binding protein	Viruses	Chitovirales	Poxviridae	Unclassified	Unclassified	neg
+An_gam_pims/LCWJ01000658.1:135990-136088	98	YP_009001498.1	putative ATP-binding cassette transporter	Viruses	Chitovirales	Poxviridae	Alphaentomopoxvirus	Unclassified	pos
+An_gam_pims/LCWJ01000777.1:41920-42030	110	YP_009052149.1	putative cyclophilin type peptydyl-prolyl	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+An_gam_pims/LCWJ01000951.1:3658-4086	428	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+An_gam_pims/LCWJ01000985.1:31309-31629	320	NP_671813.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+An_gam_pims/LCWJ01000985.1:3890-4774	884	YP_009173866.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+An_gam_pims/LCWJ01001040.1:10017-10583	566	YP_009333448.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Peropuvirus	Woodlouse peropuvirus	neg
+An_gam_pims/LCWJ01001040.1:17266-17598	332	YP_009337905.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei mivirus	neg
+An_gam_pims/LCWJ01001040.1:9438-11398	1960	YP_009666257.1|YP_009337861.1|YP_009337090.1|YP_009337905.1|YP_009177702.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus	neg
+An_gam_pims/LCWJ01001040.1:9708-10577	869	YP_009337120.1	putative glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus	neg
+An_gam_pims/LCWJ01001066.1:21389-21898	509	YP_009703687.1|YP_009702646.1|YP_009703532.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+An_gam_pims/LCWJ01001157.1:14825-14923	98	YP_009001306.1	Ser/Thr protein kinase	Viruses	Unclassified	Pithoviridae	Pithovirus	Unclassified	neg
+An_gam_pims/LCWJ01001357.1:13180-13314	134	NP_057859.1	MOS	Viruses	Ortervirales	Retroviridae	Gammaretrovirus	Unclassified	neg
+An_gam_pims/LCWJ01001379.1:5864-6219	355	YP_009702646.1|YP_009702646.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	pos
+An_gam_pims/LCWJ01001432.1:12539-12637	98	YP_004894687.1	putative serine threonine-protein kinase	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+An_gam_pims/LCWJ01001529.1:10710-10820	110	YP_009513242.1	pol	Viruses	Ortervirales	Retroviridae	Simiispumavirus	Unclassified	neg
+An_gam_pims/LCWJ01001650.1:93-257	164	YP_232995.1	IMV membrane protein	Viruses	Chitovirales	Poxviridae	Orthopoxvirus	Unclassified	pos
+An_gam_pims/LCWJ01001722.1:101686-101790	104	YP_009162415.1	serine/threonine protein kinase; probable	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+An_gam_pims/LCWJ01002094.1:11644-11856	212	YP_762450.1	26.3 kDa RecD exoV/alpha subunit	Viruses	Pimascovirales	Ascoviridae	Ascovirus	Unclassified	neg
+An_gam_pims/LCWJ01002372.1:16497-16595	98	NP_042289.1	P68 protein	Viruses	Ortervirales	Retroviridae	Alpharetrovirus	Unclassified	neg
+An_gam_pims/LCWJ01002441.1:52426-52902	476	YP_009220475.1	collagen-like protein	Viruses	Unclassified	Nimaviridae	Whispovirus	Unclassified	neg
+An_gam_pims/LCWJ01002514.1:5450-5659	209	YP_009448762.1	Cyclin-dependent kinase	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+An_gam_pims/LCWJ01002525.1:20685-20804	119	YP_007676316.1	ATP-dependent metalloprotease FtsH	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	neg
+An_gam_pims/LCWJ01002527.1:3925-4479	554	YP_009703687.1|YP_009703532.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	neg
+An_gam_pims/LCWJ01002616.1:18739-18879	140	YP_009305131.1	glycoprotein precursor	Viruses	Bunyavirales	Phasmaviridae	Orthophasmavirus	Wuhan mosquito orthophasmavirus 1	pos
+An_gam_pims/LCWJ01002616.1:7864-8405	541	YP_009337090.1|YP_009337429.1|YP_009182178.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Sanxia mivirus	pos
+An_gam_pims/LCWJ01002654.1:20447-20815	368	YP_009702646.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	neg
+An_gam_pims/LCWJ01002808.1:1307-1945	638	YP_009173866.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+An_gam_pims/LCWJ01002836.1:5922-6341	419	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+An_gam_pims/LCWJ01002844.1:7998-8171	173	YP_762450.1	26.3 kDa RecD exoV/alpha subunit	Viruses	Pimascovirales	Ascoviridae	Ascovirus	Unclassified	neg
+An_gam_pims/LCWJ01002852.1:6170-6265	95	YP_007354522.1	Serine/Threonine kinase	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	pos
+An_gam_pims/LCWJ01002865.1:20727-21194	467	YP_173236.1	nsp16	Viruses	Nidovirales	Coronaviridae	Betacoronavirus	Unclassified	pos
+An_gam_pims/LCWJ01002872.1:2457-2558	101	YP_008059249.1	carbamoyl phosphate synthase small subunit	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	pos
+An_gam_pims/LCWJ01002875.1:28196-28660	464	YP_003517744.1	mucin-like protein	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+An_gam_pims/LCWJ01002916.1:4830-5078	248	NP_043957.1	MC006L	Viruses	Chitovirales	Poxviridae	Molluscipoxvirus	Molluscum contagiosum virus	pos
+An_gam_pims/LCWJ01002942.1:3873-4382	509	YP_009702646.1|YP_009703687.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	pos
+An_gam_pims/LCWJ01003137.1:24301-24822	521	YP_009703687.1|YP_009703532.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+An_gam_pims/LCWJ01003238.1:11105-11374	269	YP_004063462.1	putative 3-methyl-2-oxobutanoate	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	neg
+An_gam_pims/LCWJ01003238.1:11651-11890	239	YP_004063462.1	putative 3-methyl-2-oxobutanoate	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	neg
+An_gam_pims/LCWJ01003359.1:7059-7421*	362	YP_009010988.1|YP_053105.1	uracil-DNA glycosylase	Viruses	Herpesvirales	Herpesviridae	Simplexvirus	Panine alphaherpesvirus 3	pos
+An_gam_pims/LCWJ01003359.1:7239-7442	203	YP_009173284.1	Uracil-DNA glycosylase	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+An_gam_pims/LCWJ01003359.1:7465-7710	245	YP_008438547.1	Uracil-DNA glycosylase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+An_gam_pims/LCWJ01003407.1:11239-11724	485	YP_009448872.1	Bi-functional 3,4-dihydroxy-2-butanone	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+An_gam_pims/LCWJ01003408.1:7819-8456	637	YP_004894381.1|YP_007354235.1	putative zinc protease	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+An_gam_pims/LCWJ01003409.1:1873-2043	170	YP_003987185.1	arginyl-tRNA synthetase	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	neg
+An_gam_pims/LCWJ01003409.1:2132-2860	728	YP_009448418.1	Arginyl-tRNA synthetase	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+An_gam_pims/LCWJ01003409.1:3013-3294	281	YP_009448418.1	Arginyl-tRNA synthetase	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+An_gam_pims/LCWJ01003441.1:9781-9909	128	YP_002241934.1	gp40	Viruses	Caudovirales	Siphoviridae	Plotvirus	Mycobacterium virus Plot	pos
+An_gam_pims/LCWJ01003625.1:64082-64411	329	NP_043957.1	MC006L	Viruses	Chitovirales	Poxviridae	Molluscipoxvirus	Molluscum contagiosum virus	neg
+An_gam_pims/LCWJ01003634.1:13554-13721	167	YP_009182178.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus	neg
+An_gam_pims/LCWJ01003634.1:23774-24753	979	YP_009337090.1|YP_009666257.1|YP_009337905.1|YP_009177702.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus	neg
+An_gam_pims/LCWJ01003645.1:12192-12557	365	YP_009702646.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	neg
+An_gam_pims/LCWJ01003701.1:18667-18765	98	NP_047715.1	cathepsin-like proteinase	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+An_gam_pims/LCWJ01003732.1:1663463-1663561	98	YP_003987440.1	probable cholinesterase	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	neg
+An_gam_pims/LCWJ01003889.1:1020085-1020647	562	NP_955119.1|NP_955119.1|YP_009447989.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_gam_pims/LCWJ01003889.1:1020767-1022920*	2153	NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|YP_009447989.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_gam_pims/LCWJ01003889.1:1023045-1024184	1139	NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_gam_pims/LCWJ01003909.1:4244093-4244191	98	YP_001031233.1	viral inexin-like protein	Viruses	Unclassified	Polydnaviridae	Ichnovirus	Unclassified	pos
+An_gam_pims/LCWJ01003927.1:6959-7384	425	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	neg
+An_gam_pims/LCWJ01003968.1:173469-173585	116	YP_009052252.1	putative serine threonine protein phosphatase	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+An_gam_pims/LCWJ01004202.1:11407-11730	323	YP_009702978.1	BA71V-B602L (9RL)	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	pos
+An_gam_pims/LCWJ01004217.1:69483-69653	170	YP_009666655.1|YP_308891.1	protein kinase-1	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	neg
+An_gam_pims/LCWJ01004234.1:239918-240016	98	NP_075195.1	egt	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Helicoverpa armigera nucleopolyhedrovirus	neg
+An_gam_pims/LCWJ01004258.1:45473-45580	107	YP_009186810.1	egt	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	neg
+An_gam_pims/LCWJ01004334.1:14128-14700	572	YP_009173866.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+An_gam_pims/LCWJ01004389.1:10004-11602*	1598	NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_gam_pims/LCWJ01004389.1:11579-11686	107	NP_258300.1	ubiquitin GP37 fusion protein	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+An_gam_pims/LCWJ01004389.1:2341184-2341291	107	YP_003969699.1	putative metalloendopeptidase	Viruses	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus	pos
+An_gam_pims/LCWJ01004389.1:3113060-3115075*	2015	YP_009336947.1|YP_009337090.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Odonate mivirus	neg
+An_gam_pims/LCWJ01004389.1:3113363-3115069	1706	YP_009337120.1|YP_009666281.1	putative glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus	neg
+An_gam_pims/LCWJ01004389.1:3113624-3114388	764	YP_009333184.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Hexartovirus	Barnacle hexartovirus	neg
+An_gam_pims/LCWJ01004389.1:7735-8649	914	NP_955119.1|NP_955119.1|NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_gam_pims/LCWJ01004389.1:8872-9099	227	YP_009173411.1	Ubiquitin	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+An_gam_pims/LCWJ01004389.1:9097-9204	107	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_gam_pims/LCWJ01004389.1:9351-9779*	428	NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_gam_pims/LCWJ01004391.1:1209-2989*	1780	YP_009337090.1|YP_009177702.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus	neg
+An_gam_pims/LCWJ01004391.1:1574-3028	1454	YP_009666281.1	glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Drosophilid anphevirus	neg
+An_gam_pims/LCWJ01004391.1:1604-2365	761	YP_009333184.1|YP_009505432.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Peropuvirus	Pteromalus puparum peropuvirus	neg
+An_gam_pims/LCWJ01004419.1:16891-17457	566	YP_009259545.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Herpetohepadnavirus	Unclassified	neg
+An_gam_pims/LCWJ01004452.1:6368-7957*	1589	YP_009337090.1|YP_009177219.1|YP_009337857.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Suffolk mivirus	pos
+An_gam_pims/LCWJ01004452.1:6443-7939	1496	YP_009177723.1	glycoprotein	Viruses	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified	pos
+An_gam_pims/LCWJ01004452.1:6800-7564	764	YP_009333184.1|YP_009333448.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Peropuvirus	Woodlouse peropuvirus	pos
+An_gam_pims/LCWJ01004492.1:38712-39218	506	YP_009337090.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus	pos
+An_gam_pims/LCWJ01004571.1:141851-141949	98	YP_009013838.1	helicase	Viruses	Caudovirales	Siphoviridae	Unclassified	Unclassified	pos
+An_gam_pims/LCWJ01004605.1:10943-11608	665	YP_024968.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	neg
+An_gam_pims/LCWJ01004655.1:1836-2264	428	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+An_gam_pims/LCWJ01004709.1:4767-5210	443	YP_009702646.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	neg
+An_gam_pims/LCWJ01004740.1:46047-46148	101	YP_003407062.1	thioredoxin	Viruses	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified	pos
+An_gam_pims/LCWJ01004747.1:7571-7915	344	YP_024968.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	neg
+An_gam_pims/LCWJ01004748.1:5988-6671	683	YP_024968.1|YP_009259545.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	neg
+An_gam_pims/LCWJ01004753.1:6755-6964	209	YP_024968.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	neg
+An_gam_pims/LCWJ01004800.1:181485-181595	110	YP_009052194.1	putative translation elongation factor EF-1	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+An_gam_pims/LCWJ01004876.1:962-1408	446	YP_009703687.1|YP_009703532.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+An_gam_pims/LCWJ01004945.1:8301-8426	125	YP_009665799.1	protein tyrosine phosphatase	Viruses	Unclassified	Polydnaviridae	Bracovirus	Unclassified	neg
+An_gam_pims/LCWJ01005081.1:9501-9599	98	YP_024974.1	polymerase protein	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	pos
+An_gam_pims/LCWJ01005089.1:4173-4601	428	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+An_gam_pims/LCWJ01005101.1:7621-8019	398	YP_004956864.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified	neg
+An_gam_pims/LCWJ01005107.1:3911-4012	101	YP_024974.1	polymerase protein	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	neg
+An_gam_pims/LCWJ01005146.1:20341-21824*	1483	YP_009302387.1|YP_009336728.1|YP_009666282.1|YP_009302387.1	RNA-dependent RNA polymerase	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Orthopteran anphevirus	pos
+An_gam_pims/LCWJ01005146.1:20755-21129	374	YP_009177021.1	polymerase protein	Viruses	Mononegavirales	Rhabdoviridae	Cytorhabdovirus	Alfalfa dwarf cytorhabdovirus	pos
+An_gam_pims/LCWJ01005146.1:21028-21779	751	YP_009666292.1|YP_009666283.1	RNA-dependent RNA polymerase	Viruses	Mononegavirales	Nyamiviridae	Berhavirus	Sipunculid berhavirus	pos
+An_gam_pims/LCWJ01005146.1:31127-31605	478	YP_009666257.1|YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	neg
+An_gam_pims/LCWJ01005147.1:23257-23892	635	YP_009182178.1|YP_009337905.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus	neg
+An_gam_pims/LCWJ01005168.1:15301-15612	311	NP_671813.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+An_gam_pims/LCWJ01005258.1:10701-11252	551	YP_024974.1	polymerase protein	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	pos
+An_gam_pims/LCWJ01005258.1:3721-4149	428	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+An_gam_pims/LCWJ01005359.1:14227-14586	359	YP_009702646.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	neg
+An_gam_pims/LCWJ01005440.1:278-775	497	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+An_gam_pims/LCWJ01005510.1:3600-3698	98	YP_007676316.1	ATP-dependent metalloprotease FtsH	Viruses	Algavirales	Phycodnaviridae	Prasinovirus	Unclassified	pos
+An_gam_pims/LCWJ01005552.1:8672-8884	212	YP_024974.1	polymerase protein	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	neg
+An_gam_pims/LCWJ01005558.1:10663-11091	428	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+An_gam_pims/LCWJ01005592.1:51380-51478	98	YP_002332722.1	EGT	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+An_gam_pims/LCWJ01005669.1:301-981	680	YP_024974.1|YP_009259541.1	polymerase protein	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	pos
+An_gam_pims/LCWJ01005811.1:1029575-1031542*	1967	YP_009337090.1|YP_009666257.1|YP_009337861.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus	pos
+An_gam_pims/LCWJ01005811.1:1030259-1030978	719	YP_009333184.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Hexartovirus	Barnacle hexartovirus	pos
+An_gam_pims/LCWJ01005814.1:12747-12845	98	YP_003969734.1	putative ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Cafeteriavirus	Cafeteria roenbergensis virus	pos
+An_gam_pims/LCWJ01005815.1:356375-356485	110	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+An_gam_pims/LCWJ01005849.1:5300-5749	449	NP_671813.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+An_gam_pims/LCWJ01005854.1:163137-163511	374	YP_008241029.1	putative phage tail fiber	Viruses	Caudovirales	Siphoviridae	Helsingorvirus	Cellulophaga virus Cba121	neg
+An_gam_pims/LCWJ01005854.1:163582-163755	173	YP_009220475.1	collagen-like protein	Viruses	Unclassified	Nimaviridae	Whispovirus	Unclassified	neg
+An_gam_pims/LCWJ01005913.1:17979-18086	107	YP_008437707.2	Serine/threonine protein kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+An_gam_pims/LCWJ01005949.1:7727-7831	104	NP_077596.1	EsV-1-111	Viruses	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified	pos
+An_gam_pims/LCWJ01005956.1:12031-12132	101	YP_009173627.1	Hsp70 protein	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+An_gam_pims/LCWJ01006150.1:15279-15644	365	YP_007354525.1	ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	neg
+An_gam_pims/LCWJ01006152.1:4096-4212	116	YP_009666709.1	RR2	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+An_gam_pims/LCWJ01006218.1:8744-9172	428	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+An_gam_pims/LCWJ01006510.1:4391-4741	350	YP_004300280.1	putative rve super family integrase	Viruses	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus	pos
+An_gam_pims/LCWJ01006559.1:7586-7696	110	YP_009310235.1	serine/threonine protein kinase	Viruses	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified	neg
+An_gam_pims/LCWJ01006791.1:8791-9540	749	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+An_gam_pims/LCWJ01007053.1:26873-26977	104	YP_007354399.1	HSP70-like protein	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	pos
+An_gam_pims/LCWJ01007053.1:51531-51629	98	YP_009448911.1	Negative regulator of the PHO system	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+An_gam_pims/LCWJ01007192.1:5514-6032	518	YP_009259545.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Herpetohepadnavirus	Unclassified	pos
+An_gam_pims/LCWJ01007261.1:1314-1427	113	YP_009389524.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified	neg
+An_gam_pims/LCWJ01007419.1:1978-2580	602	NP_671813.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+An_gam_pims/LCWJ01007431.1:17624-17872	248	YP_762450.1	26.3 kDa RecD exoV/alpha subunit	Viruses	Pimascovirales	Ascoviridae	Ascovirus	Unclassified	pos
+An_gam_pims/LCWJ01007887.1:159842-160279	437	YP_009703687.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+An_gam_pims/LCWJ01007887.1:453361-453459	98	NP_612245.1	ORF023R	Viruses	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified	pos

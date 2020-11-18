@@ -1,358 +1,358 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-Cx_tar_K1/tig00000053:346620-347039	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000053:348399-348710	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000062:105658-105999	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000062:132539-132853	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000065:68261-68587	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000075:335960-336382	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00000126:263976-264341	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000140:229129-229797	YP_004956864.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified
-Cx_tar_K1/tig00000142:16990-17088	YP_008992233.1	ptp-1	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-Cx_tar_K1/tig00000238:71922-72437	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00000246:32677-33240	YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00000260:148979-149290	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000301:62162-62632	YP_009004875.1	RNA 2\'-phosphotransferase	Caudovirales	Myoviridae	Agricanvirus	Erwinia virus Ea35-70
-Cx_tar_K1/tig00000308:103141-103629	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000312:177860-178306	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000336:43031-43342	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000370:77831-78289	YP_007007445.1	putative nuclease	Caudovirales	Myoviridae	Alcyoneusvirus	Klebsiella virus RaK2
-Cx_tar_K1/tig00000405:21217-21534	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000413:204940-205254	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000440:209808-210140	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000447:105578-106078	YP_009162457.1|YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000457:30265-30933	YP_004894344.1|YP_004894344.1	collagen-like protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00000468:166787-167176	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000473:161363-161698	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000497:74243-75631	YP_004894338.1	collagen-like protein 7	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00000557:159125-159475	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000572:127596-127949	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000588:190087-190185	NP_057866.1	ABL	Ortervirales	Retroviridae	Gammaretrovirus	Unclassified
-Cx_tar_K1/tig00000652:165797-167767	YP_009177702.1|YP_009182178.1|YP_009337429.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
-Cx_tar_K1/tig00000652:166382-167170	YP_009333448.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Woodlouse peropuvirus
-Cx_tar_K1/tig00000652:166058-167767	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
-Cx_tar_K1/tig00000796:49394-49489	YP_007354522.1	Serine/Threonine kinase	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-Cx_tar_K1/tig00000797:17596-18057	YP_009165599.1	polymerase	Blubervirales	Hepadnaviridae	Parahepadnavirus	Unclassified
-Cx_tar_K1/tig00000869:7525-8031	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000882:62378-62731	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00000913:25847-26515	YP_004956864.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified
-Cx_tar_K1/tig00000924:36615-37037	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00000949:154709-155290	YP_009703687.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-Cx_tar_K1/tig00000990:81505-81840	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
-Cx_tar_K1/tig00001038:39227-39544	YP_004894344.1	collagen-like protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00001076:108234-108515	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00001231:32051-32476	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00001298:88672-89055	YP_004894344.1	collagen-like protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00001336:164408-164899	YP_009621065.1|YP_009621065.1	L-shaped tail fiber protein	Caudovirales	Demerecviridae	Sugarlandvirus	Klebsiella virus Sugarland
-Cx_tar_K1/tig00001351:23548-23979	NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-Cx_tar_K1/tig00001355:29790-30212	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00001363:33936-34070	YP_009046285.1	GNS1/SUR4	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00001392:83283-83615	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00001407:19372-19707	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
-Cx_tar_K1/tig00001482:18382-18828	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00001492:94344-95087	YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00001492:94422-95168	YP_003986692.1	collagen-like protein 2	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00001511:71775-72098	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00001526:140164-140592	YP_009702646.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-Cx_tar_K1/tig00001526:130279-130584	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00001555:5444-5746	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00001598:160686-161132	YP_008857283.1	putative tail fiber protein	Caudovirales	Myoviridae	Seunavirus	Escherichia virus 4MG
-Cx_tar_K1/tig00001690:73645-73743	YP_009001498.1	putative ATP-binding cassette transporter	Chitovirales	Poxviridae	Alphaentomopoxvirus	Unclassified
-Cx_tar_K1/tig00001725:53891-54274	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00001815:106112-106417	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00001815:107965-108303	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00001860:152171-152749	YP_004894344.1	collagen-like protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00001861:123945-124250	YP_009046217.1	ankyrin repeat protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00001894:123143-123649	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00001938:81374-81973	YP_009506692.1	neurofilament triplet H1-like protein	Pimascovirales	Iridoviridae	Ranavirus	Frog virus 3
-Cx_tar_K1/tig00001945:5427-5801	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00001945:65201-65482	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00001994:121985-122344	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00002058:115302-115757	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00002093:51197-51538	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00002120:11985-12413	NP_044074.1	MC123R	Chitovirales	Poxviridae	Molluscipoxvirus	Molluscum contagiosum virus
-Cx_tar_K1/tig00002219:26395-26712	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00002250:28397-28879	YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00002346:54964-55302	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
-Cx_tar_K1/tig00002350:38297-39748	YP_003734301.1	Wac fibritin neck whiskers protein	Caudovirales	Myoviridae	Dhakavirus	Escherichia virus IME08
-Cx_tar_K1/tig00002350:38477-39702	YP_009507121.1|YP_004347081.1|YP_004347081.1	chromosome segregation protein (SMC)	Pimascovirales	Marseilleviridae	Unclassified	Tunisvirus
-Cx_tar_K1/tig00002365:119496-119879	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00002624:72649-73164	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00002657:153641-154594	YP_004508453.1|YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00002657:154115-154585	YP_003986692.1	collagen-like protein 2	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00002668:32515-32799	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00002681:107720-108019	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00002693:45197-45628	NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-Cx_tar_K1/tig00002738:105203-105790	YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00002738:95913-96287	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00002738:97862-98122	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00002767:40048-40335	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00002800:8215-8724	YP_009703687.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-Cx_tar_K1/tig00002802:84176-84571	YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003001:22618-23070	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003048:2597-4522	YP_009177714.1|YP_009666257.1|YP_009337861.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Argas mivirus
-Cx_tar_K1/tig00003048:3146-3718	YP_009333448.1|YP_009505432.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Woodlouse peropuvirus
-Cx_tar_K1/tig00003048:2816-4450	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
-Cx_tar_K1/tig00003102:42762-43568	YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00003120:99718-100116	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003370:122907-123098	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003372:555-1274	YP_031695.1	DNA-directed DNA polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-Cx_tar_K1/tig00003406:14676-15047	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003413:45547-46371	NP_041141.2	ORF50	Herpesvirales	Alloherpesviridae	Ictalurivirus	Unclassified
-Cx_tar_K1/tig00003421:3089-3406	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003482:52495-52908	YP_007354525.1	ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-Cx_tar_K1/tig00003509:66182-66517	YP_003986560.1	collagen-like protein 1	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00003533:13094-13525	NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-Cx_tar_K1/tig00003569:97945-98403	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003616:30617-30913	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003867:33979-34503	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00003899:44778-45011	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003931:20633-20908	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003937:62594-62926	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003964:84397-84768	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00003982:3884-4195	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00004007:48415-48714	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00004009:87779-88381	YP_004508453.1|YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00004066:98753-99157	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00004078:10607-11035	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00004112:3029-3148	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00004112:3259-4053	NP_955119.1|NP_955119.1|NP_955119.1|YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00004112:4170-5996	YP_009447989.1|NP_955119.1|YP_009447989.1|NP_955119.1|NP_955119.1|YP_009447989.1|NP_955119.1|YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00004489:22227-23294	YP_004508453.1|YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00004489:11509-11823	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00004507:20404-20919	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00004511:27548-30054	YP_009220475.1|YP_009220475.1|YP_009220475.1|YP_009220475.1	collagen-like protein	Unclassified	Nimaviridae	Whispovirus	Unclassified
-Cx_tar_K1/tig00004511:29051-29563	YP_009001333.1|YP_009001334.1|YP_009001334.1	collagen triple helix repeat protein	Unclassified	Pithoviridae	Pithovirus	Unclassified
-Cx_tar_K1/tig00004689:71324-71992	YP_004956864.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified
-Cx_tar_K1/tig00004722:54187-54504	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00004786:77562-77876	YP_009182178.1|YP_009337905.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei mivirus
-Cx_tar_K1/tig00004980:45463-45828	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00005048:43375-44160	YP_009507121.1|YP_009507205.1	chromosome segregation protein (SMC)	Pimascovirales	Marseilleviridae	Unclassified	Tunisvirus
-Cx_tar_K1/tig00005318:56105-56449	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00005363:63028-63477	NP_044074.1	MC123R	Chitovirales	Poxviridae	Molluscipoxvirus	Molluscum contagiosum virus
-Cx_tar_K1/tig00005366:37149-37490	YP_009552999.1	ORF34-like protein	Herpesvirales	Unclassified	Unclassified	Unclassified
-Cx_tar_K1/tig00005499:68789-69097	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00005499:69836-70078	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00005499:70210-70584	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00005550:75555-75827	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00005569:66562-66888	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00005703:65967-67595	YP_009182178.1|YP_009337861.1|YP_009333176.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Barnacle mivirus
-Cx_tar_K1/tig00005703:66495-67265	YP_009333448.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Woodlouse peropuvirus
-Cx_tar_K1/tig00005944:12608-13123	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00006088:56969-57310	YP_009337905.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei mivirus
-Cx_tar_K1/tig00006104:10792-11253	YP_009507441.1	putative ubiquitin carboxyl-terminal hydrolase	Algavirales	Phycodnaviridae	Raphidovirus	Unclassified
-Cx_tar_K1/tig00006104:27196-28050	YP_004894802.1|YP_004894802.1|YP_004894388.1	collagen-like protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00006293:26653-27024	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00006338:11084-12094	YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00006371:27990-28277	YP_004301345.1	gp12	Caudovirales	Herelleviridae	Unclassified	Brochothrix virus A9
-Cx_tar_K1/tig00006384:24961-25230	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00006385:31106-31903	YP_009352811.1	Flagellar motor rotation protein MotB	Unclassified	Unclassified	Unclassified	Unclassified
-Cx_tar_K1/tig00006415:6262-6513	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00006468:13647-14180	YP_009666257.1|YP_009177702.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
-Cx_tar_K1/tig00006468:1785-3357	YP_009337090.1|YP_009182178.1|YP_009177702.1|YP_009182178.1|YP_009336947.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus
-Cx_tar_K1/tig00006468:13818-14168	YP_009337181.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Dipteran anphevirus
-Cx_tar_K1/tig00006483:16026-16235	YP_009703687.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-Cx_tar_K1/tig00006483:16663-16905	YP_009703687.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-Cx_tar_K1/tig00006513:28471-28851	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00006538:43636-44151	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00006603:22749-23087	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
-Cx_tar_K1/tig00006744:40926-41219	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00007002:39274-39396	NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00007017:24529-24741	NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00007522:18672-19355	YP_024974.1	polymerase protein	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-Cx_tar_K1/tig00007627:39799-40077	YP_009448799.1	Trimeric LpxA-like	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00007627:40369-40728	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00007658:22055-22429	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00007753:63908-64006	YP_003986983.1	putative AAA family ATPase	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00007756:45254-45352	YP_009163818.1	ORF_057R	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified
-Cx_tar_K1/tig00007817:19643-20212	YP_031695.1	DNA-directed DNA polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-Cx_tar_K1/tig00007825:7471-7569	NP_612245.1	ORF023R	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified
-Cx_tar_K1/tig00007834:22097-22546	YP_007354525.1	ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-Cx_tar_K1/tig00007847:67254-67769	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00007868:25753-26097	YP_009506692.1	neurofilament triplet H1-like protein	Pimascovirales	Iridoviridae	Ranavirus	Frog virus 3
-Cx_tar_K1/tig00007929:27231-27593	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00007938:54072-54179	YP_007354522.1	Serine/Threonine kinase	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-Cx_tar_K1/tig00007941:10739-11440	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-Cx_tar_K1/tig00007990:26073-26489	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00008064:30520-30843	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00008138:4074-4379	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00008463:8088-8498	YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00008603:39521-39910	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00008603:41406-41708	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00008656:8869-9126	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00008671:25751-26035	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00009346:16345-17001	YP_024968.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-Cx_tar_K1/tig00009402:22412-22825	YP_004894344.1	collagen-like protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00009402:24827-25189	YP_009001214.1	collagen triple helix repeat protein	Unclassified	Pithoviridae	Pithovirus	Unclassified
-Cx_tar_K1/tig00009427:37637-37963	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00009505:27260-27388	YP_009052149.1	putative cyclophilin type peptydyl-prolyl	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00009529:8336-8701	YP_009703532.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-Cx_tar_K1/tig00009592:15154-15345	YP_009506692.1	neurofilament triplet H1-like protein	Pimascovirales	Iridoviridae	Ranavirus	Frog virus 3
-Cx_tar_K1/tig00009734:2198-2575	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00009746:16137-16511	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00009746:18572-18988	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00009790:40075-40455	YP_007354525.1	ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-Cx_tar_K1/tig00009837:28792-29130	YP_009703532.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-Cx_tar_K1/tig00009873:26905-27534	YP_009175034.1	polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-Cx_tar_K1/tig00009890:33200-33361	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00009966:42264-42656	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00009966:5593-5958	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00010149:46302-46625	YP_009010305.1	Putative ubiquitin thioesteraseVirion core	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified
-Cx_tar_K1/tig00010286:46661-46948	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00010490:15933-16442	YP_009703687.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-Cx_tar_K1/tig00010501:14425-14793	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00010632:2423-2665	YP_003358216.2	thymidylate kinase	Herpesvirales	Alloherpesviridae	Cyprinivirus	Unclassified
-Cx_tar_K1/tig00010792:34826-35038	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00011275:22993-23229	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00011699:18062-20015	YP_009182178.1|YP_009337090.1|YP_009666257.1|YP_009337429.1|YP_009182178.1|YP_009337090.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
-Cx_tar_K1/tig00011699:18338-18802	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
-Cx_tar_K1/tig00011740:9886-10782	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00011786:39499-40194	YP_009703687.1|YP_009702646.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	Unclassified
-Cx_tar_K1/tig00012053:42783-43352	YP_009703687.1|YP_009703687.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-Cx_tar_K1/tig00012086:22734-23084	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00012170:31218-31325	YP_009151174.1	dihyrdofolate reductase	Caudovirales	Herelleviridae	Unclassified	Bacillus virus Mater
-Cx_tar_K1/tig00012239:3153-3452	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00012373:23581-23982	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00012485:4602-5057	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00012552:28717-29010	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00012575:12400-12840	YP_009325697.1	Ser/Thr-protein phosphatase, 6 regulatory	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified
-Cx_tar_K1/tig00012627:14310-14993	YP_024974.1	polymerase protein	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-Cx_tar_K1/tig00012629:1377-1676	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00012630:53880-54284	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00012630:55534-55935	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00012664:27169-27579	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00012729:8383-8487	YP_009046271.1	ankyrin repeat protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00012957:17784-18167	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00013073:34491-34787	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00013073:37086-37415	YP_007354525.1	ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-Cx_tar_K1/tig00013267:6884-7219	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
-Cx_tar_K1/tig00013334:852-1465	YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00013345:5571-6524	YP_009173431.1	collagen and repeat containing protein	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00013347:79571-79948	YP_007354525.1	ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-Cx_tar_K1/tig00013372:15493-16008	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00013384:10240-10641	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00013412:29319-29825	NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-Cx_tar_K1/tig00013540:6908-7006	NP_932730.1	chitinase	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-Cx_tar_K1/tig00013557:28306-28620	YP_003517785.1|YP_003517785.1	ORF45	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-Cx_tar_K1/tig00013731:4730-5086	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00013825:30770-31060	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00013893:17940-18233	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00013933:7775-8122	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00014057:33286-33696	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00015363:17883-17981	YP_004894551.1	heat shock 70 kDa protein-like protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00015488:11950-12342	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00015536:33098-33394	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00015546:8863-9246	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00015628:38788-39111	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00015746:1368-1670	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00015752:5191-5292	YP_007003686.1	thymidylate kinase	Herpesvirales	Alloherpesviridae	Cyprinivirus	Unclassified
-Cx_tar_K1/tig00015806:2776-3369	YP_009162457.1|YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00015901:1610-1888	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00015923:37644-37922	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00016000:27352-27831	YP_009703687.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-Cx_tar_K1/tig00016518:42367-42792	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00016618:17138-17875	NP_064770.1	internalin	Chitovirales	Poxviridae	Betaentomopoxvirus	Unclassified
-Cx_tar_K1/tig00016925:34290-34565	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00017151:20491-20916	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00017151:22260-22625	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00017215:31182-31565	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00017555:9401-9916	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00019050:25641-27284	YP_009337090.1|YP_009182178.1|YP_009337905.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus
-Cx_tar_K1/tig00019050:25965-26735	YP_009333184.1|YP_009505432.1	putative glycoprotein	Mononegavirales	Artoviridae	Hexartovirus	Barnacle hexartovirus
-Cx_tar_K1/tig00019229:11638-11961	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00019316:17019-17723	YP_004508453.1|YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00019316:17378-17719	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00020013:7122-7508	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00020166:20056-21162	YP_007354197.1	collagen repeat protein	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-Cx_tar_K1/tig00020297:7667-7981	YP_007007445.1	putative nuclease	Caudovirales	Myoviridae	Alcyoneusvirus	Klebsiella virus RaK2
-Cx_tar_K1/tig00020462:8909-9229	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00020489:20051-20452	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00020515:12204-12503	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00020558:7354-7734	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00020579:7675-7908	YP_009176860.1	protein TE5	Herpesvirales	Herpesviridae	Scutavirus	Unclassified
-Cx_tar_K1/tig00020616:4503-4631	YP_009482443.1	S-phase kinase-associated protein 1	Unclassified	Unclassified	Pandoravirus	Unclassified
-Cx_tar_K1/tig00020618:9009-9293	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-Cx_tar_K1/tig00020649:3328-4539	YP_004894802.1	collagen-like protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00020700:6263-6577	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00020791:16609-16944	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00020796:20885-21154	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00020802:17044-17582	YP_007354525.1|YP_007354525.1	ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-Cx_tar_K1/tig00021127:10409-10507	YP_001031228.1	viral inexin-like protein	Unclassified	Polydnaviridae	Ichnovirus	Unclassified
-Cx_tar_K1/tig00021127:11601-11926	YP_001031353.1|YP_001031233.1	viral inexin-like protein	Unclassified	Polydnaviridae	Ichnovirus	Unclassified
-Cx_tar_K1/tig00021296:14069-14443	YP_009176860.1	protein TE5	Herpesvirales	Herpesviridae	Scutavirus	Unclassified
-Cx_tar_K1/tig00021394:4506-4958	YP_007354525.1	ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-Cx_tar_K1/tig00021499:1430-2464	YP_009173439.1	collagen triple helix	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00021584:33524-33622	YP_009046636.1	Histone H2A-like protein	Pimascovirales	Iridoviridae	Iridovirus	Invertebrate iridescent virus 31
-Cx_tar_K1/tig00022056:4518-4730	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00022097:8494-8796	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00022161:5980-6204	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00022243:14979-15329	YP_009010305.1	Putative ubiquitin thioesteraseVirion core	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified
-Cx_tar_K1/tig00022333:24185-24331	NP_039181.1	ankyrin repeat protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00022367:34038-34379	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00022494:9082-9570	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00022604:16459-16548	NP_955110.1	CNPV087 putative glutathione peroxidase	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00022730:47207-47620	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
-Cx_tar_K1/tig00022899:3182-3475	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00023432:21008-21343	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
-Cx_tar_K1/tig00023789:31599-31715	YP_003406874.1	eukaryotic peptide chain release translation	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified
-Cx_tar_K1/tig00023916:32599-32721	YP_009481432.1	Replication factor C subunit	Unclassified	Unclassified	Pandoravirus	Unclassified
-Cx_tar_K1/tig00025104:5142-5489	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00025104:5841-6143	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00025104:6774-7139	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00025289:20997-21338	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00025427:19271-19501	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00025578:684-1250	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00025857:9831-10175	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00025936:13004-13273	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00027672:2013-2654	YP_031610.1	neurofilament triplet H1-like protein	Pimascovirales	Iridoviridae	Ranavirus	Unclassified
-Cx_tar_K1/tig00027880:13085-13381	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00028229:21090-21641	YP_009052475.1|YP_009052475.1	pp1ab	Nidovirales	Tobaniviridae	Pregotovirus	Unclassified
-Cx_tar_K1/tig00028396:6242-6520	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00028439:22727-23002	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00028741:9118-9438	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00028847:2-313	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00028906:3723-3854	YP_249669.1	chitinase	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified
-Cx_tar_K1/tig00029014:12142-12589	YP_009182178.1|YP_009182178.1	putative glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus
-Cx_tar_K1/tig00029014:23604-23876	YP_009666257.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-Cx_tar_K1/tig00029014:3405-3866	YP_009305110.1	ORF3	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00029318:9941-10237	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00029342:24470-25132	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00029723:18794-19462	YP_004956864.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified
-Cx_tar_K1/tig00030228:17435-17971	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00030253:22658-23059	YP_004300280.1	putative rve super family integrase	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus
-Cx_tar_K1/tig00030283:8809-9183	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00030589:10097-10282	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00031441:10748-10846	YP_009665657.1	FirrV-1-B44	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified
-Cx_tar_K1/tig00031487:25881-26141	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00031541:10986-11120	YP_009052149.1	putative cyclophilin type peptydyl-prolyl	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00031817:2047-2346	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00031979:8752-9138	NP_671813.1	DNA polymerase	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified
-Cx_tar_K1/tig00032177:14193-15053	YP_009220475.1|YP_009220475.1|YP_009220475.1	collagen-like protein	Unclassified	Nimaviridae	Whispovirus	Unclassified
-Cx_tar_K1/tig00032177:15475-15759	YP_009220475.1|YP_009220475.1	collagen-like protein	Unclassified	Nimaviridae	Whispovirus	Unclassified
-Cx_tar_K1/tig00032177:15077-15511	YP_009001332.1	collagen triple helix repeat protein	Unclassified	Pithoviridae	Pithovirus	Unclassified
-Cx_tar_K1/tig00032401:14911-15171	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00032907:8235-8588	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
-Cx_tar_K1/tig00033311:2182-2760	YP_009173439.1	collagen triple helix	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00033311:2236-2799	YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00033535:16214-16699	YP_009507441.1	putative ubiquitin carboxyl-terminal hydrolase	Algavirales	Phycodnaviridae	Raphidovirus	Unclassified
-Cx_tar_K1/tig00034045:15270-17171	YP_009666257.1|YP_009182178.1|YP_009337429.1|YP_009337861.1	glycoprotein	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus
-Cx_tar_K1/tig00034045:15882-16352	YP_009505432.1	putative glycoprotein	Mononegavirales	Artoviridae	Peropuvirus	Pteromalus puparum peropuvirus
-Cx_tar_K1/tig00034045:15471-17111	YP_009337120.1	putative glycoprotein	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus
-Cx_tar_K1/tig00034074:19133-19363	YP_009173411.1	Ubiquitin	Algavirales	Phycodnaviridae	Unclassified	Unclassified
-Cx_tar_K1/tig00034074:18678-19103	NP_955119.1|YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00034074:19361-20263	YP_009447989.1|NP_955119.1|YP_009447989.1|NP_955119.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00034145:19682-19987	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00034878:31926-32291	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00034952:22351-22674	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00035621:691-1059	YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00036199:17598-18173	YP_009162457.1|YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00036546:8880-9434	YP_009703687.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-Cx_tar_K1/tig00059178:6867-7169	YP_004894344.1	collagen-like protein	Imitervirales	Mimiviridae	Mimivirus	Unclassified
-Cx_tar_K1/tig00061857:31065-31334	YP_003734319.1	tail fiber-like protein	Caudovirales	Myoviridae	Dhakavirus	Escherichia virus IME08
-Cx_tar_K1/tig00085213:6777-7094	YP_007354525.1	ubiquitin-conjugating enzyme E2	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-Cx_tar_K1/tig00335073:195186-195602	YP_009703687.1	pB602L	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus
-Cx_tar_K1/tig00335097:23242-23892	YP_024968.1	polymerase	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus
-Cx_tar_K1/tig00335114:3969-4076	YP_009665914.1	protein tyrosine phosphatase	Unclassified	Polydnaviridae	Bracovirus	Unclassified
-Cx_tar_K1/tig00335115:2515-2622	YP_009665914.1	protein tyrosine phosphatase	Unclassified	Polydnaviridae	Bracovirus	Unclassified
-Cx_tar_K1/tig00335147:81950-82423	YP_009448153.1	ankyrin repeat family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-Cx_tar_K1/tig00335494:9385-9651	YP_009162457.1	low complexity protein	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus
-Cx_tar_K1/tig00335543:585-1100	YP_009259541.1	polymerase	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+Cx_tar_K1/tig00000053:346620-347039	419	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00000053:348399-348710	311	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00000062:105658-105999	341	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000062:132539-132853	314	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00000065:68261-68587	326	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00000075:335960-336382	422	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00000126:263976-264341	365	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000140:229129-229797	668	YP_004956864.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified	pos
+Cx_tar_K1/tig00000142:16990-17088	98	YP_008992233.1	ptp-1	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+Cx_tar_K1/tig00000238:71922-72437	515	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00000246:32677-33240	563	YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00000260:148979-149290	311	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000301:62162-62632	470	YP_009004875.1	RNA 2\'-phosphotransferase	Viruses	Caudovirales	Myoviridae	Agricanvirus	Erwinia virus Ea35-70	pos
+Cx_tar_K1/tig00000308:103141-103629	488	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000312:177860-178306	446	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000336:43031-43342	311	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000370:77831-78289	458	YP_007007445.1	putative nuclease	Viruses	Caudovirales	Myoviridae	Alcyoneusvirus	Klebsiella virus RaK2	neg
+Cx_tar_K1/tig00000405:21217-21534	317	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000413:204940-205254	314	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000440:209808-210140	332	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00000447:105578-106078	500	YP_009162457.1|YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000457:30265-30933	668	YP_004894344.1|YP_004894344.1	collagen-like protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	neg
+Cx_tar_K1/tig00000468:166787-167176	389	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00000473:161363-161698	335	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000497:74243-75631	1388	YP_004894338.1	collagen-like protein 7	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	neg
+Cx_tar_K1/tig00000557:159125-159475	350	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000572:127596-127949	353	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00000588:190087-190185	98	NP_057866.1	ABL	Viruses	Ortervirales	Retroviridae	Gammaretrovirus	Unclassified	pos
+Cx_tar_K1/tig00000652:165797-167767*	1970	YP_009177702.1|YP_009182178.1|YP_009337429.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus	neg
+Cx_tar_K1/tig00000652:166058-167767	1709	YP_009337120.1	putative glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus	neg
+Cx_tar_K1/tig00000652:166382-167170	788	YP_009333448.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Peropuvirus	Woodlouse peropuvirus	neg
+Cx_tar_K1/tig00000796:49394-49489	95	YP_007354522.1	Serine/Threonine kinase	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	pos
+Cx_tar_K1/tig00000797:17596-18057	461	YP_009165599.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Parahepadnavirus	Unclassified	neg
+Cx_tar_K1/tig00000869:7525-8031	506	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00000882:62378-62731	353	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	neg
+Cx_tar_K1/tig00000913:25847-26515	668	YP_004956864.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified	pos
+Cx_tar_K1/tig00000924:36615-37037	422	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00000949:154709-155290	581	YP_009703687.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+Cx_tar_K1/tig00000990:81505-81840	335	YP_004300280.1	putative rve super family integrase	Viruses	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus	pos
+Cx_tar_K1/tig00001038:39227-39544	317	YP_004894344.1	collagen-like protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+Cx_tar_K1/tig00001076:108234-108515	281	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00001231:32051-32476	425	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	neg
+Cx_tar_K1/tig00001298:88672-89055	383	YP_004894344.1	collagen-like protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+Cx_tar_K1/tig00001336:164408-164899	491	YP_009621065.1|YP_009621065.1	L-shaped tail fiber protein	Viruses	Caudovirales	Demerecviridae	Sugarlandvirus	Klebsiella virus Sugarland	pos
+Cx_tar_K1/tig00001351:23548-23979	431	NP_671813.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+Cx_tar_K1/tig00001355:29790-30212	422	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00001363:33936-34070	134	YP_009046285.1	GNS1/SUR4	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00001392:83283-83615	332	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00001407:19372-19707	335	YP_004300280.1	putative rve super family integrase	Viruses	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus	neg
+Cx_tar_K1/tig00001482:18382-18828	446	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00001492:94344-95087	743	YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00001492:94422-95168*	746	YP_003986692.1	collagen-like protein 2	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+Cx_tar_K1/tig00001511:71775-72098	323	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00001526:130279-130584	305	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00001526:140164-140592	428	YP_009702646.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	neg
+Cx_tar_K1/tig00001555:5444-5746	302	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00001598:160686-161132	446	YP_008857283.1	putative tail fiber protein	Viruses	Caudovirales	Myoviridae	Seunavirus	Escherichia virus 4MG	pos
+Cx_tar_K1/tig00001690:73645-73743	98	YP_009001498.1	putative ATP-binding cassette transporter	Viruses	Chitovirales	Poxviridae	Alphaentomopoxvirus	Unclassified	pos
+Cx_tar_K1/tig00001725:53891-54274	383	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00001815:106112-106417	305	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00001815:107965-108303	338	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00001860:152171-152749	578	YP_004894344.1	collagen-like protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+Cx_tar_K1/tig00001861:123945-124250	305	YP_009046217.1	ankyrin repeat protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00001894:123143-123649	506	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00001938:81374-81973	599	YP_009506692.1	neurofilament triplet H1-like protein	Viruses	Pimascovirales	Iridoviridae	Ranavirus	Frog virus 3	neg
+Cx_tar_K1/tig00001945:5427-5801	374	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00001945:65201-65482	281	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00001994:121985-122344	359	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00002058:115302-115757	455	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00002093:51197-51538	341	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00002120:11985-12413	428	NP_044074.1	MC123R	Viruses	Chitovirales	Poxviridae	Molluscipoxvirus	Molluscum contagiosum virus	pos
+Cx_tar_K1/tig00002219:26395-26712	317	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00002250:28397-28879	482	YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00002346:54964-55302	338	YP_004300280.1	putative rve super family integrase	Viruses	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus	pos
+Cx_tar_K1/tig00002350:38297-39748*	1451	YP_003734301.1	Wac fibritin neck whiskers protein	Viruses	Caudovirales	Myoviridae	Dhakavirus	Escherichia virus IME08	neg
+Cx_tar_K1/tig00002350:38477-39702	1225	YP_009507121.1|YP_004347081.1|YP_004347081.1	chromosome segregation protein (SMC)	Viruses	Pimascovirales	Marseilleviridae	Unclassified	Tunisvirus	neg
+Cx_tar_K1/tig00002365:119496-119879	383	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00002624:72649-73164	515	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00002657:153641-154594*	953	YP_004508453.1|YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00002657:154115-154585	470	YP_003986692.1	collagen-like protein 2	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+Cx_tar_K1/tig00002668:32515-32799	284	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00002681:107720-108019	299	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00002693:45197-45628	431	NP_671813.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+Cx_tar_K1/tig00002738:105203-105790	587	YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00002738:95913-96287	374	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00002738:97862-98122	260	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00002767:40048-40335	287	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00002800:8215-8724	509	YP_009703687.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+Cx_tar_K1/tig00002802:84176-84571	395	YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00003001:22618-23070	452	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00003048:2597-4522*	1925	YP_009177714.1|YP_009666257.1|YP_009337861.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Argas mivirus	neg
+Cx_tar_K1/tig00003048:2816-4450	1634	YP_009337120.1	putative glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus	neg
+Cx_tar_K1/tig00003048:3146-3718	572	YP_009333448.1|YP_009505432.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Peropuvirus	Woodlouse peropuvirus	neg
+Cx_tar_K1/tig00003102:42762-43568	806	YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	neg
+Cx_tar_K1/tig00003120:99718-100116	398	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00003370:122907-123098	191	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00003372:555-1274	719	YP_031695.1	DNA-directed DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	pos
+Cx_tar_K1/tig00003406:14676-15047	371	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00003413:45547-46371	824	NP_041141.2	ORF50	Viruses	Herpesvirales	Alloherpesviridae	Ictalurivirus	Unclassified	pos
+Cx_tar_K1/tig00003421:3089-3406	317	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00003482:52495-52908	413	YP_007354525.1	ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	pos
+Cx_tar_K1/tig00003509:66182-66517	335	YP_003986560.1	collagen-like protein 1	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	neg
+Cx_tar_K1/tig00003533:13094-13525	431	NP_671813.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+Cx_tar_K1/tig00003569:97945-98403	458	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00003616:30617-30913	296	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00003867:33979-34503	524	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00003899:44778-45011	233	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00003931:20633-20908	275	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00003937:62594-62926	332	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00003964:84397-84768	371	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00003982:3884-4195	311	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00004007:48415-48714	299	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00004009:87779-88381	602	YP_004508453.1|YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	neg
+Cx_tar_K1/tig00004066:98753-99157	404	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00004078:10607-11035	428	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	neg
+Cx_tar_K1/tig00004112:3029-3148	119	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00004112:3259-4053	794	NP_955119.1|NP_955119.1|NP_955119.1|YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00004112:4170-5996	1826	YP_009447989.1|NP_955119.1|YP_009447989.1|NP_955119.1|NP_955119.1|YP_009447989.1|NP_955119.1|YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00004489:11509-11823	314	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00004489:22227-23294	1067	YP_004508453.1|YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00004507:20404-20919	515	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00004511:27548-30054*	2506	YP_009220475.1|YP_009220475.1|YP_009220475.1|YP_009220475.1	collagen-like protein	Viruses	Unclassified	Nimaviridae	Whispovirus	Unclassified	pos
+Cx_tar_K1/tig00004511:29051-29563	512	YP_009001333.1|YP_009001334.1|YP_009001334.1	collagen triple helix repeat protein	Viruses	Unclassified	Pithoviridae	Pithovirus	Unclassified	pos
+Cx_tar_K1/tig00004689:71324-71992	668	YP_004956864.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified	pos
+Cx_tar_K1/tig00004722:54187-54504	317	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00004786:77562-77876	314	YP_009182178.1|YP_009337905.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei mivirus	pos
+Cx_tar_K1/tig00004980:45463-45828	365	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00005048:43375-44160	785	YP_009507121.1|YP_009507205.1	chromosome segregation protein (SMC)	Viruses	Pimascovirales	Marseilleviridae	Unclassified	Tunisvirus	neg
+Cx_tar_K1/tig00005318:56105-56449	344	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00005363:63028-63477	449	NP_044074.1	MC123R	Viruses	Chitovirales	Poxviridae	Molluscipoxvirus	Molluscum contagiosum virus	pos
+Cx_tar_K1/tig00005366:37149-37490	341	YP_009552999.1	ORF34-like protein	Viruses	Herpesvirales	Unclassified	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00005499:68789-69097	308	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00005499:69836-70078	242	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00005499:70210-70584	374	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00005550:75555-75827	272	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00005569:66562-66888	326	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00005703:65967-67595*	1628	YP_009182178.1|YP_009337861.1|YP_009333176.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Barnacle mivirus	pos
+Cx_tar_K1/tig00005703:66495-67265	770	YP_009333448.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Peropuvirus	Woodlouse peropuvirus	pos
+Cx_tar_K1/tig00005944:12608-13123	515	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00006088:56969-57310	341	YP_009337905.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei mivirus	neg
+Cx_tar_K1/tig00006104:10792-11253	461	YP_009507441.1	putative ubiquitin carboxyl-terminal hydrolase	Viruses	Algavirales	Phycodnaviridae	Raphidovirus	Unclassified	pos
+Cx_tar_K1/tig00006104:27196-28050	854	YP_004894802.1|YP_004894802.1|YP_004894388.1	collagen-like protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+Cx_tar_K1/tig00006293:26653-27024	371	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00006338:11084-12094	1010	YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00006371:27990-28277	287	YP_004301345.1	gp12	Viruses	Caudovirales	Herelleviridae	Unclassified	Brochothrix virus A9	neg
+Cx_tar_K1/tig00006384:24961-25230	269	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00006385:31106-31903	797	YP_009352811.1	Flagellar motor rotation protein MotB	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00006415:6262-6513	251	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00006468:13647-14180	533	YP_009666257.1|YP_009177702.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus	neg
+Cx_tar_K1/tig00006468:13818-14168	350	YP_009337181.1	putative glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Dipteran anphevirus	neg
+Cx_tar_K1/tig00006468:1785-3357	1572	YP_009337090.1|YP_009182178.1|YP_009177702.1|YP_009182178.1|YP_009336947.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Bole mivirus	pos
+Cx_tar_K1/tig00006483:16026-16235	209	YP_009703687.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+Cx_tar_K1/tig00006483:16663-16905	242	YP_009703687.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+Cx_tar_K1/tig00006513:28471-28851	380	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00006538:43636-44151	515	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00006603:22749-23087	338	YP_004300280.1	putative rve super family integrase	Viruses	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus	pos
+Cx_tar_K1/tig00006744:40926-41219	293	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00007002:39274-39396	122	NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00007017:24529-24741	212	NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00007522:18672-19355	683	YP_024974.1	polymerase protein	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	pos
+Cx_tar_K1/tig00007627:39799-40077	278	YP_009448799.1	Trimeric LpxA-like	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00007627:40369-40728	359	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00007658:22055-22429	374	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00007753:63908-64006	98	YP_003986983.1	putative AAA family ATPase	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	neg
+Cx_tar_K1/tig00007756:45254-45352	98	YP_009163818.1	ORF_057R	Viruses	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified	pos
+Cx_tar_K1/tig00007817:19643-20212	569	YP_031695.1	DNA-directed DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	pos
+Cx_tar_K1/tig00007825:7471-7569	98	NP_612245.1	ORF023R	Viruses	Pimascovirales	Iridoviridae	Megalocytivirus	Unclassified	neg
+Cx_tar_K1/tig00007834:22097-22546	449	YP_007354525.1	ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	pos
+Cx_tar_K1/tig00007847:67254-67769	515	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00007868:25753-26097	344	YP_009506692.1	neurofilament triplet H1-like protein	Viruses	Pimascovirales	Iridoviridae	Ranavirus	Frog virus 3	neg
+Cx_tar_K1/tig00007929:27231-27593	362	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00007938:54072-54179	107	YP_007354522.1	Serine/Threonine kinase	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	neg
+Cx_tar_K1/tig00007941:10739-11440	701	YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	pos
+Cx_tar_K1/tig00007990:26073-26489	416	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00008064:30520-30843	323	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00008138:4074-4379	305	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00008463:8088-8498	410	YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	neg
+Cx_tar_K1/tig00008603:39521-39910	389	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00008603:41406-41708	302	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00008656:8869-9126	257	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00008671:25751-26035	284	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00009346:16345-17001	656	YP_024968.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	pos
+Cx_tar_K1/tig00009402:22412-22825	413	YP_004894344.1	collagen-like protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+Cx_tar_K1/tig00009402:24827-25189	362	YP_009001214.1	collagen triple helix repeat protein	Viruses	Unclassified	Pithoviridae	Pithovirus	Unclassified	pos
+Cx_tar_K1/tig00009427:37637-37963	326	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00009505:27260-27388	128	YP_009052149.1	putative cyclophilin type peptydyl-prolyl	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+Cx_tar_K1/tig00009529:8336-8701	365	YP_009703532.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	neg
+Cx_tar_K1/tig00009592:15154-15345	191	YP_009506692.1	neurofilament triplet H1-like protein	Viruses	Pimascovirales	Iridoviridae	Ranavirus	Frog virus 3	neg
+Cx_tar_K1/tig00009734:2198-2575	377	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00009746:16137-16511	374	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00009746:18572-18988	416	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00009790:40075-40455	380	YP_007354525.1	ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	pos
+Cx_tar_K1/tig00009837:28792-29130	338	YP_009703532.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+Cx_tar_K1/tig00009873:26905-27534	629	YP_009175034.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+Cx_tar_K1/tig00009890:33200-33361	161	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+Cx_tar_K1/tig00009966:42264-42656	392	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00009966:5593-5958	365	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00010149:46302-46625	323	YP_009010305.1	Putative ubiquitin thioesteraseVirion core	Viruses	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified	pos
+Cx_tar_K1/tig00010286:46661-46948	287	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00010490:15933-16442	509	YP_009703687.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+Cx_tar_K1/tig00010501:14425-14793	368	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00010632:2423-2665	242	YP_003358216.2	thymidylate kinase	Viruses	Herpesvirales	Alloherpesviridae	Cyprinivirus	Unclassified	neg
+Cx_tar_K1/tig00010792:34826-35038	212	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00011275:22993-23229	236	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00011699:18062-20015*	1953	YP_009182178.1|YP_009337090.1|YP_009666257.1|YP_009337429.1|YP_009182178.1|YP_009337090.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus	neg
+Cx_tar_K1/tig00011699:18338-18802	464	YP_009337120.1	putative glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus	neg
+Cx_tar_K1/tig00011740:9886-10782	896	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00011786:39499-40194	695	YP_009703687.1|YP_009702646.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	neg
+Cx_tar_K1/tig00012053:42783-43352	569	YP_009703687.1|YP_009703687.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+Cx_tar_K1/tig00012086:22734-23084	350	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00012170:31218-31325	107	YP_009151174.1	dihyrdofolate reductase	Viruses	Caudovirales	Herelleviridae	Unclassified	Bacillus virus Mater	pos
+Cx_tar_K1/tig00012239:3153-3452	299	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00012373:23581-23982	401	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00012485:4602-5057	455	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00012552:28717-29010	293	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00012575:12400-12840	440	YP_009325697.1	Ser/Thr-protein phosphatase, 6 regulatory	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified	neg
+Cx_tar_K1/tig00012627:14310-14993	683	YP_024974.1	polymerase protein	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	pos
+Cx_tar_K1/tig00012629:1377-1676	299	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00012630:53880-54284	404	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00012630:55534-55935	401	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00012664:27169-27579	410	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00012729:8383-8487	104	YP_009046271.1	ankyrin repeat protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
+Cx_tar_K1/tig00012957:17784-18167	383	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00013073:34491-34787	296	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00013073:37086-37415	329	YP_007354525.1	ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	neg
+Cx_tar_K1/tig00013267:6884-7219	335	YP_004300280.1	putative rve super family integrase	Viruses	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus	pos
+Cx_tar_K1/tig00013334:852-1465	613	YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00013345:5571-6524	953	YP_009173431.1	collagen and repeat containing protein	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00013347:79571-79948	377	YP_007354525.1	ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	neg
+Cx_tar_K1/tig00013372:15493-16008	515	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00013384:10240-10641	401	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00013412:29319-29825	506	NP_671813.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+Cx_tar_K1/tig00013540:6908-7006	98	NP_932730.1	chitinase	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	neg
+Cx_tar_K1/tig00013557:28306-28620	314	YP_003517785.1|YP_003517785.1	ORF45	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+Cx_tar_K1/tig00013731:4730-5086	356	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00013825:30770-31060	290	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00013893:17940-18233	293	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00013933:7775-8122	347	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00014057:33286-33696	410	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00015363:17883-17981	98	YP_004894551.1	heat shock 70 kDa protein-like protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	neg
+Cx_tar_K1/tig00015488:11950-12342	392	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00015536:33098-33394	296	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00015546:8863-9246	383	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00015628:38788-39111	323	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00015746:1368-1670	302	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00015752:5191-5292	101	YP_007003686.1	thymidylate kinase	Viruses	Herpesvirales	Alloherpesviridae	Cyprinivirus	Unclassified	neg
+Cx_tar_K1/tig00015806:2776-3369	593	YP_009162457.1|YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00015901:1610-1888	278	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00015923:37644-37922	278	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00016000:27352-27831	479	YP_009703687.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+Cx_tar_K1/tig00016518:42367-42792	425	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	neg
+Cx_tar_K1/tig00016618:17138-17875	737	NP_064770.1	internalin	Viruses	Chitovirales	Poxviridae	Betaentomopoxvirus	Unclassified	pos
+Cx_tar_K1/tig00016925:34290-34565	275	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00017151:20491-20916	425	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00017151:22260-22625	365	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00017215:31182-31565	383	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00017555:9401-9916	515	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00019050:25641-27284*	1643	YP_009337090.1|YP_009182178.1|YP_009337905.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Hubei odonate mivirus	neg
+Cx_tar_K1/tig00019050:25965-26735	770	YP_009333184.1|YP_009505432.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Hexartovirus	Barnacle hexartovirus	neg
+Cx_tar_K1/tig00019229:11638-11961	323	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00019316:17019-17723*	704	YP_004508453.1|YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	neg
+Cx_tar_K1/tig00019316:17378-17719	341	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00020013:7122-7508	386	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00020166:20056-21162	1106	YP_007354197.1	collagen repeat protein	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	pos
+Cx_tar_K1/tig00020297:7667-7981	314	YP_007007445.1	putative nuclease	Viruses	Caudovirales	Myoviridae	Alcyoneusvirus	Klebsiella virus RaK2	neg
+Cx_tar_K1/tig00020462:8909-9229	320	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00020489:20051-20452	401	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00020515:12204-12503	299	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00020558:7354-7734	380	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00020579:7675-7908	233	YP_009176860.1	protein TE5	Viruses	Herpesvirales	Herpesviridae	Scutavirus	Unclassified	pos
+Cx_tar_K1/tig00020616:4503-4631	128	YP_009482443.1	S-phase kinase-associated protein 1	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+Cx_tar_K1/tig00020618:9009-9293	284	YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	pos
+Cx_tar_K1/tig00020649:3328-4539	1211	YP_004894802.1	collagen-like protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+Cx_tar_K1/tig00020700:6263-6577	314	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00020791:16609-16944	335	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00020796:20885-21154	269	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00020802:17044-17582	538	YP_007354525.1|YP_007354525.1	ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	pos
+Cx_tar_K1/tig00021127:10409-10507	98	YP_001031228.1	viral inexin-like protein	Viruses	Unclassified	Polydnaviridae	Ichnovirus	Unclassified	pos
+Cx_tar_K1/tig00021127:11601-11926	325	YP_001031353.1|YP_001031233.1	viral inexin-like protein	Viruses	Unclassified	Polydnaviridae	Ichnovirus	Unclassified	pos
+Cx_tar_K1/tig00021296:14069-14443	374	YP_009176860.1	protein TE5	Viruses	Herpesvirales	Herpesviridae	Scutavirus	Unclassified	neg
+Cx_tar_K1/tig00021394:4506-4958	452	YP_007354525.1	ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	neg
+Cx_tar_K1/tig00021499:1430-2464	1034	YP_009173439.1	collagen triple helix	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+Cx_tar_K1/tig00021584:33524-33622	98	YP_009046636.1	Histone H2A-like protein	Viruses	Pimascovirales	Iridoviridae	Iridovirus	Invertebrate iridescent virus 31	pos
+Cx_tar_K1/tig00022056:4518-4730	212	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00022097:8494-8796	302	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00022161:5980-6204	224	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00022243:14979-15329	350	YP_009010305.1	Putative ubiquitin thioesteraseVirion core	Viruses	Pimascovirales	Iridoviridae	Chloriridovirus	Unclassified	pos
+Cx_tar_K1/tig00022333:24185-24331	146	NP_039181.1	ankyrin repeat protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00022367:34038-34379	341	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00022494:9082-9570	488	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00022604:16459-16548	89	NP_955110.1	CNPV087 putative glutathione peroxidase	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00022730:47207-47620	413	YP_004300280.1	putative rve super family integrase	Viruses	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus	pos
+Cx_tar_K1/tig00022899:3182-3475	293	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00023432:21008-21343	335	YP_004300280.1	putative rve super family integrase	Viruses	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus	pos
+Cx_tar_K1/tig00023789:31599-31715	116	YP_003406874.1	eukaryotic peptide chain release translation	Viruses	Pimascovirales	Marseilleviridae	Marseillevirus	Unclassified	neg
+Cx_tar_K1/tig00023916:32599-32721	122	YP_009481432.1	Replication factor C subunit	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+Cx_tar_K1/tig00025104:5142-5489	347	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00025104:5841-6143	302	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00025104:6774-7139	365	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00025289:20997-21338	341	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00025427:19271-19501	230	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00025578:684-1250	566	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00025857:9831-10175	344	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00025936:13004-13273	269	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00027672:2013-2654	641	YP_031610.1	neurofilament triplet H1-like protein	Viruses	Pimascovirales	Iridoviridae	Ranavirus	Unclassified	pos
+Cx_tar_K1/tig00027880:13085-13381	296	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00028229:21090-21641	551	YP_009052475.1|YP_009052475.1	pp1ab	Viruses	Nidovirales	Tobaniviridae	Pregotovirus	Unclassified	pos
+Cx_tar_K1/tig00028396:6242-6520	278	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00028439:22727-23002	275	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00028741:9118-9438	320	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00028847:2-313	311	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00028906:3723-3854	131	YP_249669.1	chitinase	Viruses	Unclassified	Baculoviridae	Alphabaculovirus	Unclassified	pos
+Cx_tar_K1/tig00029014:12142-12589	447	YP_009182178.1|YP_009182178.1	putative glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Imjin mivirus	pos
+Cx_tar_K1/tig00029014:23604-23876	272	YP_009666257.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	pos
+Cx_tar_K1/tig00029014:3405-3866	461	YP_009305110.1	ORF3	Viruses	Mononegavirales	Rhabdoviridae	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00029318:9941-10237	296	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00029342:24470-25132	662	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00029723:18794-19462	668	YP_004956864.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Unclassified	pos
+Cx_tar_K1/tig00030228:17435-17971	536	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00030253:22658-23059	401	YP_004300280.1	putative rve super family integrase	Viruses	Priklausovirales	Lavidaviridae	Mavirus	Cafeteriavirus-dependent mavirus	pos
+Cx_tar_K1/tig00030283:8809-9183	374	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00030589:10097-10282	185	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00031441:10748-10846	98	YP_009665657.1	FirrV-1-B44	Viruses	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified	neg
+Cx_tar_K1/tig00031487:25881-26141	260	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00031541:10986-11120	134	YP_009052149.1	putative cyclophilin type peptydyl-prolyl	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00031817:2047-2346	299	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00031979:8752-9138	386	NP_671813.1	DNA polymerase	Viruses	Blubervirales	Hepadnaviridae	Orthohepadnavirus	Unclassified	pos
+Cx_tar_K1/tig00032177:14193-15053	860	YP_009220475.1|YP_009220475.1|YP_009220475.1	collagen-like protein	Viruses	Unclassified	Nimaviridae	Whispovirus	Unclassified	neg
+Cx_tar_K1/tig00032177:15077-15511	434	YP_009001332.1	collagen triple helix repeat protein	Viruses	Unclassified	Pithoviridae	Pithovirus	Unclassified	neg
+Cx_tar_K1/tig00032177:15475-15759	284	YP_009220475.1|YP_009220475.1	collagen-like protein	Viruses	Unclassified	Nimaviridae	Whispovirus	Unclassified	neg
+Cx_tar_K1/tig00032401:14911-15171	260	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00032907:8235-8588	353	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos
+Cx_tar_K1/tig00033311:2182-2760*	578	YP_009173439.1	collagen triple helix	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	neg
+Cx_tar_K1/tig00033311:2236-2799	563	YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	neg
+Cx_tar_K1/tig00033535:16214-16699	485	YP_009507441.1	putative ubiquitin carboxyl-terminal hydrolase	Viruses	Algavirales	Phycodnaviridae	Raphidovirus	Unclassified	pos
+Cx_tar_K1/tig00034045:15270-17171*	1901	YP_009666257.1|YP_009182178.1|YP_009337429.1|YP_009337861.1	glycoprotein	Viruses	Jingchuvirales	Chuviridae	Mivirus	Cockroach mivirus	neg
+Cx_tar_K1/tig00034045:15471-17111	1640	YP_009337120.1	putative glycoprotein	Viruses	Mononegavirales	Xinmoviridae	Anphevirus	Odonate anphevirus	neg
+Cx_tar_K1/tig00034045:15882-16352	470	YP_009505432.1	putative glycoprotein	Viruses	Mononegavirales	Artoviridae	Peropuvirus	Pteromalus puparum peropuvirus	neg
+Cx_tar_K1/tig00034074:18678-19103	425	NP_955119.1|YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00034074:19133-19363	230	YP_009173411.1	Ubiquitin	Viruses	Algavirales	Phycodnaviridae	Unclassified	Unclassified	pos
+Cx_tar_K1/tig00034074:19361-20263	902	YP_009447989.1|NP_955119.1|YP_009447989.1|NP_955119.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00034145:19682-19987	305	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00034878:31926-32291	365	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00034952:22351-22674	323	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00035621:691-1059	368	YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	neg
+Cx_tar_K1/tig00036199:17598-18173	575	YP_009162457.1|YP_009162457.1|YP_009162457.1|YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00036546:8880-9434	554	YP_009703687.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	pos
+Cx_tar_K1/tig00059178:6867-7169	302	YP_004894344.1	collagen-like protein	Viruses	Imitervirales	Mimiviridae	Mimivirus	Unclassified	pos
+Cx_tar_K1/tig00061857:31065-31334	269	YP_003734319.1	tail fiber-like protein	Viruses	Caudovirales	Myoviridae	Dhakavirus	Escherichia virus IME08	pos
+Cx_tar_K1/tig00085213:6777-7094	317	YP_007354525.1	ubiquitin-conjugating enzyme E2	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	neg
+Cx_tar_K1/tig00335073:195186-195602	416	YP_009703687.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	African swine fever virus	neg
+Cx_tar_K1/tig00335097:23242-23892	650	YP_024968.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Avihepadnavirus	Duck hepatitis B virus	pos
+Cx_tar_K1/tig00335114:3969-4076	107	YP_009665914.1	protein tyrosine phosphatase	Viruses	Unclassified	Polydnaviridae	Bracovirus	Unclassified	pos
+Cx_tar_K1/tig00335115:2515-2622	107	YP_009665914.1	protein tyrosine phosphatase	Viruses	Unclassified	Polydnaviridae	Bracovirus	Unclassified	pos
+Cx_tar_K1/tig00335147:81950-82423	473	YP_009448153.1	ankyrin repeat family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+Cx_tar_K1/tig00335494:9385-9651	266	YP_009162457.1	low complexity protein	Viruses	Chitovirales	Poxviridae	Salmonpoxvirus	Salmon gillpox virus	pos
+Cx_tar_K1/tig00335543:585-1100	515	YP_009259541.1	polymerase	Viruses	Blubervirales	Hepadnaviridae	Metahepadnavirus	Blue gill hepatitis B virus	pos

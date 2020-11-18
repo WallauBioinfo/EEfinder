@@ -1,8 +1,8 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_mel_C2/AXCO02001633.1:4323-4448	NP_077493.1	EsV-1-8	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified
-An_mel_C2/AXCO02001927.1:26615-26920	YP_009665584.1	ankyrin repeat PH and SEC7 domain containing	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified
-An_mel_C2/AXCO02004504.1:18452-18682	YP_009447989.1	ubiquitin family protein	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_mel_C2/AXCO02005126.1:2044-2151	YP_628286.1	protein-tyrosine kinase	Ortervirales	Retroviridae	Alpharetrovirus	Unclassified
-An_mel_C2/AXCO02007373.1:10151-11083	YP_009361798.1	Histidinol-phosphate aminotransferase	Unclassified	Unclassified	Unclassified	Unclassified
-An_mel_C2/AXCO02011520.1:8107-8502	YP_004508453.1	collagen triple helix repeat protein	Caudovirales	Myoviridae	Unclassified	Unclassified
-An_mel_C2/AXCO02011520.1:8320-8496	YP_009032490.1	collagen-like protein	Caudovirales	Siphoviridae	Fromanvirus	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_mel_C2/AXCO02001633.1:4323-4448	125	NP_077493.1	EsV-1-8	Viruses	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified	neg
+An_mel_C2/AXCO02001927.1:26615-26920	305	YP_009665584.1	ankyrin repeat PH and SEC7 domain containing	Viruses	Algavirales	Phycodnaviridae	Chlorovirus	Unclassified	pos
+An_mel_C2/AXCO02004504.1:18452-18682	230	YP_009447989.1	ubiquitin family protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_mel_C2/AXCO02005126.1:2044-2151	107	YP_628286.1	protein-tyrosine kinase	Viruses	Ortervirales	Retroviridae	Alpharetrovirus	Unclassified	pos
+An_mel_C2/AXCO02007373.1:10151-11083	932	YP_009361798.1	Histidinol-phosphate aminotransferase	Viruses	Unclassified	Unclassified	Unclassified	Unclassified	pos
+An_mel_C2/AXCO02011520.1:8107-8502*	395	YP_004508453.1	collagen triple helix repeat protein	Viruses	Caudovirales	Myoviridae	Unclassified	Unclassified	pos
+An_mel_C2/AXCO02011520.1:8320-8496	176	YP_009032490.1	collagen-like protein	Viruses	Caudovirales	Siphoviridae	Fromanvirus	Unclassified	pos

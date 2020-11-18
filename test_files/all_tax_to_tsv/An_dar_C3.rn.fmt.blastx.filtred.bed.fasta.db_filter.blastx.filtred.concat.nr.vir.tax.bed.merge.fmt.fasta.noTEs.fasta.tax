@@ -1,6 +1,6 @@
-Element-ID	Protein-IDs	ProteinProducts	Order	Family	Genus	Species
-An_dar_C3/contig_1044:2-454	NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Chitovirales	Poxviridae	Avipoxvirus	Unclassified
-An_dar_C3/contig_1150:33766-33894	YP_008437740.2	Ser/thr kinase	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_dar_C3/contig_1502:20046-20150	YP_009483380.1	Glycosyl hydrolase family 1 protein	Unclassified	Unclassified	Pandoravirus	Unclassified
-An_dar_C3/contig_1708:14002-14100	YP_007354326.1	Ubiquitin-conjugating enzyme	Imitervirales	Mimiviridae	Unclassified	Moumouvirus
-An_dar_C3/contig_185:5852-5959	NP_077493.1	EsV-1-8	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified
+Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
+An_dar_C3/contig_1044:2-454	452	NP_955119.1|NP_955119.1	CNPV096 ubiquitin	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	pos
+An_dar_C3/contig_1150:33766-33894	128	YP_008437740.2	Ser/thr kinase	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	pos
+An_dar_C3/contig_1502:20046-20150	104	YP_009483380.1	Glycosyl hydrolase family 1 protein	Viruses	Unclassified	Unclassified	Pandoravirus	Unclassified	neg
+An_dar_C3/contig_1708:14002-14100	98	YP_007354326.1	Ubiquitin-conjugating enzyme	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	neg
+An_dar_C3/contig_185:5852-5959	107	NP_077493.1	EsV-1-8	Viruses	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified	pos
