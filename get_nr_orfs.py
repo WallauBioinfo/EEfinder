@@ -175,14 +175,14 @@ subprocess.call(clstr,shell=True)
 cd_hit_log = "cat *.cd-hit.log > cd_hit_logs.txt"
 subprocess.call(cd_hit_log,shell=True)
 
-fileList = glob.glob('./*.ORFs', recursive=True)
+fileList = glob.glob('./*.ORFs*', recursive=True)
 for filePath in fileList:
     try:
         os.remove(filePath)
     except OSError:
         print("Error while deleting file")
 
-fileList = glob.glob('./orf_cd.cd*', recursive=True)
+fileList = glob.glob('./*.orf_cd.cd*', recursive=True)
 for filePath in fileList:
     try:
         os.remove(filePath)
