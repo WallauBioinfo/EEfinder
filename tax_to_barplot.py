@@ -31,7 +31,8 @@ specific_tax = args.specifictax
 group_value = args.groupbytax
 ###############################>SNS-STYLE<###############################
 sns.set()
-style.use('seaborn-ticks')
+style.use('seaborn-poster')
+sns.set_palette("husl", 9)
 ###############################>REGEX-FUNC<##############################
 def get_prefix(name):
     return re.sub(r'\/.*','',name)
@@ -48,7 +49,7 @@ for i in family_low_list:
 df.insert(0,'Genome',df['Element-ID'])
 df['Genome'] = df['Genome'].apply(get_prefix)
 df2 = df.groupby(["Genome", plot_mode]).size().reset_index(name="Count")
-df3 = df2.pivot_table('Count', ['Genome'], plot_mode).fillna(0)
+df3 = df2.pivot_table('Count', ['Genome'], plot_mode)
 try:
     df3.drop(['Element-ID'], inplace=True)
     df3.drop([plot_mode], axis=1,inplace=True)
@@ -59,14 +60,19 @@ columns = [df3.columns.values.tolist()]
 for list_ in columns:
     for i in list_:
         labels.append(i)
-barplot = df3.plot(kind="bar", stacked=True)
-sns.despine(fig=None, top=True, right=True, left=False, bottom=False, offset=None, trim=False)
-barplot.legend(loc='upper right', ncol=4, fancybox=True, prop={'size': 6},title=plot_mode, labels=labels, title_fontsize=10)
-plt.xlabel('Genomes', fontsize=10)
-plt.ylabel('Number of Elements', fontsize=10)
-plt.xticks(fontsize=6)
-plt.yticks(fontsize=8)
-plt.savefig(input_file+'.bar_plot.pdf',dpi=300, bbox_inches='tight')
+assemblies = ["Cx_qui_J2","Cx_tar_K1","Ae_aeg_Aag2","Ae_aeg_L5","Ae_aeg_BV","Ae_alb_Canu","Ae_alb_F1","Ae_alb_F2","Ae_alb_R1","An_fun_F3","An_fun_Fv1","An_sin_C2","An_sin_S2","An_cul_A1","An_min_M1","An_epi_E1","An_mac_BtQ1","An_mac_M1","An_atr_E3","An_nil_1","An_ste_5v2","An_ste_UCI","An_ste_S1","An_ste_7v2","An_ste_Astel2","An_chr_AchrA1","An_dar_C3","An_aqua_v1","An_alb_S2","An_dir_W1","An_cra_4v1","An_pun_5v1","An_kol_7v1","An_far_F2","An_far_wgs1","An_mer_M2","An_mel_C2","An_qua_S1","An_bwa_2","An_fon_9v1","An_ara_D1","An_col_M1","An_col_Ng","An_gam_s1","An_gam_p4","An_gam_pims","An_gam_BV"]
+df3 = df3.reindex(assemblies)
+barplot = df3.plot(kind="bar", stacked=True, edgecolor='black', width=1)
+barplot.legend(loc='upper right', ncol=2, fancybox=True, prop={'size': 12},title=plot_mode, labels=labels, title_fontsize=14)
+barplot.spines['bottom'].set_color('0')
+barplot.spines['top'].set_color('0')
+barplot.spines['right'].set_color('0')
+barplot.spines['left'].set_color('0')
+#sns.despine(fig=None, top=True, right=True, left=True, bottom=False, offset=None, trim=False)
+plt.xlabel('Genomes', fontsize=12)
+plt.ylabel('Number of Elements', fontsize=12)
+plt.xticks(fontsize=10)
+plt.yticks(fontsize=10)
+plt.show()
+#plt.savefig(input_file+'.bar_plot.pdf',figsize=(3400,800),dpi=300, bbox_inches='tight')
 plt.clf()
-
-
