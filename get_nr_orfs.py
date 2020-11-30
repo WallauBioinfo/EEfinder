@@ -112,7 +112,7 @@ getorf_out_renamed.close()
 #Excluding redundant
 getorf_csv = open(getorf_out+'.csv','w')
 getorf_csv_writer = csv.writer(getorf_csv,delimiter=',')
-getorf_csv_writer.writerow(['ORF-ID','Element-ID','ORF','ORF-Start','ORF-End','ORF-Length','Sense'])
+getorf_csv_writer.writerow(['ORF-ID','Element-ID','ORF','ORF-Start','ORF-End','ORF-Length(aa)','Sense'])
 getorf_info_list = []
 with open(getorf_out,'r') as getorf_file:
     getorf_reader = getorf_file.readlines()
@@ -128,11 +128,11 @@ with open(getorf_out,'r') as getorf_file:
             ORF_end = re.sub(r'.*-','',ORF_end)
             ORF_end = re.sub(r'\/REVERSE','',ORF_end)
             if 'REVERSE' in ORF_id:
-                ORF_length = int(ORF_start) - int(ORF_end)
+                ORF_length = (int(ORF_start) - int(ORF_end)+1)/3
                 sense = 'neg'
                 getorf_info_list.append([ORF_id,Element_id,ORF,ORF_end,ORF_start,ORF_length,sense])
             else:
-                ORF_length = int(ORF_end) - int(ORF_start)
+                ORF_length = (int(ORF_end) - int(ORF_start)+1)/3
                 sense = 'pos'
                 getorf_info_list.append([ORF_id,Element_id,ORF,ORF_start,ORF_end,ORF_length,sense])
                 
