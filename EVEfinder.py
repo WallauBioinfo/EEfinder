@@ -127,7 +127,8 @@ if __name__ == '__main__':
     vir_filter_table = FilterTable(f"{out_dir}/{prefix}.rn.fmt.blastx", "VIR")
     vir_filter_table.run_filter()
     # Getting fastas
-    getter_fasta = GetFasta(f"{out_dir}/{prefix}.rn.fmt", f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed",
+    getter_fasta = GetFasta(f"{out_dir}/{prefix}.rn.fmt",
+                            f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed",
                             f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta")
     getter_fasta.run_get_fasta()
     # Second Similarity Screen
@@ -157,3 +158,11 @@ if __name__ == '__main__':
     remove_annot_bed.run_reformat_bed()
     reformat_bed_name = ReformatBedName(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt")
     reformat_bed_name.run_reformat_name()
+    # Getting merged elements
+    getter_merged_fasta = GetFasta(f"{out_dir}/{prefix}.rn.fmt",
+                            f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt",
+                            f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa")
+    getter_merged_fasta.run_get_fasta()
+    # Put mask_clean function here
+
+    # Create final taxonomy files to '.tax.bed.merge.fmt.fa' and '.tax.bed.merge.fmt.fa.mask_clean.fa'
