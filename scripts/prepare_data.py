@@ -32,7 +32,7 @@ def concat_files(file1, file2, outdir, output):
         output_file = ''
         output_file += file1Read
         output_file += file2Read
-        with open(f"{outdir}{output}", 'w') as outputWriter:
+        with open(f"{outdir}/{output}", 'w') as outputWriter:
             outputWriter.write(output_file)
 
         del file1Read, file2Read, output_file

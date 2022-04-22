@@ -13,7 +13,9 @@ from scripts.make_database import MakeDB
 from scripts.similarity_analysis import SimilaritySearch
 from scripts.filter_table import FilterTable
 from scripts.get_fasta import GetFasta
-
+from scripts.get_taxonomy import GetTaxonomy
+from scripts.format_bed import GetAnnotBed, RemoveAnnotation, ReformatBedName
+from scripts.bed_merge import MergeBed
 ###############################>GENERAL-INFORMATIONS<###############################
 
 __authors__ = {"Names": ["Filipe Dezordi", "Yago Dias"],
@@ -141,3 +143,17 @@ if __name__ == '__main__':
     comparer = CompareResults(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred",
                               f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred")
     comparer.run_comparation()
+    # Get info taxonomy for pEVEs
+    get_info = GetTaxonomy(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir",database_table)
+    get_info.run_get_taxonomy_info()
+    # Get annotated bed file
+    get_annot_bed = GetAnnotBed(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax")
+    get_annot_bed.run_get_annotated_bed()
+    # Merge bed file
+    merge_bed = MergeBed(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed",str(limit_merge))
+    merge_bed.run_merge_bedfile()
+    # Format bed names to get_fasta step and to create a taxonomy table with merged elements
+    remove_annot_bed = RemoveAnnotation(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge")
+    remove_annot_bed.run_reformat_bed()
+    reformat_bed_name = ReformatBedName(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt")
+    reformat_bed_name.run_reformat_name()

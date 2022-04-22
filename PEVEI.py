@@ -311,7 +311,7 @@ if __name__ == '__main__':
         #remove contigs bellow the threshold
         cut_seq(prefix+'.rn',length_cutoff)
         #running blastx against viral proteins
-        runblastx(prefix+'.rn.fmt',database_file)
+        runblastx(prefix+'.rn.fmt',database_file) ##FEITA
         #filtring blastx outputs and generating bed file
         blastx_filter(prefix+'.rn.fmt.blastx',"VIR")
         #extracting sequences based on query start and query end matches
