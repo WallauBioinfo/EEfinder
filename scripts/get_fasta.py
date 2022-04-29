@@ -12,7 +12,7 @@ def get_fasta(in_file, bed_file, out_file):
     out_file - output file 
     """
 
-    get_fasta = 'bedtools getfasta -fi '+in_file+' -bed '+bed_file+' -fo '+out_file
+    get_fasta = f'bedtools getfasta -fi {in_file} -bed {bed_file} -fo {out_file}'
     get_fasta = shlex.split(get_fasta)
     cmd_get_fasta = subprocess.Popen(get_fasta)
     cmd_get_fasta.wait()

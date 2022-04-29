@@ -5,7 +5,11 @@
 
 import argparse
 import re
+from scripts.bed_flank import BedFlank
 from scripts.compare_results import CompareResults
+from scripts.flank_divider import FlankDivider
+from scripts.get_bed import GetBed
+from scripts.get_length import GetLength
 from scripts.run_message import PaperInfo
 from scripts.prepare_data import ConcatFiles, SetPrefix
 from scripts.clean_data import RemoveShort, MaskClean
@@ -145,24 +149,59 @@ if __name__ == '__main__':
                               f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred")
     comparer.run_comparation()
     # Get info taxonomy for pEVEs
-    get_info = GetTaxonomy(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir",database_table)
+    get_info = GetTaxonomy(
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir", database_table)
     get_info.run_get_taxonomy_info()
     # Get annotated bed file
-    get_annot_bed = GetAnnotBed(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax")
+    get_annot_bed = GetAnnotBed(
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax")
     get_annot_bed.run_get_annotated_bed()
     # Merge bed file
-    merge_bed = MergeBed(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed",str(limit_merge))
+    merge_bed = MergeBed(
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed", str(limit_merge))
     merge_bed.run_merge_bedfile()
     # Format bed names to get_fasta step and to create a taxonomy table with merged elements
-    remove_annot_bed = RemoveAnnotation(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge")
+    remove_annot_bed = RemoveAnnotation(
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge")
     remove_annot_bed.run_reformat_bed()
-    reformat_bed_name = ReformatBedName(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt")
+    reformat_bed_name = ReformatBedName(
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt")
     reformat_bed_name.run_reformat_name()
     # Getting merged elements
     getter_merged_fasta = GetFasta(f"{out_dir}/{prefix}.rn.fmt",
-                            f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt",
-                            f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa")
+                                   f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt",
+                                   f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa")
     getter_merged_fasta.run_get_fasta()
     # Put mask_clean function here
 
     # Create final taxonomy files to '.tax.bed.merge.fmt.fa' and '.tax.bed.merge.fmt.fa.mask_clean.fa'
+
+    # Flanking Reagions
+    getter_length = GetLength(f"{out_dir}/{prefix}.rn.fmt")
+    getter_length.run_get_length()
+    getter_bed = GetBed(
+        f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa')
+    getter_bed.run_get_bed()
+    getter_bed_flank = BedFlank(
+        f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed',
+        f'{out_dir}/{prefix}.rn.fmt.rn.fmt.lenght',
+        flank_region)
+    getter_bed_flank.run_bed_flank()
+    divider = FlankDivider(
+        f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank')
+    divider.run_flank_divider()
+    get_fasta_flank = GetFasta(
+        f"{out_dir}/{prefix}.rn.fmt",
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.fmt",
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.fmt.fasta")
+    get_fasta_flankr = GetFasta(
+        f"{out_dir}/{prefix}.rn.fmt",
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.right",
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.right.fasta")
+    get_fasta_flankl = GetFasta(
+        f"{out_dir}/{prefix}.rn.fmt",
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.left",
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.left.fasta")
+    get_fasta_flank.run_get_fasta()
+    get_fasta_flankl.run_get_fasta()
+    get_fasta_flankr.run_get_fasta()
