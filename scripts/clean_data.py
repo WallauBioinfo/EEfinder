@@ -25,16 +25,18 @@ def mask_clean(in_file, m_per):
     in_file - fasta file, with putative EVEs.
     m_per - treshold masked percentage value, parsed with -mp argument.
     """
+
     sequences={}
     for seq_record in SeqIO.parse(in_file, "fasta"):
         sequence = str(seq_record.seq)
+        sequence_id = str(seq_record.id)
         if (float(sequence.count("a")+sequence.count("t")+sequence.count("c")+sequence.count("g")+sequence.count("n")+sequence.count("N"))/float(len(sequence)))*100 <= float(m_per):
-            if sequence not in sequences:
-                sequences[sequence] = seq_record.id
+            if sequence_id not in sequences:
+                sequences[sequence_id] = sequence
     with open(in_file+'.cl', "w+") as output_file:
-        for sequence in sequences:
-            output_file.write(">" + sequences[sequence] + "\n" + sequence + "\n")
-    return(print(f'Sequences with {m_per} percent of lower-case letters are removed, results are stored in {in_file}.clean!'))
+        for sequence_id, sequence in sequences.items():
+            output_file.write(f">{sequence_id}\n{sequence}\n")
+    return(print(f'DONE: Sequences with {m_per} percent of lower-case letters are removed, results are stored in {in_file}.cl!'))
 
 class RemoveShort():
     def __init__(self, seq_file, cutoff):
@@ -47,7 +49,7 @@ class RemoveShort():
 class MaskClean():
     def __init__(self, in_file, m_per):
         self.in_file = in_file
-        self.cutoff = cutoff
+        self.m_per = m_per
 
     def run_mask_clean(self):
         mask_clean(self.in_file, self.m_per)

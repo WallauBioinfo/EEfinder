@@ -5,11 +5,6 @@
 
 import argparse
 import re
-from scripts.bed_flank import BedFlank
-from scripts.compare_results import CompareResults
-from scripts.flank_divider import FlankDivider
-from scripts.get_bed import GetBed
-from scripts.get_length import GetLength
 from scripts.run_message import PaperInfo
 from scripts.prepare_data import ConcatFiles, SetPrefix
 from scripts.clean_data import RemoveShort, MaskClean
@@ -17,9 +12,15 @@ from scripts.make_database import MakeDB
 from scripts.similarity_analysis import FlankSearch, SimilaritySearch
 from scripts.filter_table import FilterTable
 from scripts.get_fasta import GetFasta
-from scripts.get_taxonomy import GetTaxonomy
-from scripts.format_bed import GetAnnotBed, RemoveAnnotation, ReformatBedName
+from scripts.get_taxonomy import GetTaxonomy, GetFinalTaxonomy, GetCleanedTaxonomy
+from scripts.format_bed import GetAnnotBed, RemoveAnnotation
 from scripts.bed_merge import MergeBed
+from scripts.bed_flank import BedFlank
+from scripts.compare_results import CompareResults
+from scripts.flank_divider import FlankDivider
+from scripts.get_bed import GetBed
+from scripts.get_length import GetLength
+
 ###############################>GENERAL-INFORMATIONS<###############################
 
 __authors__ = {"Names": ["Filipe Dezordi", "Yago Dias"],
@@ -136,7 +137,6 @@ if __name__ == '__main__':
                             f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta")
     getter_fasta.run_get_fasta()
     # Second Similarity Screen
-
     host_similarity_step = SimilaritySearch(
         f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta", f"{out_dir}/DatabaseFilter.fa", threads, mode)
     host_similarity_step.run_similarity_search()
@@ -164,18 +164,22 @@ if __name__ == '__main__':
     remove_annot_bed = RemoveAnnotation(
         f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge")
     remove_annot_bed.run_reformat_bed()
-    reformat_bed_name = ReformatBedName(
-        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt")
-    reformat_bed_name.run_reformat_name()
     # Getting merged elements
     getter_merged_fasta = GetFasta(f"{out_dir}/{prefix}.rn.fmt",
                                    f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt",
                                    f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa")
     getter_merged_fasta.run_get_fasta()
     # Put mask_clean function here
-
+    clean_masked = MaskClean(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa",
+                                mask_per)
+    clean_masked.run_mask_clean()
     # Create final taxonomy files to '.tax.bed.merge.fmt.fa' and '.tax.bed.merge.fmt.fa.mask_clean.fa'
-
+    get_final_taxonomy = GetFinalTaxonomy(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt",
+                                          f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax")
+    get_final_taxonomy.run_get_final_taxonomy()
+    get_cleaned_taxonomy = GetCleanedTaxonomy(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.cl",
+                                              f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.tax")
+    get_cleaned_taxonomy.run_get_cleaned_taxonomy()
     # Flanking Regions
     getter_length = GetLength(f"{out_dir}/{prefix}.rn.fmt")
     getter_length.run_get_length()
