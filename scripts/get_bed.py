@@ -1,7 +1,7 @@
 import re
 
 
-def get_bed(input_file):
+def get_bed(input_file, log):
     with open(f'{input_file}', 'r') as repeat_eves, open(f'{input_file}.bed', 'w') as repeat_eves_bed_out:
         repeat_eves_lines = repeat_eves.readlines()
         for line in repeat_eves_lines:
@@ -13,12 +13,14 @@ def get_bed(input_file):
                 line_end = re.sub('.*-', '', line).rstrip('\n')
                 repeat_eves_bed_out.write(
                     f'{line_name}\t{line_start}\t{line_end}\n')
-        print('DONE GETTING BED')
+        print('DONE: Get bed file!', file = log)
+        return(print('DONE: Get bed file!'))
 
 
 class GetBed():
-    def __init__(self, input_file):
+    def __init__(self, input_file, log):
         self.input_file = input_file
+        self.log = log
 
     def run_get_bed(self):
-        get_bed(self.input_file)
+        get_bed(self.input_file, self.log)

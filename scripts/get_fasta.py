@@ -2,7 +2,7 @@ import subprocess
 import shlex
 
 
-def get_fasta(in_file, bed_file, out_file):
+def get_fasta(in_file, bed_file, out_file, log):
     """
     This function execute the bedtools getfasta.
 
@@ -16,14 +16,16 @@ def get_fasta(in_file, bed_file, out_file):
     get_fasta = shlex.split(get_fasta)
     cmd_get_fasta = subprocess.Popen(get_fasta)
     cmd_get_fasta.wait()
-    print("DONE GETTING FASTA")
+    print(f"DONE: Get fasta for {bed_file}!", file = log)
+    return(print(f"DONE: Get fasta for {bed_file}!"))
 
 
 class GetFasta:
-    def __init__(self, in_file, bed_file, out_file):
+    def __init__(self, in_file, bed_file, out_file, log):
         self.in_file = in_file
         self.bed_file = bed_file
         self.out_file = out_file
+        self.log = log
 
     def run_get_fasta(self):
-        get_fasta(self.in_file, self.bed_file, self.out_file)
+        get_fasta(self.in_file, self.bed_file, self.out_file, self.log)

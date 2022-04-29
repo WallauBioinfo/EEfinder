@@ -3,7 +3,7 @@ import csv
 import os
 
 
-def filter(blast_result, tag):
+def filter(blast_result, tag, log):
     """
     This function receives a blastx result and filter based on query ID and ranges of qstart and qend.
 
@@ -79,14 +79,16 @@ def filter(blast_result, tag):
         df_4.to_csv(out_bed, sep='\t', index=False, header=False)
     os.remove(blast_result+'.csv')
     os.remove(blast_result+'.csv.mod')
-    return(print(f'{blast_result} filtred!'))
+    print(f'DONE: {blast_result} filtred!', file = log)
+    return(print(f'DONE: {blast_result} filtred!'))
 
 
 class FilterTable:
 
-    def __init__(self, blastresult, tag):
+    def __init__(self, blastresult, tag, log):
         self.blastresult = blastresult
         self.tag = tag
+        self.log = log
 
     def run_filter(self):
-        filter(self.blastresult, self.tag)
+        filter(self.blastresult, self.tag, self.log)

@@ -16,7 +16,7 @@ def insert_prefix(input_file, prefix, outdir):
             output_file.write(line)
 
 
-def concat_files(file1, file2, outdir, output):
+def concat_files(file1, file2, outdir, output,log):
     """
     This function concatenate two files.
 
@@ -36,8 +36,8 @@ def concat_files(file1, file2, outdir, output):
             outputWriter.write(output_file)
 
         del file1Read, file2Read, output_file
-    print(
-        f"DONE: The concatenated filter database is stored at {outdir}{output}\n")
+    print(f"DONE: The concatenated filter database is stored at {outdir}/{output}", file = log)
+    return(print(f"DONE: The concatenated filter database is stored at {outdir}/{output}"))
 
 
 class SetPrefix():
@@ -51,11 +51,12 @@ class SetPrefix():
 
 
 class ConcatFiles():
-    def __init__(self, file1, file2, outdir, output):
+    def __init__(self, file1, file2, outdir, output,log):
         self.file1 = file1
         self.file2 = file2
         self.outdir = outdir
         self.output = output
+        self.log = log
 
     def run_concate_file(self):
-        concat_files(self.file1, self.file2, self.outdir, self.output)
+        concat_files(self.file1, self.file2, self.outdir, self.output,self.log)

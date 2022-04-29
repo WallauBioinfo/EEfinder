@@ -1,6 +1,6 @@
 import pandas as pd
 
-def compare_blasts(vir_blast_filtred,filter_blast_filtred):
+def compare_blasts(vir_blast_filtred,filter_blast_filtred, log):
     """
     This function compares 2 blast results, for queries with same ID, only the one with the major bitscore is keept. In a final step
     Only queries with tag VIR are maintained.
@@ -20,13 +20,15 @@ def compare_blasts(vir_blast_filtred,filter_blast_filtred):
     df_nr.to_csv(filter_blast_filtred+'.concat.nr', sep='\t', index = False)
     df_nr_vir = df_nr[df_nr.tag == 'VIR']
     df_nr_vir.to_csv(filter_blast_filtred+'.concat.nr.vir', sep='\t', index = False)
-    return(print("DONE COMPARISON"))
+    print("DONE: Filter step", file = log)
+    return(print("DONE: Filter step"))
 
 class CompareResults:
-    def __init__(self, vir_result, host_result):
+    def __init__(self, vir_result, host_result, log):
         self.vir_result = vir_result
         self.host_result = host_result
+        self.log = log
     
     def run_comparation(self):
-        compare_blasts(self.vir_result, self.host_result)
+        compare_blasts(self.vir_result, self.host_result, self.log)
         

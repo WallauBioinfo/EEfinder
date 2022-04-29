@@ -3,7 +3,7 @@ import subprocess
 import shlex
 
 
-def makeblastdb(data, db_type):
+def makeblastdb(data, db_type, log):
     """
     This function creates blast databases.
 
@@ -13,10 +13,11 @@ def makeblastdb(data, db_type):
     """
     clinedb = NcbimakeblastdbCommandline(dbtype=db_type, input_file=data)
     stdout, stderr = clinedb()
-    return(print(f'DONE: Makeblastdb for {data}\n'))
+    print(f'DONE: Makeblastdb for {data}', file = log)
+    return(print(f'DONE: Makeblastdb for {data}'))
 
 
-def makediamonddb(data, threads):
+def makediamonddb(data, threads, log):
     """
     This function creates diamond databases.
 
@@ -28,20 +29,20 @@ def makediamonddb(data, threads):
     clinedb = shlex.split(clinedb)
     cmd_clinedb = subprocess.Popen(clinedb)
     cmd_clinedb.wait()
-    return(print(f'DONE: Makediamonddb for {data}\n'))
+    print(f'DONE: Makediamonddb for {data}', file = log)
+    return(print(f'DONE: Makediamonddb for {data}'))
 
 
 class MakeDB():
-    def __init__(self, mode, data, db_type, threads):
+    def __init__(self, mode, data, db_type, threads, log):
         self.mode = mode
         self.data = data
         self.db_type = db_type
         self.threads = threads
+        self.log = log
 
     def run_make_db(self):
         if self.mode in ['blastx', 'tblastn']:
-            makeblastdb(data=self.data, db_type=self.db_type)
-            #print(f"makeblastdb(data = {self.data}, db_type = {self.db_type})")
+            makeblastdb(data=self.data, db_type=self.db_type, log = self.log)
         else:
-            makediamonddb(data=self.data, threads=self.threads)
-            #print(f"makediamonddb(data = {self.data}, threads = {self.threads})")
+            makediamonddb(data=self.data, threads=self.threads, log = self.log)

@@ -2,7 +2,7 @@ import pandas as pd
 import re, csv
 from Bio import SeqIO
 
-def get_taxonomy_info(blast_file,tax_file):
+def get_taxonomy_info(blast_file,tax_file, log):
     """
     This function merge the filtred blast results with taxonomy information
 
@@ -16,9 +16,10 @@ def get_taxonomy_info(blast_file,tax_file):
     df_tax_file.rename(columns = {"Accession":'sseqid'}, inplace = True)
     df_merged = pd.merge(df_blast_file, df_tax_file, on="sseqid", how = 'left')
     df_merged.to_csv(f"{blast_file}.tax", index = False, header = True)
+    print(f'DONE: Get initial taxonomy info!', file = log)
     return(print(f'DONE: Get initial taxonomy info!'))
 
-def get_final_taxonomy(bed_formated, taxonomy_info):
+def get_final_taxonomy(bed_formated, taxonomy_info, log):
     with open(bed_formated,'r') as bed_merge_file, open(f"{bed_formated}.fa.tax",'w') as bed_merge_tax_out:
         bed_merge_tax_list = []
         bed_merge_file_reader = csv.reader(bed_merge_file,delimiter='\t')
@@ -43,25 +44,25 @@ def get_final_taxonomy(bed_formated, taxonomy_info):
                     for line_prot in prot_info_reader:
                             protein_ids = re.sub('AND',"|",line[3]).rstrip('\n')
                             if line_prot[1].rstrip('\n') in protein_ids:
-                                if line_prot[24].rstrip('\n') not in protein_terms:
-                                    protein_terms += line_prot[24]+' AND '
-                                    mol_type = line_prot[19]
-                                    family = line_prot[18]
-                                if line_prot[17].rstrip('\n') not in genus:
-                                    genus += line_prot[17]+' AND '
-                                if line_prot[16].rstrip('\n') not in species:
-                                    species += line_prot[16]+' AND '
-                                if line_prot[27].rstrip('\n') not in host:
-                                    host +=  line_prot[27]+' AND '
+                                if line_prot[19].rstrip('\n') not in protein_terms:
+                                    protein_terms += line_prot[19]+' AND '
+                                    mol_type = line_prot[18]
+                                    family = line_prot[17]
+                                if line_prot[16].rstrip('\n') not in genus:
+                                    genus += line_prot[16]+' AND '
+                                if line_prot[15].rstrip('\n') not in species:
+                                    species += line_prot[15]+' AND '
+                                if line_prot[20].rstrip('\n') not in host:
+                                    host +=  line_prot[20]+' AND '
                 else:
                     for line_prot in prot_info_reader:
                         if line_prot[1].rstrip('\n') in protein_ids:
-                                protein_terms = line_prot[24]
-                                mol_type = line_prot[19]
-                                family = line_prot[18]
-                                genus = line_prot[17]
-                                species = line_prot[16]
-                                host =  line_prot[27]
+                                protein_terms = line_prot[19]
+                                mol_type = line_prot[18]
+                                family = line_prot[17]
+                                genus = line_prot[16]
+                                species = line_prot[15]
+                                host =  line_prot[20]
 
             protein_terms = re.sub(r" AND $","",protein_terms)
             species = re.sub(r" AND $","",species)
@@ -79,9 +80,10 @@ def get_final_taxonomy(bed_formated, taxonomy_info):
 
             bed_merge_tax_list.append([element_merged_id,sense,protein_ids,protein_terms,mol_type,family,genus,species,host])
         bed_merge_tax_out_writer.writerows(bed_merge_tax_list)
+        print(f'DONE: Get Taxonomy for Merged Elements!', file = log)
         return(print(f'DONE: Get Taxonomy for Merged Elements!'))
 
-def get_cleaned_taxonomy(cleaned_file, taxonomy_file):
+def get_cleaned_taxonomy(cleaned_file, taxonomy_file, log):
     output_list = [["Element-ID","Sense","Protein-IDs","Protein-Products","Molecule_type","Family","Genus","Species","Host"]]
 
     for seq_record in SeqIO.parse(cleaned_file, "fasta"):
@@ -94,29 +96,33 @@ def get_cleaned_taxonomy(cleaned_file, taxonomy_file):
     with open(f"{cleaned_file}.tax","w") as output_file:
         output_file_writer = csv.writer(output_file,delimiter = '\t')
         output_file_writer.writerows(output_list)
-    
+
+    print(f'DONE: Get Taxonomy for Cleaned Merged Elements!', file = log)
     return(print(f'DONE: Get Taxonomy for Cleaned Merged Elements!'))
 
 class GetTaxonomy():
-    def __init__(self, blast_file, tax_file):
+    def __init__(self, blast_file, tax_file, log):
         self.blast_file = blast_file
         self.tax_file = tax_file
+        self.log = log
     
     def run_get_taxonomy_info(self):
-        get_taxonomy_info(self.blast_file, self.tax_file)
+        get_taxonomy_info(self.blast_file, self.tax_file, self.log)
 
 class GetFinalTaxonomy():
-    def __init__(self, bed_formated, taxonomy_info):
+    def __init__(self, bed_formated, taxonomy_info, log):
         self.bed_formated = bed_formated
         self.taxonomy_info = taxonomy_info
+        self.log = log
 
     def run_get_final_taxonomy(self):
-        get_final_taxonomy(self.bed_formated, self.taxonomy_info)
+        get_final_taxonomy(self.bed_formated, self.taxonomy_info, self.log)
 
 class GetCleanedTaxonomy():
-    def __init__(self, cleaned_file, taxonomy_file):
+    def __init__(self, cleaned_file, taxonomy_file, log):
         self.cleaned_file = cleaned_file
         self.taxonomy_file = taxonomy_file
+        self.log = log
 
     def run_get_cleaned_taxonomy(self):
-        get_cleaned_taxonomy(self.cleaned_file,self.taxonomy_file)
+        get_cleaned_taxonomy(self.cleaned_file,self.taxonomy_file,self.log)
