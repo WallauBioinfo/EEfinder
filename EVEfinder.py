@@ -14,7 +14,7 @@ from scripts.run_message import PaperInfo
 from scripts.prepare_data import ConcatFiles, SetPrefix
 from scripts.clean_data import RemoveShort, MaskClean
 from scripts.make_database import MakeDB
-from scripts.similarity_analysis import SimilaritySearch
+from scripts.similarity_analysis import FlankSearch, SimilaritySearch
 from scripts.filter_table import FilterTable
 from scripts.get_fasta import GetFasta
 from scripts.get_taxonomy import GetTaxonomy
@@ -176,7 +176,7 @@ if __name__ == '__main__':
 
     # Create final taxonomy files to '.tax.bed.merge.fmt.fa' and '.tax.bed.merge.fmt.fa.mask_clean.fa'
 
-    # Flanking Reagions
+    # Flanking Regions
     getter_length = GetLength(f"{out_dir}/{prefix}.rn.fmt")
     getter_length.run_get_length()
     getter_bed = GetBed(
@@ -205,3 +205,31 @@ if __name__ == '__main__':
     get_fasta_flank.run_get_fasta()
     get_fasta_flankl.run_get_fasta()
     get_fasta_flankr.run_get_fasta()
+
+    # Flank search
+    # Creating dbs
+    make_db_tel = MakeDB(
+        'tblastn', f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.left.fasta', 'nucl', threads)
+    make_db_tel.run_make_db()
+
+    make_db_ter = MakeDB(
+        'tblastn', f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.right.fasta', 'nucl', threads)
+    make_db_ter.run_make_db()
+
+    # Left side
+    tel_similarity = FlankSearch(database_TE, f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.left.fasta',
+                                 threads, f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.left.fasta.tblastn')
+    tel_similarity.run_flank_search()
+
+    tel_filter = FilterTable(
+        f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.left.fasta.tblastn', 'HOST')
+    tel_filter.run_filter()
+
+    # Right side
+    ter_similarity = FlankSearch(database_TE, f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.right.fasta',
+                                 threads, f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.right.fasta.tblastn')
+    ter_similarity.run_flank_search()
+
+    ter_filter = FilterTable(
+        f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.vir.tax.bed.merge.fmt.fa.bed.flank.right.fasta.tblastn', 'HOST')
+    ter_filter.run_filter()

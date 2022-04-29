@@ -23,7 +23,7 @@ def runblastx(query_file, database_file, threads):
     return(print(f'DONE: BLASTx with {query_file} against {database_file}\n'))
 
 
-def runtblastn(query_file, database_file, step):  # colocar opções de blastn ou blastx
+def runtblastn(query_file, database_file, threads, output):  # colocar opções de blastn ou blastx
     """
     This function runs blast with putative EVEs against host genes database.
 
@@ -32,8 +32,8 @@ def runtblastn(query_file, database_file, step):  # colocar opções de blastn o
     database - pre-formated blast database - parsed with -db argument
     """
 
-    cline = NcbiblastxCommandline(query=query_file, db=database_file, out=query_file+'.db_filter.blastx',
-                                  outfmt=6, evalue=0.00001, num_threads=threads,  max_intron_length=100, soft_masking='true')
+    cline = NcbitblastnCommandline(query=query_file, db=database_file, out=output,
+                                   outfmt=6, evalue=0.00001, num_threads=threads,  max_intron_length=100, soft_masking='true')
     stdout, stderr = cline()
     return(print(f'BLASTx with {query_file} against {database_file}: DONE'))
 
@@ -73,3 +73,15 @@ class SimilaritySearch():
         else:
             rundiamond(self.query_file, self.database_file,
                        self.threads, self.mode)
+
+
+class FlankSearch():
+    def __init__(self, query_file, database_file, threads, output):
+        self.query_file = query_file
+        self.database_file = database_file
+        self.threads = threads
+        self.output = output
+
+    def run_flank_search(self):
+        runtblastn(self.query_file, self.database_file,
+                   self.threads, self.output)

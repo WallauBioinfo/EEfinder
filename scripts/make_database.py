@@ -1,7 +1,9 @@
 from Bio.Blast.Applications import NcbimakeblastdbCommandline
-import subprocess, shlex
+import subprocess
+import shlex
 
-def makeblastdb(data,db_type):
+
+def makeblastdb(data, db_type):
     """
     This function creates blast databases.
 
@@ -9,9 +11,10 @@ def makeblastdb(data,db_type):
     data - the database_file, parsed with -db argument
     db_type - 'nucl' or 'prot' strings
     """
-    clinedb = NcbimakeblastdbCommandline(dbtype=db_type, input_file = data)
+    clinedb = NcbimakeblastdbCommandline(dbtype=db_type, input_file=data)
     stdout, stderr = clinedb()
     return(print(f'DONE: Makeblastdb for {data}\n'))
+
 
 def makediamonddb(data, threads):
     """
@@ -27,17 +30,18 @@ def makediamonddb(data, threads):
     cmd_clinedb.wait()
     return(print(f'DONE: Makediamonddb for {data}\n'))
 
+
 class MakeDB():
-    def __init__(self,mode,data,db_type,threads):
+    def __init__(self, mode, data, db_type, threads):
         self.mode = mode
         self.data = data
         self.db_type = db_type
         self.threads = threads
-    
+
     def run_make_db(self):
-        if self.mode == 'blastx':
-            makeblastdb(data = self.data, db_type = self.db_type)
+        if self.mode in ['blastx', 'tblastn']:
+            makeblastdb(data=self.data, db_type=self.db_type)
             #print(f"makeblastdb(data = {self.data}, db_type = {self.db_type})")
         else:
-            makediamonddb(data = self.data, threads = self.threads)
+            makediamonddb(data=self.data, threads=self.threads)
             #print(f"makediamonddb(data = {self.data}, threads = {self.threads})")
