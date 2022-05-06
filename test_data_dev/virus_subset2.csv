@@ -1,0 +1,83 @@
+Accession,Species,Genus,Family,Molecule_type,Protein,Host
+YP_009664712.1,Bas-Congo tibrovirus,Tibrovirus,Rhabdoviridae,ssRNA(-),N protein,Homo sapiens
+YP_009665181.1,Chick syncytial virus,Gammaretrovirus,Retroviridae,ssRNA-RT,polymerase,
+YP_009666257.1,Scarabeuvirus blattae,Scarabeuvirus,Chuviridae,ssRNA(-),glycoprotein,Blattella germanica
+YP_009666308.1,Cladosporium fulvum T-1 virus,Metavirus,Metaviridae,ssRNA-RT,Reverse Transcriptase,
+YP_009551691.1,Merida-like virus KE-2017a,,Rhabdoviridae,ssRNA(-),glycoprotein,Culex pipiens
+YP_009552767.1,Culex Flavi-like virus,,Flaviviridae,ssRNA(+),polyprotein,Culex
+YP_009505504.1,Ekpoma 1 tibrovirus,Tibrovirus,Rhabdoviridae,ssRNA(-),N protein,Homo sapiens
+YP_009507248.1,Trichoplusia ni TED virus,Errantivirus,Metaviridae,ssRNA-RT,ORF B,Trichoplusia ni
+YP_009508546.1,Central cimpanzee simian foamy virus,Simiispumavirus,Retroviridae,ssRNA-RT,pol protein,Homo sapiens
+YP_009508566.1,Squirrel monkey simian foamy virus,Simiispumavirus,Retroviridae,ssRNA-RT,pol,Saimiri
+YP_009508577.1,White-tufted-ear marmoset simian foamy virus,Simiispumavirus,Retroviridae,ssRNA-RT,pol,Callithrix
+YP_009508888.1,Bornean orangutan simian foamy virus,Simiispumavirus,Retroviridae,ssRNA-RT,polymerase,Pongo pygmaeus pygmaeus
+YP_009430304.1,Zika virus,Flavivirus,Flaviviridae,ssRNA(+),nonstructural protein NS3,Homo sapiens
+YP_009417300.1,Australian Anopheles totivirus,,Totiviridae,dsRNA,capsid,Anopheles hinesorum
+YP_009389296.1,Mac Peak virus,,Flaviviridae,ssRNA(+),polyprotein,Anopheles farauti
+YP_009389241.1,Karumba virus,,Flaviviridae,ssRNA(+),NS1,Anopheles meraukensis
+YP_009362111.1,Marco hapavirus,Hapavirus,Rhabdoviridae,ssRNA(-),nucleoprotein,Ameiva ameiva
+YP_009362190.1,Nkolbisson ledantevirus,Ledantevirus,Rhabdoviridae,ssRNA(-),nucleoprotein,Eretmapodites leucopous
+YP_009362259.1,Klamath tupavirus,Tupavirus,Rhabdoviridae,ssRNA(-),nucleoprotein,Microtus montanus
+YP_009361993.1,Kern Canyon ledantevirus,Ledantevirus,Rhabdoviridae,ssRNA(-),glycoprotein,Myotis yumanensis
+YP_009352228.1,Ochlerotatus caspius flavivirus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,Ochlerotatus caspius
+YP_009351861.1,Menghai flavivirus,,Flaviviridae,ssRNA(+),polyprotein,Culicidae
+YP_009350102.1,Xishuangbanna aedes flavivirus,,Flaviviridae,ssRNA(+),polyprotein,Aedes albopictus
+YP_009344961.1,Bouboui virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,
+YP_009344962.1,Palm Creek virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,Coquillettidia xanthogaster
+YP_009345047.1,Wuhan pillworm virus 2,,,RNA,putative nucleoprotein,Myriapoda
+YP_009337008.1,Hubei dimarhabdovirus virus 3,,,RNA,putative nucleoprotein,Odonata
+YP_009337090.1,Scarabeuvirus dentati,Scarabeuvirus,Chuviridae,ssRNA(-),putative glycoprotein,Odonata
+YP_009329953.1,Saint Louis encephalitis virus,Flavivirus,Flaviviridae,ssRNA(+),nonstructural protein NS3,
+YP_009315874.1,Orgi virus,,Rhabdoviridae,ssRNA(-),glycoprotein,Orgyia pseudotsugata
+YP_009305402.1,Anopheles flavivirus Liberia/2013,,Flaviviridae,ssRNA(+),NS3,Anopheles gambiae
+YP_009268624.1,Hanko virus,Flavivirus,Flaviviridae,ssRNA(+),nonstructural protein NS3,Culicidae
+YP_009259489.1,Hanko virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,Culicidae
+YP_009259257.1,Cell fusing agent virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,Aedes aegypti
+YP_009259294.1,Cell fusing agent virus,Flavivirus,Flaviviridae,ssRNA(+),NS1,Aedes aegypti
+YP_009259300.1,Cell fusing agent virus,Flavivirus,Flaviviridae,ssRNA(+),NS4B,Aedes aegypti
+YP_009259320.1,Aedes flavivirus,Flavivirus,Flaviviridae,ssRNA(+),truncated polyprotein,Aedes albopictus
+YP_009259327.1,Aedes flavivirus,Flavivirus,Flaviviridae,ssRNA(+),nonstructural protein NS3,Aedes albopictus
+YP_009256193.1,Culiseta flavivirus,,Flaviviridae,ssRNA(+),polyprotein,Culiseta melanura
+YP_009182178.1,Culicidavirus imjinense,Culicidavirus,Chuviridae,ssRNA(-),putative glycoprotein,Culex bitaeniorhynchus
+YP_009182100.1,Blueberry fruit drop associated virus,Vaccinivirus,Caulimoviridae,dsDNA-RT,polyprotein,Vaccinium
+YP_009179389.1,Wuhan aphid virus 1,,,ssRNA(+),NS3-like protein,Hyalopterus pruni
+YP_009177714.1,Morsusvirus argatis,Morsusvirus,Chuviridae,ssRNA(-),glycoprotein,Argas miniatus
+YP_009164029.1,Parramatta River virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,
+YP_009164031.1,Mercadeo virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,Culex
+YP_009126875.1,Sokoluk virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,Pipistrellus pipistrellus
+YP_009094345.1,Scophthalmus maximus rhabdovirus,,Rhabdoviridae,ssRNA(-),glycoprotein,Scophthalmus maximus
+YP_009094404.1,Coastal Plains tibrovirus,Tibrovirus,Rhabdoviridae,ssRNA(-),nucleoprotein N,Bos taurus
+YP_009094322.1,Tritaeniorhynchus merhavirus,Merhavirus,Rhabdoviridae,ssRNA(-),glycoprotein,Culex tritaeniorhynchus
+YP_009094205.1,Pike fry sprivivirus,Sprivivirus,Rhabdoviridae,ssRNA(-),glycoprotein,Tinca tinca
+YP_009094266.1,Pike fry sprivivirus,Sprivivirus,Rhabdoviridae,ssRNA(-),glycoprotein,Ctenopharyngodon idella
+YP_009001771.1,Kama virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,Ixodes lividus
+YP_007877501.1,Quang Binh virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,Culex tritaeniorhynchus
+YP_007641382.1,Isfahan vesiculovirus,Vesiculovirus,Rhabdoviridae,ssRNA(-),nucleocapsid protein,Phlebotomus papatasi
+YP_006907834.1,Horseradish latent virus,Caulimovirus,Caulimoviridae,dsDNA-RT,polyprotein,Armoracia rusticana
+YP_006732334.1,Dahlia mosaic virus,Caulimovirus,Caulimoviridae,dsDNA-RT,polyprotein,Dahlia pinnata
+YP_006200957.1,Obodhiang ephemerovirus,Ephemerovirus,Rhabdoviridae,ssRNA(-),nucleoprotein,Mansonia uniformis
+YP_006491219.1,Kamiti River virus,Flavivirus,Flaviviridae,ssRNA(+),truncated polyprotein,
+YP_006273075.1,Fig badnavirus 1,Badnavirus,Caulimoviridae,dsDNA-RT,polyprotein,Ficus
+YP_004581513.1,Sweet potato pakakuy virus,Badnavirus,Caulimoviridae,dsDNA-RT,RNaseH/reverse transcriptase,Ipomoea batatas
+YP_003029843.1,Aedes flavivirus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,Aedes albopictus
+YP_002884239.1,Quang Binh virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,Culex tritaeniorhynchus
+YP_001956722.2,African green monkey simian foamy virus,Spumavirus,Retroviridae,ssRNA-RT,Pol precursor,
+YP_001285388.1,European bat 1 lyssavirus,Lyssavirus,Rhabdoviridae,ssRNA(-),nucleoprotein,Eptesicus serotinus
+YP_001008348.1,Saint Louis encephalitis virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,
+YP_443922.1,Atlantic salmon swim bladder sarcoma virus,,Retroviridae,ssRNA-RT,polyprotein,Salmo salar
+YP_223871.1,Reticuloendotheliosis virus,Gammaretrovirus,Retroviridae,ssRNA-RT,protease/polymerase,Gallus gallus
+NP_955577.1,Feline leukemia virus,Gammaretrovirus,Retroviridae,ssRNA-RT,pol gene polyprotein,
+NP_955579.1,Feline leukemia virus,Gammaretrovirus,Retroviridae,ssRNA-RT,reverse transcriptase,
+NP_955591.1,Murine leukemia virus,Gammaretrovirus,Retroviridae,ssRNA-RT,p80 RT,
+NP_891560.1,Kamiti River virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,
+NP_659397.1,Mirabilis mosaic virus,Caulimovirus,Caulimoviridae,dsDNA-RT,hypothetical protein,
+NP_127504.1,Petunia vein clearing virus,Petuvirus,Caulimoviridae,dsDNA-RT,ORF I polyprotein,Petunia
+NP_054716.1,Equine foamy virus,Equispumavirus,Retroviridae,ssRNA-RT,Pol,
+NP_045937.2,Walleye dermal sarcoma virus,Epsilonretrovirus,Retroviridae,ssRNA-RT,Pr gag-pro-pol,
+NP_059433.1,Dengue virus,Flavivirus,Flaviviridae,ssRNA(+),polyprotein,
+NP_056848.1,Cassava vein mosaic virus,Cavemovirus,Caulimoviridae,dsDNA-RT,aspartic protease/reverse transcriptase,
+NP_043924.1,Snakehead retrovirus,,Retroviridae,ssRNA-RT,gag-pol polyprotein,
+NP_056803.1,Simian foamy virus,Spumavirus,Retroviridae,ssRNA-RT,pol polyprotein,
+NP_040333.1,Murine leukemia virus,Gammaretrovirus,Retroviridae,ssRNA-RT,RNA-dependent DNA polymerase,
+NP_068729.1,Soybean chlorotic mottle virus,Soymovirus,Caulimoviridae,dsDNA-RT,putative reverse transcriptase,
+NP_619548.1,Figwort mosaic virus,Caulimovirus,Caulimoviridae,dsDNA-RT,hypothetical protein,
