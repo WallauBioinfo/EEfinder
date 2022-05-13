@@ -17,7 +17,7 @@ def filter(blast_result, tag, log):
         by='bitscore', ascending=False)  # convert the csv blast file in a dataframe
     df['sense'] = ''  # creates a new column for sense of hit
     df['bed_name'] = ''  # creates a new column with bedtools formated name
-    df['tag'] = ''  # creates a new columns for tag of blast VIR or HOST
+    df['tag'] = ''  # creates a new columns for tag of blast EE or HOST
     # convert de dataframe in a csv file
     df.to_csv(blast_result+'.csv', sep='\t')
     rows = list()
@@ -35,9 +35,9 @@ def filter(blast_result, tag, log):
                     row[8] = a
                 else:
                     row[13] = 'pos'
-                if tag == 'VIR':
+                if tag == 'EE':
                     row[14] = row[1]+":"+row[7]+"-"+row[8]
-                    row[15] = 'VIR'
+                    row[15] = 'EE'
                 else:
                     row[14] = row[1]
                     row[15] = 'HOST'
@@ -53,7 +53,7 @@ def filter(blast_result, tag, log):
     df["evalue"] = pd.to_numeric(df["evalue"], downcast="float")
     '''
     The next three line is a trick used to remove redundant hits () in in 3 decimal places, in this case, as we are
-    using a blast do recovery the viral signature in queries, that represent our genome, the filter is applied by
+    using a blast do recovery the EE signature in queries, that represent our genome, the filter is applied by
     query name and query start and end ranges, an example:
     INPUT:
     qseqid	sseqid	pident	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore
@@ -73,7 +73,7 @@ def filter(blast_result, tag, log):
                  'qend', 'sstart', 'send', 'evalue', 'bitscore', 'sense', 'bed_name', 'tag']]
     out_csv = blast_result+'.filtred'
     df_3.to_csv(out_csv, sep='\t', index=False)
-    if tag == "VIR":
+    if tag == "EE":
         df_4 = df_2[['qseqid', 'qstart', 'qend']]
         out_bed = blast_result+'.filtred.bed'
         df_4.to_csv(out_bed, sep='\t', index=False, header=False)

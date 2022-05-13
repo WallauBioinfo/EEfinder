@@ -18,7 +18,7 @@ def compare_blasts(vir_blast_filtred,filter_blast_filtred, log):
     df_hybrid.to_csv(filter_blast_filtred+'.concat', sep='\t', index = False)
     df_nr = df_hybrid.drop_duplicates(subset=['qseqid'])
     df_nr.to_csv(filter_blast_filtred+'.concat.nr', sep='\t', index = False)
-    df_nr_vir = df_nr[df_nr.tag == 'VIR']
+    df_nr_vir = df_nr[df_nr.tag == 'EE']
     df_nr_vir.to_csv(filter_blast_filtred+'.concat.nr.vir', sep='\t', index = False)
     print("DONE: Filter step", file = log)
     return(print("DONE: Filter step"))
