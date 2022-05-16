@@ -36,8 +36,8 @@ def concat_files(file1, file2, outdir, output,log):
             outputWriter.write(output_file)
 
         del file1Read, file2Read, output_file
-    print(f"DONE: The concatenated filter database is stored at {outdir}/{output}", file = log)
-    return(print(f"DONE: The concatenated filter database is stored at {outdir}/{output}"))
+    print(f"DONE: The concatenated filter database is stored at {outdir}{output}", file = log)
+    return(print(f"DONE: The concatenated filter database is stored at {outdir}{output}"))
 
 
 class SetPrefix():

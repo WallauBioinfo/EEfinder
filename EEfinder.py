@@ -3,8 +3,7 @@
 
 ##################################>IMPORT-MODULES<##################################
 
-import argparse, re
-import re
+import argparse, re, os, glob
 from scripts.run_message import PaperInfo
 from scripts.prepare_data import ConcatFiles, SetPrefix
 from scripts.clean_data import RemoveShort, MaskClean
@@ -59,7 +58,7 @@ parser.add_argument("-mp", "--mask_per",
 parser.add_argument("-p", "--threads",
                     help="Threads for multi-thread analysis, default = 1.", type=int, default=1)
 parser.add_argument("-rm", "--removetmp", 
-                    help="Remove temporary files generated through analysis? default = True.", default=False, choices=['True', 'False'])
+                    help="Remove temporary files generated through analysis? default = True.", default=True, choices=['True', 'False'])
 parser.add_argument("-mk", "--makeblastdb",
                     help="Make blast database?, default = True.", default=True, choices=['True', 'False'])
 parser.add_argument("-pr", "--prefix",
@@ -100,6 +99,8 @@ else:
         out_dir = '.'
     else:
         out_dir = re.sub("/.*", "", input_file).rstrip('\n')
+if os.path.isdir(out_dir) == False:
+    os.mkdir(out_dir)
 # create log file
 log_file = open(f"{out_dir}/EEfinder.log.txt","w+")
 
@@ -171,7 +172,7 @@ if __name__ == '__main__':
     print("\n|"+"-"*42+"RUNNING FILTER STEPS"+"-"*42+"|\n")
     print("\n|"+"-"*42+"RUNNING FILTER STEPS"+"-"*42+"|\n", file = log_file)
     host_similarity_step = SimilaritySearch(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta",
-                                            f"{in_dir}/DatabaseFilter.fa",
+                                            f"{in_dir}DatabaseFilter.fa",
                                             threads,
                                             mode,
                                             log_file)
@@ -288,7 +289,6 @@ if __name__ == '__main__':
                         make_db,
                         log_file)
     make_db_ter.run_make_db()
-    
     # Left side
     tel_similarity = FlankSearch(database_TE,
                                 f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta',
@@ -312,4 +312,51 @@ if __name__ == '__main__':
                             'HOST',
                             log_file)
     ter_filter.run_filter()
+
+
+    #Organize Outputs
+    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa",f"{out_dir}/{prefix}.EEs.fa")
+    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.cl",f"{out_dir}/{prefix}.EEs.cleaned.fa")
+    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.tax",f"{out_dir}/{prefix}.EEs.tax.tsv")
+    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.cl.tax",f"{out_dir}/{prefix}.EEs.cleaned.tax.tsv")
+    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fmt.fasta",f"{out_dir}/{prefix}.EEs.flanks.fa")
+    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta",f"{out_dir}/{prefix}.EEs.L-flank.fa")
+    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.tblastn.filtred",f"{out_dir}/{prefix}.EEs.L-flank.blast.tsv")
+    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta",f"{out_dir}/{prefix}.EEs.R-flank.fa")
+    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.tblastn.filtred",f"{out_dir}/{prefix}.EEs.R-flank.blast.tsv")
+
+    print("\n|"+"-"*45+"SUMMARY RESULTS"+"-"*45+"|\n")
+    print("\n|"+"-"*45+"SUMMARY RESULTS"+"-"*45+"|\n", file = log_file)
+    print(f"{out_dir}/{prefix}.EEs.fa ----------------------------- Fasta file with Endogenous Elements nucleotide sequences.")
+    print(f"{out_dir}/{prefix}.EEs.tax.tsv ------------------------ TSV file with Endogenous Elements taxonomy.")
+    print(f"{out_dir}/{prefix}.EEs.flanks.fa ---------------------- Fasta file with Endogenous Elements plus {flank_region}nt in each flanking regions.")
+    print(f"{out_dir}/{prefix}.EEs.L-flank.fa --------------------- Fasta file with Endogenous Elements plus {flank_region}nt upstream flanking region.")
+    print(f"{out_dir}/{prefix}.EEs.R-flank.fa --------------------- Fasta file with Endogenous Elements plus {flank_region}nt downstream flanking region.")
+    print(f"{out_dir}/{prefix}.EEs.L-flank.blast.tsv -------------- TSV file with filtred blast results of upstream flanking regions.")
+    print(f"{out_dir}/{prefix}.EEs.R-flank.blast.tsv -------------- TSV file with filtred blast results of downstream flanking regions.")
+    print(f"{out_dir}/{prefix}.EEs.cleaned.fa --------------------- Fasta file with Cleaned Endogenous Elements.")
+    print(f"{out_dir}/{prefix}.EEs.cleaned.tax.tsv ---------------- TSV file with Cleaned Endogenous Elements.")
+
+    print(f"{out_dir}/{prefix}.EEs.fa ----------------------------- Fasta file with Endogenous Elements nucleotide sequences.", file = log_file)
+    print(f"{out_dir}/{prefix}.EEs.tax.tsv ------------------------ TSV file with Endogenous Elements taxonomy.", file = log_file)
+    print(f"{out_dir}/{prefix}.EEs.flanks.fa ---------------------- Fasta file with Endogenous Elements plus {flank_region}nt in each flanking regions.", file = log_file)
+    print(f"{out_dir}/{prefix}.EEs.L-flank.fa --------------------- Fasta file with Endogenous Elements plus {flank_region}nt upstream flanking region.", file = log_file)
+    print(f"{out_dir}/{prefix}.EEs.R-flank.fa --------------------- Fasta file with Endogenous Elements plus {flank_region}nt downstream flanking region.", file = log_file)
+    print(f"{out_dir}/{prefix}.EEs.L-flank.blast.tsv -------------- TSV file with filtred blast results of upstream flanking regions.", file = log_file)
+    print(f"{out_dir}/{prefix}.EEs.R-flank.blast.tsv -------------- TSV file with filtred blast results of downstream flanking regions.", file = log_file)
+    print(f"{out_dir}/{prefix}.EEs.cleaned.fa --------------------- Fasta file with Cleaned Endogenous Elements.", file = log_file)
+    print(f"{out_dir}/{prefix}.EEs.cleaned.tax.tsv ---------------- TSV file with Cleaned Endogenous Elements.", file = log_file)
+
+    if temp_remove == True:
+        for tmp_file in glob.glob(f"{out_dir}/*rn*"):
+            os.remove(tmp_file)
+        print('\nTemporary files were removed.')
+        print('\nTemporary files were removed.', file = log_file)
+    else:
+        os.mkdir(f'{out_dir}/tmp_files')
+        for tmp_file in glob.glob(f"{out_dir}/*rn*"):
+            new_tmp_file = re.sub(r'.*/','',tmp_file)
+            os.rename(tmp_file,f"{out_dir}/tmp_files/{new_tmp_file}")
+        print(f'\nTemporary files were moved to {out_dir}/tmp_files. Check the github documentation to access the description of each temporary file.')
+        print(f'\nTemporary files were moved to {out_dir}/tmp_files. Check the github documentation to access the description of each temporary file.', file = log_file)
     print_info.print_finish()
