@@ -65,6 +65,7 @@ def get_final_taxonomy(bed_formated, taxonomy_info, log):
                                 host =  line_prot[20]
 
             protein_terms = re.sub(r" AND $","",protein_terms)
+            genus = re.sub(r" AND $","",genus)
             species = re.sub(r" AND $","",species)
             host = re.sub(r" AND $","",host)
             if mol_type == '':
