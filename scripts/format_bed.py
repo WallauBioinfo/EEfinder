@@ -1,6 +1,6 @@
 import pandas as pd
 
-def get_annotated_bed(blast_tax_info, log):
+def get_annotated_bed(blast_tax_info, merge_level, log):
     """
     This function create a bed file that will be used to merge truncated EVEs of the same family in the same sense based on a limite length treshold.
 
@@ -13,7 +13,10 @@ def get_annotated_bed(blast_tax_info, log):
     df_blast_tax_info['sseqid'] = df_blast_tax_info['sseqid']+'|'+df_blast_tax_info['sense']
     df_blast_tax_info['Family'].fillna('Unknown', inplace=True)
     df_blast_tax_info['Genus'].fillna('Unknown', inplace=True)
-    df_blast_tax_info['formated_name'] = df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['Family']+'|'+df_blast_tax_info['Genus']+'|'+df_blast_tax_info['sense']
+    if merge_level == "genus":
+        df_blast_tax_info['formated_name'] = df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['Family']+'|'+df_blast_tax_info['Genus']+'|'+df_blast_tax_info['sense']
+    else:
+        df_blast_tax_info['formated_name'] = df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['Genus']+'|'+df_blast_tax_info['sense']
     bed_blast_info = df_blast_tax_info[['formated_name','qstart','qend','sseqid']].copy()
     bed_blast_info = bed_blast_info.sort_values(['formated_name','qstart'], ascending = (True, True))
     bed_blast_info.to_csv(f"{blast_tax_info}.bed", index = False, header = False, sep = '\t')
@@ -36,12 +39,13 @@ def reformat_bed(bed_annotated_merged_file,log):
     return(print(f'DONE: Remove annotation of bed file sequences name.'))
 
 class GetAnnotBed():
-    def __init__(self, blast_tax_info, log):
+    def __init__(self, blast_tax_info, merge_level, log):
         self.blast_tax_info = blast_tax_info
+        self.merge_level = merge_level
         self.log = log
 
     def run_get_annotated_bed(self):    
-        get_annotated_bed(self.blast_tax_info, self.log)
+        get_annotated_bed(self.blast_tax_info, self.merge_level, self.log)
 
 class RemoveAnnotation():
     def __init__(self, bed_annotated_merged_file,log):
