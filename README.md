@@ -82,6 +82,7 @@ You can choose which mode of DIAMOND you want to use between:
 - more-sensitive
 - very-sensitive
 - ultra-sensitive
+
 Using 'fast' mode as example:
 `python EEfinder.py -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -db2 <host_protein_db> -db3 <TE_protein_db> -od <protein_table> -md fast`
 #### Keeping temporaries:
@@ -123,6 +124,7 @@ For bacterias you can use the addicional script **bac_retriever**, on the folder
 It require only 3 arguments, your proteins `-in --input`, an email for Entrez `-em --email` and an API key for ncbi `-key --APIkey`.
 ##### Email and APIkey
 You have to register on NCBI and create an APIkey, for the APIkey go on **Account Settings** and find **API Key Management** to create your APIkey
+
 ![account_settings](images/apikey/account_settings.png)
 #### Filter Datasets
 
