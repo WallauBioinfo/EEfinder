@@ -66,8 +66,8 @@ parser.add_argument("-mk", "--makeblastdb",
                     help="Make blast database?, default = True.", default=True, choices=['True', 'False'])
 parser.add_argument("-pr", "--prefix",
                     help="Write the prefix name for output files. We strongly recommend the use of genome name assembly, this prefix will be used to create the EEname (The Endogenous Element name will be formated as PREFIX|CONTIG/SCAFFOLD:START-END) default = input file name.")
-parser.add_argument("-ml", "--merge_level", help="Phylogenetic level to merge elements by genus or family",
-                    default="genus", choices=['family', 'genus'])
+parser.add_argument("-ml", "--merge_level", help="Phylogenetic level to merge elements by genus or family, default = family",
+                    default="family", choices=['family', 'genus'])
 
 # Store arguments on variables
 args = parser.parse_args()
@@ -366,7 +366,6 @@ if __name__ == '__main__':
         print('\nTemporary files were removed.', file=log_file)
     else:
         if os.path.isdir(f'{out_dir}/tmp_files') == False:
-            print(os.path.isfile(f'{out_dir}/tmp_files'))
             os.mkdir(f'{out_dir}/tmp_files')
         else:
             pass

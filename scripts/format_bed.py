@@ -16,7 +16,7 @@ def get_annotated_bed(blast_tax_info, merge_level, log):
     if merge_level == "genus":
         df_blast_tax_info['formated_name'] = df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['Family']+'|'+df_blast_tax_info['Genus']+'|'+df_blast_tax_info['sense']
     else:
-        df_blast_tax_info['formated_name'] = df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['Genus']+'|'+df_blast_tax_info['sense']
+        df_blast_tax_info['formated_name'] = df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['Family']+'|'+df_blast_tax_info['sense']
     bed_blast_info = df_blast_tax_info[['formated_name','qstart','qend','sseqid']].copy()
     bed_blast_info = bed_blast_info.sort_values(['formated_name','qstart'], ascending = (True, True))
     bed_blast_info.to_csv(f"{blast_tax_info}.bed", index = False, header = False, sep = '\t')
