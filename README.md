@@ -145,3 +145,45 @@ prefix.EEs.L-flank.blast.tsv|TSV file with filtred blast results of downstream f
 prefix.EEs.cleaned.fa|Fasta file with Cleaned Endogenous Elements
 prefix.EEs.cleaned.tax.tsv|TSV file with Cleaned Endogenous Elements
 
+### Output diretory
+output/
+├── EEfinder.log.txt
+├── prefix.EEs.cleaned.fa
+├── prefix.EEs.cleaned.tax.tsv
+├── prefix.EEs.fa
+├── prefix.EEs.flanks.fa
+├── prefix.EEs.L-flank.blast.tsv
+├── prefix.EEs.L-flank.fa
+├── prefix.EEs.R-flank.blast.tsv
+├── prefix.EEs.R-flank.fa
+├── prefix.EEs.tax.tsv
+└── tmp_files
+    ├── prefix.rn
+    ├── prefix.rn.fmt
+    ├── prefix.rn.fmt.blastx
+    ├── prefix.rn.fmt.blastx.filtred
+    ├── prefix.rn.fmt.blastx.filtred.bed
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fmt
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.nhr
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.nin
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.nsq
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.tblastn
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.nhr
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.nin
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.nsq
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.tblastn
+    ├── prefix.rn.fmt.fai
+    └── prefix.rn.fmt.rn.fmt.lenght
