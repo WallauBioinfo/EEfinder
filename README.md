@@ -127,4 +127,21 @@ You have to register on NCBI and create an APIkey, for the APIkey go on **Accoun
 
 ![account_settings](images/apikey/account_settings.png)
 #### Filter Datasets
+#### TE datasets
+For screening on virus you must select a TE dataset. We suggest a dataset for TEs in mosquitos from the [paper](https://doi.org/10.1371/journal.pgen.1008946)
+#### Host proteins
+The other dataset for cleaning is a set of host proteins, we suggest RefSeq proteins from NCBI
+
+## Outputs
+Name|Meaning
+| --- | --- |
+prefix.EEs.fa|Fasta file with Endogenous Elements nucleotide sequences
+prefix.EEs.tax.tsv|TSV file with Endogenous Elements taxonomy
+prefix.EEs.flanks.fa|Fasta file with Endogenous Elements plus 10000nt in each flanking regions
+prefix.EEs.L-flank.fa|Fasta file with Endogenous Elements plus 10000nt upstream flanking region.
+prefix.EEs.R-flank.fa|Fasta file with Endogenous Elements plus 10000nt downstream flanking region.
+prefix.EEs.L-flank.blast.tsv|TSV file with filtred blast results of upstream flanking regions
+prefix.EEs.L-flank.blast.tsv|TSV file with filtred blast results of downstream flanking regions
+prefix.EEs.cleaned.fa|Fasta file with Cleaned Endogenous Elements
+prefix.EEs.cleaned.tax.tsv|TSV file with Cleaned Endogenous Elements
 
