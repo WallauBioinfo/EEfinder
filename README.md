@@ -1,7 +1,11 @@
 # EEfinder
+
+This set of python script automatizes several tasks related to identification of Endogenous Elements present on Eukaryotic Genomes.
+
 ## Endogenous Element Finder, Alpha dev version
 
 ### Dependencies:
+
 |Name|Version|
 | ------ | ----- |
 _libgcc_mutex|**0.1**
@@ -49,32 +53,43 @@ xz|**5.2.5**
 zlib|**1.2.11**
 zstd|**1.4.9**
 
-
 #### Install dependencies with conda enviroment:
 
-`conda env create -f env.yml`
-`conda activate env`
+```bash
+conda env create -f env.yml
+conda activate env
+```
 
-For users that want to use diamond:
+For users that want to use diamond, install following the repository tool instructions:
 > https://github.com/bbuchfink/diamond/releases/tag/v2.0.15
 
 ### Running:
+
 #### Test files:
+
 There are some test files in the folder `test_data_dev`:
-Name|Usage
+
+Argument|Test file
 | --- | --- |
 fasta_genome|Ae_aeg_Aag2_ctg_1913.fasta
 virus_proteins_table|virus_subset2.csv
 virus_db|virus_subset.fa
 host_protein_db|filter_subset.fa
 TE_protein_db|TEs_subset.fa
+
 #### Test line:
-`python EEfinder.py -in Ae_aeg_Aag2_ctg_1913.fasta -mt virus_subset2.csv -db virus_subset.fa -db2 filter_subset.fa -db3 TEs_subset.fa -od <outdir>`
 
-
+```bash
+python EEfinder.py -in test_files/Ae_aeg_Aag2_ctg_1913.fasta -mt test_files/virus_subset.csv -db test_files/virus_subset.fa -db2 test_files/filter_subset.fa -db3 test_files/TEs_subset.fa -od <outdir>
+```
 #### Default line:
-`python EEfinder.py -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -db2 <host_protein_db> -db3 <TE_protein_db> -od <protein_table>`
+
+```bash
+python EEfinder.py -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -db2 <host_protein_db> -db3 <TE_protein_db> -od <protein_table>
+```
+
 #### Default line (DIAMOND):
+
 You can choose which mode of DIAMOND you want to use between:
 - fast
 - mid-sensitive
@@ -84,55 +99,94 @@ You can choose which mode of DIAMOND you want to use between:
 - ultra-sensitive
 
 Using 'fast' mode as example:
-`python EEfinder.py -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -db2 <host_protein_db> -db3 <TE_protein_db> -od <protein_table> -md fast`
+
+```bash
+python EEfinder.py -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -db2 <host_protein_db> -db3 <TE_protein_db> -od <protein_table> -md fast
+```
+
 #### Keeping temporaries:
+
 For not deleting temporaries after conclusion use the argument: `-rm --remove False`
+
 #### Merge level:
+
 For decide which philogetic level is going to be use, between family or genus, use the argument: `-ml --merge_level`
+
 #### Modify min lenght of contigs:
+
 In EEfinder you can choose the minimum lenght of contigs that BLAST/DIAMOND is going to use with the argument: `-ln --lenght`
+
 #### Modify flank lenght:
+
 You can choose the lenght of flanking regions going to be extracted with the argument: `-fl --flank`
+
 #### Modify merge lenght:
+
 There are the possibility to change the lenght for merging elements in EEfinder: `-lm --limit`
+
 #### Name your prefix:
+
 You can name the prefix that EEfinder is going to use to create your output files with: `-pr --prefix`
 We suggest to use the name of the genome with the name of the assembly like: **Ae_aeg_Aag2 for Aedes _aegypti_/Aag2**
 
 ### Adquire datasets
-#### Protein database
+
+#### Viral Protein database
+
 For getting the **protein database** you can go on [ncbi virus](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/) and follow this steps:
-![Select RefSeq](images/protein_dataset/refseq.png)
+
 Scroll down and select RefSeq
-![Click Download button](images/protein_dataset/download_button.png)
+![Select RefSeq](images/protein_dataset/refseq.png)
 Click on download button
-![Select Protein](images/protein_dataset/select_protein.png)
+![Click Download button](images/protein_dataset/download_button.png)
 Select protein
-![Select Download all records](images/protein_dataset/download_all.png)
+![Select Protein](images/protein_dataset/select_protein.png)
 Select Download all records
-![Select default](images/protein_dataset/fasta_line.png)
+![Select Download all records](images/protein_dataset/download_all.png)
 Select default
+![Select default](images/protein_dataset/fasta_line.png)
+
 #### Protein table
+
 For getting the protein csv file continue on the RefSeq page and also click on the download button and follow this steps:
 ![Select csv](images/protein_table/csv.png)
 Select csv
 ![Select Download all records](images/protein_table/download_all.png)
 Select Download all records
 ![Follow the template](images/protein_table/template.png)
+
 #### For bacterias
-For bacterias you can use the addicional script **bac_retriever**, on the folder **accessory_scripts/**, that create the table with the proteins you choose.
-It require only 3 arguments, your proteins `-in --input`, an email for Entrez `-em --email` and an API key for ncbi `-key --APIkey`.
+
+For bacterias you can use the addicional script **bac_retriever.py**, on the folder **accessory_scripts/**, that create the table with the proteins you choose.
+
+```bash
+python bac_retriever.py -in <fasta_with_bac_protein> -em <your_email_associated_to_ncbi_account> -key <your_ncbi_api_key>
+```
+
+This script will automatically recovery the accession ID present on fasta header and will create a tabular file with the same structure of the `virus_subset.tsv` test example, with the bacterial metadata information.
+
+##### Disclaimer
+
+Your bacterial protein fasta file **should** have sequences recovered from NCBI protein databases, and the sequences **should** have the same header pattern (starting with NCBI access protein code).
+
 ##### Email and APIkey
+
 You have to register on NCBI and create an APIkey, for the APIkey go on **Account Settings** and find **API Key Management** to create your APIkey
 
 ![account_settings](images/apikey/account_settings.png)
+
 #### Filter Datasets
+
 #### TE datasets
-For screening on virus you must select a TE dataset. We suggest a dataset for TEs in mosquitos from the [paper](https://doi.org/10.1371/journal.pgen.1008946)
+
+For screening on virus you must select a TE protein dataset. If you work with EVEs on mosquitos, we suggest a dataset for TEs in mosquitos from this [paper](https://doi.org/10.1371/journal.pgen.1008946).
+
 #### Host proteins
-The other dataset for cleaning is a set of host proteins, we suggest RefSeq proteins from NCBI
+
+The other dataset for cleaning is a set of host proteins, we suggest RefSeq proteins from NCBI.
 
 ## Outputs
+
 Name|Meaning
 | --- | --- |
 prefix.EEs.fa|Fasta file with Endogenous Elements nucleotide sequences
@@ -146,6 +200,8 @@ prefix.EEs.cleaned.fa|Fasta file with Cleaned Endogenous Elements
 prefix.EEs.cleaned.tax.tsv|TSV file with Cleaned Endogenous Elements
 
 ### Output diretory
+
+```
 output/
 ├── EEfinder.log.txt
 ├── prefix.EEs.cleaned.fa
@@ -187,3 +243,4 @@ output/
     ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.tblastn
     ├── prefix.rn.fmt.fai
     └── prefix.rn.fmt.rn.fmt.lenght
+```
