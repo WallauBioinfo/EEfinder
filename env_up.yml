@@ -1,0 +1,38 @@
+name: EEfinder
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - blast=2.5.0
+  - boost-cpp=1.74.0
+  - bzip2=1.0.8
+  - ca-certificates=2022.6.15
+  - diamond=2.0.15
+  - icu=70.1
+  - libcxx=14.0.6
+  - libffi=3.2.1
+  - libzlib=1.2.12
+  - lz4-c=1.9.3
+  - ncurses=6.3
+  - openssl=1.1.1q
+  - pip=21.2.4
+  - python=3.9.0
+  - python_abi=3.9
+  - readline=8.1.2
+  - setuptools=63.3.0
+  - sqlite=3.39.2
+  - tk=8.6.12
+  - tzdata=2022a
+  - wheel=0.37.1
+  - xz=5.2.5
+  - zlib=1.2.12
+  - zstd=1.5.2
+  - pip:
+    - biopython==1.79
+    - numpy==1.23.1
+    - pandas==1.4.2
+    - python-dateutil==2.8.2
+    - pytz==2022.1
+    - six==1.16.0
+prefix: /Users/varsomics/opt/anaconda3/envs/EEfinder
