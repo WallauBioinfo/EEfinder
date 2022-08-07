@@ -1,2 +1,6 @@
 scripts/__pycache__/
 *.pyc
+*.pin
+*.phr
+*.psq
+output/
