@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 def get_annotated_bed(blast_tax_info, merge_level, log):
     """
@@ -13,10 +14,13 @@ def get_annotated_bed(blast_tax_info, merge_level, log):
     df_blast_tax_info['sseqid'] = df_blast_tax_info['sseqid']+'|'+df_blast_tax_info['sense']
     df_blast_tax_info['Family'].fillna('Unknown', inplace=True)
     df_blast_tax_info['Genus'].fillna('Unknown', inplace=True)
+    '''
+    
+    '''
     if merge_level == "genus":
-        df_blast_tax_info['formated_name'] = df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['Family']+'|'+df_blast_tax_info['Genus']+'|'+df_blast_tax_info['sense']
+        df_blast_tax_info['formated_name'] = np.where(df_blast_tax_info['Genus']!= 'Unknown', df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['Family']+'|'+df_blast_tax_info['Genus']+'|'+df_blast_tax_info['sense'], df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['sseqid']+'|'+df_blast_tax_info['Genus'])
     else:
-        df_blast_tax_info['formated_name'] = df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['Family']+'|'+df_blast_tax_info['sense']
+        df_blast_tax_info['formated_name'] = np.where(df_blast_tax_info['Family']!= 'Unknown', df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['Family']+'|'+df_blast_tax_info['sense'], df_blast_tax_info['qseqid']+'|'+df_blast_tax_info['sseqid']+'|'+df_blast_tax_info['Family'])
     bed_blast_info = df_blast_tax_info[['formated_name','qstart','qend','sseqid']].copy()
     bed_blast_info = bed_blast_info.sort_values(['formated_name','qstart'], ascending = (True, True))
     bed_blast_info.to_csv(f"{blast_tax_info}.bed", index = False, header = False, sep = '\t')

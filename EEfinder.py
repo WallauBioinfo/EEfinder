@@ -68,7 +68,7 @@ parser.add_argument("-mk", "--makeblastdb",
 parser.add_argument("-pr", "--prefix",
                     help="Write the prefix name for output files. We strongly recommend the use of genome name assembly, this prefix will be used to create the EEname (The Endogenous Element name will be formated as PREFIX|CONTIG/SCAFFOLD:START-END) default = input file name.")
 parser.add_argument("-ml", "--merge_level", help="Phylogenetic level to merge elements by genus or family, default = family",
-                    default="family", choices=['family', 'genus'])
+                    default="genus", choices=['family', 'genus'])
 
 # Store arguments on variables
 args = parser.parse_args()
@@ -111,11 +111,8 @@ if os.path.isdir(out_dir) == False:
 # create log file
 log_file = open(f"{out_dir}/EEfinder.log.txt", "w+")
 
-
 if __name__ == '__main__':
-    # Count start time
-    st = time.time()
-
+    start_running_time = time.time()
     print_info = PaperInfo()
     print_info.print_message()
     # Prepare Data Step
@@ -139,9 +136,10 @@ if __name__ == '__main__':
                               log_file)
     remove_seqs.run_remove_short()
     final_time_prep = time.time()
-    print(f"PREPARING DATA TIME = {final_time_prep - start_time_prep} SECONDS")
     print(
-        f"PREPARING DATA TIME = {final_time_prep - start_time_prep} SECONDS", file=log_file)
+        f"PREPARING DATA TIME = {(final_time_prep - start_time_prep)/60:.2f} MINUTES")
+    print(
+        f"PREPARING DATA TIME = {(final_time_prep - start_time_prep)/60:.2f} MINUTES", file=log_file)
     # Make databases for EVEs screening and filters
     print("\n|"+"-"*42+"FORMATTING DATABASES"+"-"*42+"|\n")
     print("\n|"+"-"*42+"FORMATTING DATABASES"+"-"*42+"|\n", file=log_file)
@@ -162,9 +160,9 @@ if __name__ == '__main__':
     make_db_filter.run_make_db()
     final_time_formatdb = time.time()
     print(
-        f"FORMATTING DATABASES TIME = {final_time_formatdb - start_time_formatdb} SECONDS")
+        f"FORMATTING DATABASES TIME = {(final_time_formatdb - start_time_formatdb)/60:.2f} MINUTES")
     print(
-        f"FORMATTING DATABASES TIME = {final_time_formatdb - start_time_formatdb} SECONDS", file=log_file)
+        f"FORMATTING DATABASES TIME = {(final_time_formatdb - start_time_formatdb)/60:.2f} MINUTES", file=log_file)
     # Run Similarity Screenings
     print("\n|"+"-"*40+"RUNNING SIMILARITY SEARCH"+"-"*39+"|\n")
     print("\n|"+"-"*40+"RUNNING SIMILARITY SEARCH"+"-"*39+"|\n", file=log_file)
@@ -181,9 +179,10 @@ if __name__ == '__main__':
                                   log_file)
     ee_filter_table.run_filter()
     final_time_sim = time.time()
-    print(f"RUNING SEARCH TIME = {final_time_sim - start_time_sim} SECONDS")
     print(
-        f"RUNING SEARCH TIME = {final_time_sim - start_time_sim} SECONDS", file=log_file)
+        f"RUNING SEARCH TIME = {(final_time_sim - start_time_sim)/60:.2f} MINUTES")
+    print(
+        f"RUNING SEARCH TIME = {(final_time_sim - start_time_sim)/60:.2f} MINUTES", file=log_file)
     # Getting fastas
     print("\n|"+"-"*40+"EXTRACTING PUTATIVE EVES"+"-"*40+"|\n")
     print("\n|"+"-"*40+"EXTRACTING PUTATIVE EVES"+"-"*40+"|\n", file=log_file)
@@ -195,9 +194,9 @@ if __name__ == '__main__':
     getter_fasta.run_get_fasta()
     final_time_extract = time.time()
     print(
-        f"EXTRACTING EVES TIME = {final_time_extract - start_time_extract} SECONDS")
+        f"EXTRACTING EVES TIME = {(final_time_extract - start_time_extract)/60:.2f} MINUTES")
     print(
-        f"EXTRACTING EVES TIME = {final_time_extract - start_time_extract} SECONDS", file=log_file)
+        f"EXTRACTING EVES TIME = {(final_time_extract - start_time_extract)/60:.2f} MINUTES", file=log_file)
     # Second Similarity Screen
     print("\n|"+"-"*42+"RUNNING FILTER STEPS"+"-"*42+"|\n")
     print("\n|"+"-"*42+"RUNNING FILTER STEPS"+"-"*42+"|\n", file=log_file)
@@ -220,9 +219,9 @@ if __name__ == '__main__':
     comparer.run_comparation()
     final_time_filter = time.time()
     print(
-        f"FILTER STEP TIME = {final_time_filter - start_time_filter} SECONDS")
+        f"FILTER STEP TIME = {(final_time_filter - start_time_filter)/60:.2f} MINUTES")
     print(
-        f"FILTER STEP TIME = {final_time_filter - start_time_filter} SECONDS", file=log_file)
+        f"FILTER STEP TIME = {(final_time_filter - start_time_filter)/60:.2f} MINUTES", file=log_file)
     print("\n|"+"-"*39+"GETTING BASIC TAXONOMY INFO"+"-"*38+"|\n")
     print("\n|"+"-"*39+"GETTING BASIC TAXONOMY INFO"+"-"*38+"|\n", file=log_file)
     start_time_tax = time.time()
@@ -233,9 +232,9 @@ if __name__ == '__main__':
     get_info.run_get_taxonomy_info()
     final_time_tax = time.time()
     print(
-        f"GETTING BASIC TAXONOMY INFO TIME = {final_time_tax - start_time_tax} SECONDS")
+        f"GETTING BASIC TAXONOMY INFO TIME = {(final_time_tax - start_time_tax)/60:.2f} MINUTES")
     print(
-        f"GETTING BASIC TAXONOMY INFO TIME = {final_time_tax - start_time_tax} SECONDS", file=log_file)
+        f"GETTING BASIC TAXONOMY INFO TIME = {(final_time_tax - start_time_tax)/60:.2f} MINUTES", file=log_file)
     # Get annotated bed file
     print("\n|"+"-"*40+"MERGIN TRUNCATED ELEMENTS"+"-"*39+"|\n")
     print("\n|"+"-"*40+"MERGIN TRUNCATED ELEMENTS"+"-"*39+"|\n", file=log_file)
@@ -259,9 +258,10 @@ if __name__ == '__main__':
                                    log_file)
     getter_merged_fasta.run_get_fasta()
     final_time_merge = time.time()
-    print(f"MERGING TIME = {final_time_merge - start_time_merge} SECONDS")
     print(
-        f"MERGING TIME = {final_time_merge - start_time_merge} SECONDS", file=log_file)
+        f"MERGING TIME = {(final_time_merge - start_time_merge)/60:.2f} MINUTES")
+    print(
+        f"MERGING TIME = {(final_time_merge - start_time_merge)/60:.2f} MINUTES", file=log_file)
     print("\n|"+"-"*43+"CLEANNING ELEMENTS"+"-"*43+"|\n")
     print("\n|"+"-"*43+"CLEANNING ELEMENTS"+"-"*43+"|\n", file=log_file)
     start_time_clean = time.time()
@@ -270,9 +270,10 @@ if __name__ == '__main__':
                              log_file)
     clean_masked.run_mask_clean()
     final_time_clean = time.time()
-    print(f"CLEAN STEP TIME = {final_time_clean - start_time_clean} SECONDS")
     print(
-        f"CLEAN STEP TIME = {final_time_clean - start_time_clean} SECONDS", file=log_file)
+        f"CLEAN STEP TIME = {(final_time_clean - start_time_clean)/60:.2f} MINUTES")
+    print(
+        f"CLEAN STEP TIME = {(final_time_clean - start_time_clean)/60:.2f} MINUTES", file=log_file)
     print("\n|"+"-"*37+"CREATING FINAL TAXONOMY FILES"+"-"*38+"|\n")
     print("\n|"+"-"*37+"CREATING FINAL TAXONOMY FILES"+"-"*38+"|\n", file=log_file)
     start_time_final_tax = time.time()
@@ -288,9 +289,9 @@ if __name__ == '__main__':
 
     final_time_final_tax = time.time()
     print(
-        f"FINAL TAXONOMY TIME = {final_time_final_tax - start_time_final_tax}")
+        f"FINAL TAXONOMY TIME = {(final_time_final_tax - start_time_final_tax)/60:.2f} MINUTES")
     print(
-        f"FINAL TAXONOMY TIME = {final_time_final_tax - start_time_final_tax}", file=log_file)
+        f"FINAL TAXONOMY TIME = {(final_time_final_tax - start_time_final_tax)/60:.2f} MINUTES", file=log_file)
     # Flanking Regions
     print("\n|"+"-"*39+"EXTRACTING FLANKING REGIONS"+"-"*38+"|\n")
     print("\n|"+"-"*39+"EXTRACTING FLANKING REGIONS"+"-"*38+"|\n", file=log_file)
@@ -329,9 +330,9 @@ if __name__ == '__main__':
     get_fasta_flankr.run_get_fasta()
     final_time_flank = time.time()
     print(
-        f"EXTRACTING FLANKS TIME = {final_time_flank - start_time_flank} SECONDS")
+        f"EXTRACTING FLANKS TIME = {(final_time_flank - start_time_flank)/60:.2f} MINUTES")
     print(
-        f"EXTRACTING FLANKS TIME = {final_time_flank - start_time_flank} SECONDS", file=log_file)
+        f"EXTRACTING FLANKS TIME = {(final_time_flank - start_time_flank)/60:.2f} MINUTES", file=log_file)
     print("\n|"+"-"*38+"IDENTIFYING FLANKING ELEMENTS"+"-"*37+"|\n")
     print("\n|"+"-"*38+"IDENTIFYING FLANKING ELEMENTS"+"-"*37+"|\n", file=log_file)
     start_time_flanks_sim = time.time()
@@ -377,9 +378,9 @@ if __name__ == '__main__':
     ter_filter.run_filter()
     final_time_flanks_sim = time.time()
     print(
-        f"IDENTIFYING FLANKING ELEMENTS TIME = {final_time_flanks_sim - start_time_flanks_sim} SECONDS")
+        f"IDENTIFYING FLANKING ELEMENTS TIME = {(final_time_flanks_sim - start_time_flanks_sim)/60:.2f} MINUTES")
     print(
-        f"IDENTIFYING FLANKING ELEMENTS TIME = {final_time_flanks_sim - start_time_flanks_sim} SECONDS", file=log_file)
+        f"IDENTIFYING FLANKING ELEMENTS TIME = {(final_time_flanks_sim - start_time_flanks_sim)/60:.2f} MINUTES", file=log_file)
     # Organize Outputs
     os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa",
               f"{out_dir}/{prefix}.EEs.fa")
@@ -441,8 +442,7 @@ if __name__ == '__main__':
             f'\nTemporary files were moved to {out_dir}/tmp_files. Check the github documentation to access the description of each temporary file.', file=log_file)
     print_info.print_finish()
 
-    # Count End time and show total time
-    et = time.time()
-    total_time = et - st
-    print(f'TOTAL TIME = {total_time} SECONDS')
-    print(f'TOTAL TIME = {total_time} SECONDS', file=log_file)
+    end_running_time = time.time()
+    total_running_time = end_running_time - start_running_time
+    print(f'TOTAL TIME = {total_running_time/60:.2f} MINUTES')
+    print(f'TOTAL TIME = {total_running_time/60:.2f} MINUTES', file=log_file)
