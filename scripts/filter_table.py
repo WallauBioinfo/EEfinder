@@ -24,7 +24,7 @@ def filter(blast_result, tag, out_dir, log):
     df['new_qend'] = df["qend"]
     # convert de dataframe in a csv file
     df.to_csv(blast_result+'.csv', sep='\t')
-    chunks = df = pd.read_csv(f"{blast_result}.csv", sep='\t', chunksize=1000)
+    chunks = df = pd.read_csv(f"{blast_result}.csv", sep='\t', chunksize=200000)
     count = 0
     tmp_path = f"{out_dir}/tmp/"
     if os.path.exists(tmp_path) == False:
