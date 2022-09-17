@@ -176,6 +176,7 @@ if __name__ == '__main__':
     # Filtering results
     ee_filter_table = FilterTable(f"{out_dir}/{prefix}.rn.fmt.blastx",
                                   "EE",
+                                  out_dir,
                                   log_file)
     ee_filter_table.run_filter()
     final_time_sim = time.time()
@@ -210,6 +211,7 @@ if __name__ == '__main__':
     # Filtering results
     host_filter_table = FilterTable(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx",
                                     "HOST",
+                                    out_dir,
                                     log_file)
     host_filter_table.run_filter()
     # Comparing results
@@ -363,6 +365,7 @@ if __name__ == '__main__':
 
     tel_filter = FilterTable(f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.tblastn',
                              'HOST',
+                             out_dir,
                              log_file)
     tel_filter.run_filter()
     # Right side
@@ -374,6 +377,7 @@ if __name__ == '__main__':
     ter_similarity.run_flank_search()
     ter_filter = FilterTable(f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.tblastn',
                              'HOST',
+                             out_dir,
                              log_file)
     ter_filter.run_filter()
     final_time_flanks_sim = time.time()

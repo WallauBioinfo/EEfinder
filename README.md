@@ -53,11 +53,13 @@ xz|**5.2.5**
 zlib|**1.2.11**
 zstd|**1.4.9**
 
-#### Install dependencies with conda enviroment:
+#### Install
 
 ```bash
+git clone https://github.com/dezordi/EEfinder.git
+cd EEfinder
 conda env create -f env.yml
-conda activate env
+conda activate EEfinder
 ```
 
 For users that want to use diamond, install following the repository tool instructions:

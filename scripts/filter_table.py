@@ -1,9 +1,11 @@
 import pandas as pd
 import csv
 import os
+import re
+import glob
+import shutil
 
-
-def filter(blast_result, tag, log):
+def filter(blast_result, tag, out_dir, log):
     """
     This function receives a blastx result and filter based on query ID and ranges of qstart and qend.
 
@@ -18,77 +20,84 @@ def filter(blast_result, tag, log):
     df['sense'] = ''  # creates a new column for sense of hit
     df['bed_name'] = ''  # creates a new column with bedtools formated name
     df['tag'] = ''  # creates a new columns for tag of blast EE or HOST
+    df['new_qstart'] = df["qstart"]
+    df['new_qend'] = df["qend"]
     # convert de dataframe in a csv file
     df.to_csv(blast_result+'.csv', sep='\t')
-    rows = list()
-    with open(blast_result+'.csv', 'r') as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter='\t')
-        for row in csv_reader:  # this loop verify the sense of match
-            if row[0] == '':
-                pass
-            else:
-                if float(row[7]) > float(row[8]):
-                    row[13] = 'neg'
-                    a = row[7]
-                    b = row[8]
-                    row[7] = b
-                    row[8] = a
-                else:
-                    row[13] = 'pos'
-                if tag == 'EE':
-                    row[14] = row[1]+":"+row[7]+"-"+row[8]
-                    row[15] = 'EE'
-                else:
-                    row[14] = row[1]
-                    row[15] = 'HOST'
-            rows.append(row)
-        with open(blast_result+'.csv.mod', 'w') as writeFile:
-            writer = csv.writer(writeFile, delimiter='\t')
-            writer.writerows(rows)
-    csv_file.close()
-    writeFile.close()
-    pd.options.display.float_format = "{:,.2f}".format
-    df = pd.read_csv(blast_result+'.csv.mod', sep='\t')
-    # this line format the evalue as float, to avoid a representation by a large nuber pd.dataframe creates, for a limitation of ndarray, numbers fewer than -9223372036854775808 (np.iinfo(np.int64).min) are converted to 0.0
-    df["evalue"] = pd.to_numeric(df["evalue"], downcast="float")
-    '''
-    The next three line is a trick used to remove redundant hits () in in 3 decimal places, in this case, as we are
-    using a blast do recovery the EE signature in queries, that represent our genome, the filter is applied by
-    query name and query start and end ranges, an example:
-    INPUT:
-    qseqid	sseqid	pident	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore
-    aag2_ctg_162	AAC97621	30.636	173	108	3	130612	130100	132	294	2.43e-08	69.7
-    aag2_ctg_162	AAU10897	23.611	216	163	2	130717	130073	134	348	2.52e-10	75.3
-    aag2_ctg_162	AOC55195	24.535	269	197	4	130864	130073	84	351	4.49e-11	77.8
-    OUTPUT:
-    qseqid	sseqid	pident	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore	sense
-    aag2_ctg_162	AOC55195	24.535	269	197	4	130073	130864	84	351	4.49e-11	77.8	-
-    '''
-    df['qstart_rng'] = df.qstart.floordiv(100)
-    df['qend_rng'] = df.qend.floordiv(100)
-    df_2 = df.drop_duplicates(subset=['qseqid', 'qstart_rng', 'sense']).drop_duplicates(
-        subset=['qseqid', 'qstart_rng', 'sense']).sort_values(by=['qseqid'])
-    df_2 = df_2[df_2.length >= 33]
-    df_3 = df_2[['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart',
-                 'qend', 'sstart', 'send', 'evalue', 'bitscore', 'sense', 'bed_name', 'tag']]
-    out_csv = blast_result+'.filtred'
-    df_3.to_csv(out_csv, sep='\t', index=False)
+    chunks = df = pd.read_csv(f"{blast_result}.csv", sep='\t', chunksize=1000)
+    count = 0
+    tmp_path = f"{out_dir}/tmp/"
+    if os.path.exists(tmp_path) == False:
+        os.mkdir(tmp_path)
+    for df in chunks:
+        df.loc[df["qstart"].astype(int) > df["qend"].values.astype(int), "sense"] = "neg"
+        df.loc[df["qend"].values.astype(int) > df["qstart"].astype(int), "sense"] = "pos"
+        df.loc[df["sense"] == "neg", "new_qstart"] = df["qend"]
+        df.loc[df["sense"] == "neg", "new_qend"] = df["qstart"]
+        df.loc[df["sense"] == "neg", "qstart"] = df["new_qstart"]
+        df.loc[df["sense"] == "neg", "qend"] = df["new_qend"]
+        df.drop(columns=["new_qstart", "new_qend"], inplace=True)
+        if tag == "EE":
+            df["tag"] = "EE"
+            df["bed_name"] = df.apply(lambda x:'%s:%s-%s' % (x['qseqid'],x['qstart'],x["qend"]),axis=1)
+        else:
+            df["tag"] = "HOST"
+            df["bed_name"] = df["qseqid"]
+        pd.options.display.float_format = "{:,.2f}".format
+        # this line format the evalue as float, to avoid a representation by a large nuber pd.dataframe creates, for a limitation of ndarray, numbers fewer than -9223372036854775808 (np.iinfo(np.int64).min) are converted to 0.0
+        df["evalue"] = pd.to_numeric(df["evalue"], downcast="float")
+        """
+        '''
+        The next three line is a trick used to remove redundant hits () in in 3 decimal places, in this case, as we are
+        using a blast do recovery the EE signature in queries, that represent our genome, the filter is applied by
+        query name and query start and end ranges, an example:
+        INPUT:
+        qseqid	sseqid	pident	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore
+        aag2_ctg_162	AAC97621	30.636	173	108	3	130612	130100	132	294	2.43e-08	69.7
+        aag2_ctg_162	AAU10897	23.611	216	163	2	130717	130073	134	348	2.52e-10	75.3
+        aag2_ctg_162	AOC55195	24.535	269	197	4	130864	130073	84	351	4.49e-11	77.8
+        OUTPUT:
+        qseqid	sseqid	pident	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore	sense
+        aag2_ctg_162	AOC55195	24.535	269	197	4	130073	130864	84	351	4.49e-11	77.8	-
+        '''
+        df['qstart_rng'] = df.qstart.floordiv(100)
+        df['qend_rng'] = df.qend.floordiv(100)
+        df = df.drop_duplicates(subset=['qseqid', 'qstart_rng', 'sense']).drop_duplicates(
+                           subset=['qseqid', 'qstart_rng', 'sense']).sort_values(by=['qseqid'])
+        """
+        df = df[df.length >= 33]
+        header = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart',
+                 'qend', 'sstart', 'send', 'evalue', 'bitscore', 'sense', 'bed_name', 'tag']
+        df = df[header]
+        with open(f"{tmp_path}chunk.{count}.tsv", 'w') as chunk_writer:
+            df.to_csv(chunk_writer, sep="\t",index=False)
+        count += 1
+    all_chunks = glob.glob(f"{tmp_path}/*.tsv")
+    final_filtred_file = pd.DataFrame()
+    chunks_list = []
+    for chunk in all_chunks:
+        df = pd.read_csv(chunk, sep="\t")
+        chunks_list.append(df)
+    final_filtred_file = pd.concat(chunks_list, ignore_index=True)
+    final_filtred_file['qstart_rng'] = final_filtred_file.qstart.floordiv(100)
+    final_filtred_file['qend_rng'] = final_filtred_file.qend.floordiv(100)
+    final_filtred_file = final_filtred_file.drop_duplicates(subset=['qseqid', 'qstart_rng', 'sense']).drop_duplicates(
+                           subset=['qseqid', 'qstart_rng', 'sense']).sort_values(by=['qseqid'])
+    final_filtred_file.to_csv(f"{blast_result}.filtred", sep="\t", index=False, columns=header)
     if tag == "EE":
-        df_4 = df_2[['qseqid', 'qstart', 'qend']]
-        out_bed = blast_result+'.filtred.bed'
-        df_4.to_csv(out_bed, sep='\t', index=False, header=False)
-    os.remove(blast_result+'.csv')
-    os.remove(blast_result+'.csv.mod')
+        final_filtred_file.to_csv(f"{blast_result}.filtred.bed", header=False, sep="\t", index=False, columns=['qseqid', 'qstart', 'qend'])
+    shutil.rmtree(tmp_path, ignore_errors=True)
     print(f'DONE: {blast_result} filtred!', file = log)
     return(print(f'DONE: {blast_result} filtred!'))
 
 
 class FilterTable:
 
-    def __init__(self, blastresult, tag, log):
+    def __init__(self, blastresult, tag, out_dir, log):
         self.blastresult = blastresult
         self.tag = tag
+        self.out_dir = out_dir
         self.log = log
 
     def run_filter(self):
-        filter(self.blastresult, self.tag, self.log)
+        filter(self.blastresult, self.tag, self.out_dir, self.log)
