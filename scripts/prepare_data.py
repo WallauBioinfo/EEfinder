@@ -15,31 +15,6 @@ def insert_prefix(input_file, prefix, outdir):
                 line = re.sub(r">", f">{prefix}/", line)
             output_file.write(line)
 
-
-def concat_files(file1, file2, outdir, output,log):
-    """
-    This function concatenate two files.
-
-    Keyword arguments:
-    file1 - first file to be concatenated
-    file2 - second file to be concatenated
-    outdir - directory to store outputs
-    output - output file name
-    """
-    with open(file1) as file1Read, open(file2) as file2Read:
-        file1Read = file1Read.read()
-        file2Read = file2Read.read()
-        output_file = ''
-        output_file += file1Read
-        output_file += file2Read
-        with open(f"{outdir}/{output}", 'w') as outputWriter:
-            outputWriter.write(output_file)
-
-        del file1Read, file2Read, output_file
-    print(f"DONE: The concatenated filter database is stored at {outdir}{output}", file = log)
-    return(print(f"DONE: The concatenated filter database is stored at {outdir}{output}"))
-
-
 class SetPrefix():
     def __init__(self, in_file, prefix, outdir):
         self.in_file = in_file

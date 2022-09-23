@@ -9,7 +9,7 @@ import re
 import os
 import glob
 from scripts.run_message import PaperInfo
-from scripts.prepare_data import ConcatFiles, SetPrefix
+from scripts.prepare_data import SetPrefix
 from scripts.clean_data import RemoveShort, MaskClean
 from scripts.make_database import MakeDB
 from scripts.similarity_analysis import FlankSearch, SimilaritySearch
@@ -119,12 +119,7 @@ if __name__ == '__main__':
     print("|"+"-"*45+"PREPARING DATA"+"-"*45+"|\n")
     print("|"+"-"*45+"PREPARING DATA"+"-"*45+"|\n", file=log_file)
     start_time_prep = time.time()
-    concat_files = ConcatFiles(database_HOST,
-                               database_TE,
-                               in_dir,
-                               'DatabaseFilter.fa',
-                               log_file)
-    concat_files.run_concate_file()
+
     # Set Prefix
     set_prefix = SetPrefix(input_file,
                            prefix,
@@ -152,7 +147,7 @@ if __name__ == '__main__':
                         log_file)
     make_db_ee.run_make_db()
     make_db_filter = MakeDB(mode,
-                            f"{in_dir}/DatabaseFilter.fa",
+                            database_HOST,
                             'prot',
                             threads,
                             make_db,
@@ -203,7 +198,7 @@ if __name__ == '__main__':
     print("\n|"+"-"*42+"RUNNING FILTER STEPS"+"-"*42+"|\n", file=log_file)
     start_time_filter = time.time()
     host_similarity_step = SimilaritySearch(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta",
-                                            f"{in_dir}DatabaseFilter.fa",
+                                            database_HOST,
                                             threads,
                                             mode,
                                             log_file)
