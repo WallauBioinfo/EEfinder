@@ -1,6 +1,6 @@
 import shlex
 import subprocess
-import csv
+import pandas as pd
 
 
 def bed_flank(input_file, length_file, flank_region, log):
@@ -14,15 +14,18 @@ def bed_flank(input_file, length_file, flank_region, log):
 
 
 def flank_formater(input_file, log):
-    with open(f'{input_file}.flank', 'r') as flank_bed, open(f'{input_file}.flank.fmt', 'w') as flank_bed_fmt:
-        reader = csv.reader(flank_bed, delimiter='\t')
-        for line in reader:
-            nextline = next(reader)
-            try:
-                flank_bed_fmt.write(line[0].rstrip(
-                    '\n')+'\t'+line[1].rstrip('\n')+'\t'+nextline[2]+'\n')
-            except:
-                pass
+    with open(f'{input_file}.flank.fmt', 'w') as flank_bed_fmt:
+        #reader = csv.reader(flank_bed, delimiter='\t')
+        df = pd.read_csv(f'{input_file}.flank', sep="\t", header=None)
+        df_up_flank = df.iloc[::2].copy()
+        df_down_flank = df.drop(0).copy()
+        df_down_flank = df_down_flank.iloc[::2].copy()
+        df_up_flank.columns = ["prefix", "up_start", "up_end"]
+        df_down_flank.columns = ["prefix", "down_start", "down_end"]
+        down_end = df_down_flank["down_end"].tolist()
+        df_up_flank["down_end"] = down_end
+        df_bed_flanks = df_up_flank.drop("up_end", axis = 1)
+        df_bed_flanks.to_csv(flank_bed_fmt, sep="\t", index=False, header=None)
         print('DONE: Format bed flank files!', file = log)
         return(print('DONE: Format bed flank files!'))
 
