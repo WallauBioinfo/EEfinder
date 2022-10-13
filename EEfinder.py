@@ -20,7 +20,6 @@ from scripts.format_bed import GetAnnotBed, RemoveAnnotation
 from scripts.bed_merge import MergeBed
 from scripts.bed_flank import BedFlank
 from scripts.compare_results import CompareResults
-from scripts.flank_divider import FlankDivider
 from scripts.get_bed import GetBed
 from scripts.get_length import GetLength
 
@@ -304,27 +303,12 @@ if __name__ == '__main__':
                                 flank_region,
                                 log_file)
     getter_bed_flank.run_bed_flank()
-    divider = FlankDivider(
-        f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank')
-    divider.run_flank_divider()
     get_fasta_flank = GetFasta(
         f"{out_dir}/{prefix}.rn.fmt",
-        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fmt",
-        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fmt.fasta",
-        log_file)
-    get_fasta_flankr = GetFasta(
-        f"{out_dir}/{prefix}.rn.fmt",
-        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right",
-        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta",
-        log_file)
-    get_fasta_flankl = GetFasta(
-        f"{out_dir}/{prefix}.rn.fmt",
-        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left",
-        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta",
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank",
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta",
         log_file)
     get_fasta_flank.run_get_fasta()
-    get_fasta_flankl.run_get_fasta()
-    get_fasta_flankr.run_get_fasta()
     final_time_flank = time.time()
     print(
         f"EXTRACTING FLANKS TIME = {(final_time_flank - start_time_flank)/60:.2f} MINUTES")
@@ -334,47 +318,27 @@ if __name__ == '__main__':
     print("\n|"+"-"*38+"IDENTIFYING FLANKING ELEMENTS"+"-"*37+"|\n", file=log_file)
     start_time_flanks_sim = time.time()
     # Flank transposon search
-    # Creating dbs
+    # Creating db
     make_db_tel = MakeDB('tblastn',
-                         f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta',
+                         f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta',
                          'nucl',
                          threads,
                          make_db,
                          log_file)
     make_db_tel.run_make_db()
-
-    make_db_ter = MakeDB('tblastn',
-                         f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta',
-                         'nucl',
-                         threads,
-                         make_db,
-                         log_file)
-    make_db_ter.run_make_db()
-    # Left side
+    # Similarity Search
     tel_similarity = FlankSearch(database_TE,
-                                 f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta',
+                                 f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta',
                                  threads,
-                                 f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.tblastn',
+                                 f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta.tblastn',
                                  log_file)
     tel_similarity.run_flank_search()
 
-    tel_filter = FilterTable(f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.tblastn',
+    tel_filter = FilterTable(f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta.tblastn',
                              'HOST',
                              out_dir,
                              log_file)
     tel_filter.run_filter()
-    # Right side
-    ter_similarity = FlankSearch(database_TE,
-                                 f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta',
-                                 threads,
-                                 f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.tblastn',
-                                 log_file)
-    ter_similarity.run_flank_search()
-    ter_filter = FilterTable(f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.tblastn',
-                             'HOST',
-                             out_dir,
-                             log_file)
-    ter_filter.run_filter()
     final_time_flanks_sim = time.time()
     print(
         f"IDENTIFYING FLANKING ELEMENTS TIME = {(final_time_flanks_sim - start_time_flanks_sim)/60:.2f} MINUTES")
@@ -389,36 +353,24 @@ if __name__ == '__main__':
               f"{out_dir}/{prefix}.EEs.tax.tsv")
     os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.cl.tax",
               f"{out_dir}/{prefix}.EEs.cleaned.tax.tsv")
-    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fmt.fasta",
+    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta",
               f"{out_dir}/{prefix}.EEs.flanks.fa")
-    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta",
-              f"{out_dir}/{prefix}.EEs.L-flank.fa")
-    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.tblastn.filtred",
-              f"{out_dir}/{prefix}.EEs.L-flank.blast.tsv")
-    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta",
-              f"{out_dir}/{prefix}.EEs.R-flank.fa")
-    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.tblastn.filtred",
-              f"{out_dir}/{prefix}.EEs.R-flank.blast.tsv")
+    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta.tblastn.filtred",
+              f"{out_dir}/{prefix}.EEs.flank.blast.tsv")
 
     print("\n|"+"-"*45+"SUMMARY RESULTS"+"-"*45+"|\n")
     print("\n|"+"-"*45+"SUMMARY RESULTS"+"-"*45+"|\n", file=log_file)
     print(f"{out_dir}/{prefix}.EEs.fa ----------------------------- Fasta file with Endogenous Elements nucleotide sequences.")
     print(f"{out_dir}/{prefix}.EEs.tax.tsv ------------------------ TSV file with Endogenous Elements taxonomy.")
     print(f"{out_dir}/{prefix}.EEs.flanks.fa ---------------------- Fasta file with Endogenous Elements plus {flank_region}nt in each flanking regions.")
-    print(f"{out_dir}/{prefix}.EEs.L-flank.fa --------------------- Fasta file with Endogenous Elements plus {flank_region}nt upstream flanking region.")
-    print(f"{out_dir}/{prefix}.EEs.R-flank.fa --------------------- Fasta file with Endogenous Elements plus {flank_region}nt downstream flanking region.")
-    print(f"{out_dir}/{prefix}.EEs.L-flank.blast.tsv -------------- TSV file with filtred blast results of upstream flanking regions.")
-    print(f"{out_dir}/{prefix}.EEs.R-flank.blast.tsv -------------- TSV file with filtred blast results of downstream flanking regions.")
+    print(f"{out_dir}/{prefix}.EEs.flank.blast.tsv ---------------- TSV file with filtred blast results of flanking regions.")
     print(f"{out_dir}/{prefix}.EEs.cleaned.fa --------------------- Fasta file with Cleaned Endogenous Elements.")
     print(f"{out_dir}/{prefix}.EEs.cleaned.tax.tsv ---------------- TSV file with Cleaned Endogenous Elements.")
 
     print(f"{out_dir}/{prefix}.EEs.fa ----------------------------- Fasta file with Endogenous Elements nucleotide sequences.", file=log_file)
     print(f"{out_dir}/{prefix}.EEs.tax.tsv ------------------------ TSV file with Endogenous Elements taxonomy.", file=log_file)
     print(f"{out_dir}/{prefix}.EEs.flanks.fa ---------------------- Fasta file with Endogenous Elements plus {flank_region}nt in each flanking regions.", file=log_file)
-    print(f"{out_dir}/{prefix}.EEs.L-flank.fa --------------------- Fasta file with Endogenous Elements plus {flank_region}nt upstream flanking region.", file=log_file)
-    print(f"{out_dir}/{prefix}.EEs.R-flank.fa --------------------- Fasta file with Endogenous Elements plus {flank_region}nt downstream flanking region.", file=log_file)
-    print(f"{out_dir}/{prefix}.EEs.L-flank.blast.tsv -------------- TSV file with filtred blast results of upstream flanking regions.", file=log_file)
-    print(f"{out_dir}/{prefix}.EEs.R-flank.blast.tsv -------------- TSV file with filtred blast results of downstream flanking regions.", file=log_file)
+    print(f"{out_dir}/{prefix}.EEs.flank.blast.tsv ---------------- TSV file with filtred blast results of flanking regions.", file=log_file)
     print(f"{out_dir}/{prefix}.EEs.cleaned.fa --------------------- Fasta file with Cleaned Endogenous Elements.", file=log_file)
     print(f"{out_dir}/{prefix}.EEs.cleaned.tax.tsv ---------------- TSV file with Cleaned Endogenous Elements.", file=log_file)
 
