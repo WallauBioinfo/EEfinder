@@ -23,23 +23,6 @@ def runblastx(query_file, database_file, threads, log):
     print(f'DONE: BLASTx with {query_file}\nagainst {database_file}',file = log)
     return(print(f'DONE: BLASTx with {query_file}\nagainst {database_file}'))
 
-
-def runtblastn(query_file, database_file, threads, output, log):  # colocar opções de blastn ou blastx
-    """
-    This function runs blast with putative EVEs against host genes database.
-
-    Keyword arguments:
-    query_file - input_file - parsed with -in argument
-    database - pre-formated blast database - parsed with -db argument
-    """
-
-    cline = NcbitblastnCommandline(query=query_file, db=database_file, out=output,
-                                   outfmt=6, evalue=0.00001, num_threads=threads,  max_intron_length=100, soft_masking='true')
-    stdout, stderr = cline()
-    print(f'DONE: tBLASTn with {query_file} against {database_file}', file = log)
-    return(print(f'DONE: tBLASTn with {query_file} against {database_file}'))
-
-
 def rundiamond(query_file, database_file, threads, mode, log):
     """
     This function runs Diamond analysis.
@@ -75,16 +58,3 @@ class SimilaritySearch():
         else:
             rundiamond(self.query_file, self.database_file,
                        self.threads, self.mode,self.log)
-
-
-class FlankSearch():
-    def __init__(self, query_file, database_file, threads, output, log):
-        self.query_file = query_file
-        self.database_file = database_file
-        self.threads = threads
-        self.output = output
-        self.log = log
-
-    def run_flank_search(self):
-        runtblastn(self.query_file, self.database_file,
-                   self.threads, self.output, self.log)

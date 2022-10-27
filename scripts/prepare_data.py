@@ -15,6 +15,7 @@ def insert_prefix(input_file, prefix, outdir):
                 line = re.sub(r">", f">{prefix}/", line)
             output_file.write(line)
 
+
 class SetPrefix():
     def __init__(self, in_file, prefix, outdir):
         self.in_file = in_file
@@ -23,15 +24,3 @@ class SetPrefix():
 
     def run_insert_prefix(self):
         insert_prefix(self.in_file, self.prefix, self.outdir)
-
-
-class ConcatFiles():
-    def __init__(self, file1, file2, outdir, output,log):
-        self.file1 = file1
-        self.file2 = file2
-        self.outdir = outdir
-        self.output = output
-        self.log = log
-
-    def run_concate_file(self):
-        concat_files(self.file1, self.file2, self.outdir, self.output,self.log)

@@ -77,17 +77,16 @@ fasta_genome|Ae_aeg_Aag2_ctg_1913.fasta
 virus_proteins_table|virus_subset2.csv
 virus_db|virus_subset.fa
 host_protein_db|filter_subset.fa
-TE_protein_db|TEs_subset.fa
 
 #### Test line:
 
 ```bash
-python EEfinder.py -in test_files/Ae_aeg_Aag2_ctg_1913.fasta -mt test_files/virus_subset.csv -db test_files/virus_subset.fa -db2 test_files/filter_subset.fa -db3 test_files/TEs_subset.fa -od <outdir>
+python EEfinder.py -in test_files/Ae_aeg_Aag2_ctg_1913.fasta -mt test_files/virus_subset.csv -db test_files/virus_subset.fa -dbh test_files/filter_subset.fa -od <outdir>
 ```
 #### Default line:
 
 ```bash
-python EEfinder.py -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -db2 <host_protein_db> -db3 <TE_protein_db> -od <protein_table>
+python EEfinder.py -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -dbh <host_protein_db> -od <protein_table>
 ```
 
 #### Default line (DIAMOND):
@@ -103,7 +102,7 @@ You can choose which mode of DIAMOND you want to use between:
 Using 'fast' mode as example:
 
 ```bash
-python EEfinder.py -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -db2 <host_protein_db> -db3 <TE_protein_db> -od <protein_table> -md fast
+python EEfinder.py -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -dbh <host_protein_db> -od <protein_table> -md fast
 ```
 
 #### Keeping temporaries:
@@ -177,13 +176,9 @@ You have to register on NCBI and create an APIkey, for the APIkey go on **Accoun
 
 ![account_settings](images/apikey/account_settings.png)
 
-#### Filter Datasets
+## Filter Datasets
 
-#### TE datasets
-
-For screening on virus you must select a TE protein dataset. If you work with EVEs on mosquitos, we suggest a dataset for TEs in mosquitos from this [paper](https://doi.org/10.1371/journal.pgen.1008946).
-
-#### Host proteins
+### Host proteins
 
 The other dataset for cleaning is a set of host proteins, we suggest RefSeq proteins from NCBI.
 
@@ -194,35 +189,29 @@ Name|Meaning
 prefix.EEs.fa|Fasta file with Endogenous Elements nucleotide sequences
 prefix.EEs.tax.tsv|TSV file with Endogenous Elements taxonomy
 prefix.EEs.flanks.fa|Fasta file with Endogenous Elements plus 10000nt in each flanking regions
-prefix.EEs.L-flank.fa|Fasta file with Endogenous Elements plus 10000nt upstream flanking region.
-prefix.EEs.R-flank.fa|Fasta file with Endogenous Elements plus 10000nt downstream flanking region.
-prefix.EEs.L-flank.blast.tsv|TSV file with filtred blast results of upstream flanking regions
-prefix.EEs.L-flank.blast.tsv|TSV file with filtred blast results of downstream flanking regions
 prefix.EEs.cleaned.fa|Fasta file with Cleaned Endogenous Elements
 prefix.EEs.cleaned.tax.tsv|TSV file with Cleaned Endogenous Elements
 
 ### Output diretory
 
 ```
-output/
+outdir/
 ├── EEfinder.log.txt
 ├── prefix.EEs.cleaned.fa
 ├── prefix.EEs.cleaned.tax.tsv
 ├── prefix.EEs.fa
 ├── prefix.EEs.flanks.fa
-├── prefix.EEs.L-flank.blast.tsv
-├── prefix.EEs.L-flank.fa
-├── prefix.EEs.R-flank.blast.tsv
-├── prefix.EEs.R-flank.fa
 ├── prefix.EEs.tax.tsv
 └── tmp_files
     ├── prefix.rn
     ├── prefix.rn.fmt
     ├── prefix.rn.fmt.blastx
+    ├── prefix.rn.fmt.blastx.csv
     ├── prefix.rn.fmt.blastx.filtred
     ├── prefix.rn.fmt.blastx.filtred.bed
     ├── prefix.rn.fmt.blastx.filtred.bed.fasta
     ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx
+    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.csv
     ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred
     ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat
     ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr
@@ -232,17 +221,6 @@ output/
     ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt
     ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed
     ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank
-    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fmt
-    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left
-    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.nhr
-    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.nin
-    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.nsq
-    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.left.fasta.tblastn
-    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right
-    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.nhr
-    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.nin
-    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.nsq
-    ├── prefix.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.right.fasta.tblastn
     ├── prefix.rn.fmt.fai
     └── prefix.rn.fmt.rn.fmt.lenght
 ```
