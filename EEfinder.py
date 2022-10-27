@@ -12,7 +12,7 @@ from scripts.run_message import PaperInfo
 from scripts.prepare_data import SetPrefix
 from scripts.clean_data import RemoveShort, MaskClean
 from scripts.make_database import MakeDB
-from scripts.similarity_analysis import FlankSearch, SimilaritySearch
+from scripts.similarity_analysis import SimilaritySearch
 from scripts.filter_table import FilterTable
 from scripts.get_fasta import GetFasta
 from scripts.get_taxonomy import GetTaxonomy, GetFinalTaxonomy, GetCleanedTaxonomy
@@ -44,10 +44,8 @@ parser.add_argument("-db", "--database",
                     help="Proteins from viruses or bacterias database fasta file.", required=True)
 parser.add_argument("-mt", "--dbmetadata",
                     help="Proteins from viruses or bacterias csv file.", required=True)
-parser.add_argument("-db2", '--databaseHOST',
+parser.add_argument("-dbh", '--databaseHOST',
                     help="Host and heatshock proteins database file.", required=True)
-parser.add_argument("-db3", "--databaseTE",
-                    help="Transposon protein database file.", required=True)
 parser.add_argument("-md", "--mode",
                     help="Choose between BLAST or the DIAMOND strategies (fast, mid-sensitive, sensitive, more-sensitive, very-sensitive, ultra-sensisitve) to run analysis, default = blastx.", default='blastx', choices=['blastx', 'fast', 'mid-sensitive', 'sensitive', 'more-sensitive', 'very-sensitive', 'ultra-sensitive'])
 parser.add_argument("-ln", "--length",
@@ -76,7 +74,6 @@ out_dir = args.outdir
 database_file = args.database
 database_table = args.dbmetadata
 database_HOST = args.databaseHOST
-database_TE = args.databaseTE
 mode = args.mode
 length_cutoff = args.length
 flank_region = args.flank
@@ -314,36 +311,6 @@ if __name__ == '__main__':
         f"EXTRACTING FLANKS TIME = {(final_time_flank - start_time_flank)/60:.2f} MINUTES")
     print(
         f"EXTRACTING FLANKS TIME = {(final_time_flank - start_time_flank)/60:.2f} MINUTES", file=log_file)
-    print("\n|"+"-"*38+"IDENTIFYING FLANKING ELEMENTS"+"-"*37+"|\n")
-    print("\n|"+"-"*38+"IDENTIFYING FLANKING ELEMENTS"+"-"*37+"|\n", file=log_file)
-    start_time_flanks_sim = time.time()
-    # Flank transposon search
-    # Creating db
-    make_db_tel = MakeDB('tblastn',
-                         f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta',
-                         'nucl',
-                         threads,
-                         make_db,
-                         log_file)
-    make_db_tel.run_make_db()
-    # Similarity Search
-    tel_similarity = FlankSearch(database_TE,
-                                 f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta',
-                                 threads,
-                                 f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta.tblastn',
-                                 log_file)
-    tel_similarity.run_flank_search()
-
-    tel_filter = FilterTable(f'{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta.tblastn',
-                             'HOST',
-                             out_dir,
-                             log_file)
-    tel_filter.run_filter()
-    final_time_flanks_sim = time.time()
-    print(
-        f"IDENTIFYING FLANKING ELEMENTS TIME = {(final_time_flanks_sim - start_time_flanks_sim)/60:.2f} MINUTES")
-    print(
-        f"IDENTIFYING FLANKING ELEMENTS TIME = {(final_time_flanks_sim - start_time_flanks_sim)/60:.2f} MINUTES", file=log_file)
     # Organize Outputs
     os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa",
               f"{out_dir}/{prefix}.EEs.fa")
@@ -355,22 +322,18 @@ if __name__ == '__main__':
               f"{out_dir}/{prefix}.EEs.cleaned.tax.tsv")
     os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta",
               f"{out_dir}/{prefix}.EEs.flanks.fa")
-    os.rename(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta.tblastn.filtred",
-              f"{out_dir}/{prefix}.EEs.flank.blast.tsv")
 
     print("\n|"+"-"*45+"SUMMARY RESULTS"+"-"*45+"|\n")
     print("\n|"+"-"*45+"SUMMARY RESULTS"+"-"*45+"|\n", file=log_file)
     print(f"{out_dir}/{prefix}.EEs.fa ----------------------------- Fasta file with Endogenous Elements nucleotide sequences.")
     print(f"{out_dir}/{prefix}.EEs.tax.tsv ------------------------ TSV file with Endogenous Elements taxonomy.")
     print(f"{out_dir}/{prefix}.EEs.flanks.fa ---------------------- Fasta file with Endogenous Elements plus {flank_region}nt in each flanking regions.")
-    print(f"{out_dir}/{prefix}.EEs.flank.blast.tsv ---------------- TSV file with filtred blast results of flanking regions.")
     print(f"{out_dir}/{prefix}.EEs.cleaned.fa --------------------- Fasta file with Cleaned Endogenous Elements.")
     print(f"{out_dir}/{prefix}.EEs.cleaned.tax.tsv ---------------- TSV file with Cleaned Endogenous Elements.")
 
     print(f"{out_dir}/{prefix}.EEs.fa ----------------------------- Fasta file with Endogenous Elements nucleotide sequences.", file=log_file)
     print(f"{out_dir}/{prefix}.EEs.tax.tsv ------------------------ TSV file with Endogenous Elements taxonomy.", file=log_file)
     print(f"{out_dir}/{prefix}.EEs.flanks.fa ---------------------- Fasta file with Endogenous Elements plus {flank_region}nt in each flanking regions.", file=log_file)
-    print(f"{out_dir}/{prefix}.EEs.flank.blast.tsv ---------------- TSV file with filtred blast results of flanking regions.", file=log_file)
     print(f"{out_dir}/{prefix}.EEs.cleaned.fa --------------------- Fasta file with Cleaned Endogenous Elements.", file=log_file)
     print(f"{out_dir}/{prefix}.EEs.cleaned.tax.tsv ---------------- TSV file with Cleaned Endogenous Elements.", file=log_file)
 
