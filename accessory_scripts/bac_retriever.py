@@ -53,7 +53,7 @@ if __name__ == '__main__':
     ids_list = fasta_ids(sequences)
     row_list = []
 
-    with open('output_file', 'w', newline='') as output:
+    with open(f"{sequences}.meta", 'w', newline='') as output:
         writer = csv.writer(output, delimiter=',')
         header = ["Acession", "Species", 'Genus',
                   'Family', 'Molecule_type', 'Protein', 'Host']
