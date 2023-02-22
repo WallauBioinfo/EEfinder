@@ -55,11 +55,11 @@ if __name__ == '__main__':
 
     with open(f"{sequences}.meta", 'w', newline='') as output:
         writer = csv.writer(output, delimiter=',')
-        header = ["Acession", "Species", 'Genus',
+        header = ["Accession", "Species", 'Genus',
                   'Family', 'Molecule_type', 'Protein', 'Host']
         writer.writerow(header)
-        for acession in ids_list:
-            xml = efetch_function(acession)
+        for accession in ids_list:
+            xml = efetch_function(accession)
             xml = xml.decode("utf-8")
             taxid = str(re.findall(r'taxon:.*', xml))
             taxid = re.sub(r'\[.*:', '', taxid)
@@ -77,10 +77,10 @@ if __name__ == '__main__':
                     if 'species' in key.values():
                         species = key['ScientificName']
                 print(
-                    f"done organism taxonomy for {acession}:{taxid}", end='\n')
+                    f"done organism taxonomy for {accession}:{taxid}", end='\n')
             except:
                 print(
-                    f'error in organism taxonomy step for {acession}:{taxid}',  end='\n')
+                    f'error in organism taxonomy step for {accession}:{taxid}',  end='\n')
             molecule_type = 'DNA'
             protein = str(re.findall(r'<GBSeq_definition>.*', xml))
             protein = re.sub(r"\['<GBSeq_definition>", '', protein)
@@ -92,6 +92,6 @@ if __name__ == '__main__':
                 genus = 'Unclassified'
             if species == '':
                 species = 'Unclassified'
-            row_list.append([acession, species, genus, family,
+            row_list.append([accession, species, genus, family,
                             molecule_type, protein, host])
         writer.writerows(row_list)
