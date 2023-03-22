@@ -22,6 +22,7 @@ from scripts.bed_flank import BedFlank
 from scripts.compare_results import CompareResults
 from scripts.get_bed import GetBed
 from scripts.get_length import GetLength
+from scripts.tag_elements import TagElements
 
 ###############################>GENERAL-INFORMATIONS<###############################
 
@@ -279,6 +280,12 @@ if __name__ == '__main__':
                                               f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.tax",
                                               log_file)
     get_cleaned_taxonomy.run_get_cleaned_taxonomy()
+    tag_taxonomy = TagElements(
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.tax", log_file)
+    tag_taxonomy.run_tag_elemets()
+    tag_cleaned_taxonomy = TagElements(
+        f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.cl.tax", log_file)
+    tag_cleaned_taxonomy.run_tag_elemets()
 
     final_time_final_tax = time.time()
     print(
