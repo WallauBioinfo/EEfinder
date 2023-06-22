@@ -206,7 +206,7 @@ if __name__ == '__main__':
     host_similarity_step.run_similarity_search()
     # Filtering results
     host_filter_table = FilterTable(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx",
-                                    100,
+                                    range_junction,
                                     "HOST",
                                     out_dir,
                                     log_file)
