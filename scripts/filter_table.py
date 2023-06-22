@@ -5,7 +5,7 @@ import re
 import glob
 import shutil
 
-def filter(blast_result, tag, out_dir, log):
+def filter(blast_result, rangejunction, tag, out_dir, log):
     """
     This function receives a blastx result and filter based on query ID and ranges of qstart and qend.
 
@@ -79,8 +79,8 @@ def filter(blast_result, tag, out_dir, log):
         df = pd.read_csv(chunk, sep="\t")
         chunks_list.append(df)
     final_filtred_file = pd.concat(chunks_list, ignore_index=True)
-    final_filtred_file['qstart_rng'] = final_filtred_file.qstart.floordiv(100)
-    final_filtred_file['qend_rng'] = final_filtred_file.qend.floordiv(100)
+    final_filtred_file['qstart_rng'] = final_filtred_file.qstart.floordiv(rangejunction)
+    final_filtred_file['qend_rng'] = final_filtred_file.qend.floordiv(rangejunction)
     final_filtred_file = final_filtred_file.drop_duplicates(subset=['qseqid', 'qstart_rng', 'sense']).drop_duplicates(
                            subset=['qseqid', 'qstart_rng', 'sense']).sort_values(by=['qseqid'])
     final_filtred_file.to_csv(f"{blast_result}.filtred", sep="\t", index=False, columns=header)
@@ -93,11 +93,12 @@ def filter(blast_result, tag, out_dir, log):
 
 class FilterTable:
 
-    def __init__(self, blastresult, tag, out_dir, log):
+    def __init__(self, blastresult, rangejunction, tag, out_dir, log):
         self.blastresult = blastresult
+        self.rangejunction = rangejunction
         self.tag = tag
         self.out_dir = out_dir
         self.log = log
 
     def run_filter(self):
-        filter(self.blastresult, self.tag, self.out_dir, self.log)
+        filter(self.blastresult, self.rangejunction, self.tag, self.out_dir, self.log)

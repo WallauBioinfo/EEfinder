@@ -55,6 +55,8 @@ parser.add_argument("-fl", "--flank",
                     help="Length of flanking regions of Endogenous Elements to be extracted, default = 10,000.", type=int, default=10000)
 parser.add_argument("-lm", "--limit",
                     help="Limit of bases used to merge regions on bedtools merge, default = 1.", type=str, default=str(1))
+parser.add_argument("-rj,", "--range_junction",
+                    help= "Sets the range for junction of redudant hits, should follow a logic with 'limit' option, default=100", type=int, default=100)
 parser.add_argument("-mp", "--mask_per",
                     help="Limit of lowercase letters in percentage to consider a putative Endogenous Elements as a repetitive region, default = 50.", type=str, default=50)
 parser.add_argument("-p", "--threads",
@@ -79,6 +81,7 @@ mode = args.mode
 length_cutoff = args.length
 flank_region = args.flank
 limit_merge = args.limit
+range_junction = args.range_junction
 mask_per = args.mask_per
 threads = args.threads
 temp_remove = args.removetmp
@@ -167,6 +170,7 @@ if __name__ == '__main__':
     ee_similarity_step.run_similarity_search()
     # Filtering results
     ee_filter_table = FilterTable(f"{out_dir}/{prefix}.rn.fmt.blastx",
+                                  range_junction,
                                   "EE",
                                   out_dir,
                                   log_file)
@@ -202,6 +206,7 @@ if __name__ == '__main__':
     host_similarity_step.run_similarity_search()
     # Filtering results
     host_filter_table = FilterTable(f"{out_dir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx",
+                                    range_junction,
                                     "HOST",
                                     out_dir,
                                     log_file)
