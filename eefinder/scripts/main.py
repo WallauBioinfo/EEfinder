@@ -7,6 +7,7 @@ import re
 import os
 import glob
 import sys
+from eefinder.log import logger
 from eefinder.run_message import PaperInfo
 from eefinder.prepare_data import SetPrefix
 from eefinder.clean_data import RemoveShort, MaskClean
@@ -156,8 +157,12 @@ def main(
     prefix,
     merge_level,
 ):  
-    if prefix is not None:
+    start_running_time = time.time()
+    print_info = PaperInfo()
+    print_info.print_message()
+    if prefix is None:
         try:
+            logger.info(f"Creating prefix")
             prefix = input_file
             prefix = re.sub("\..*", "", prefix)
             prefix = re.sub(".*/", "", prefix).rstrip("\n")
@@ -166,6 +171,7 @@ def main(
             click.secho(f"Failed to create prefix: {err}", err=True, fg="red")
             sys.exit(1)
     try:
+        logger.info(f"Creating output directory")
         if outdir != None:
             if "/" in outdir:
                 outdir = re.sub("/$", "", outdir)
@@ -180,15 +186,10 @@ def main(
         click.secho(f"Failed to create output dir: {err}", err=True, fg="red")
         sys.exit(1)
     try:
-        log_file = open(f"{outdir}/EEfinder.log.txt", "w+")
-        start_running_time = time.time()
-        print_info = PaperInfo()
-        print_info.print_message()
-        # Prepare Data Step
-        print("|" + "-" * 45 + "PREPARING DATA" + "-" * 45 + "|\n")
-        print("|" + "-" * 45 + "PREPARING DATA" + "-" * 45 + "|\n", file=log_file)
+        logger.info(f"Preparing input data")
         start_time_prep = time.time()
-
+        log_file = open(f"{outdir}/EEfinder.log.txt", "w+")
+        print("|" + "-" * 45 + "PREPARING DATA" + "-" * 45 + "|\n", file=log_file)
         # Set Prefix
         set_prefix = SetPrefix(input_file, prefix, outdir)
         set_prefix.run_insert_prefix()
@@ -196,7 +197,7 @@ def main(
         remove_seqs = RemoveShort(f"{outdir}/{prefix}.rn", length, log_file)
         remove_seqs.run_remove_short()
         final_time_prep = time.time()
-        print(
+        logger.info(
             f"PREPARING DATA TIME = {(final_time_prep - start_time_prep)/60:.2f} MINUTES"
         )
         print(
@@ -207,11 +208,11 @@ def main(
         click.secho(f"Failed to prepare input data: {err}", err=True, fg="red")
         sys.exit(1)
     try:
-        print("\n|" + "-" * 42 + "FORMATTING DATABASES" + "-" * 42 + "|\n")
+        logger.info(f"Formatting databases")
+        start_time_formatdb = time.time()
         print(
             "\n|" + "-" * 42 + "FORMATTING DATABASES" + "-" * 42 + "|\n", file=log_file
         )
-        start_time_formatdb = time.time()
         makeblastdb_ee = MakeDB(mode, database, "prot", threads, makeblastdb, log_file)
         makeblastdb_ee.run_make_db()
         makeblastdb_filter = MakeDB(
@@ -219,7 +220,7 @@ def main(
         )
         makeblastdb_filter.run_make_db()
         final_time_formatdb = time.time()
-        print(
+        logger.info(
             f"FORMATTING DATABASES TIME = {(final_time_formatdb - start_time_formatdb)/60:.2f} MINUTES"
         )
         print(
@@ -230,12 +231,12 @@ def main(
         click.secho(f"Failed to format databases: {err}", err=True, fg="red")
         sys.exit(1)    
     try:
-        print("\n|" + "-" * 40 + "RUNNING SIMILARITY SEARCH" + "-" * 39 + "|\n")
+        logger.info(f"Running similarity search")
+        start_time_sim = time.time()
         print(
             "\n|" + "-" * 40 + "RUNNING SIMILARITY SEARCH" + "-" * 39 + "|\n",
             file=log_file,
         )
-        start_time_sim = time.time()
         ee_similarity_step = SimilaritySearch(
             f"{outdir}/{prefix}.rn.fmt", database, threads, mode, log_file
         )
@@ -246,7 +247,7 @@ def main(
         )
         ee_filter_table.run_filter()
         final_time_sim = time.time()
-        print(
+        logger.info(
             f"RUNING SEARCH TIME = {(final_time_sim - start_time_sim)/60:.2f} MINUTES"
         )
         print(
@@ -257,12 +258,12 @@ def main(
         click.secho(f"Failed to run similarity searches: {err}", err=True, fg="red")
         sys.exit(1)  
     try:
-        print("\n|" + "-" * 40 + "EXTRACTING PUTATIVE EVES" + "-" * 40 + "|\n")
+        logger.info("Extracting Putative EVEs")
+        start_time_extract = time.time()
         print(
             "\n|" + "-" * 40 + "EXTRACTING PUTATIVE EVES" + "-" * 40 + "|\n",
             file=log_file,
         )
-        start_time_extract = time.time()
         getter_fasta = GetFasta(
             f"{outdir}/{prefix}.rn.fmt",
             f"{outdir}/{prefix}.rn.fmt.blastx.filtred.bed",
@@ -271,7 +272,7 @@ def main(
         )
         getter_fasta.run_get_fasta()
         final_time_extract = time.time()
-        print(
+        logger.info(
             f"EXTRACTING EVES TIME = {(final_time_extract - start_time_extract)/60:.2f} MINUTES"
         )
         print(
@@ -283,7 +284,7 @@ def main(
         sys.exit(1)
     try:
         # Second Similarity Screen
-        print("\n|" + "-" * 42 + "RUNNING FILTER STEPS" + "-" * 42 + "|\n")
+        logger.info("Running filter steps")
         print(
             "\n|" + "-" * 42 + "RUNNING FILTER STEPS" + "-" * 42 + "|\n", file=log_file
         )
@@ -313,7 +314,7 @@ def main(
         )
         comparer.run_comparation()
         final_time_filter = time.time()
-        print(
+        logger.info(
             f"FILTER STEP TIME = {(final_time_filter - start_time_filter)/60:.2f} MINUTES"
         )
         print(
@@ -324,7 +325,7 @@ def main(
         click.secho(f"Failed to filter EEs: {err}", err=True, fg="red")
         sys.exit(1)
     try:
-        print("\n|" + "-" * 39 + "GETTING BASIC TAXONOMY INFO" + "-" * 38 + "|\n")
+        logger.info("Getting basic taxonomy info")
         print(
             "\n|" + "-" * 39 + "GETTING BASIC TAXONOMY INFO" + "-" * 38 + "|\n",
             file=log_file,
@@ -338,7 +339,7 @@ def main(
         )
         get_info.run_get_taxonomy_info()
         final_time_tax = time.time()
-        print(
+        logger.info(
             f"GETTING BASIC TAXONOMY INFO TIME = {(final_time_tax - start_time_tax)/60:.2f} MINUTES"
         )
         print(
@@ -349,7 +350,7 @@ def main(
         click.secho(f"Failed to perform taxonomy signature: {err}", err=True, fg="red")
         sys.exit(1)
     try:
-        print("\n|" + "-" * 40 + "MERGIN TRUNCATED ELEMENTS" + "-" * 39 + "|\n")
+        logger.info("Merging truncated elements")
         print(
             "\n|" + "-" * 40 + "MERGIN TRUNCATED ELEMENTS" + "-" * 39 + "|\n",
             file=log_file,
@@ -383,7 +384,7 @@ def main(
         )
         getter_merged_fasta.run_get_fasta()
         final_time_merge = time.time()
-        print(f"MERGING TIME = {(final_time_merge - start_time_merge)/60:.2f} MINUTES")
+        logger.info(f"MERGING TIME = {(final_time_merge - start_time_merge)/60:.2f} MINUTES")
         print(
             f"MERGING TIME = {(final_time_merge - start_time_merge)/60:.2f} MINUTES",
             file=log_file,
@@ -392,7 +393,7 @@ def main(
         click.secho(f"Failed to merge truncated elements: {err}", err=True, fg="red")
         sys.exit(1)
     try:
-        print("\n|" + "-" * 43 + "CLEANNING ELEMENTS" + "-" * 43 + "|\n")
+        logger.info("Cleaning elements")
         print("\n|" + "-" * 43 + "CLEANNING ELEMENTS" + "-" * 43 + "|\n", file=log_file)
         start_time_clean = time.time()
         clean_masked = MaskClean(
@@ -402,7 +403,7 @@ def main(
         )
         clean_masked.run_mask_clean()
         final_time_clean = time.time()
-        print(
+        logger.info(
             f"CLEAN STEP TIME = {(final_time_clean - start_time_clean)/60:.2f} MINUTES"
         )
         print(
@@ -413,7 +414,7 @@ def main(
         click.secho(f"Failed to remove EEs from soft-masked regions: {err}", err=True, fg="red")
         sys.exit(1)
     try:
-        print("\n|" + "-" * 37 + "CREATING FINAL TAXONOMY FILES" + "-" * 38 + "|\n")
+        logger.info("Creating final taxonomy")
         print(
             "\n|" + "-" * 37 + "CREATING FINAL TAXONOMY FILES" + "-" * 38 + "|\n",
             file=log_file,
@@ -444,7 +445,7 @@ def main(
         tag_cleaned_taxonomy.run_tag_elemets()
 
         final_time_final_tax = time.time()
-        print(
+        logger.info(
             f"FINAL TAXONOMY TIME = {(final_time_final_tax - start_time_final_tax)/60:.2f} MINUTES"
         )
         print(
@@ -455,6 +456,7 @@ def main(
         click.secho(f"Failed to obtain final taxonomy: {err}", err=True, fg="red")
         sys.exit(1)
     try:
+        logger.info("Extracting flaking regions")
         # Flanking Regions
         print("\n|" + "-" * 39 + "EXTRACTING FLANKING REGIONS" + "-" * 38 + "|\n")
         print(
@@ -484,7 +486,7 @@ def main(
         )
         get_fasta_flank.run_get_fasta()
         final_time_flank = time.time()
-        print(
+        logger.info(
             f"EXTRACTING FLANKS TIME = {(final_time_flank - start_time_flank)/60:.2f} MINUTES"
         )
         print(
@@ -495,6 +497,7 @@ def main(
         click.secho(f"Failed to extract flanking regions: {err}", err=True, fg="red")
         sys.exit(1)
     try:
+        logger.info("Organizing final outputs")
         os.rename(
             f"{outdir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa",
             f"{outdir}/{prefix}.EEs.fa",
@@ -515,8 +518,7 @@ def main(
             f"{outdir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge.fmt.fa.bed.flank.fasta",
             f"{outdir}/{prefix}.EEs.flanks.fa",
         )
-
-        print("\n|" + "-" * 45 + "SUMMARY RESULTS" + "-" * 45 + "|\n")
+        print("")
         print("\n|" + "-" * 45 + "SUMMARY RESULTS" + "-" * 45 + "|\n", file=log_file)
         print(
             f"{outdir}/{prefix}.EEs.fa ----------------------------- Fasta file with Endogenous Elements nucleotide sequences."
@@ -551,7 +553,7 @@ def main(
             file=log_file,
         )
         print(
-            f"{outdir}/{prefix}.EEs.cleaned.tax.tsv ---------------- TSV file with Cleaned Endogenous Elements.",
+            f"{outdir}/{prefix}.EEs.cleaned.tax.tsv ---------------- TSV file with Cleaned Endogenous Elements taxonomy.",
             file=log_file,
         )
 
@@ -575,11 +577,12 @@ def main(
                 f"\nTemporary files were moved to {outdir}/tmp_files. Check the github documentation to access the description of each temporary file.",
                 file=log_file,
             )
-        print_info.print_finish()
+        print("\n")
         end_running_time = time.time()
+        total_running_time = end_running_time - start_running_time
+        click.secho(f"TOTAL TIME = {total_running_time/60:.2f} MINUTES", fg="green")
+        print(f"TOTAL TIME = {total_running_time/60:.2f} MINUTES", file=log_file)
+        print_info.print_finish()
     except Exception as err:
         click.secho(f"Failed to organize outputs: {err}", err=True, fg="red")
         sys.exit(1)
-    total_running_time = end_running_time - start_running_time
-    click.secho(f"TOTAL TIME = {total_running_time/60:.2f} MINUTES", fg="green")
-    print(f"TOTAL TIME = {total_running_time/60:.2f} MINUTES", file=log_file)
