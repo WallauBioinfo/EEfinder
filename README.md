@@ -60,6 +60,15 @@ git clone https://github.com/dezordi/EEfinder.git
 cd EEfinder
 conda env create -f env.yml
 conda activate EEfinder
+pip install .
+```
+
+#### Check tool
+
+```bash
+eefinder --version
+
+#eefinder, version 0.1.0
 ```
 
 For users that want to use diamond, install following the repository tool instructions:
@@ -81,12 +90,12 @@ host_protein_db|filter_subset.fa
 #### Test line:
 
 ```bash
-python EEfinder.py -in test_files/Ae_aeg_Aag2_ctg_1913.fasta -mt test_files/virus_subset.csv -db test_files/virus_subset.fa -dbh test_files/filter_subset.fa -od <outdir>
+eefinder -in test_files/Ae_aeg_Aag2_ctg_1913.fasta -mt test_files/virus_subset.csv -db test_files/virus_subset.fa -dbh test_files/filter_subset.fa -od . --makeblastdb
 ```
 #### Default line:
 
 ```bash
-python EEfinder.py -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -dbh <host_protein_db> -od <protein_table>
+eefinder -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -dbh <host_protein_db> -od . --makeblastdb
 ```
 
 #### Default line (DIAMOND):
@@ -102,12 +111,12 @@ You can choose which mode of DIAMOND you want to use between:
 Using 'fast' mode as example:
 
 ```bash
-python EEfinder.py -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -dbh <host_protein_db> -od <protein_table> -md fast
+eefinder -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -dbh <host_protein_db> -od . -md fast --makeblastdb
 ```
 
 #### Keeping temporaries:
 
-For not deleting temporaries after conclusion use the argument: `-rm --remove False`
+For not deleting temporaries after conclusion use the argument: `-rm`
 
 #### Merge level:
 

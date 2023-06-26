@@ -1,9 +1,0 @@
-Element-ID	Length	Protein-IDs	ProteinProducts	Super-Kingdom	Order	Family	Genus	Species	Sense
-An_col_M1/ABKP02008408.1:1286-1378	92	YP_007354600.1	glucose-methanol-choline oxidoreductase	Viruses	Imitervirales	Mimiviridae	Unclassified	Moumouvirus	neg
-An_col_M1/ABKP02009888.1:6782-7135	353	YP_004301531.1	gp197	Viruses	Caudovirales	Herelleviridae	Unclassified	Brochothrix virus A9	neg
-An_col_M1/ABKP02013079.1:12362-12511	149	YP_239383.1	protein tyrosine phosphatase	Viruses	Unclassified	Polydnaviridae	Bracovirus	Unclassified	pos
-An_col_M1/ABKP02014093.1:44892-45218	326	NP_042773.1	pB602L	Viruses	Asfuvirales	Asfarviridae	Asfivirus	Unclassified	pos
-An_col_M1/ABKP02019138.1:2806-2946	140	YP_009177047.1	GNS1/SUR4-like protein	Viruses	Chitovirales	Poxviridae	Avipoxvirus	Unclassified	neg
-An_col_M1/ABKP02019467.1:32010-32108	98	YP_008719957.1	chitinase	Viruses	Unclassified	Baculoviridae	Betabaculovirus	Clostera anastomosis granulovirus A	neg
-An_col_M1/ABKP02019990.1:43285-43422	137	YP_628286.1	protein-tyrosine kinase	Viruses	Ortervirales	Retroviridae	Alpharetrovirus	Unclassified	pos
-An_col_M1/ABKP02021152.1:7023-7127	104	NP_077596.1	EsV-1-111	Viruses	Algavirales	Phycodnaviridae	Phaeovirus	Unclassified	neg
