@@ -7,9 +7,6 @@ def print_paper_info():
 
 
 def print_end_info():
-    print("\n")
-    print("|" + "-" * 48 + "FINISHING" + "-" * 48 + "|")
-    print("\n")
     click.secho(f"Thank You for use EEfinder", fg="green")
     click.secho(f"Please Cite: Paper info", fg="green")
     print("\n")
