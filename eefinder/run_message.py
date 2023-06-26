@@ -1,3 +1,5 @@
+import click
+
 def print_paper_info():
     print("\n")
     print("Mensagem de Cabeçalho")
@@ -5,11 +7,8 @@ def print_paper_info():
 
 
 def print_end_info():
-    print("\n")
-    print("|" + "-" * 48 + "FINISHING" + "-" * 48 + "|")
-    print("\n")
-    print("Thank You for use EEfinder")
-    print("Please Cite: Paper info")
+    click.secho(f"Thank You for use EEfinder", fg="green")
+    click.secho(f"Please Cite: Paper info", fg="green")
     print("\n")
 
 
