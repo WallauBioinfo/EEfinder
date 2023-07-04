@@ -93,7 +93,7 @@ def cli():
     default="1",
 )
 @click.option(
-    "-rj,",
+    "-rj",
     "--range_junction",
     help="Sets the range for junction of redudant hits, should follow a logic with 'limit' option, default=100",
     type=int,
@@ -117,14 +117,12 @@ def cli():
     "-rm",
     "--removetmp",
     help="Remove temporary files generated through analysis? default = True.",
-    default=False,
     is_flag=True,
 )
 @click.option(
     "-mk",
     "--makeblastdb",
     help="Make blast database?, default = True.",
-    default=False,
     is_flag=True,
 )
 @click.option(
@@ -207,29 +205,30 @@ def main(
     except Exception as err:
         click.secho(f"Failed to prepare input data: {err}", err=True, fg="red")
         sys.exit(1)
-    try:
-        logger.info(f"Formatting databases")
-        start_time_formatdb = time.time()
-        print(
-            "\n|" + "-" * 42 + "FORMATTING DATABASES" + "-" * 42 + "|\n", file=log_file
-        )
-        makeblastdb_ee = MakeDB(mode, database, "prot", threads, makeblastdb, log_file)
-        makeblastdb_ee.run_make_db()
-        makeblastdb_filter = MakeDB(
-            mode, dbhost, "prot", threads, makeblastdb, log_file
-        )
-        makeblastdb_filter.run_make_db()
-        final_time_formatdb = time.time()
-        logger.info(
-            f"FORMATTING DATABASES TIME = {(final_time_formatdb - start_time_formatdb)/60:.2f} MINUTES"
-        )
-        print(
-            f"FORMATTING DATABASES TIME = {(final_time_formatdb - start_time_formatdb)/60:.2f} MINUTES",
-            file=log_file,
-        )
-    except Exception as err:
-        click.secho(f"Failed to format databases: {err}", err=True, fg="red")
-        sys.exit(1)    
+    if makeblastdb:
+        try:
+            logger.info(f"Formatting databases")
+            start_time_formatdb = time.time()
+            print(
+                "\n|" + "-" * 42 + "FORMATTING DATABASES" + "-" * 42 + "|\n", file=log_file
+            )
+            makeblastdb_ee = MakeDB(mode, database, "prot", threads, log_file)
+            makeblastdb_ee.run_make_db()
+            makeblastdb_filter = MakeDB(
+                mode, dbhost, "prot", threads, log_file
+            )
+            makeblastdb_filter.run_make_db()
+            final_time_formatdb = time.time()
+            logger.info(
+                f"FORMATTING DATABASES TIME = {(final_time_formatdb - start_time_formatdb)/60:.2f} MINUTES"
+            )
+            print(
+                f"FORMATTING DATABASES TIME = {(final_time_formatdb - start_time_formatdb)/60:.2f} MINUTES",
+                file=log_file,
+            )
+        except Exception as err:
+            click.secho(f"Failed to format databases: {err}", err=True, fg="red")
+            sys.exit(1)    
     try:
         logger.info(f"Running similarity search")
         start_time_sim = time.time()
@@ -557,7 +556,7 @@ def main(
             file=log_file,
         )
 
-        if removetmp == True:
+        if removetmp:
             for tmp_file in glob.glob(f"{outdir}/*rn*"):
                 os.remove(tmp_file)
             print("\nTemporary files were removed.")
