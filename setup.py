@@ -6,7 +6,7 @@ setup(
     Tool to analyze endogenous elements (EEs) based on similarity search
     and junctions of genomic regions.
     """,
-    version="0.1.0",
+    version="0.1.1",
     authors="Filipe Dezordi and Yago Dias",
     authors_emails='zimmer.filipe@gmail.com" and yag.dias@gmail',
     classifiers=[
