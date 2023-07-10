@@ -10,7 +10,7 @@ import sys
 import json
 from eefinder.log import logger
 from eefinder.run_message import PaperInfo
-from eefinder.utils import step_info, running_info
+from eefinder.utils import check_outdir, step_info, running_info
 from eefinder.prepare_data import InsertPrefix
 from eefinder.clean_data import RemoveShortSequences, MaskClean
 from eefinder.make_database import MakeDB
@@ -191,16 +191,8 @@ def main(
 
     try:
         logger.info(f"Creating output directory")
-        if outdir != None:
-            if "/" in outdir:
-                outdir = re.sub("/$", "", outdir)
-        else:
-            if "/" not in genome_file:
-                outdir = "."
-            else:
-                outdir = re.sub("/.*", "", genome_file).rstrip("\n")
-        if os.path.isdir(outdir) == False:
-            os.mkdir(outdir)
+        outdir = check_outdir(outdir)
+
     except Exception as err:
         click.secho(f"Failed to create output dir: {err}", err=True, fg="red")
         sys.exit(1)

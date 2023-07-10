@@ -1,4 +1,14 @@
 from datetime import datetime
+import re
+from pathlib import Path
+
+def check_outdir(outdir: str) -> str:
+    if  outdir.endswith("/"):
+        outdir = re.sub("/$", "", outdir)
+    
+    Path(outdir).mkdir(parents=True, exist_ok=True)
+
+    return outdir
 
 
 def step_info(step: str, start_time: str, end_time: str, message: str) -> dict:
