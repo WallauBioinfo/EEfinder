@@ -6,7 +6,7 @@ setup(
     Tool to analyze endogenous elements (EEs) based on similarity search
     and junctions of genomic regions.
     """,
-    version="0.1.1",
+    version="0.2.0",
     authors="Filipe Dezordi and Yago Dias",
     authors_emails='zimmer.filipe@gmail.com" and yag.dias@gmail',
     classifiers=[
@@ -17,6 +17,12 @@ setup(
     ],
     packages=find_packages(),
     include_package_data=True,
-    install_requires=["click",],
-    entry_points={"console_scripts": ["eefinder = eefinder.scripts.main:main",],},
+    install_requires=[
+        "click",
+    ],
+    entry_points={
+        "console_scripts": [
+            "eefinder = eefinder.scripts.main:main",
+        ],
+    },
 )

@@ -1,5 +1,6 @@
 import click
 
+
 def print_paper_info():
     print("\n")
     print("Mensagem de Cabeçalho")
