@@ -4,7 +4,7 @@ import subprocess
 import shlex
 
 
-def runblastx(query_file, database_file, threads, log):
+def runblastx(query_file, database_file, threads):
     """
     This function runs Blastx analisis.
 
@@ -30,11 +30,9 @@ def runblastx(query_file, database_file, threads, log):
         soft_masking="true",
     )
     stdout, stderr = cline()
-    print(f"DONE: BLASTx with {query_file}\nagainst {database_file}", file=log)
-    return print(f"DONE: BLASTx with {query_file}\nagainst {database_file}")
 
 
-def rundiamond(query_file, database_file, threads, mode, log):
+def rundiamond(query_file, database_file, threads, mode):
     """
     This function runs Diamond analysis.
 
@@ -51,27 +49,19 @@ def rundiamond(query_file, database_file, threads, mode, log):
     clinedmd = shlex.split(clinedmd)
     cmd_clinedmd = subprocess.Popen(clinedmd)
     cmd_clinedmd.wait()
-    print(
-        f"DONE: DIAMOND {mode} analysis with {query_file} against {database_file}",
-        file=log,
-    )
-    return print(
-        f"DONE: DIAMOND {mode} analysis with {query_file} against {database_file}"
-    )
 
 
 class SimilaritySearch:
-    def __init__(self, query_file, database_file, threads, mode, log):
+    def __init__(self, query_file, database_file, threads, mode):
         self.query_file = query_file
         self.database_file = database_file
         self.threads = threads
         self.mode = mode
-        self.log = log
 
-    def run_similarity_search(self):
+        self.similarity_search()
+
+    def similarity_search(self):
         if self.mode == "blastx":
-            runblastx(self.query_file, self.database_file, self.threads, self.log)
+            runblastx(self.query_file, self.database_file, self.threads)
         else:
-            rundiamond(
-                self.query_file, self.database_file, self.threads, self.mode, self.log
-            )
+            rundiamond(self.query_file, self.database_file, self.threads, self.mode)
