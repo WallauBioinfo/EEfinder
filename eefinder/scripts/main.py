@@ -16,9 +16,8 @@ from eefinder.clean_data import RemoveShortSequences, MaskClean
 from eefinder.make_database import MakeDB
 from eefinder.similarity_analysis import SimilaritySearch
 from eefinder.filter_table import FilterTable
-from eefinder.get_fasta import GetFasta
 from eefinder.get_taxonomy import GetTaxonomy, GetFinalTaxonomy, GetCleanedTaxonomy
-from eefinder.bed import GetAnnotBed, RemoveAnnotation, MergeBed, BedFlank, GetBed
+from eefinder.bed import GetFasta, GetAnnotBed, RemoveAnnotation, MergeBed, BedFlank, GetBed
 from eefinder.compare_results import CompareResults
 from eefinder.get_length import GetLength
 from eefinder.tag_elements import TagElements
@@ -104,7 +103,7 @@ def cli():
 @click.option(
     "-rj",
     "--range_junction",
-    help="Sets the range for junction of redudant hits, should follow a logic with 'limit' option, default=100",
+    help="Sets the range for junction of BLAST/DIAMOND redudant hits, default=100",
     type=int,
     default=100,
 )
@@ -148,7 +147,7 @@ def cli():
 @click.option(
     "-ml",
     "--merge_level",
-    help="Phylogenetic level to merge elements by genus or family, default = genus",
+    help="Taxonomy level to merge elements by genus or family, default = genus",
     default="genus",
     type=click.Choice(["family", "genus"]),
 )
@@ -177,7 +176,8 @@ def main(
     steps_infos = []
     start_running_time = time.time()
     print_info = PaperInfo()
-    print_info.print_message()
+    print_info.print_start(__version__)
+
     if prefix is None:
         try:
             logger.info(f"Creating prefix")

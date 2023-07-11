@@ -55,10 +55,12 @@ zstd|**1.4.9**
 
 #### Install
 
+EEfinder was developed and tested with BLAST 2.5.0 and DIAMOND 2.0.15, they are implemented on conda environments
+
 ```bash
 git clone https://github.com/dezordi/EEfinder.git
 cd EEfinder
-conda env create -f env.yml
+conda env create -f envs/<env_ubuntu.yml/env_mac.yml>
 conda activate EEfinder
 pip install .
 ```
@@ -68,11 +70,8 @@ pip install .
 ```bash
 eefinder --version
 
-#eefinder, version 0.1.0
+#eefinder, version 3.0.1
 ```
-
-For users that want to use diamond, install following the repository tool instructions:
-> https://github.com/bbuchfink/diamond/releases/tag/v2.0.15
 
 ### Running:
 
