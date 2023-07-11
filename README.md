@@ -1,8 +1,8 @@
 # EEfinder
 
-This set of python script automatizes several tasks related to identification of Endogenous Elements present on Eukaryotic Genomes.
+EEfinder is a tool/python package that automatizes several tasks related to identification of Endogenous Elements present on Eukaryotic Genomes.
 
-## Endogenous Element Finder, Alpha dev version
+## Endogenous Element Finder, Beta dev version
 
 ### Dependencies:
 
