@@ -27,7 +27,7 @@ def makediamonddb(data, threads):
         f"diamond makedb --db {data} --in {data} --threads {threads} --matrix BLOSUM45"
     )
     clinedb = shlex.split(clinedb)
-    cmd_clinedb = subprocess.Popen(clinedb)
+    cmd_clinedb = subprocess.Popen(clinedb, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     cmd_clinedb.wait()
 
 

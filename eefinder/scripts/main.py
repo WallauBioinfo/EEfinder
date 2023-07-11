@@ -134,7 +134,7 @@ def cli():
     is_flag=True,
 )
 @click.option(
-    "-mk",
+    "-id",
     "--index_databases",
     help="Index databases?",
     is_flag=True,
