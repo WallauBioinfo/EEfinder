@@ -55,6 +55,8 @@ zstd|**1.4.9**
 
 #### Install
 
+EEfinder was developed and tested with BLAST 2.5.0 and DIAMOND 2.0.15, they are implemented on conda environments
+
 ```bash
 git clone https://github.com/dezordi/EEfinder.git
 cd EEfinder
@@ -68,11 +70,8 @@ pip install .
 ```bash
 eefinder --version
 
-#eefinder, version 0.1.0
+#eefinder, version 3.0.1
 ```
-
-For users that want to use diamond, install following the repository tool instructions:
-> https://github.com/bbuchfink/diamond/releases/tag/v2.0.15
 
 ### Running:
 
@@ -90,12 +89,12 @@ host_protein_db|filter_subset.fa
 #### Test line:
 
 ```bash
-eefinder -in test_files/Ae_aeg_Aag2_ctg_1913.fasta -mt test_files/virus_subset.csv -db test_files/virus_subset.fa -dbh test_files/filter_subset.fa -od . --makeblastdb
+eefinder -in test_files/Ae_aeg_Aag2_ctg_1913.fasta -mt test_files/virus_subset.csv -db test_files/virus_subset.fa -bt test_files/filter_subset.fa -od . -id
 ```
 #### Default line:
 
 ```bash
-eefinder -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -dbh <host_protein_db> -od . --makeblastdb
+eefinder -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -bt <host_protein_db> -od . -id
 ```
 
 #### Default line (DIAMOND):
@@ -111,7 +110,7 @@ You can choose which mode of DIAMOND you want to use between:
 Using 'fast' mode as example:
 
 ```bash
-eefinder -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -dbh <host_protein_db> -od . -md fast --makeblastdb
+eefinder -in <fasta_genome> -mt <virus_proteins_table> -db <virus_db> -bt <host_protein_db> -od . -md fast -id
 ```
 
 #### Keeping temporaries:

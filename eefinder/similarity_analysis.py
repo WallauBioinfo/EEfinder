@@ -47,7 +47,7 @@ def rundiamond(query_file, database_file, threads, mode):
 
     clinedmd = f"diamond blastx -p {threads} -d {database_file}.dmnd -f 6 -q {query_file} -o {query_file}.blastx -e 0.00001 --matrix BLOSUM45 -k 500 --max-hsps 0 --{mode}"
     clinedmd = shlex.split(clinedmd)
-    cmd_clinedmd = subprocess.Popen(clinedmd)
+    cmd_clinedmd = subprocess.Popen(clinedmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     cmd_clinedmd.wait()
 
 
