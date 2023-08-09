@@ -10,6 +10,7 @@ class CompareResults:
     vir_result: filtred blast against ee database
     host_result: filtred blast against filter database
     """
+
     def __init__(self, vir_result: str, host_result: str) -> object:
         self.vir_result = vir_result
         self.host_result = host_result

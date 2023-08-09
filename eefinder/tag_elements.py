@@ -1,17 +1,23 @@
 import pandas as pd
 
 
-def _list_to_string(overlaped_elements: list):
+def _list_to_string(overlaped_elements: list) -> str:
     return ",".join(map(str, overlaped_elements))
 
 
 class TagElements:
-    def __init__(self, tax_file):
+    """
+    Create a collumn in the tax file with a tag sinalizing if the element is overlaped or unique
+    
+    Keyword arguments:
+    tax_file: tax input file
+    """
+    def __init__(self, tax_file: str) -> object:
         self.tax_file = tax_file
 
         self.tag_elements()
 
-    def tag_elements(self):
+    def tag_elements(self) -> None:
         df = pd.read_csv(self.tax_file, sep="\t")
         df["Element-ID"] = df["Element-ID"].replace(".*/", "", regex=True)
         df["start"] = df["Element-ID"].replace("-.*", "", regex=True)

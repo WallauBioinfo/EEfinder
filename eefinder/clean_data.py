@@ -10,7 +10,7 @@ class RemoveShortSequences:
     cutoff: cutoff length, parsed by -ln
     """
 
-    def __init__(self, input_file: str, cutoff: str) -> object:
+    def __init__(self, input_file: str, cutoff: int) -> object:
         self.input_file = input_file
         self.cutoff = cutoff
 
@@ -35,7 +35,7 @@ class MaskClean:
     m_per: treshold masked percentage value, parsed with -mp argument
     """
 
-    def __init__(self, input_file: str, m_per:str) -> object:
+    def __init__(self, input_file: str, m_per: int) -> object:
         self.input_file = input_file
         self.m_per = m_per
 

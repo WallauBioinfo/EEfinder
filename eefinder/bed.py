@@ -104,6 +104,7 @@ class RemoveAnnotation:
     Keyword arguments:
     bed_annotated_merged_file: tsv file generated in the merge_bedfile function on bed_merge.py
     """
+
     def __init__(self, bed_annotated_merged_file: str) -> object:
         self.bed_annotated_merged_file = bed_annotated_merged_file
 
@@ -124,12 +125,13 @@ class RemoveAnnotation:
 class MergeBed:
     """
     Execute the bedtools merge.
-    
+
     Keyword arguments:
     bed_annotated_file: annotated bed file created at get_annotated_bed function
     limit_merge: Limit of bases to merge regions, parsed with -lm argument
     """
-    def __init__(self, bed_annotated_file: str, limit_merge: str) -> object:
+
+    def __init__(self, bed_annotated_file: str, limit_merge: int) -> object:
         self.bed_annotated_file = bed_annotated_file
         self.limit_merge = limit_merge
 
@@ -137,7 +139,7 @@ class MergeBed:
 
     def merge_bed(self) -> None:
         bed_merge_output = open(f"{self.bed_annotated_file}.merge", "w")
-        bed_merge_cmd = f'bedtools merge -d {self.limit_merge} -i {self.bed_annotated_file} -c 4 -o collapse -delim " AND "'
+        bed_merge_cmd = f'bedtools merge -d {int(self.limit_merge)} -i {self.bed_annotated_file} -c 4 -o collapse -delim " AND "'
         bed_merge_cmd = shlex.split(bed_merge_cmd)
         bed_merge_process = subprocess.Popen(bed_merge_cmd, stdout=bed_merge_output)
         bed_merge_process.wait()
@@ -152,7 +154,8 @@ class BedFlank:
     lenght_file: lenght file produced by get_length function
     flank_region: desired lenght regions for extraction, parsed from
     """
-    def __init__(self, input_file: str, length_file: str, flank_region: str) -> object:
+
+    def __init__(self, input_file: str, length_file: str, flank_region: int) -> object:
         self.input_file = input_file
         self.length_file = length_file
         self.flank_region = flank_region
@@ -174,6 +177,7 @@ class GetBed:
     Keyword arguments:
     input_file: fasta file for desired bed file
     """
+
     def __init__(self, input_file: str) -> object:
         self.input_file = input_file
 

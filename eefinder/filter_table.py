@@ -16,7 +16,10 @@ class FilterTable:
     tag: HOST or EE, tells which blastx is
     out_dir: output directory, parsed by -od
     """
-    def __init__(self, blast_result: str, rangejunction: str, tag: str, out_dir: str) -> object:
+
+    def __init__(
+        self, blast_result: str, rangejunction: int, tag: str, out_dir: str
+    ) -> object:
         self.blast_result = blast_result
         self.rangejunction = rangejunction
         self.tag = tag
