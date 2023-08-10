@@ -37,6 +37,7 @@ class GetAnnotBed:
 
     Keyword arguments:
     blast_tax_info: csv file generated in the get_taxonomy_info function on get_taxonomy.py
+    merge_level: genus or family, choose which level going to merge nearby elements
     """
 
     def __init__(self, blast_tax_info: str, merge_level: str) -> object:
