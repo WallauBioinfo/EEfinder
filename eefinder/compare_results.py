@@ -2,22 +2,22 @@ import pandas as pd
 
 
 class CompareResults:
-    def __init__(self, vir_result, host_result):
+    """
+    This function compares 2 blast results, for queries with same ID, only the one
+    with the major bitscore is keept. In a final step only queries with tag EE are maintained
+
+    Keyword arguments:
+    vir_result: filtred blast against ee database
+    host_result: filtred blast against filter database
+    """
+
+    def __init__(self, vir_result: str, host_result: str) -> object:
         self.vir_result = vir_result
         self.host_result = host_result
 
         self.compare_results()
 
-    def compare_results(self):
-        """
-        This function compares 2 blast results, for queries with same ID, only the one with the major bitscore is keept. In a final step
-        Only queries with tag VIR are maintained.
-
-        Keyword arguments:
-        vir_result - filtred blast against vir database
-        self.host_result - viltred blast against filter database
-        """
-
+    def compare_results(self) -> None:
         df_vir = pd.read_csv(self.vir_result, sep="\t")
         df_vir["qseqid"] = df_vir["bed_name"]
         df_host = pd.read_csv(self.host_result, sep="\t")

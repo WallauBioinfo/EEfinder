@@ -3,36 +3,32 @@ import subprocess
 import shlex
 
 
-def makeblastdb(data, db_type):
-    """
-    This function creates blast databases.
-
-    Keyword arguments:
-    data - the database_file, parsed with -db argument
-    db_type - 'nucl' or 'prot' strings
-    """
+def makeblastdb(data: str, db_type: str) -> None:
     clinedb = NcbimakeblastdbCommandline(dbtype=db_type, input_file=data)
     stdout, stderr = clinedb()
 
 
-def makediamonddb(data, threads):
-    """
-    This function creates diamond databases.
-
-    Keyword arguments:
-    data - the database_file, parsed with -db argument
-    in_db_type - 'nucl' or 'prot' strings
-    """
-    clinedb = (
-        f"diamond makedb --db {data} --in {data} --threads {threads} --matrix BLOSUM45"
-    )
+def makediamonddb(data: str, threads: int) -> None:
+    clinedb = f"diamond makedb --db {data} --in {data} --threads {int(threads)} --matrix BLOSUM45"
     clinedb = shlex.split(clinedb)
-    cmd_clinedb = subprocess.Popen(clinedb, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    cmd_clinedb = subprocess.Popen(
+        clinedb, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+    )
     cmd_clinedb.wait()
 
 
 class MakeDB:
-    def __init__(self, mode, data, db_type, threads):
+    """
+    Creates BLAST or DIAMOND databases.
+
+    Keyword arguments:
+    mode: select the mode for mounting the database
+    data: the database_file, parsed with -db argument
+    db_type: 'nucl' or 'prot' strings
+    threads: number of threads to be used in the throught the workflow
+    """
+
+    def __init__(self, mode: str, data: str, db_type: str, threads: int) -> object:
         self.mode = mode
         self.data = data
         self.db_type = db_type
@@ -40,7 +36,7 @@ class MakeDB:
 
         self.make_db()
 
-    def make_db(self):
+    def make_db(self) -> None:
         if self.mode in ["blastx", "tblastn"]:
             makeblastdb(self.data, self.db_type)
         else:

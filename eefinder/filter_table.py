@@ -7,7 +7,19 @@ import shutil
 
 
 class FilterTable:
-    def __init__(self, blast_result, rangejunction, tag, out_dir):
+    """
+    Receives a blastx result and filter based on query ID and ranges of qstart and qend.
+
+    Keyword arguments:
+    blast_result: input blastx result
+    rangejunction: range for filter redundant hits
+    tag: HOST or EE, tells which blastx is
+    out_dir: output directory, parsed by -od
+    """
+
+    def __init__(
+        self, blast_result: str, rangejunction: int, tag: str, out_dir: str
+    ) -> object:
         self.blast_result = blast_result
         self.rangejunction = rangejunction
         self.tag = tag
@@ -15,13 +27,7 @@ class FilterTable:
 
         self.filter_blast()
 
-    def filter_blast(self):
-        """
-        This function receives a blastx result and filter based on query ID and ranges of qstart and qend.
-
-        Keyword arguments:
-        self.blast_result = blastx result outfmt 6
-        """
+    def filter_blast(self) -> None:
         header_outfmt6 = [
             "qseqid",
             "sseqid",
