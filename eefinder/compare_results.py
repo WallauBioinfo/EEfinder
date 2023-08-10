@@ -4,7 +4,7 @@ import pandas as pd
 class CompareResults:
     """
     This function compares 2 blast results, for queries with same ID, only the one
-    with the major bitscore is keept. In a final step
+    with the major bitscore is keept. In a final step only queries with tag EE are maintained
     Only queries with tag EE are maintained
 
     Keyword arguments:
