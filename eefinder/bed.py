@@ -33,7 +33,8 @@ class GetFasta:
 
 class GetAnnotBed:
     """
-    Create a bed file that will be used to merge truncated EVEs of the same family in the same sense based on a limite length treshold.
+    Create a bed file that will be used to merge truncated EVEs of the same
+    family in the same sense based on a limite length treshold.
 
     Keyword arguments:
     blast_tax_info: csv file generated in the get_taxonomy_info function on get_taxonomy.py
