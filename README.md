@@ -70,7 +70,7 @@ pip install .
 ```bash
 eefinder --version
 
-#eefinder, version 3.0.1
+#eefinder, version 1.0.0
 ```
 
 ### Running:
