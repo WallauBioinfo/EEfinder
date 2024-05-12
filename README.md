@@ -58,7 +58,7 @@ zstd|**1.4.9**
 EEfinder was developed and tested with BLAST 2.5.0 and DIAMOND 2.0.15, they are implemented on conda environments
 
 ```bash
-git clone https://github.com/dezordi/EEfinder.git
+git clone https://github.com/WallauBioinfo/EEfinder.git
 cd EEfinder
 conda env create -f env.yml
 conda activate EEfinder
