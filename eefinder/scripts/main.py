@@ -58,8 +58,8 @@ def cli():
 )
 @click.option(
     "-bt",
-    "--baits",
-    help="Bait proteins, used to filter putative EEs .fasta file.",
+    "--hostgenesbaits",
+    help="Host genes baits proteins, used to filter putative EEs .fasta file.",
     required=True,
 )
 @click.option(
@@ -310,7 +310,7 @@ def main(
                 end_time=end_time,
                 message=f"Filter step based on similarity analysis with {mode} was performed using {query} against {database}. "
                 + f"Matches against same subject sequence in a {range_junction}nt range junction are filtered, mantaining the one with the greatest bitscore. "
-                + "The results are compared, and the putative EEs with the greatest bitscore on baits database are removed",
+                + "The results are compared, and the putative EEs with the greatest bitscore on host genes baits database are removed",
             )
         )
     except Exception as err:
