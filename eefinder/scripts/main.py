@@ -156,7 +156,7 @@ def main(
     outdir,
     database,
     dbmetadata,
-    baits,
+    hostgenesbaits,
     mode,
     length,
     flank,
@@ -223,7 +223,7 @@ def main(
             start_time = time.time()
 
             MakeDB(mode, database, "prot", threads)
-            MakeDB(mode, baits, "prot", threads)
+            MakeDB(mode, hostgenesbaits, "prot", threads)
 
             end_time = time.time()
             steps_infos.append(
@@ -231,7 +231,7 @@ def main(
                     step="Index databases",
                     start_time=start_time,
                     end_time=end_time,
-                    message=f"Index {database} and {baits} databases.",
+                    message=f"Index {database} and {hostgenesbaits} databases.",
                 )
             )
         except Exception as err:
@@ -290,7 +290,7 @@ def main(
 
         start_time = time.time()
         query = f"{outdir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta"
-        SimilaritySearch(query, baits, threads, mode)
+        SimilaritySearch(query, hostgenesbaits, threads, mode)
         FilterTable(
             f"{outdir}/{prefix}.rn.fmt.blastx.filtred.bed.fasta.blastx",
             range_junction,
@@ -532,7 +532,7 @@ def main(
         outdir,
         database,
         dbmetadata,
-        baits,
+        hostgenesbaits,
         mode,
         length,
         flank,
