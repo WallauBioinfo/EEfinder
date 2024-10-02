@@ -59,6 +59,7 @@ class FilterTable:
         if os.path.exists(tmp_path) == False:
             os.mkdir(tmp_path)
         for df in chunks:
+            df["sense"] = df["sense"].astype(object)
             df.loc[
                 df["qstart"].astype(int) > df["qend"].values.astype(int), "sense"
             ] = "neg"
