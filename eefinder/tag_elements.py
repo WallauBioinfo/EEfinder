@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 
 def _list_to_string(overlaped_elements: list) -> str:
@@ -16,6 +17,7 @@ class TagElements:
         self.tax_file = tax_file
 
         self.tag_elements()
+        self.get_average_pident()
 
     def tag_elements(self) -> None:
         df = pd.read_csv(self.tax_file, sep="\t")
@@ -52,4 +54,13 @@ class TagElements:
                 row["Overlaped_Element_ID"] != ""
                 df.at[i, "tag"] = "overlaped"
 
+        df.to_csv(self.tax_file, sep="\t", index=False, header=True)
+
+    def get_average_pident(self) -> None:
+        df = pd.read_csv(self.tax_file, sep="\t")
+        def calculate_average(pidents):
+            entries = pidents.split(" | ")
+            pidents_values = [float(entry.split("|")[1]) for entry in entries if "|" in entry]
+            return round(np.mean(pidents_values), 1) if pidents else np.nan
+        df['Average_pident'] = df['Protein-IDs'].apply(calculate_average)
         df.to_csv(self.tax_file, sep="\t", index=False, header=True)

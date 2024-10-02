@@ -53,7 +53,11 @@ class GetAnnotBed:
             r"\:.*", "", regex=True
         )
         df_blast_tax_info["sseqid"] = (
-            df_blast_tax_info["sseqid"] + "|" + df_blast_tax_info["sense"]
+            df_blast_tax_info["sseqid"]
+            + "|"
+            + df_blast_tax_info["sense"]
+            + "|"
+            + df_blast_tax_info["pident"].astype(str)
         )
         df_blast_tax_info["Family"] = df_blast_tax_info["Family"].fillna("Unknown")
         df_blast_tax_info["Genus"] = df_blast_tax_info["Genus"].fillna("Unknown")
