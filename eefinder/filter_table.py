@@ -59,6 +59,7 @@ class FilterTable:
         if os.path.exists(tmp_path) == False:
             os.mkdir(tmp_path)
         for df in chunks:
+            df["sense"] = df["sense"].astype(object)
             df.loc[
                 df["qstart"].astype(int) > df["qend"].values.astype(int), "sense"
             ] = "neg"
@@ -80,26 +81,6 @@ class FilterTable:
                 df["bed_name"] = df["qseqid"]
             pd.options.display.float_format = "{:,.2f}".format
             df["evalue"] = pd.to_numeric(df["evalue"], downcast="float")
-            """
-            ##TODO: move to documentation
-            '''
-            The next three line is a trick used to remove redundant hits () in in 3 decimal places, in this case, as we are
-            using a blast do recovery the EE signature in queries, that represent our genome, the filter is applied by
-            query name and query start and end ranges, an example:
-            INPUT:
-            qseqid	sseqid	pident	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore
-            aag2_ctg_162	AAC97621	30.636	173	108	3	130612	130100	132	294	2.43e-08	69.7
-            aag2_ctg_162	AAU10897	23.611	216	163	2	130717	130073	134	348	2.52e-10	75.3
-            aag2_ctg_162	AOC55195	24.535	269	197	4	130864	130073	84	351	4.49e-11	77.8
-            OUTPUT:
-            qseqid	sseqid	pident	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore	sense
-            aag2_ctg_162	AOC55195	24.535	269	197	4	130073	130864	84	351	4.49e-11	77.8	-
-            '''
-            df['qstart_rng'] = df.qstart.floordiv(100)
-            df['qend_rng'] = df.qend.floordiv(100)
-            df = df.drop_duplicates(subset=['qseqid', 'qstart_rng', 'sense']).drop_duplicates(
-                            subset=['qseqid', 'qstart_rng', 'sense']).sort_values(by=['qseqid'])
-            """
             df = df[df.length >= 33]
             header = [
                 "qseqid",

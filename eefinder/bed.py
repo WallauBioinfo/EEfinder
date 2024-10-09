@@ -53,10 +53,14 @@ class GetAnnotBed:
             r"\:.*", "", regex=True
         )
         df_blast_tax_info["sseqid"] = (
-            df_blast_tax_info["sseqid"] + "|" + df_blast_tax_info["sense"]
+            df_blast_tax_info["sseqid"]
+            + "|"
+            + df_blast_tax_info["sense"]
+            + "|"
+            + df_blast_tax_info["pident"].astype(str)
         )
-        df_blast_tax_info["Family"].fillna("Unknown", inplace=True)
-        df_blast_tax_info["Genus"].fillna("Unknown", inplace=True)
+        df_blast_tax_info["Family"] = df_blast_tax_info["Family"].fillna("Unknown")
+        df_blast_tax_info["Genus"] = df_blast_tax_info["Genus"].fillna("Unknown")
 
         if self.merge_level == "genus":
             df_blast_tax_info["formated_name"] = np.where(
