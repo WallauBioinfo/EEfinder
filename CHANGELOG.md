@@ -5,7 +5,7 @@ All notable changes to EEfinder are documented here. The format is based on
 adheres to [Semantic Versioning](https://semver.org/).
 
 
-## [2.0.0] - 2026-07-11
+## [2.0.0]
 
 Major release. The CLI became a command group, a database-acquisition command
 was added, the similarity search gained alternative translation methods and
