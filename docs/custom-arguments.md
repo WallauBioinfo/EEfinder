@@ -29,6 +29,7 @@ whether two neighbouring elements belong to the "same taxon" for merging.
 
 ![Merge level example](_static/images/merge_level.png)
 
+(range-junction-arg)=
 ## Range junction (`-rj` / `--range_junction`)
 
 Sets the range used to clean redundant hits during the similarity analysis. The
@@ -70,8 +71,25 @@ contigs).
 Sets the length of the flanking regions extracted around each endogenous element
 into `PREFIX.EEs.flanks.fa` (default `10000` nt on each side).
 
+## Masking (`-cm` / `--clean_masked` and `-mp` / `--mask_per`)
+
+Endogenous elements frequently sit inside repetitive regions, which many genome
+assemblies deliver soft-masked (lower-case). With `-cm`, EEfinder writes an
+additional, filtered pair of outputs (`PREFIX.EEs.cleaned.fa` and
+`PREFIX.EEs.cleaned.tax.tsv`) containing only the elements whose
+lower-case-plus-`N` content is at or below `-mp` percent (default `50`).
+
+The unfiltered `PREFIX.EEs.fa` / `PREFIX.EEs.tax.tsv` are always written too, so
+the flag adds a view rather than replacing one. Without `-cm` no masking filter
+is applied and `-mp` has no effect.
+
 ## Output prefix (`-pr` / `--prefix`)
 
-Names the prefix EEfinder uses for output files and Element-IDs. Element names
-are formatted as `PREFIX|CONTIG/SCAFFOLD:START-END`. We suggest combining the
-genome and assembly names, e.g. **Ae_aeg_Aag2** for *Aedes aegypti* / Aag2.
+Names the prefix EEfinder uses for output files and element names. Sequence
+headers and GFF3 `ID`s are formatted as `PREFIX/CONTIG:START-END` (e.g.
+`Ae_aeg_Aag2_ctg_1913/ctg_1913:1754-2689`); the taxonomy table's `Element-ID`
+column carries the same name without the `PREFIX/` part. We suggest combining
+the genome and assembly names, e.g. **Ae_aeg_Aag2** for *Aedes aegypti* / Aag2.
+
+If `-pr` is omitted the prefix is derived from the input filename, up to the
+first dot.

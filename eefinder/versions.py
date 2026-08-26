@@ -25,10 +25,19 @@ _TOOL_COMMANDS = {
     "bedtools": "bedtools --version",
     "blast": "blastx -version",
     "diamond": "diamond version",
+    "ncbi-datasets-cli": "datasets --version",
 }
 
 #: Order in which dependencies are reported in the run log.
-DEPENDENCY_NAMES = ("python", "numpy", "pandas", "bedtools", "blast", "diamond")
+DEPENDENCY_NAMES = (
+    "python",
+    "numpy",
+    "pandas",
+    "bedtools",
+    "blast",
+    "diamond",
+    "ncbi-datasets-cli",
+)
 
 _VERSION_RE = re.compile(r"(\d+\.\d+(?:\.\d+)?)")
 

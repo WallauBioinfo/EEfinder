@@ -2,8 +2,9 @@
 
 Two endogenous elements can occupy the same genomic region while being assigned
 to **different families** — for example when a locus matches proteins from more
-than one viral lineage. `TagElements` flags such elements with
-`overlap_status=overlaped`, and `--overlap` (`-ov`) decides what to do with them.
+than one viral lineage. `TagElements` flags such elements in the
+`tag` column (`overlaped`, versus `unique`), and `--overlap` (`-ov`) decides
+what to do with them.
 
 | Value | Behaviour |
 |-------|-----------|

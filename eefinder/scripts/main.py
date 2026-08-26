@@ -8,7 +8,11 @@ module wires those steps together in order and writes a typed run summary
 (:class:`~eefinder.utils.RunInfo`) to ``eefinder.log``.
 """
 
+import faulthandler
+import io
+import signal
 import time
+
 import click
 import re
 import os
@@ -20,8 +24,8 @@ from dataclasses import asdict
 from eefinder.log import logger, enable_debug
 from eefinder.run_message import PaperInfo
 from eefinder.utils import check_outdir, StepInfo, RunArguments, RunInfo
-from eefinder.prepare_data import InsertPrefix
-from eefinder.clean_data import RemoveShortSequences, MaskClean
+from eefinder.prepare_data import PrepareGenome
+from eefinder.clean_data import MaskClean
 from eefinder.make_database import MakeDB
 from eefinder.similarity_analysis import SimilaritySearch
 from eefinder.translation import TRANSLATION_METHODS
@@ -45,6 +49,8 @@ from eefinder.get_databases import (
     CDHIT_BINARY,
     DEFAULT_TAXA,
 )
+from eefinder.taxon_exclusion import DEFAULT_VIRUS_EXCLUSIONS, NO_EXCLUSION
+from eefinder.progress import DEFAULT_ATTEMPTS, DEFAULT_STALL_TIMEOUT
 from eefinder.gff import WriteGFF3
 from eefinder.versions import (
     collect_dependency_versions,
@@ -54,6 +60,26 @@ from eefinder.versions import (
 from eefinder import __version__
 
 HOMEPAGE = "https://github.com/WallauBioinfo/EEfinder"
+
+
+def _enable_stack_dumps() -> None:
+    """Let ``kill -USR1 <pid>`` print what every thread is doing.
+
+    A run that appears frozen is otherwise impossible to diagnose after the
+    fact: this turns it into one command that says exactly which line is
+    waiting, including inside external-tool handling.
+    """
+    if not hasattr(signal, "SIGUSR1"):  # not available on Windows
+        return
+    try:
+        # sys.__stderr__ rather than sys.stderr: the handler needs a real file
+        # descriptor, which an in-memory replacement (a test runner's, say)
+        # does not have.
+        faulthandler.register(
+            signal.SIGUSR1, file=sys.__stderr__, all_threads=True, chain=True
+        )
+    except (AttributeError, ValueError, OSError, io.UnsupportedOperation):
+        logger.debug("stack dumps on SIGUSR1 are not available here")
 
 
 def report_run_context(system, dependencies):
@@ -87,7 +113,7 @@ def cli():
     Use ``screening`` to run the EE-finding pipeline and ``get-databases`` to
     download the RefSeq protein databases it needs.
     """
-    pass
+    _enable_stack_dumps()
 
 
 @cli.command(name="screening")
@@ -352,13 +378,15 @@ def screening(
         logger.info(f"Preparing input data")
         start_time = time.time()
 
-        logger.debug(f"InsertPrefix: {genome_file} -> {outdir}/{prefix}.rn")
-        InsertPrefix(genome_file, prefix, outdir)
         logger.debug(
-            f"RemoveShortSequences: dropping contigs < {length} nt from "
-            f"{outdir}/{prefix}.rn -> {outdir}/{prefix}.rn.fmt"
+            f"PrepareGenome: {genome_file} -> {outdir}/{prefix}.rn.fmt "
+            f"(prefixing headers, dropping contigs < {length} nt)"
         )
-        RemoveShortSequences(f"{outdir}/{prefix}.rn", length)
+        prepared = PrepareGenome(genome_file, prefix, outdir, length)
+        logger.info(
+            f"Prepared {prepared.kept} of {prepared.total} contig(s) "
+            f"(>= {length} nt)"
+        )
 
         end_time = time.time()
         steps_infos.append(
@@ -845,6 +873,37 @@ def screening(
 def _common_download_options(func):
     """Attach the -od/-pr/--refseq/--debug options shared by every command."""
     func = click.option(
+        "--stall-timeout",
+        help="Seconds without any sign of life (no output from datasets, no "
+        "growth of the archive) after which a download is treated as hung, "
+        f"killed and retried. 0 waits forever. default = {DEFAULT_STALL_TIMEOUT}",
+        type=float,
+        default=DEFAULT_STALL_TIMEOUT,
+    )(func)
+    func = click.option(
+        "--released-before",
+        help="Only include data released on or before this date (YYYY-MM-DD), so "
+        "a database can be rebuilt as it stood then. For bacteria/host the NCBI "
+        "client applies it per assembly; for viruses its subcommand has no such "
+        "flag, so EEfinder applies it per organism, from the release dates in the "
+        "download's own report.",
+        default=None,
+    )(func)
+    func = click.option(
+        "--keep-download/--remove-download",
+        help="Keep the downloaded zip and the extracted ncbi_dataset directory. "
+        "They are deleted by default, since everything in them is already in the "
+        "FASTA, the metadata CSV and the tracking table. default = remove",
+        default=False,
+    )(func)
+    func = click.option(
+        "--attempts",
+        help="How many times to try the download before giving up. NCBI "
+        f"transfers fail and hang intermittently. default = {DEFAULT_ATTEMPTS}",
+        type=int,
+        default=DEFAULT_ATTEMPTS,
+    )(func)
+    func = click.option(
         "--debug",
         help="Emit verbose debug logging (download command, extraction, "
         "per-record standardization details). default = off",
@@ -855,6 +914,17 @@ def _common_download_options(func):
         help="Collapse 100%-identical / 100%-coverage duplicate proteins with "
         "cd-hit before writing the database. default = cluster",
         default=True,
+    )(func)
+    func = click.option(
+        "--exclude-taxon",
+        "exclude_taxa",
+        help="Tax id or scientific name to leave out of the download; repeatable. "
+        "The branch is never requested from NCBI: the taxon being downloaded is "
+        "expanded into the taxa that cover it minus this one. 'virus' defaults "
+        f"to {DEFAULT_VIRUS_EXCLUSIONS[0]} (SARS-CoV-2), which is 61% of every "
+        f"viral record in GenBank; pass '--exclude-taxon {NO_EXCLUSION}' to "
+        "switch that off.",
+        multiple=True,
     )(func)
     func = click.option(
         "--refseq/--all-sequences",
@@ -877,6 +947,21 @@ def _common_download_options(func):
     return func
 
 
+def _resolve_exclusions(exclude_taxa, defaults=()):
+    """Apply the per-dataset default exclusions and the 'none' escape hatch.
+
+    Passing ``--exclude-taxon none`` clears the defaults, so a build that really
+    wants every branch can still ask for one.
+    """
+    given = tuple(t.strip() for t in (exclude_taxa or ()) if t.strip())
+    if not given:
+        return tuple(defaults)
+    if any(t.lower() == NO_EXCLUSION for t in given):
+        kept = tuple(t for t in given if t.lower() != NO_EXCLUSION)
+        return kept
+    return given
+
+
 def _run_get_databases(
     dataset,
     taxon,
@@ -887,6 +972,11 @@ def _run_get_databases(
     standardize_proteins,
     cluster=True,
     debug=False,
+    attempts=DEFAULT_ATTEMPTS,
+    stall_timeout=DEFAULT_STALL_TIMEOUT,
+    keep_download=False,
+    released_before=None,
+    exclude_taxa=(),
 ):
     """Check for the datasets binary and run :class:`GetDatabases`."""
     if debug:
@@ -895,7 +985,10 @@ def _run_get_databases(
         f"get-databases {dataset} arguments: taxon={taxon!r} outdir={outdir!r} "
         f"prefix={prefix!r} refseq={refseq} "
         f"exclude_uninformative={exclude_uninformative} "
-        f"standardize_proteins={standardize_proteins} cluster={cluster}"
+        f"standardize_proteins={standardize_proteins} cluster={cluster} "
+        f"attempts={attempts} stall_timeout={stall_timeout} "
+        f"keep_download={keep_download} released_before={released_before!r} "
+        f"exclude_taxa={exclude_taxa!r}"
     )
     if shutil.which(DATASETS_BINARY) is None:
         click.secho(
@@ -923,6 +1016,11 @@ def _run_get_databases(
             exclude_uninformative=exclude_uninformative,
             standardize_proteins=standardize_proteins,
             cluster=cluster,
+            attempts=attempts,
+            stall_timeout=stall_timeout or None,
+            keep_download=keep_download,
+            released_before=released_before,
+            exclude_taxa=exclude_taxa,
         )
     except Exception as err:
         click.secho(f"Failed to download databases: {err}", err=True, fg="red")
@@ -968,10 +1066,15 @@ def get_databases_virus(
     prefix,
     cluster,
     refseq,
+    attempts,
+    stall_timeout,
+    keep_download,
+    released_before,
     debug,
     taxon,
     exclude_uninformative,
     standardize_proteins,
+    exclude_taxa,
 ):
     """Download the RefSeq viral protein DB + metadata CSV (screening -db/-mt)."""
     _run_get_databases(
@@ -984,6 +1087,11 @@ def get_databases_virus(
         standardize_proteins=standardize_proteins,
         cluster=cluster,
         debug=debug,
+        attempts=attempts,
+        stall_timeout=stall_timeout,
+        keep_download=keep_download,
+        released_before=released_before,
+        exclude_taxa=_resolve_exclusions(exclude_taxa, DEFAULT_VIRUS_EXCLUSIONS),
     )
 
 
@@ -1016,10 +1124,15 @@ def get_databases_bacteria(
     prefix,
     cluster,
     refseq,
+    attempts,
+    stall_timeout,
+    keep_download,
+    released_before,
     debug,
     taxon,
     exclude_uninformative,
     standardize_proteins,
+    exclude_taxa,
 ):
     """Download the RefSeq bacterial protein DB + metadata CSV (screening -db/-mt)."""
     _run_get_databases(
@@ -1032,6 +1145,11 @@ def get_databases_bacteria(
         standardize_proteins=standardize_proteins,
         cluster=cluster,
         debug=debug,
+        attempts=attempts,
+        stall_timeout=stall_timeout,
+        keep_download=keep_download,
+        released_before=released_before,
+        exclude_taxa=_resolve_exclusions(exclude_taxa),
     )
 
 
@@ -1052,7 +1170,18 @@ def get_databases_bacteria(
     default=True,
 )
 def get_databases_host(
-    outdir, prefix, cluster, refseq, debug, taxon, exclude_uninformative
+    outdir,
+    prefix,
+    cluster,
+    refseq,
+    attempts,
+    stall_timeout,
+    keep_download,
+    released_before,
+    debug,
+    taxon,
+    exclude_uninformative,
+    exclude_taxa,
 ):
     """Download the host protein baits FASTA (screening -bt); no metadata CSV."""
     _run_get_databases(
@@ -1065,4 +1194,9 @@ def get_databases_host(
         standardize_proteins=False,
         cluster=cluster,
         debug=debug,
+        attempts=attempts,
+        stall_timeout=stall_timeout,
+        keep_download=keep_download,
+        released_before=released_before,
+        exclude_taxa=_resolve_exclusions(exclude_taxa),
     )

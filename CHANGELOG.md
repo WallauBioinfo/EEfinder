@@ -13,9 +13,28 @@ overlap resolution, and the project gained GFF3 output, a run/dependency audit,
 a full test suite, a Read-the-Docs docs and a `pyproject.toml` build.
 
 ### Added
+- **`--exclude-taxon` on `get-databases`** (`eefinder/taxon_exclusion.py`, new) — leaves
+  a branch of the NCBI taxonomy out of a download **without ever requesting it**.
+  SARS-CoV-2 is 9,210,670 of the 15,027,633 viral records in GenBank (61%, and
+  99.2% of *Coronaviridae*), so `get-databases virus --all-sequences` otherwise
+  spends most of its bandwidth and clustering time on one virus. The `datasets`
+  CLI has no exclusion flag, so EEfinder inverts the request: it walks the
+  lineage from the requested taxon down to the excluded one and keeps every child
+  except the one on the path (`expand_taxon_excluding`). For all viruses minus
+  SARS-CoV-2 that is 63 taxa, which fit in one `datasets --inputfile` call;
+  longer lists are split across downloads and extracted one package per
+  subdirectory (`find_data_reports`, `batch_taxa`). The option is repeatable,
+  accepts tax ids or scientific names, defaults to `2697049` (SARS-CoV-2) for
+  `virus` and to nothing for `bacteria`/`host`, and is switched off with
+  `--exclude-taxon none`. Recorded in the run log as `arguments.exclude_taxa`.
+  Verified end to end against *Coronaviridae*: the default build has 1,042
+  records and no SARS-CoV-2, `--exclude-taxon none` has 1,080, and the two differ
+  by exactly the 38 SARS-CoV-2 accessions — SARS-CoV-**1** (Tor2) is retained.
+  Known limit: records attached directly to a rank on the path (`"Betacoronavirus
+  sp."`) are unreachable this way — 273 of 5.8 million (0.005%).
 - **`get-databases` command** (`eefinder/get_databases.py`) — downloads the
   RefSeq protein databases EEfinder needs via the NCBI `datasets` CLI
-  (`ncbi-datasets-cli>=18.1`, pinned in `env.yml`; earlier builds fail on viral
+  (`ncbi-datasets-cli`, pinned to 18.36.0 in `env.yml`; earlier builds fail on viral
   downloads with `ACELLULAR_ROOT is not a valid V2reportsRankType`). It is a
   command group with one subcommand per database:
   - `virus` (taxon default `10239`) and `bacteria` (taxon default `2`) write a
@@ -109,14 +128,88 @@ a full test suite, a Read-the-Docs docs and a `pyproject.toml` build.
   `get-databases`, running the pipeline, translation methods, overlap resolution,
   custom arguments, outputs, testing and a developer guide (builds warning-clean).
 - **`CLAUDE.md`** project guidance and **`CHANGELOG.md`** (this file).
+- **Progress reporting for `get-databases`** (`eefinder/progress.py`). The
+  `datasets` CLI draws its own transfer progress and EEfinder was swallowing it
+  with `capture_output=True`; its output is now mirrored to the terminal as it
+  arrives, while still being captured so a failure can quote the tool's own
+  message. The steps EEfinder performs itself — archive extraction, `protein.faa`
+  merging and metadata building — get `click` progress bars. Progress is shown
+  only on a terminal (piped runs stay silent, as before) and
+  `EEFINDER_NO_PROGRESS=1` disables it.
+- **Retries and stall detection for downloads** (`--attempts`, default 3;
+  `--stall-timeout`, default 180s). NCBI transfers fail both by reporting an
+  error (`Internal error (invalid zip archive). Please try again`) and by hanging
+  with the connection open, which no exit status ever reports. A transfer counts
+  as stalled only when **neither** new output from `datasets` **nor** growth of
+  the archive is seen within the timeout, so a slow-but-working transfer is not
+  mistaken for a hung one; the attempt is then killed, the partial archive
+  discarded and the download retried with a growing backoff. Permanent failures
+  (a misspelled taxon, an unknown flag) are detected and **not** retried. Both
+  settings are recorded in the `{prefix}.log` arguments block.
+
+- **`get-databases --released-before YYYY-MM-DD`** restricts a build to data
+  released on or before a date, so a database can be rebuilt as it stood then;
+  the date is recorded in `{prefix}.log`. For `bacteria`/`host` the cutoff is the
+  NCBI client's own flag (exact, per assembly). Its **virus** subcommand has no
+  such flag, so EEfinder applies it from the release dates in the download's
+  report — per **organism**, because the protein FASTA carries no link back to
+  the record a protein came from (mapping by `proteinCount` was tested and does
+  not hold: in *Peribunyaviridae* the totals match but the order does not, in
+  *Orthomyxoviridae* the totals disagree). An organism is kept when its earliest
+  record predates the cutoff, so a segmented virus whose later segment postdates
+  it is not erased. Excluded accessions are recorded in the tracking table with
+  `Reason = released_after_cutoff`.
+- **`get-databases` writes a `{prefix}.tracking.tsv`** recording the fate of
+  every downloaded accession: its product name as delivered and after
+  standardisation (with a `Name_changed` flag), whether it was removed and why
+  (`uninformative_product`, `identical_duplicate`,
+  `product_standardized_to_unknown`), and for clustered sequences the `cd-hit`
+  cluster and the representative accession that replaced them. The sequences
+  dropped before the FASTA is written appear nowhere else, so this is the only
+  record that the download and the database can be reconciled against. The table
+  is verified against the finished FASTA, so a record that vanished without any
+  step reporting it is still accounted for (`absent_from_final_database`) —
+  `cd-hit` silently discards sequences of up to 10 residues (`-l`), which would
+  otherwise be reported as kept while missing from the database. Every row also
+  carries `Organism_release_date` (the earliest release date among the organism's
+  records), so a dated build can be checked rather than trusted.
+- **The raw download is deleted once it has been read** — the zip and the
+  extracted `*_ncbi/` directory are several GB of duplication for a whole-RefSeq
+  run. `--keep-download` keeps them. What a run leaves behind is the FASTA, the
+  metadata CSV, the tracking table, the `cd-hit` cluster file
+  (`{prefix}.clstr`, new — the members and representative of every cluster) and
+  the JSON log.
 
 ### Changed
+- **The genome is prepared in a single pass** (`prepare_data.PrepareGenome`).
+  Prefixing the headers and dropping the short contigs used to be two steps
+  chained through a `{prefix}.rn` file, so the whole genome was written to disk
+  twice — 3.2 GB of intermediates for a 1.6 GB genome, of which the first copy
+  was never read again. Only `{prefix}.rn.fmt` is written now, and the output is
+  byte-for-byte what the two steps produced (asserted by a test, and by the
+  golden-file integration runs). `InsertPrefix` and `RemoveShortSequences` remain
+  for callers that need one operation on its own.
 - **The CLI is now a command group; the pipeline moved under `screening`.** The
   console entry point is the `cli` group, so the pipeline is invoked as
   **`eefinder screening <options>`** instead of `eefinder <options>`. Options are
   otherwise unchanged. **(Breaking.)**
 - **`--merge_level` default changed from `genus` to `family`**; the default GFF3
   feature type is `endogenous_viral_element` (was `translated_nucleotide_match`).
+- **Packaging metadata aligned with the PyPI release workflow** added upstream
+  (`.github/workflows/publish.yml`, Trusted Publishing). `pyproject.toml` gained
+  the MIT `license`/`license-files`, maintainers, URLs, the full classifier set,
+  `requires-python = ">=3.9,<3.12"` and an sdist manifest. The console script
+  stays `eefinder.scripts.main:cli` (the 2.0.0 CLI is a click **group**; the
+  pre-2.0 `main` entry point no longer exists). Verified end to end:
+  `python -m build`, `twine check --strict`, install into a clean venv, and
+  `eefinder --version` → `eefinder, version 2.0.0`.
+- **Dependency bounds corrected.** `biopython` is capped at `<1.86`, which
+  **removed** `Bio.Blast.Applications` — still used by `make_database.py` and
+  `similarity_analysis.py`. `pandas`/`numpy` were relaxed from `<2` to `<3`
+  after confirming the unit suite passes in full against pandas 2.3 / numpy 2.2.
+- **`eefinder/__init__.py` no longer calls `sys.exit(1)`** when the package
+  metadata is missing; it falls back to `__version__ = "unknown"`, so importing
+  from a source tree (or during a docs build) no longer kills the process.
 - **Build system migrated to `pyproject.toml`** (hatchling backend, `[project]`
   table with runtime deps + `dev` extra + the `eefinder` console script);
   `setup.py`/`MANIFEST.in` removed. `pyproject.toml` also holds the black + pytest
@@ -126,8 +219,7 @@ a full test suite, a Read-the-Docs docs and a `pyproject.toml` build.
   2.5.0 → 2.17.0, DIAMOND 2.0.15 → 2.2.3, plus `ncbi-datasets-cli`, `cd-hit`,
   `pyrodigal-gv` and `pyrodigal-rv`. `env.yml` now pins only the direct
   dependencies and lets conda resolve the rest (the old frozen transitive pins
-  conflicted with BLAST 2.17's openssl 3.x). BLAST 2.17.0 is unavailable on
-  osx-arm64 — pin `blast=2.16.0` there.
+  conflicted with BLAST 2.17's openssl 3.x).
 - **`eefinder/__init__.py` resolves `__version__` via `importlib.metadata`**
   instead of `pkg_resources`, removing the deprecation warning and the implicit
   `setuptools` runtime pin.
@@ -154,6 +246,44 @@ a full test suite, a Read-the-Docs docs and a `pyproject.toml` build.
 - **`RunInfo.merge_level` was mis-mapped** to the `length` argument in the run
   log; it now reports the real `--merge_level`.
 - Corrected the run-log timestamp format string (stray `%` in `%H:%M%:%S`).
+- **`get-databases` hung after the download had finished** — the run sat forever
+  on a completed `Validating package files … 100%`. Root cause: the NCBI
+  `datasets` client never exits when it inherits an **open standard input**,
+  which is what happens in an interactive terminal. Measured on the same
+  download, same machine: **3 seconds** with stdin closed, **indefinite** with it
+  open. Every external command is now run with stdin closed; nothing here feeds a
+  command through stdin, so this costs nothing.
+- **The progress display could freeze mid-word** (`Valida…`): the child's pipe
+  was read as text in fixed 256-character blocks, which blocks until that many
+  characters exist, so a tool redrawing a progress bar appeared stuck until
+  enough further output accumulated. The pipe is now read unbuffered and in
+  binary, forwarding output the moment it arrives, with incremental decoding so a
+  chunk boundary inside a multi-byte character does not corrupt it.
+- **Waiting for end-of-file could outlive the command.** A background process a
+  command leaves behind holds the write end of the pipe open, so the pipe never
+  closes even after the tool has exited. Exit of the command now ends the loop;
+  output still in flight is drained first.
+- **An HTTP/2 stream reset is retried over HTTP/1.1.** NCBI aborts large
+  transfers with `stream error: stream ID 3; INTERNAL_ERROR; received from peer`;
+  the same download completes when the Go client is told to avoid HTTP/2
+  (`GODEBUG=http2client=0`), so that is what the retry does instead of repeating
+  the attempt unchanged. Measured on the full RefSeq viral set: HTTP/1.1 finished
+  in 176s where HTTP/2 failed three times in a row.
+- **A download that leaves a broken archive is no longer accepted.** NCBI
+  occasionally delivers a full-size package that is not a readable zip
+  (`118MB invalid zip archive`), sometimes while still reporting success. The
+  archive is now verified after the download and a bad one is retried like any
+  other failure. Any archive already at the destination is removed **before** the
+  first attempt too, so an interrupted run never leaves something to download
+  into.
+- **A quiet command no longer looks like a freeze.** While a command produces no
+  output and its output file does not grow, EEfinder says so every 20 seconds,
+  including how long it has been quiet and when it will give up and retry —
+  silence was indistinguishable from a hang, so users interrupted runs that were
+  about to recover on their own.
+- `kill -USR1 <pid>` on a running EEfinder now prints a full traceback of every
+  thread (`faulthandler`), so a run that appears stuck can be diagnosed instead
+  of guessed at.
 
 ### Notes
 - The default `blastx` mode is the tested, reliable path. The DIAMOND modes can

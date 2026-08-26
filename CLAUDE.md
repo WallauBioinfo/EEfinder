@@ -17,7 +17,7 @@ Wiki: https://github.com/WallauBioinfo/EEfinder/wiki
 The package lives in `eefinder/` (flat layout, no `src/`). Each processing step
 is a small class whose `__init__` runs the work as a side effect (files in,
 files out) — there is no shared in-memory pipeline object; steps communicate
-through files on disk whose names accrete suffixes (`.rn`, `.fmt`, `.blastx`,
+through files on disk whose names accrete suffixes (`.rn.fmt`, `.blastx`,
 `.filtred`, `.bed`, `.tax`, ...).
 
 The CLI (`eefinder/scripts/main.py`) is a `click` **group** (`cli`, the console
@@ -44,13 +44,24 @@ entry point) with two commands:
   (extension points). All targets share the cleaning pipeline (bracket-tag
   removal, directive stripping, molecular-weight + misspelling normalisation,
   special-char removal, capitalisation, bare-`CDS`/`ORF` → `Unknown`).
+  `--exclude-taxon` (repeatable; defaults to `2697049`/SARS-CoV-2 on `virus`,
+  cleared with `--exclude-taxon none`) leaves a branch out **at fetch time**:
+  `taxon_exclusion.py` `expand_taxon_excluding` walks the lineage from the requested
+  taxon to the excluded one and keeps every child except the one on the path, so
+  the branch is never requested. The resulting taxa go to `datasets` via
+  `--inputfile` (max 100, so `batch_taxa` splits longer lists into several
+  downloads, each extracted into its own `part_N/` and merged by
+  `find_data_reports`). Records attached directly to a rank on the path are
+  unreachable this way (measured: 0.005%).
 
 The `screening` command orchestrates the steps in this order:
 
-1. **prepare_data.py** `InsertPrefix` — prefix every FASTA header (`>PREFIX/…`).
-2. **clean_data.py** `RemoveShortSequences` — drop contigs below `--length`.
-3. **make_database.py** `MakeDB` — build BLAST or DIAMOND DBs (`--index_databases`).
-4. **similarity_analysis.py** `SimilaritySearch` — the similarity search, run
+1. **prepare_data.py** `PrepareGenome` — prefix every FASTA header (`>PREFIX/…`)
+   **and** drop contigs below `--length` in a single pass, writing only
+   `{prefix}.rn.fmt`. (`InsertPrefix`/`clean_data.RemoveShortSequences` still
+   exist for standalone use; chaining them wrote the genome to disk twice.)
+2. **make_database.py** `MakeDB` — build BLAST or DIAMOND DBs (`--index_databases`).
+3. **similarity_analysis.py** `SimilaritySearch` — the similarity search, run
    **twice** (main EE search + host-bait search). `--translation_method`
    controls both: `default` = six-frame `blastx`/`diamond blastx`; `gv`/`rv`/
    `gv-rv` predict proteins (**translation.py**, pyrodigal-gv/-rv, + `cd-hit`
@@ -79,6 +90,14 @@ The `screening` command orchestrates the steps in this order:
 14. **get_length.py** `GetLength` + **bed.py** `GetBed`/`BedFlank`/`GetFasta` —
     extract flanking regions (`--flank`).
 
+`progress.py` = terminal progress reporting: it mirrors a subprocess's own
+progress display (the `datasets` CLI draws one) instead of capturing it, wraps
+`click.progressbar` for the in-process loops, and implements the download
+retry/stall detection (`run_with_retries`; a transfer is "stalled" only when
+neither new output nor growth of the output file is seen within the timeout).
+Everything degrades to the previous silent behaviour off a terminal or under
+`EEFINDER_NO_PROGRESS=1`.
+
 `utils.py` = path/timing helpers + the `StepInfo`/`RunArguments`/`RunInfo`
 dataclasses (and `DownloadArguments`/`SequenceCounts`/`DownloadInfo` for the
 `get-databases` log); `versions.py` = dependency-version detection + `env.yml`
@@ -87,7 +106,15 @@ comparison (reported in the log and warned about at startup); `log.py` = the
 it to DEBUG; `logger.debug(...)` calls throughout are silent otherwise). The run
 finishes by renaming intermediates to `PREFIX.EEs.*` and writing `eefinder.log`
 (JSON: `eefinder_version`, `arguments`, `dependencies`, timing, and per-step
-info). `get-databases` similarly writes `{outdir}/{prefix}.log` (`DownloadInfo`:
+info). `--released-before` bounds a build to a date for reproducibility: native in the
+`datasets` client for bacteria/host, applied by EEfinder per **organism** for
+viruses (their subcommand has no such flag, and proteins cannot be traced to a
+genome record). `get-databases` also writes `{prefix}.tracking.tsv` (one row per downloaded
+accession: product before/after standardisation, whether it was removed and why,
+and the cd-hit cluster + representative for duplicates, plus each organism's
+earliest release date) and `{prefix}.clstr`,
+and deletes the downloaded zip and the extracted `*_ncbi/` directory unless
+`--keep-download` is passed. It similarly writes `{outdir}/{prefix}.log` (`DownloadInfo`:
 version, arguments, per-phase steps, timing, and a `sequence_counts` block —
 `downloaded`/`excluded_uninformative`/`clustered_identical`/
 `dropped_standardization`/`kept`). Unless `--no-cluster`, `get-databases` runs a
@@ -124,8 +151,9 @@ pip install .                         # or `pip install -e .` for development
 pip install ".[dev]"                  # + pytest + black (or requirements-dev.txt)
 ```
 
-- Python runtime deps (declared in `pyproject.toml`): click, biopython,
-  pandas (<2), numpy (<2). `pip install .` pulls them; the external binaries
+- Python runtime deps (declared in `pyproject.toml`): click, biopython
+  (**`<1.86`** — `Bio.Blast.Applications` was removed there and
+  `make_database.py`/`similarity_analysis.py` use it), pandas (<3), numpy (<3). `pip install .` pulls them; the external binaries
   still come from `env.yml`.
 - Build metadata lives in `pyproject.toml` (**hatchling** backend, `[project]`
   table with runtime deps + `dev` extra + the `eefinder` console script). There

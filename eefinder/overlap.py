@@ -1,4 +1,4 @@
-"""Resolve elements tagged ``overlap_status=overlaped`` by a chosen strategy.
+"""Resolve elements tagged ``overlaped`` (the ``tag`` column) by a chosen strategy.
 
 Elements are flagged ``overlaped`` by :class:`~eefinder.tag_elements.TagElements`
 when they overlap (within a small margin, same contig) an element assigned to a

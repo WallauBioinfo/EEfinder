@@ -11,8 +11,9 @@ from click.testing import CliRunner
 from eefinder.scripts.main import cli
 from eefinder.get_databases import (
     METADATA_COLUMNS,
-    UNINFORMATIVE_PRODUCTS,
+    TRACKING_COLUMNS,
     TaxonomyRecord,
+    UNINFORMATIVE_PRODUCTS,
     _genus_family_from_lineage,
     build_download_command,
     build_metadata_frame,
@@ -21,10 +22,16 @@ from eefinder.get_databases import (
     count_fasta_records,
     filter_fasta_by_ids,
     find_data_report,
+    find_data_reports,
     molecule_type_for_family,
+    organisms_released_after,
     parse_protein_header,
+    parse_release_dates,
     parse_taxonomy_report,
+    reconcile_tracking,
     standardize_protein,
+    validate_date,
+    write_tracking_table,
 )
 from eefinder.normalization import strip_bracket_tags
 
@@ -889,3 +896,358 @@ def test_cluster_identical_proteins_removes_exact_duplicates(tmp_path):
     # The representative of the identical pair survives, plus the distinct one.
     assert "PROT_C" in ids
     assert len(ids & {"PROT_A", "PROT_B"}) == 1
+
+
+# --------------------------------------------------------------------------- #
+# tracking.tsv: the fate of every downloaded accession
+# --------------------------------------------------------------------------- #
+class TestTracking:
+    """Every sequence that leaves the database must say why it left."""
+
+    def _faa(self, tmp_path, records):
+        data = tmp_path / "ncbi_dataset" / "data"
+        data.mkdir(parents=True)
+        (data / "protein.faa").write_text(
+            "".join(f">{header}\n{seq}\n" for header, seq in records)
+        )
+        return str(tmp_path)
+
+    def test_uninformative_records_are_recorded_with_their_reason(self, tmp_path):
+        extract = self._faa(
+            tmp_path,
+            [
+                ("PROT_A glycoprotein [organism=Mivirus chuvi]", "MKALL"),
+                ("PROT_B hypothetical protein [organism=Mivirus chuvi]", "KKTTT"),
+            ],
+        )
+        tracking = {}
+        counts = concat_protein_faas(
+            extract,
+            str(tmp_path / "out.faa"),
+            exclude_products=UNINFORMATIVE_PRODUCTS,
+            tracking=tracking,
+        )
+
+        assert counts.total == 2 and counts.written == 1
+        assert tracking["PROT_A"]["Status"] == "kept"
+        assert tracking["PROT_B"]["Status"] == "removed"
+        assert tracking["PROT_B"]["Reason"] == "uninformative_product"
+        # The dropped one is only visible here: it never reaches the FASTA.
+        assert "PROT_B" not in (tmp_path / "out.faa").read_text()
+
+    def test_every_downloaded_accession_is_present(self, tmp_path):
+        extract = self._faa(
+            tmp_path,
+            [(f"PROT_{i} some protein [organism=X]", "MKALL") for i in range(5)],
+        )
+        tracking = {}
+        concat_protein_faas(extract, str(tmp_path / "out.faa"), tracking=tracking)
+        assert len(tracking) == 5
+
+    def test_a_rename_is_recorded(self, tmp_path):
+        fasta = tmp_path / "proteins.faa"
+        fasta.write_text(
+            ">PROT_A RNA-dependent RNA polymerase [organism=Mivirus chuvi]\nMKALL\n"
+        )
+        tracking = {
+            "PROT_A": {
+                "Accession": "PROT_A",
+                "Species": "Mivirus chuvi",
+                "Protein_downloaded": "RNA-dependent RNA polymerase",
+                "Protein_final": "",
+                "Name_changed": "",
+                "Status": "kept",
+                "Reason": "",
+                "Cluster": "",
+                "Cluster_representative": "",
+            }
+        }
+        taxonomy = {
+            "Mivirus chuvi": TaxonomyRecord(
+                "Mivirus chuvi", "Mivirus", "Chuviridae", "", ""
+            )
+        }
+        build_metadata_frame(str(fasta), taxonomy, standardize=True, tracking=tracking)
+
+        row = tracking["PROT_A"]
+        assert row["Protein_final"] == "RdRp"
+        assert row["Name_changed"] == "yes"
+        assert row["Status"] == "kept"
+
+    def test_an_unchanged_name_says_so(self, tmp_path):
+        fasta = tmp_path / "proteins.faa"
+        fasta.write_text(">PROT_A RdRp [organism=Mivirus chuvi]\nMKALL\n")
+        tracking = {
+            "PROT_A": {
+                "Accession": "PROT_A",
+                "Protein_final": "",
+                "Name_changed": "",
+                "Status": "kept",
+                "Reason": "",
+            }
+        }
+        build_metadata_frame(str(fasta), {}, standardize=True, tracking=tracking)
+        assert tracking["PROT_A"]["Name_changed"] == "no"
+
+    def test_records_dropped_by_standardization_are_recorded(self, tmp_path):
+        fasta = tmp_path / "proteins.faa"
+        fasta.write_text(">PROT_A CDS: [organism=Mivirus chuvi]\nMKALL\n")
+        tracking = {
+            "PROT_A": {
+                "Accession": "PROT_A",
+                "Protein_final": "",
+                "Name_changed": "",
+                "Status": "kept",
+                "Reason": "",
+            }
+        }
+        frame = build_metadata_frame(
+            str(fasta), {}, standardize=True, tracking=tracking
+        )
+
+        assert frame.empty
+        assert tracking["PROT_A"]["Status"] == "removed"
+        assert tracking["PROT_A"]["Reason"] == "product_standardized_to_unknown"
+
+    def test_a_record_that_vanished_without_explanation_is_caught(self, tmp_path):
+        """cd-hit silently drops very short sequences; the table must not lie."""
+        fasta = tmp_path / "final.faa"
+        fasta.write_text(">PROT_A\nMKALLVGTSGAGKSTLLQ\n")
+        tracking = {
+            "PROT_A": {"Accession": "PROT_A", "Status": "kept", "Reason": ""},
+            "PROT_SHORT": {"Accession": "PROT_SHORT", "Status": "kept", "Reason": ""},
+            "PROT_DROPPED": {
+                "Accession": "PROT_DROPPED",
+                "Status": "removed",
+                "Reason": "uninformative_product",
+            },
+        }
+        assert reconcile_tracking(tracking, str(fasta)) == 1
+
+        assert tracking["PROT_A"]["Status"] == "kept"
+        assert tracking["PROT_SHORT"]["Status"] == "removed"
+        assert tracking["PROT_SHORT"]["Reason"] == "absent_from_final_database"
+        # An already-explained removal keeps its own reason.
+        assert tracking["PROT_DROPPED"]["Reason"] == "uninformative_product"
+
+    def test_the_table_has_the_documented_columns(self, tmp_path):
+        tracking = {
+            "PROT_A": {column: "" for column in TRACKING_COLUMNS},
+        }
+        tracking["PROT_A"]["Accession"] = "PROT_A"
+        tracking["PROT_A"]["Status"] = "kept"
+        out = tmp_path / "tracking.tsv"
+        assert write_tracking_table(tracking, str(out)) == 1
+
+        table = pd.read_csv(out, sep="\t")
+        assert list(table.columns) == TRACKING_COLUMNS
+
+
+@pytest.mark.skipif(not binaries_available("cd-hit"), reason="requires cd-hit on PATH")
+class TestTrackingOfDuplicates:
+    """A dropped duplicate must point at the sequence that replaced it."""
+
+    def test_duplicates_name_their_cluster_and_representative(self, tmp_path):
+        fasta = tmp_path / "proteins.faa"
+        # PROT_A and PROT_B are identical; PROT_C is not.
+        fasta.write_text(
+            ">PROT_A\nMKALLVGTSGAGKSTLLQALNRLYELDSGSIRIDG\n"
+            ">PROT_B\nMKALLVGTSGAGKSTLLQALNRLYELDSGSIRIDG\n"
+            ">PROT_C\nWWYYFFHHKKRREEDDNNQQSSTTAAVVLLIIMMPP\n"
+        )
+        tracking = {
+            name: {column: "" for column in TRACKING_COLUMNS}
+            for name in ("PROT_A", "PROT_B", "PROT_C")
+        }
+        for name, row in tracking.items():
+            row["Accession"] = name
+            row["Status"] = "kept"
+
+        removed = cluster_identical_proteins(
+            str(fasta),
+            threads=1,
+            clusters_path=str(tmp_path / "clusters.clstr"),
+            tracking=tracking,
+        )
+
+        assert removed == 1
+        kept, dropped = (
+            [n for n, r in tracking.items() if r["Status"] == "kept"],
+            [n for n, r in tracking.items() if r["Status"] == "removed"],
+        )
+        assert set(kept) == {"PROT_A", "PROT_C"} or set(kept) == {"PROT_B", "PROT_C"}
+        assert len(dropped) == 1
+
+        gone = tracking[dropped[0]]
+        assert gone["Reason"] == "identical_duplicate"
+        assert gone["Cluster"] != ""
+        # It points at the sequence that stands for it, which was kept.
+        assert tracking[gone["Cluster_representative"]]["Status"] == "kept"
+        # The cluster composition itself is kept, not cd-hit's chatter.
+        clusters = (tmp_path / "clusters.clstr").read_text()
+        assert ">Cluster" in clusters
+        assert gone["Cluster_representative"] in clusters
+
+
+# --------------------------------------------------------------------------- #
+# Release-date cutoff: rebuilding a database as it stood on a given day
+# --------------------------------------------------------------------------- #
+REPORT_WITH_DATES = "\n".join(
+    json.dumps(record)
+    for record in [
+        {
+            "accession": "NC_000001.1",
+            "releaseDate": "2002-08-13T00:00:00Z",
+            "virus": {"organismName": "La Crosse virus"},
+        },
+        {
+            # Same organism, a segment added two decades later.
+            "accession": "NC_000002.1",
+            "releaseDate": "2023-05-06T00:00:00Z",
+            "virus": {"organismName": "La Crosse virus"},
+        },
+        {
+            "accession": "NC_000003.1",
+            "releaseDate": "2024-01-15T00:00:00Z",
+            "virus": {"organismName": "Brand new virus"},
+        },
+    ]
+)
+
+
+class TestReleaseDateCutoff:
+    def _report(self, tmp_path):
+        path = tmp_path / "data_report.jsonl"
+        path.write_text(REPORT_WITH_DATES + "\n")
+        return str(path)
+
+    def test_an_organism_is_dated_by_its_earliest_record(self, tmp_path):
+        """A virus first appeared when its first segment did, not its last."""
+        dates = parse_release_dates(self._report(tmp_path))
+        assert dates["La Crosse virus"] == "2002-08-13"
+        assert dates["Brand new virus"] == "2024-01-15"
+
+    def test_only_organisms_that_did_not_exist_yet_are_excluded(self, tmp_path):
+        excluded = organisms_released_after(self._report(tmp_path), "2010-01-01")
+        assert excluded == {"Brand new virus"}
+
+    def test_a_cutoff_after_everything_excludes_nothing(self, tmp_path):
+        assert organisms_released_after(self._report(tmp_path), "2030-01-01") == set()
+
+    def test_the_release_date_is_recorded_for_every_accession(self, tmp_path):
+        """A dated build should be checkable, not merely trusted."""
+        data = tmp_path / "ncbi_dataset" / "data"
+        data.mkdir(parents=True)
+        (data / "protein.faa").write_text(
+            ">PROT_OLD glycoprotein [organism=La Crosse virus]\nMKALL\n"
+            ">PROT_NEW glycoprotein [organism=Brand new virus]\nKKTTT\n"
+        )
+        tracking = {}
+        concat_protein_faas(
+            str(tmp_path),
+            str(tmp_path / "out.faa"),
+            tracking=tracking,
+            exclude_organisms={"Brand new virus"},
+            release_dates=parse_release_dates(self._report(tmp_path)),
+        )
+
+        # Both the excluded record and the kept one carry their date.
+        assert tracking["PROT_NEW"]["Reason"] == "released_after_cutoff"
+        assert tracking["PROT_NEW"]["Organism_release_date"] == "2024-01-15"
+        assert tracking["PROT_OLD"]["Status"] == "kept"
+        assert tracking["PROT_OLD"]["Organism_release_date"] == "2002-08-13"
+
+    def test_the_date_column_follows_the_reason(self, tmp_path):
+        assert TRACKING_COLUMNS.index("Organism_release_date") == (
+            TRACKING_COLUMNS.index("Reason") + 1
+        )
+
+    def test_excluded_organisms_are_dropped_and_recorded(self, tmp_path):
+        data = tmp_path / "ncbi_dataset" / "data"
+        data.mkdir(parents=True)
+        (data / "protein.faa").write_text(
+            ">PROT_OLD glycoprotein [organism=La Crosse virus]\nMKALL\n"
+            ">PROT_NEW glycoprotein [organism=Brand new virus]\nKKTTT\n"
+        )
+        tracking = {}
+        counts = concat_protein_faas(
+            str(tmp_path),
+            str(tmp_path / "out.faa"),
+            tracking=tracking,
+            exclude_organisms={"Brand new virus"},
+        )
+
+        assert (counts.total, counts.written) == (2, 1)
+        assert "PROT_NEW" not in (tmp_path / "out.faa").read_text()
+        assert tracking["PROT_OLD"]["Status"] == "kept"
+        assert tracking["PROT_NEW"]["Status"] == "removed"
+        assert tracking["PROT_NEW"]["Reason"] == "released_after_cutoff"
+
+    def test_the_native_flag_is_used_where_the_client_supports_it(self):
+        """datasets implements the cutoff for genomes, but not for viruses."""
+        bacteria = build_download_command(
+            "bacteria", "2", "x.zip", released_before="2020-01-01"
+        )
+        assert "--released-before 2020-01-01" in bacteria
+
+        virus = build_download_command(
+            "virus", "10239", "x.zip", released_before="2020-01-01"
+        )
+        assert "--released-before" not in virus
+
+    @pytest.mark.parametrize("value", ["2024-13-01", "31/12/2024", "yesterday"])
+    def test_a_malformed_date_is_rejected_up_front(self, value):
+        with pytest.raises(ValueError, match="Invalid date"):
+            validate_date(value)
+
+    def test_an_unset_date_passes_through(self):
+        assert validate_date(None) is None
+        assert validate_date("") is None
+        assert validate_date("2024-12-31") == "2024-12-31"
+
+
+class TestDownloadCommandWithInputfile:
+    """The taxon list replaces the positional taxon, never joins it."""
+
+    def test_virus_uses_inputfile_instead_of_taxon(self):
+        command = build_download_command(
+            "virus", "10239", "/tmp/out.zip", inputfile="/tmp/taxa.txt"
+        )
+        assert "--inputfile /tmp/taxa.txt" in command
+        assert "taxon 10239" not in command
+        assert "--include protein" in command
+
+    def test_genome_uses_inputfile_instead_of_taxon(self):
+        command = build_download_command(
+            "bacteria", "2", "/tmp/out.zip", inputfile="/tmp/taxa.txt"
+        )
+        assert "--inputfile /tmp/taxa.txt" in command
+        assert "taxon 2" not in command
+
+    def test_without_inputfile_the_taxon_is_positional(self):
+        command = build_download_command("virus", "10239", "/tmp/out.zip")
+        assert "taxon 10239" in command
+        assert "--inputfile" not in command
+
+    def test_inputfile_path_is_quoted(self):
+        command = build_download_command(
+            "virus", "10239", "/tmp/out.zip", inputfile="/tmp/a b.txt"
+        )
+        assert "'/tmp/a b.txt'" in command
+
+
+class TestFindDataReports:
+    """A split download leaves one report per extracted package."""
+
+    def test_returns_every_report(self, tmp_path):
+        for part in ("part_1", "part_2"):
+            target = tmp_path / part / "ncbi_dataset" / "data"
+            target.mkdir(parents=True)
+            (target / "data_report.jsonl").write_text("{}\n")
+        found = find_data_reports(str(tmp_path))
+        assert len(found) == 2
+        # find_data_report keeps returning the first, for single-package runs.
+        assert find_data_report(str(tmp_path)) == found[0]
+
+    def test_empty_when_there_is_none(self, tmp_path):
+        assert find_data_reports(str(tmp_path)) == []

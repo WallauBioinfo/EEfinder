@@ -12,18 +12,31 @@ conda/micromamba environment built from the bundled `env.yml`.
 | BLAST (`blastx`/`blastp`/`makeblastdb`) | similarity search + database build | `env.yml` (`blast`) |
 | DIAMOND (`diamond`) | fast alternative to BLAST | `env.yml` (`diamond`) |
 | bedtools | sequence extraction / merging | `env.yml` (`bedtools`) |
-| NCBI datasets CLI (`datasets`) | database download (`get-databases`) | `env.yml` (`ncbi-datasets-cli`) |
-| cd-hit | dedup for `--translation_method gv-rv` | `env.yml` (`cd-hit`) |
+| NCBI datasets CLI (`datasets`) | database download (`get-databases`) | `env.yml` (`ncbi-datasets-cli`, pinned to 18.36.0) |
+| cd-hit | dedup for `--translation_method gv-rv` **and** the `get-databases` `--cluster` step (on by default) | `env.yml` (`cd-hit`) |
 | pyrodigal-gv / pyrodigal-rv | protein prediction (`gv`/`rv`/`gv-rv`) | `env.yml` (pip) |
-| biopython, pandas (<2), numpy (<2), click | Python runtime deps | `env.yml` (pip) |
+| biopython (<1.86), pandas (<3), numpy (<3), click | Python runtime deps | `env.yml` (pip) |
 
-```{note}
-BLAST 2.17.0 is available on `linux-64` but **not** on macOS Apple Silicon
-(`osx-arm64`), which tops out at 2.16.0. On Apple Silicon either pin
-`blast=2.16.0` in `env.yml` or build on a `linux-64` / `osx-64` machine.
+## Install from PyPI
+
+Install the external binaries first, then EEfinder itself:
+
+```bash
+# 1. the binaries (conda-forge / bioconda)
+conda create -n EEfinder -c conda-forge -c bioconda \
+  "python>=3.9,<3.12" "blast>=2.5" "diamond>=2.0.15" "bedtools>=2.27" \
+  ncbi-datasets-cli cd-hit
+conda activate EEfinder
+
+# 2. the package
+pip install eefinder
 ```
 
-## Install with micromamba (recommended)
+This is the quickest route, but it resolves the binaries to whatever versions
+are current. To get the versions EEfinder is tested against, install from source
+with `env.yml` as below.
+
+## Install from source (recommended)
 
 ```bash
 git clone https://github.com/WallauBioinfo/EEfinder.git
@@ -52,7 +65,9 @@ eefinder --help
 To run the test suite and format the code, add the development dependencies:
 
 ```bash
-pip install -r requirements-dev.txt   # pytest + black
+pip install ".[dev]"                  # pytest + black
+# or, equivalently:
+pip install -r requirements-dev.txt
 ```
 
 See the [Developer guide](developer-guide.md) and [Testing](testing.md) pages

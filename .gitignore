@@ -28,3 +28,18 @@ results_test/
 
 # Sphinx documentation build output
 docs/_build/
+# macOS
+.DS_Store
+
+# Run outputs and scratch databases produced while testing
+results/
+results_*/
+teste_*/
+db/
+test_db/
+test_db_host/
+
+# Nextflow working files
+.nextflow/
+.nextflow.log*
+work/

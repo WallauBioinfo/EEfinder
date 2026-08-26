@@ -133,6 +133,13 @@ class DownloadArguments:
     exclude_uninformative: bool
     standardize_proteins: bool
     cluster: bool
+    #: Download robustness settings (retries and stall detection).
+    attempts: int = 1
+    stall_timeout: float = 0.0
+    keep_download: bool = False
+    released_before: str = ""
+    #: Taxa left out of the download entirely (never requested from NCBI).
+    exclude_taxa: str = ""
 
 
 @dataclass

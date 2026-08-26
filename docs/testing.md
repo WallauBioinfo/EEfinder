@@ -51,13 +51,15 @@ failed), so `pytest -m "not integration"` runs cleanly on a bare Python install.
 ### Unit tests
 
 - **`test_prepare_data.py`** — `InsertPrefix` rewrites every FASTA header to
-  `>PREFIX/…` and leaves sequences untouched.
+  `>PREFIX/…` and leaves sequences untouched; `PrepareGenome` does the prefixing
+  and the length cutoff in one pass, byte-for-byte matching the two-step result.
 - **`test_clean_data.py`** — `RemoveShortSequences` applies the length cutoff
   (inclusive); `MaskClean` drops soft-masked sequences at the given threshold.
 - **`test_filter_table.py`** — `FilterTable` collapses redundant hits, swaps
   coordinates for negative-strand hits, drops hits shorter than 33 aa, and emits
   the `.filtred`/`.filtred.bed` files with the expected `bed_name`/`tag`.
-- **`test_taxonomy.py`** — `GetTaxonomy` left-joins the metadata CSV;
+- **`test_taxonomy.py`** — (the taxonomy *table*, not `taxon_exclusion.py`)
+  `GetTaxonomy` left-joins the metadata CSV;
   `CompareResults` removes putative EEs that hit the host baits with a higher
   bitscore.
 - **`test_bed.py`** — `GetBed`, `RemoveAnnotation` and `GetAnnotBed` produce the
@@ -76,6 +78,15 @@ failed), so `pytest -m "not integration"` runs cleanly on a bare Python install.
 - **`test_overlap.py`** — `elements_to_remove` for the `keep`/`longest`/
   `targets` strategies (per-cluster keep-list and drop-list resolution) and
   `FilterOverlap` splitting kept vs removed records.
+- **`test_taxon_exclusion.py`** — taxonomy expansion for `--exclude-taxon`:
+  sibling collection along the lineage, composing several exclusions, exclusions
+  outside the requested taxon, `--inputfile` batching, and the error cases. The
+  `datasets` CLI is faked, so no network is used.
+- **`test_translation.py`** — protein prediction, `cd-hit` clustering and the
+  amino-acid → nucleotide coordinate traceback.
+- **`test_progress.py`** / **`test_download_hang.py`** — the progress display,
+  retry/backoff and stall detection, including the cases where `datasets`
+  delivers a complete package but never exits.
 - **`test_utils.py`** — `check_outdir`, `step_info`, `running_info` helpers.
 
 ### Integration tests

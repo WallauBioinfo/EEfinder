@@ -42,27 +42,67 @@ eefinder screening \
 ## Pipeline steps
 
 The `screening` command orchestrates these steps (each a small side-effect class;
-files flow through disk with accreting suffixes `.rn`, `.fmt`, `.blastx`,
+files flow through disk with accreting suffixes `.rn.fmt`, `.blastx`,
 `.filtred`, `.bed`, `.tax`, …):
 
-1. **InsertPrefix** — prefix every FASTA header (`>PREFIX/…`).
-2. **RemoveShortSequences** — drop contigs below `--length`.
-3. **MakeDB** — build BLAST or DIAMOND databases (`--index_databases`).
-4. **SimilaritySearch** — the similarity search, run **twice** (main EE search +
+1. **PrepareGenome** — prefix every FASTA header (`>PREFIX/…`) **and** drop
+   contigs below `--length`, in a single pass writing only `{prefix}.rn.fmt`.
+   (`InsertPrefix` and `RemoveShortSequences` still exist as standalone classes;
+   chaining them wrote the genome to disk twice.)
+2. **MakeDB** — build BLAST or DIAMOND databases (`--index_databases`).
+3. **SimilaritySearch** — the similarity search, run **twice** (main EE search +
    host-bait search). `--translation_method` controls both — see
    [Translation methods](translation-methods.md).
-5. **FilterTable** — filter redundant hits by `qseqid`/range/sense.
-6. **GetFasta** — extract putative EE sequences (bedtools).
-7. **CompareResults** — drop EEs that hit host baits harder.
-8. **GetTaxonomy** — join hits to the metadata CSV, build the taxonomy table.
-9. **MergeBed** — merge truncated elements of the same genus/family
+4. **FilterTable** — filter redundant hits by `qseqid`/range/sense.
+5. **GetFasta** — extract putative EE sequences (bedtools).
+6. **CompareResults** — drop EEs that hit host baits harder.
+7. **GetTaxonomy** — join hits to the metadata CSV, build the taxonomy table.
+8. **MergeBed** — merge truncated elements of the same genus/family
    (`--merge_level`).
-10. **MaskClean** — optional soft-mask filter (`--clean_masked`).
-11. **TagElements** — flag overlapping elements, add `Average_pident`.
-12. **FilterOverlap** — resolve overlaps by the chosen strategy — see
+9. **MaskClean** — optional soft-mask filter (`--clean_masked`).
+10. **TagElements** — flag overlapping elements, add `Average_pident`.
+11. **FilterOverlap** — resolve overlaps by the chosen strategy — see
     [Overlap resolution](overlap.md).
-13. **WriteGFF3** — write the EE taxonomy table as a GFF3 annotation.
-14. **GetLength + BedFlank + GetFasta** — extract flanking regions (`--flank`).
+12. **WriteGFF3** — write the EE taxonomy table as a GFF3 annotation.
+13. **GetLength + BedFlank + GetFasta** — extract flanking regions (`--flank`).
+
+(diamond-sensitivity)=
+## The sensitivity trade-off
+
+```{important}
+DIAMOND is faster than BLAST, but **at a real cost in sensitivity**, and the
+loss falls exactly where endogenous-element studies operate: on the most
+divergent sequences.
+```
+
+DIAMOND seeds its alignments on a reduced amino-acid alphabet. Its authors
+report that this does not compromise sensitivity, but the EEfinder benchmark
+found a clear effect on the highly divergent sequences typical of EVE studies.
+Screening the *Aedes aegypti* Aag2 genome (GCA_021653915) against a viral
+protein database gave:
+
+| Search mode | Elements recovered | Identity range | Runtime |
+|-------------|--------------------|----------------|---------|
+| `blastx` (BLAST) | **481** | 10.2–100 % | 56 h 14 min |
+| `-md very-sensitive` (DIAMOND) | 225 | 16.2–100 % | 42 h 34 min |
+| `-md fast` (DIAMOND) | 126 | 16.9–100 % | 8 h 6 min |
+
+DIAMOND's most sensitive setting recovered **less than half** the elements BLAST
+did, for a runtime saving of only ~25 %; `fast` mode recovered about a quarter of
+them, but seven times faster. The identity ranges show where the difference
+comes from — BLAST reaches down to 10.2 % identity, while both DIAMOND modes
+floor out around 16 %, i.e. the oldest and most degraded integrations are the
+ones that go missing.
+
+**Use `blastx` (the default) whenever sensitivity matters**, which for EE
+discovery is almost always. The DIAMOND modes are appropriate for rapid
+exploratory screens, for very large sample sets, or when only comparatively
+recent, well-conserved integrations are of interest — with the caveat that the
+resulting element counts are not comparable to BLAST-based ones.
+
+The full benchmark is reported in section 3.2 (*Benchmark of alignment tools*) of
+[Dias, Dezordi & Wallau (2024)](https://doi.org/10.1016/j.csbj.2024.10.012)
+([PMC11532726](https://pmc.ncbi.nlm.nih.gov/articles/PMC11532726/)).
 
 ## Options reference
 
@@ -80,7 +120,7 @@ files flow through disk with accreting suffixes `.rn`, `.fmt`, `.blastx`,
 
 | Option | Default | Meaning |
 |--------|---------|---------|
-| `-md/--mode` | `blastx` | `blastx` or a DIAMOND sensitivity (`fast`, `mid-sensitive`, `sensitive`, `more-sensitive`, `very-sensitive`, `ultra-sensitive`). |
+| `-md/--mode` | `blastx` | `blastx` or a DIAMOND sensitivity (`fast`, `mid-sensitive`, `sensitive`, `more-sensitive`, `very-sensitive`, `ultra-sensitive`). DIAMOND is faster but less sensitive — see [The sensitivity trade-off](#diamond-sensitivity). |
 | `-tm/--translation_method` | `default` | `default`/`gv`/`rv`/`gv-rv` — see [Translation methods](translation-methods.md). |
 | `-ln/--length` | `10000` | Minimum contig length for the search. |
 | `-rj/--range_junction` | `100` | Range for junction of redundant hits — see [Custom arguments](custom-arguments.md). |

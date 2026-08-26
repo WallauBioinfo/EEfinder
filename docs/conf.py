@@ -12,7 +12,8 @@ except ModuleNotFoundError:  # pragma: no cover - Python < 3.11
 
 # -- Version ------------------------------------------------------------------
 # Read the version from pyproject.toml rather than importing the installed
-# package -- the docs build does not install EEfinder itself.
+# package -- the docs build does not install EEfinder itself (it would pull in
+# BLAST, DIAMOND and bedtools, which are not pip-installable).
 _pyproject = Path(__file__).parent.parent / "pyproject.toml"
 with open(_pyproject, "rb") as _f:
     release = tomllib.load(_f)["project"]["version"]

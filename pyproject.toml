@@ -1,33 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "eefinder"
 version = "2.0.0"
-description = "Tool to analyze endogenous elements (EEs) based on similarity search and junctions of genomic regions."
+description = "Identification of endogenous viral and bacterial elements in eukaryotic genomes"
+readme = "README.md"
+requires-python = ">=3.9,<3.12"
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
     { name = "Filipe Zimmer Dezordi", email = "zimmer.filipe@gmail.com" },
     { name = "Yago Dias", email = "yag.dias@gmail.com" },
 ]
-readme = "README.md"
-requires-python = ">=3.9"
-dependencies = [
-    "click>=8.1,<9",
-    "biopython>=1.79",
-    "pandas>=1.4,<2",
-    "numpy>=1.23,<2",
+maintainers = [
+    { name = "Filipe Zimmer Dezordi", email = "zimmer.filipe@gmail.com" },
 ]
-
 keywords = [
-    "endogenous-elements",
-    "endogenous-viral-elements",
     "bioinformatics",
     "genomics",
-    "python",
+    "endogenous elements",
+    "EVE",
+    "virus",
+    "horizontal gene transfer",
 ]
 classifiers = [
-    "Development Status :: 4 - Beta",
-    "Programming Language :: Python :: 3",
-    "Operating System :: OS Independent",
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
     "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "click>=8.1",
+    "biopython>=1.79,<1.86",  # Bio.Blast.Applications removed in 1.86
+    "pandas>=1.4,<3",
+    "numpy>=1.22,<3",
 ]
 
 [project.optional-dependencies]
@@ -41,15 +54,22 @@ eefinder = "eefinder.scripts.main:cli"
 
 [project.urls]
 Homepage = "https://github.com/WallauBioinfo/EEfinder"
-Documentation = "https://github.com/WallauBioinfo/EEfinder/tree/master/docs"
-
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+Documentation = "https://eefinder.readthedocs.io"
+Repository = "https://github.com/WallauBioinfo/EEfinder"
+Issues = "https://github.com/WallauBioinfo/EEfinder/issues"
+Publication = "https://doi.org/10.1016/j.csbj.2024.10.012"
 
 [tool.hatch.build.targets.wheel]
 packages = ["eefinder"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/eefinder",
+    "/test_files",
+    "/env.yml",
+    "/README.md",
+    "/LICENSE",
+]
 
 [tool.black]
 line-length = 88

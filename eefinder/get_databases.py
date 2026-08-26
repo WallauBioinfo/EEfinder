@@ -26,13 +26,16 @@ from the bundled ICTV genome-composition table (``data/``) keyed by family.
 
 from __future__ import annotations
 
+import glob
 import json
 import os
 import re
 import shlex
+import shutil
 import subprocess
 import time
 import zipfile
+from datetime import datetime
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import NamedTuple
@@ -50,7 +53,15 @@ from eefinder.utils import (
     StepInfo,
 )
 from eefinder.normalization import standardize_protein, strip_bracket_tags
-from eefinder.translation import cluster_proteins
+from eefinder.progress import (
+    DEFAULT_ATTEMPTS,
+    DEFAULT_STALL_TIMEOUT,
+    STALLED,
+    progress_bar,
+    run_with_retries,
+)
+from eefinder.translation import cluster_proteins, parse_cdhit_clusters
+from eefinder.taxon_exclusion import batch_taxa, expand_taxon_excluding
 
 #: cd-hit executable used to collapse identical proteins (from ``cd-hit``).
 CDHIT_BINARY = "cd-hit"
@@ -70,6 +81,39 @@ DEFAULT_TAXA = {"virus": "10239", "bacteria": "2"}
 #: dropped from a download via ``--exclude-uninformative``.
 UNINFORMATIVE_PRODUCTS = ("hypothetical protein", "uncharacterized protein")
 
+#: Columns of ``{prefix}.tracking.tsv``: the fate of every downloaded accession.
+#: ``Organism_release_date`` is the earliest release date among the organism's
+#: genome records -- the finest granularity available, since a protein in the
+#: download cannot be traced back to the record it came from.
+TRACKING_COLUMNS = [
+    "Accession",
+    "Species",
+    "Protein_downloaded",
+    "Protein_final",
+    "Name_changed",
+    "Status",
+    "Reason",
+    "Organism_release_date",
+    "Cluster",
+    "Cluster_representative",
+]
+
+#: Values of the tracking ``Status`` column.
+STATUS_KEPT = "kept"
+STATUS_REMOVED = "removed"
+
+#: Values of the tracking ``Reason`` column, one per way a sequence can leave.
+REASON_UNINFORMATIVE = "uninformative_product"
+REASON_DUPLICATE = "identical_duplicate"
+REASON_UNKNOWN_PRODUCT = "product_standardized_to_unknown"
+REASON_ABSENT = "absent_from_final_database"
+REASON_TOO_RECENT = "released_after_cutoff"
+
+#: ``cd-hit`` silently throws away sequences of at most ``-l`` residues
+#: (default 10), which is the usual reason a record vanishes without any step
+#: reporting it. :func:`reconcile_tracking` catches that and anything like it.
+CDHIT_MIN_LENGTH = 10
+
 #: Columns of the metadata CSV consumed by the ``screening`` command (``-mt``).
 METADATA_COLUMNS = [
     "Accession",
@@ -83,6 +127,13 @@ METADATA_COLUMNS = [
 
 #: NCBI datasets CLI binary (from ``ncbi-datasets-cli``).
 DATASETS_BINARY = "datasets"
+
+#: Messages that mean NCBI reset the HTTP/2 stream mid-transfer. The download
+#: itself is fine over HTTP/1.1, which the Go client can be told to use.
+HTTP2_ERROR_MARKERS = ("stream error", "internal_error", "http2")
+
+#: Environment that makes a Go binary fall back to HTTP/1.1.
+HTTP1_ENV = {"GODEBUG": "http2client=0"}
 
 #: Bundled ICTV family -> genome-composition table (used for ``Molecule_type``,
 #: which the NCBI datasets report does not provide). Sourced from
@@ -215,6 +266,58 @@ def _genus_family_from_lineage(lineage: "list[dict]") -> "tuple[str, str]":
     return genus, family
 
 
+def parse_release_dates(report_path: str) -> "dict[str, str]":
+    """Map each organism to the **earliest** release date of its records.
+
+    A virus is represented by one record per genome (per segment, for segmented
+    families), and those can be released years apart -- La Crosse virus has
+    segments from 2002 and 2023. The earliest date is when the organism first
+    appeared in RefSeq, which is what a cutoff is asking about.
+
+    Parameters
+    ----------
+    report_path : str
+        ``data_report.jsonl`` from the download.
+
+    Returns
+    -------
+    dict[str, str]
+        ``organism -> YYYY-MM-DD``; organisms without a date are absent.
+    """
+    dates: dict[str, str] = {}
+    with open(report_path) as report:
+        for line in report:
+            line = line.strip()
+            if not line:
+                continue
+            data = json.loads(line)
+            organism = (data.get("virus") or data.get("organism") or {}).get(
+                "organismName", ""
+            )
+            released = (data.get("releaseDate") or "")[:10]
+            if not organism or not released:
+                continue
+            if organism not in dates or released < dates[organism]:
+                dates[organism] = released
+    return dates
+
+
+def organisms_released_after(report_path: str, cutoff: str) -> "set[str]":
+    """Organisms whose earliest record was released after ``cutoff``.
+
+    These are the ones a dated build must leave out. The granularity is the
+    organism, not the individual genome record: the protein FASTA carries no
+    link back to the record a protein came from (its ``proteinCount`` ordering
+    does not hold), so an organism that already existed at the cutoff is kept
+    with all of its proteins.
+    """
+    return {
+        organism
+        for organism, released in parse_release_dates(report_path).items()
+        if released > cutoff
+    }
+
+
 def parse_taxonomy_report(report_path: str) -> dict[str, TaxonomyRecord]:
     """Build an ``organism -> TaxonomyRecord`` map from a ``data_report.jsonl``.
 
@@ -265,6 +368,7 @@ def build_metadata_frame(
     taxonomy: dict[str, TaxonomyRecord],
     standardize: bool = False,
     dataset: str = "virus",
+    tracking: "dict[str, dict] | None" = None,
 ) -> pd.DataFrame:
     """Join protein headers with taxonomy into the screening metadata table.
 
@@ -283,6 +387,10 @@ def build_metadata_frame(
     dataset : str
         The database target (``"virus"``/``"bacteria"``), selecting which
         standardisation logic :func:`standardize_protein` applies.
+    tracking : dict[str, dict], optional
+        Updated with the standardised name of each record and whether that
+        renamed it (``RNA-dependent RNA polymerase`` -> ``RdRp``), plus the
+        records dropped because they standardise to ``"Unknown"``.
 
     Returns
     -------
@@ -290,32 +398,47 @@ def build_metadata_frame(
         One row per (kept) protein, with :data:`METADATA_COLUMNS`.
     """
     rows = []
-    for record in SeqIO.parse(protein_fasta, "fasta"):
-        header = parse_protein_header(record.description)
-        tax = taxonomy.get(
-            header.organism,
-            TaxonomyRecord(header.organism, "", "", "", ""),
-        )
-        # Molecule_type is absent from the datasets report, so it is looked up
-        # from the ICTV genome-composition table by family.
-        mol_type = molecule_type_for_family(tax.family)
-        if standardize:
-            protein = standardize_protein(header.product, mol_type, target=dataset)
-            if protein == "Unknown":
-                continue  # bare CDS/ORF: drop the record entirely
-        else:
-            protein = header.product
-        rows.append(
-            {
-                "Accession": header.accession,
-                "Species": header.organism,
-                "Genus": tax.genus,
-                "Family": tax.family,
-                "Molecule_type": mol_type,
-                "Protein": protein,
-                "Host": tax.host,
-            }
-        )
+    with progress_bar(
+        SeqIO.parse(protein_fasta, "fasta"),
+        "Building metadata",
+        length=count_fasta_records(protein_fasta),
+    ) as records:
+        for record in records:
+            header = parse_protein_header(record.description)
+            tax = taxonomy.get(
+                header.organism,
+                TaxonomyRecord(header.organism, "", "", "", ""),
+            )
+            # Molecule_type is absent from the datasets report, so it is looked
+            # up from the ICTV genome-composition table by family.
+            mol_type = molecule_type_for_family(tax.family)
+            if standardize:
+                protein = standardize_protein(header.product, mol_type, target=dataset)
+                if tracking is not None and header.accession in tracking:
+                    row = tracking[header.accession]
+                    row["Protein_final"] = protein
+                    row["Name_changed"] = "yes" if protein != header.product else "no"
+                    if protein == "Unknown":
+                        row["Status"] = STATUS_REMOVED
+                        row["Reason"] = REASON_UNKNOWN_PRODUCT
+                if protein == "Unknown":
+                    continue  # bare CDS/ORF: drop the record entirely
+            else:
+                protein = header.product
+                if tracking is not None and header.accession in tracking:
+                    tracking[header.accession]["Protein_final"] = protein
+                    tracking[header.accession]["Name_changed"] = "no"
+            rows.append(
+                {
+                    "Accession": header.accession,
+                    "Species": header.organism,
+                    "Genus": tax.genus,
+                    "Family": tax.family,
+                    "Molecule_type": mol_type,
+                    "Protein": protein,
+                    "Host": tax.host,
+                }
+            )
     return pd.DataFrame(rows, columns=METADATA_COLUMNS)
 
 
@@ -325,6 +448,8 @@ def build_download_command(
     zip_path: str,
     refseq: bool = True,
     datasets_bin: str = DATASETS_BINARY,
+    released_before: "str | None" = None,
+    inputfile: "str | None" = None,
 ) -> str:
     """Compose the ``datasets download`` command for a dataset type.
 
@@ -340,6 +465,16 @@ def build_download_command(
         Restrict to RefSeq sequences (recommended).
     datasets_bin : str
         Path/name of the ``datasets`` executable.
+    released_before : str, optional
+        Only include records released on or before this date (``YYYY-MM-DD``).
+        The ``datasets`` CLI implements this for genome downloads
+        (bacteria/host); its **virus** subcommand has no such flag, so for
+        viruses the cutoff is applied afterwards by
+        :func:`organisms_released_after`.
+    inputfile : str, optional
+        Path to a file listing one tax id per line, used instead of ``taxon``
+        when a download had to be expanded into many taxa to leave a branch out
+        (see :mod:`eefinder.taxon_exclusion`). ``taxon`` is then only used for logging.
 
     Returns
     -------
@@ -349,9 +484,14 @@ def build_download_command(
     if dataset not in DATASET_CHOICES:
         raise ValueError(f"Unknown dataset type: {dataset!r}")
 
+    # A download restricted to a list of taxa names them in a file rather than
+    # on the command line; the CLI takes one or the other, never both.
+    selector = (
+        f"--inputfile {shlex.quote(inputfile)}" if inputfile else shlex.quote(taxon)
+    )
     if dataset == "virus":
         command = (
-            f"{datasets_bin} download virus genome taxon {shlex.quote(taxon)} "
+            f"{datasets_bin} download virus genome taxon {selector} "
             f"--include protein "
             f"--filename {zip_path}"
         )
@@ -359,12 +499,14 @@ def build_download_command(
             command += " --refseq"
     else:  # bacteria / host: genome download, keep only the proteins
         command = (
-            f"{datasets_bin} download genome taxon {shlex.quote(taxon)} "
+            f"{datasets_bin} download genome taxon {selector} "
             f"--include protein "
             f"--filename {zip_path}"
         )
         if refseq:
             command += " --assembly-source RefSeq"
+        if released_before:
+            command += f" --released-before {shlex.quote(released_before)}"
     return command
 
 
@@ -380,6 +522,9 @@ def concat_protein_faas(
     extract_dir: str,
     output_fasta: str,
     exclude_products: "tuple[str, ...]" = (),
+    tracking: "dict[str, dict] | None" = None,
+    exclude_organisms: "set[str] | None" = None,
+    release_dates: "dict[str, str] | None" = None,
 ) -> ConcatCounts:
     """Concatenate every ``protein.faa`` under ``extract_dir`` into one FASTA.
 
@@ -396,6 +541,16 @@ def concat_protein_faas(
     exclude_products : tuple[str, ...]
         Lower-cased product substrings whose records are dropped (e.g.
         :data:`UNINFORMATIVE_PRODUCTS`). Empty (the default) keeps everything.
+    tracking : dict[str, dict], optional
+        Filled with one row per **downloaded** accession, recording its product
+        and whether it was dropped here. This is the only place the dropped ones
+        are seen, since they never reach the FASTA.
+    exclude_organisms : set[str], optional
+        Organisms to leave out entirely (a release-date cutoff, see
+        :func:`organisms_released_after`).
+    release_dates : dict[str, str], optional
+        ``organism -> earliest release date``, recorded for every accession so a
+        dated build can be checked, not just trusted.
 
     Returns
     -------
@@ -414,19 +569,48 @@ def concat_protein_faas(
     exclude = tuple(term.lower() for term in exclude_products)
     total = written = 0
     keep = True
-    with open(output_fasta, "w") as out:
-        for faa in faas:
+    with (
+        open(output_fasta, "w") as out,
+        progress_bar(faas, "Merging FASTAs ") as tracked,
+    ):
+        for faa in tracked:
             with open(faa) as handle:
                 for line in handle:
                     if line.startswith(">"):
                         total += 1
-                        if exclude:
-                            product = parse_protein_header(line).product.lower()
-                            keep = not any(term in product for term in exclude)
-                        else:
-                            keep = True
+                        header = parse_protein_header(line)
+                        too_recent = bool(
+                            exclude_organisms and header.organism in exclude_organisms
+                        )
+                        keep = not too_recent and not (
+                            exclude
+                            and any(term in header.product.lower() for term in exclude)
+                        )
                         if keep:
                             written += 1
+                        if tracking is not None:
+                            tracking[header.accession] = {
+                                "Accession": header.accession,
+                                "Species": header.organism,
+                                "Protein_downloaded": header.product,
+                                "Protein_final": "",
+                                "Name_changed": "",
+                                "Status": STATUS_KEPT if keep else STATUS_REMOVED,
+                                "Reason": (
+                                    ""
+                                    if keep
+                                    else (
+                                        REASON_TOO_RECENT
+                                        if too_recent
+                                        else REASON_UNINFORMATIVE
+                                    )
+                                ),
+                                "Organism_release_date": (release_dates or {}).get(
+                                    header.organism, ""
+                                ),
+                                "Cluster": "",
+                                "Cluster_representative": "",
+                            }
                     if keep:
                         out.write(line)
     return ConcatCounts(files=len(faas), total=total, written=written)
@@ -438,15 +622,19 @@ def count_fasta_records(fasta_path: str) -> int:
         return sum(1 for line in handle if line.startswith(">"))
 
 
-def cluster_identical_proteins(fasta_path: str, threads: int = 1) -> int:
+def cluster_identical_proteins(
+    fasta_path: str,
+    threads: int = 1,
+    clusters_path: "str | None" = None,
+    tracking: "dict[str, dict] | None" = None,
+) -> int:
     """Collapse 100%-identical / 100%-coverage duplicate proteins in place.
 
     Runs ``cd-hit`` at 100% sequence identity **and** 100% coverage of both the
     longer and the shorter sequence (``-c 1.0 -aL 1.0 -aS 1.0``), so only
     sequences that are identical over their entire length are merged to a single
     representative -- a lossless deduplication of the database. ``fasta_path`` is
-    overwritten with the non-redundant set and the ``cd-hit`` ``.clstr`` sidecar
-    is removed.
+    overwritten with the non-redundant set.
 
     Parameters
     ----------
@@ -454,6 +642,13 @@ def cluster_identical_proteins(fasta_path: str, threads: int = 1) -> int:
         Protein FASTA to deduplicate (overwritten in place).
     threads : int
         Threads for ``cd-hit`` (``-T``).
+    clusters_path : str, optional
+        Where to keep ``cd-hit``'s ``.clstr`` output, which lists the members of
+        every cluster and marks the representative. Discarded when omitted.
+    tracking : dict[str, dict], optional
+        Updated with the cluster each accession landed in and the representative
+        that stands for it, so a dropped duplicate can be traced to the sequence
+        that replaced it.
 
     Returns
     -------
@@ -463,18 +658,114 @@ def cluster_identical_proteins(fasta_path: str, threads: int = 1) -> int:
     before = count_fasta_records(fasta_path)
     clustered = f"{fasta_path}.nr"
     cluster_proteins(fasta_path, clustered, threads)
-    os.replace(clustered, fasta_path)
     clstr = f"{clustered}.clstr"
+
+    if tracking is not None and os.path.exists(clstr):
+        for cluster_id, members in parse_cdhit_clusters(clstr).items():
+            representative = members[0]
+            for member in members:
+                row = tracking.get(member)
+                if row is None:
+                    continue
+                row["Cluster"] = cluster_id
+                row["Cluster_representative"] = representative
+                if member != representative:
+                    row["Status"] = STATUS_REMOVED
+                    row["Reason"] = REASON_DUPLICATE
+
+    os.replace(clustered, fasta_path)
     if os.path.exists(clstr):
-        os.remove(clstr)
+        if clusters_path:
+            os.replace(clstr, clusters_path)
+        else:
+            os.remove(clstr)
     after = count_fasta_records(fasta_path)
     return before - after
 
 
+def validate_date(value: "str | None") -> "str | None":
+    """Check a ``YYYY-MM-DD`` cutoff, raising a clear error when it is not one.
+
+    Returns ``None`` unchanged, so callers can pass an unset option straight
+    through.
+    """
+    if value is None or value == "":
+        return None
+    try:
+        datetime.strptime(value, "%Y-%m-%d")
+    except ValueError:
+        raise ValueError(f"Invalid date {value!r}: use ISO format, e.g. 2024-12-31.")
+    return value
+
+
+def reconcile_tracking(tracking: "dict[str, dict]", fasta_path: str) -> int:
+    """Mark as removed anything still called ``kept`` that is not in the FASTA.
+
+    The tracking table must agree with the database it describes. Steps can drop
+    a record without saying so -- ``cd-hit`` silently discards sequences of at
+    most :data:`CDHIT_MIN_LENGTH` residues -- and such a record would otherwise
+    be reported as kept while being absent from both the FASTA and the CSV.
+
+    Parameters
+    ----------
+    tracking : dict[str, dict]
+        The table built through the run.
+    fasta_path : str
+        The final protein FASTA.
+
+    Returns
+    -------
+    int
+        Number of rows corrected.
+    """
+    present = set()
+    with open(fasta_path) as handle:
+        for line in handle:
+            if line.startswith(">"):
+                present.add(line[1:].split(None, 1)[0])
+
+    corrected = 0
+    for accession, row in tracking.items():
+        if row["Status"] == STATUS_KEPT and accession not in present:
+            row["Status"] = STATUS_REMOVED
+            row["Reason"] = REASON_ABSENT
+            corrected += 1
+    return corrected
+
+
+def write_tracking_table(tracking: "dict[str, dict]", out_path: str) -> int:
+    """Write the per-accession audit table (:data:`TRACKING_COLUMNS`).
+
+    One row per sequence **as downloaded**, so every accession that did not make
+    it into the final database can be traced to the reason it left: an
+    uninformative product, an identical duplicate (with the cluster and the
+    representative that replaced it), or a product that standardised to
+    ``Unknown``. Kept sequences record whether standardisation renamed them.
+
+    Returns
+    -------
+    int
+        Number of rows written.
+    """
+    frame = pd.DataFrame(list(tracking.values()), columns=TRACKING_COLUMNS)
+    frame = frame.sort_values(by=["Status", "Accession"])
+    frame.to_csv(out_path, sep="\t", index=False)
+    return len(frame)
+
+
+def find_data_reports(extract_dir: str) -> "list[str]":
+    """Return every ``data_report.jsonl`` under ``extract_dir``.
+
+    A download split into several packages (see :mod:`eefinder.taxon_exclusion`) is
+    extracted one package per subdirectory, so there is a report per part.
+    """
+    return [str(path) for path in sorted(Path(extract_dir).rglob("data_report.jsonl"))]
+
+
 def find_data_report(extract_dir: str) -> str | None:
     """Return the first ``data_report.jsonl`` under ``extract_dir``, if any."""
-    reports = sorted(Path(extract_dir).rglob("data_report.jsonl"))
-    return str(reports[0]) if reports else None
+    reports = find_data_reports(extract_dir)
+    return reports[0] if reports else None
 
 
 def filter_fasta_by_ids(fasta_path: str, keep_ids: "set[str]") -> int:
@@ -547,6 +838,26 @@ class GetDatabases:
         Threads for the ``cd-hit`` clustering step.
     datasets_bin : str
         Path/name of the ``datasets`` executable.
+    attempts : int
+        How many times the download is attempted before giving up.
+    stall_timeout : float
+        Seconds without any sign of life (no output from ``datasets``, no growth
+        of the archive) after which an attempt is treated as hung, killed and
+        retried.
+    keep_download : bool
+        Keep the downloaded zip and the directory it was extracted into. They
+        are deleted by default: their content is already in the outputs.
+    released_before : str, optional
+        Only include data released on or before this date (``YYYY-MM-DD``), so a
+        build can be reproduced later. Applied by the ``datasets`` CLI for
+        bacteria/host and by EEfinder for viruses, whose subcommand has no such
+        flag.
+    exclude_taxa : tuple[str, ...]
+        Tax ids or scientific names to leave out of the download. The branch is
+        never requested: ``taxon`` is expanded into the taxa that cover it minus
+        the excluded subtrees (:func:`eefinder.taxon_exclusion.expand_taxon_excluding`),
+        which is what keeps SARS-CoV-2 -- 61% of all viral records -- out of an
+        ``--all-sequences`` viral build.
     """
 
     def __init__(
@@ -561,6 +872,11 @@ class GetDatabases:
         cluster: bool = False,
         threads: int = 1,
         datasets_bin: str = DATASETS_BINARY,
+        attempts: int = DEFAULT_ATTEMPTS,
+        stall_timeout: float = DEFAULT_STALL_TIMEOUT,
+        keep_download: bool = False,
+        released_before: "str | None" = None,
+        exclude_taxa: "tuple[str, ...]" = (),
     ) -> None:
         if dataset not in DATASET_CHOICES:
             raise ValueError(f"Unknown dataset type: {dataset!r}")
@@ -574,6 +890,11 @@ class GetDatabases:
         self.cluster = cluster
         self.threads = threads
         self.datasets_bin = datasets_bin
+        self.attempts = attempts
+        self.stall_timeout = stall_timeout
+        self.keep_download = keep_download
+        self.released_before = validate_date(released_before)
+        self.exclude_taxa = tuple(exclude_taxa or ())
 
         self.get_databases()
 
@@ -581,6 +902,7 @@ class GetDatabases:
         """Download the dataset and write the FASTA (and CSV where applicable)."""
         run_start = time.time()
         steps: list[StepInfo] = []
+        tracking: "dict[str, dict]" = {}
         zip_path = f"{self.outdir}/{self.prefix}.zip"
         extract_dir = f"{self.outdir}/{self.prefix}_ncbi"
         fasta_out = f"{self.outdir}/{self.prefix}.fa"
@@ -588,36 +910,96 @@ class GetDatabases:
             f"Paths: zip={zip_path} extract_dir={extract_dir} fasta={fasta_out}"
         )
 
+        start = time.time()
+        batches = self._plan_download()
+        if len(batches) > 1 or (batches and batches[0] != [self.taxon]):
+            steps.append(
+                StepInfo.from_times(
+                    "Resolve taxonomy",
+                    start,
+                    time.time(),
+                    self._exclusion_summary,
+                )
+            )
+
         logger.info(f"Downloading {self.dataset} proteins for taxon '{self.taxon}'")
         start = time.time()
-        self._download(zip_path)
+        zip_paths = self._download_batches(batches, zip_path)
         steps.append(
             StepInfo.from_times(
                 "Download",
                 start,
                 time.time(),
                 f"Downloaded {self.dataset} proteins for taxon '{self.taxon}' "
-                f"(refseq={self.refseq}) to {zip_path}.",
+                f"(refseq={self.refseq}) to "
+                f"{', '.join(zip_paths) if len(zip_paths) > 1 else zip_path}.",
             )
         )
 
         logger.info("Extracting the datasets archive")
         start = time.time()
-        with zipfile.ZipFile(zip_path) as archive:
-            archive.extractall(extract_dir)
+        for index, part_zip in enumerate(zip_paths, start=1):
+            # One package per subdirectory: every package carries its own
+            # data_report.jsonl and protein.faa, which would otherwise overwrite
+            # each other.
+            target = (
+                extract_dir if len(zip_paths) == 1 else f"{extract_dir}/part_{index}"
+            )
+            with zipfile.ZipFile(part_zip) as archive:
+                members = archive.infolist()
+                label = (
+                    "Extracting     "
+                    if len(zip_paths) == 1
+                    else f"Extracting {index}/{len(zip_paths)}"
+                )
+                with progress_bar(members, label) as tracked:
+                    for member in tracked:
+                        archive.extract(member, target)
         logger.debug(f"Extracted archive into {extract_dir}")
         steps.append(
             StepInfo.from_times(
                 "Extract",
                 start,
                 time.time(),
-                f"Extracted {zip_path} into {extract_dir}.",
+                f"Extracted {len(zip_paths)} package(s) into {extract_dir}.",
             )
         )
 
         exclude = UNINFORMATIVE_PRODUCTS if self.exclude_uninformative else ()
+        too_recent: "set[str]" = set()
+        release_dates: "dict[str, str]" = {}
+        reports = find_data_reports(extract_dir)
+        for report in reports:
+            # Recorded for every accession, whether or not a cutoff was asked
+            # for: a dated build should be checkable, not merely trusted.
+            release_dates.update(parse_release_dates(report))
+        if self.released_before and self.dataset == "virus":
+            # The virus subcommand of datasets has no --released-before, so the
+            # cutoff is applied here, from the release dates in the report.
+            if reports:
+                too_recent = {
+                    organism
+                    for organism, released in release_dates.items()
+                    if released > self.released_before
+                }
+                logger.info(
+                    f"Release cutoff {self.released_before}: leaving out "
+                    f"{len(too_recent)} organism(s) that first appeared later"
+                )
+            else:
+                logger.warning(
+                    "No data_report.jsonl in the download; the release cutoff "
+                    "could not be applied."
+                )
         start = time.time()
-        counts = concat_protein_faas(extract_dir, fasta_out, exclude_products=exclude)
+        counts = concat_protein_faas(
+            extract_dir,
+            fasta_out,
+            exclude_products=exclude,
+            tracking=tracking,
+            exclude_organisms=too_recent,
+            release_dates=release_dates,
+        )
         excluded_uninformative = counts.total - counts.written
         merged = f"{counts.files} protein.faa file(s) merged"
         if exclude:
@@ -642,7 +1024,12 @@ class GetDatabases:
         clustered_identical = 0
         if self.cluster:
             start = time.time()
-            clustered_identical = cluster_identical_proteins(fasta_out, self.threads)
+            clustered_identical = cluster_identical_proteins(
+                fasta_out,
+                self.threads,
+                clusters_path=f"{self.outdir}/{self.prefix}.clstr",
+                tracking=tracking,
+            )
             remaining = counts.written - clustered_identical
             logger.info(
                 f"Clustered {fasta_out}: removed {clustered_identical} "
@@ -662,11 +1049,13 @@ class GetDatabases:
         dropped_standardization = 0
         if self.dataset in _METADATA_DATASETS:
             start = time.time()
-            report = find_data_report(extract_dir)
-            logger.debug(f"data_report.jsonl: {report}")
-            taxonomy = parse_taxonomy_report(report) if report else {}
+            reports = find_data_reports(extract_dir)
+            logger.debug(f"data_report.jsonl: {reports}")
+            taxonomy: "dict[str, TaxonomyRecord]" = {}
+            for report in reports:
+                taxonomy.update(parse_taxonomy_report(report))
             logger.debug(f"Parsed taxonomy for {len(taxonomy)} organism(s)")
-            if not report:
+            if not reports:
                 logger.warning(
                     "No data_report.jsonl in the download; the metadata CSV will "
                     "have empty Genus/Family/Molecule_type/Host columns."
@@ -676,6 +1065,7 @@ class GetDatabases:
                 taxonomy,
                 standardize=self.standardize_proteins,
                 dataset=self.dataset,
+                tracking=tracking,
             )
             if self.standardize_proteins:
                 # Keep the FASTA in sync: drop the records that standardisation
@@ -702,6 +1092,46 @@ class GetDatabases:
                 )
             )
 
+        start = time.time()
+        unexplained = reconcile_tracking(tracking, fasta_out)
+        if unexplained:
+            logger.warning(
+                f"{unexplained} sequence(s) are absent from {fasta_out} without a "
+                "step reporting it; they are marked "
+                f"'{REASON_ABSENT}' in the tracking table"
+                + (
+                    f" (cd-hit discards sequences of up to {CDHIT_MIN_LENGTH} "
+                    "residues)"
+                    if self.cluster
+                    else ""
+                )
+            )
+        tracking_path = f"{self.outdir}/{self.prefix}.tracking.tsv"
+        rows = write_tracking_table(tracking, tracking_path)
+        logger.info(f"Wrote {tracking_path} ({rows} downloaded accession(s))")
+        steps.append(
+            StepInfo.from_times(
+                "Write tracking table",
+                start,
+                time.time(),
+                f"Recorded the fate of {rows} downloaded accession(s) in "
+                f"{tracking_path}.",
+            )
+        )
+
+        if not self.keep_download:
+            start = time.time()
+            removed = self._clean_download(zip_path, extract_dir)
+            steps.append(
+                StepInfo.from_times(
+                    "Remove the raw download",
+                    start,
+                    time.time(),
+                    f"Deleted {removed} (the database, metadata, tracking table "
+                    "and logs are kept).",
+                )
+            )
+
         kept = counts.written - clustered_identical - dropped_standardization
         self.sequence_counts = SequenceCounts(
             downloaded=counts.total,
@@ -716,6 +1146,30 @@ class GetDatabases:
             f" dropped (of {counts.total} downloaded)"
         )
         self._write_log(run_start, time.time(), steps)
+
+    def _clean_download(self, zip_path: str, extract_dir: str) -> str:
+        """Delete the downloaded archive and the directory it was extracted to.
+
+        Everything they contain has been read into the outputs by this point;
+        for a whole-RefSeq download they are several GB of duplication. What is
+        kept is the database FASTA, the metadata CSV, the tracking table and the
+        logs.
+        """
+        removed = []
+        base = zip_path[: -len(".zip")] if zip_path.endswith(".zip") else zip_path
+        # A download split across taxa leaves {prefix}.partN.zip beside the
+        # single-package {prefix}.zip; both spellings are cleaned up.
+        archives = [zip_path] + sorted(glob.glob(f"{base}.part*.zip"))
+        for archive in archives:
+            if os.path.exists(archive):
+                os.remove(archive)
+                removed.append(os.path.basename(archive))
+        if os.path.isdir(extract_dir):
+            shutil.rmtree(extract_dir, ignore_errors=True)
+            removed.append(f"{os.path.basename(extract_dir)}/")
+        if removed:
+            logger.info(f"Removed the raw download: {', '.join(removed)}")
+        return ", ".join(removed) or "nothing"
 
     def _write_log(
         self, start_time: float, end_time: float, steps: list[StepInfo]
@@ -732,6 +1186,11 @@ class GetDatabases:
                 exclude_uninformative=self.exclude_uninformative,
                 standardize_proteins=self.standardize_proteins,
                 cluster=self.cluster,
+                attempts=self.attempts,
+                stall_timeout=self.stall_timeout,
+                keep_download=self.keep_download,
+                released_before=self.released_before or "",
+                exclude_taxa=", ".join(self.exclude_taxa),
             ),
             sequence_counts=self.sequence_counts,
             start_time=start_time,
@@ -744,7 +1203,74 @@ class GetDatabases:
             json.dump(asdict(info), json_out, indent=4)
         logger.info(f"Wrote {log_path}")
 
-    def _download(self, zip_path: str) -> None:
+    def _plan_download(self) -> "list[list[str]]":
+        """Work out which taxa to ask for, honouring ``exclude_taxa``.
+
+        Returns one list of taxa per ``datasets`` call: ``[[self.taxon]]`` when
+        nothing is excluded, otherwise the sibling taxa that cover the requested
+        taxon minus the excluded branches, split into ``--inputfile``-sized
+        batches. The excluded branch is never requested, so its records are
+        never transferred.
+        """
+        self._exclusion_summary = ""
+        if not self.exclude_taxa:
+            return [[self.taxon]]
+
+        logger.info("Resolving taxonomy to leave out: " + ", ".join(self.exclude_taxa))
+        expansion = expand_taxon_excluding(
+            self.taxon, self.exclude_taxa, datasets_bin=self.datasets_bin
+        )
+        for node in expansion.not_below_root:
+            logger.warning(
+                f"{node.name} ({node.tax_id}) is not below "
+                f"{expansion.root.name} ({expansion.root.tax_id}); nothing to "
+                "exclude for it"
+            )
+        if not expansion.pruned:
+            return [[self.taxon]]
+
+        left_out = ", ".join(
+            f"{node.name} ({node.tax_id})" for node in expansion.excluded
+        )
+        batches = batch_taxa(expansion.taxa)
+        self._exclusion_summary = (
+            f"Expanded taxon '{self.taxon}' into {len(expansion.taxa)} taxa in "
+            f"{len(batches)} download(s) to leave out {left_out}. Records "
+            "attached directly to a rank between them are not reachable this way."
+        )
+        logger.info(
+            f"Leaving out {left_out}: downloading {len(expansion.taxa)} sibling "
+            f"taxa instead of '{self.taxon}'"
+        )
+        return [[str(t) for t in batch] for batch in batches]
+
+    def _download_batches(
+        self, batches: "list[list[str]]", zip_path: str
+    ) -> "list[str]":
+        """Download each batch of taxa, returning the packages written."""
+        if len(batches) == 1 and batches[0] == [self.taxon]:
+            self._download(zip_path)
+            return [zip_path]
+
+        base = zip_path[: -len(".zip")] if zip_path.endswith(".zip") else zip_path
+        written: "list[str]" = []
+        for index, batch in enumerate(batches, start=1):
+            part_zip = zip_path if len(batches) == 1 else f"{base}.part{index}.zip"
+            listing = f"{base}.part{index}.taxa.txt"
+            with open(listing, "w") as handle:
+                handle.write("\n".join(batch) + "\n")
+            logger.info(
+                f"Downloading package {index}/{len(batches)} ({len(batch)} taxa)"
+            )
+            try:
+                self._download(part_zip, inputfile=listing)
+            finally:
+                if not self.keep_download and os.path.exists(listing):
+                    os.remove(listing)
+            written.append(part_zip)
+        return written
+
+    def _download(self, zip_path: str, inputfile: "str | None" = None) -> None:
         """Run ``datasets download``, raising on a non-zero exit."""
         command = build_download_command(
             self.dataset,
@@ -752,17 +1278,92 @@ class GetDatabases:
             zip_path,
             refseq=self.refseq,
             datasets_bin=self.datasets_bin,
+            inputfile=inputfile,
         )
         logger.debug(f"datasets command: {command}")
-        result = subprocess.run(shlex.split(command), capture_output=True, text=True)
-        if result.returncode != 0:
-            message = result.stderr.strip() or result.stdout.strip()
+
+        def _archive_is_complete() -> bool:
+            """Whether the download already produced a readable, complete zip.
+
+            ``zipfile`` can only read the central directory once the archive has
+            been written in full, so this cannot be satisfied by a partial file.
+            It is what lets the run continue when ``datasets`` has delivered the
+            package but does not exit.
+            """
+            if not os.path.exists(zip_path) or not zipfile.is_zipfile(zip_path):
+                return False
+            try:
+                with zipfile.ZipFile(zip_path) as archive:
+                    return bool(archive.namelist()) and archive.testzip() is None
+            except (zipfile.BadZipFile, OSError):
+                return False
+
+        def _discard_partial(attempt: "int | None" = None) -> None:
+            """Drop any archive already at ``zip_path`` so a run starts clean.
+
+            Called before the first attempt as well as between retries: a
+            leftover archive from an interrupted run is not something to download
+            *into*.
+            """
+            if os.path.exists(zip_path):
+                logger.debug(f"removing pre-existing download {zip_path}")
+                os.remove(zip_path)
+
+        _discard_partial()
+
+        def _http1_fallback(output: str) -> "dict[str, str] | None":
+            """Retry over HTTP/1.1 after NCBI resets an HTTP/2 stream.
+
+            ``stream error: stream ID 3; INTERNAL_ERROR; received from peer``
+            aborts large transfers part-way through; the same download completes
+            over HTTP/1.1, so repeating the attempt unchanged would just fail the
+            same way.
+            """
+            lowered = (output or "").lower()
+            if any(marker in lowered for marker in HTTP2_ERROR_MARKERS):
+                logger.warning(
+                    "NCBI reset the HTTP/2 stream; the retry will use HTTP/1.1"
+                )
+                return dict(HTTP1_ENV)
+            return None
+
+        # The datasets CLI draws its own download/validation progress; mirror it
+        # to the terminal instead of swallowing it, while keeping the tail so a
+        # failure can still be reported with the tool's own message. NCBI
+        # transfers also hang outright, which no exit status reports, so the run
+        # is watched for a stall and retried.
+        returncode, output = run_with_retries(
+            shlex.split(command),
+            attempts=self.attempts,
+            stall_timeout=self.stall_timeout,
+            liveness_path=zip_path,
+            before_retry=_discard_partial,
+            success_check=_archive_is_complete,
+            retry_env=_http1_fallback,
+        )
+        if returncode == 0 and not _archive_is_complete():
+            # datasets can report success and still leave a broken package.
+            returncode, output = STALLED, (
+                output or "the download finished but the archive is not readable"
+            )
+            logger.warning(
+                f"{zip_path} is not a readable zip archive despite a clean exit"
+            )
+
+        if returncode != 0:
+            message = output
             if "ACELLULAR_ROOT" in message or "RankType" in message:
                 message += (
                     " -- this is an outdated NCBI datasets CLI: it predates the "
                     "'acellular root' taxonomy rank added above Viruses. Upgrade "
                     "to datasets >= 18.1 (see env.yml)."
                 )
+            reason = (
+                f"it stalled for more than {self.stall_timeout:.0f}s"
+                if returncode == STALLED
+                else f"exit {returncode}"
+            )
             raise RuntimeError(
-                f"datasets download failed (exit {result.returncode}): {message}"
+                f"datasets download failed after {self.attempts} attempt(s) "
+                f"({reason}): {message}"
             )

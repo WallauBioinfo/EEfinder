@@ -20,6 +20,7 @@ unchanged regardless of the chosen method.
 
 from __future__ import annotations
 
+import re
 import shlex
 import subprocess
 
@@ -106,18 +107,87 @@ def cluster_proteins(faa_in: str, faa_out: str, threads: int) -> None:
     tools. Identical sequences have identical coordinates, so the coordinates
     TSV keeps every ``gv``+``rv`` entry and the cluster representative id (which
     ``cd-hit`` preserves) still resolves during :func:`traceback`.
+
+    Parameters
+    ----------
+    ``cd-hit`` also writes a ``{faa_out}.clstr`` file describing the composition
+    of every cluster; callers that need to know which sequences were absorbed
+    into which representative read it with :func:`parse_cdhit_clusters`.
+
+    Parameters
+    ----------
+    faa_in, faa_out : str
+        Input and output protein FASTA.
+    threads : int
+        Threads for ``cd-hit`` (``-T``).
     """
     command = (
         f"cd-hit -i {faa_in} -o {faa_out} "
         f"-c 1.0 -aL 1.0 -aS 1.0 -d 0 -M 0 -T {int(threads)}"
     )
     logger.debug(f"cd-hit command: {command}")
+    # capture rather than discard: on failure check=True raises with cd-hit's
+    # own message attached.
     subprocess.run(
         shlex.split(command),
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
+        stdin=subprocess.DEVNULL,
+        capture_output=True,
+        text=True,
         check=True,
     )
+
+
+def parse_cdhit_clusters(clstr_path: str) -> "dict[str, list[str]]":
+    """Parse a ``cd-hit`` ``.clstr`` file into ``cluster id -> [members]``.
+
+    The representative -- the member ``cd-hit`` marks with ``*`` -- is always the
+    first element of the list, so a caller can tell which sequence stands for the
+    cluster and which ones it absorbed.
+
+    Parameters
+    ----------
+    clstr_path : str
+        Path to the ``.clstr`` file written next to a ``cd-hit`` output FASTA.
+
+    Returns
+    -------
+    dict[str, list[str]]
+        Keyed by the cluster number as ``cd-hit`` wrote it.
+    """
+    clusters: "dict[str, list[str]]" = {}
+    cluster_id = ""
+    members: "list[str]" = []
+    representative = ""
+
+    def _flush() -> None:
+        if cluster_id and members:
+            ordered = (
+                [representative] + [m for m in members if m != representative]
+                if representative
+                else members
+            )
+            clusters[cluster_id] = ordered
+
+    with open(clstr_path) as handle:
+        for line in handle:
+            line = line.strip()
+            if not line:
+                continue
+            if line.startswith(">Cluster"):
+                _flush()
+                cluster_id = line.split()[-1]
+                members, representative = [], ""
+                continue
+            match = re.search(r">(.+?)\.\.\.", line)
+            if not match:
+                continue
+            member = match.group(1)
+            members.append(member)
+            if line.endswith("*"):
+                representative = member
+    _flush()
+    logger.debug(f"cd-hit: parsed {len(clusters)} cluster(s) from {clstr_path}")
+    return clusters
 
 
 def _aa_to_genomic(
