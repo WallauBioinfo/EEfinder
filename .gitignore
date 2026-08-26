@@ -6,3 +6,11 @@ scripts/__pycache__/
 output/
 
 docs/_build/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# macOS
+.DS_Store

@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "eefinder"
+version = "1.1.2"
+description = "Identification of endogenous viral and bacterial elements in eukaryotic genomes"
+readme = "README.md"
+requires-python = ">=3.9,<3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Filipe Zimmer Dezordi", email = "zimmer.filipe@gmail.com" },
+    { name = "Yago Dias", email = "yag.dias@gmail.com" },
+]
+maintainers = [
+    { name = "Filipe Zimmer Dezordi", email = "zimmer.filipe@gmail.com" },
+]
+keywords = [
+    "bioinformatics",
+    "genomics",
+    "endogenous elements",
+    "EVE",
+    "virus",
+    "horizontal gene transfer",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "click>=8.1",
+    "biopython>=1.79,<1.86",  # Bio.Blast.Applications removido no 1.86
+    "pandas>=1.4,<3",
+    "numpy>=1.22,<3",
+]
+
+[project.scripts]
+eefinder = "eefinder.scripts.main:main"
+
+[project.urls]
+Homepage = "https://github.com/WallauBioinfo/EEfinder"
+Documentation = "https://eefinder.readthedocs.io"
+Repository = "https://github.com/WallauBioinfo/EEfinder"
+Issues = "https://github.com/WallauBioinfo/EEfinder/issues"
+Publication = "https://doi.org/10.1016/j.csbj.2024.10.012"
+
+[tool.hatch.build.targets.wheel]
+packages = ["eefinder"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/eefinder",
+    "/test_files",
+    "/env.yml",
+    "/README.md",
+    "/LICENSE",
+]
