@@ -1,4 +1,6 @@
-import pkg_resources
+from importlib.metadata import PackageNotFoundError, version
 
-package_info = pkg_resources.get_distribution("eefinder")
-__version__ = package_info.version
+try:
+    __version__ = version("eefinder")
+except PackageNotFoundError:  # pragma: no cover - package not installed
+    __version__ = "unknown"

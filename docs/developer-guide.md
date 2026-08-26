@@ -54,18 +54,65 @@ communicate through files on disk whose names accrete suffixes (`.rn`, `.fmt`,
 
 ## Build metadata
 
-Build metadata lives in `setup.py` (setuptools). It declares the `eefinder`
-console script (`eefinder.scripts.main:main`) and the `click` runtime pin; the
-scientific stack (biopython, pandas, numpy) comes from `env.yml` rather than
-from `install_requires`, because it must match the conda-provided binaries.
-
-The version is set once in `setup.py` and read back at runtime by
-`eefinder/__init__.py` through `pkg_resources`, which is why `eefinder --version`
-reports the *installed* distribution version — reinstall after bumping it.
+Build metadata lives entirely in `pyproject.toml`, built with the **hatchling**
+backend. The `[project]` table declares the runtime dependencies, the `eefinder`
+console script and the project URLs. There is no `setup.py` and no
+`MANIFEST.in`. The version is set once in `[project].version` and read back at
+runtime through stdlib `importlib.metadata`, so `eefinder --version` reports the
+*installed* distribution version — reinstall after bumping it.
 
 ```bash
-pip install .      # runtime install
-pip install -e .   # editable install for development
+pip install .            # runtime install
+pip install -e .         # editable install for development
+python -m build          # build the wheel/sdist (needs the `build` package)
+```
+
+### Dependency bounds
+
+Two upper bounds are deliberate and must not be relaxed without code changes:
+
+| Pin | Reason |
+|-----|--------|
+| `biopython>=1.79,<1.86` | `Bio.Blast.Applications` (used by `make_database.py` and `similarity_analysis.py`) was **removed in Biopython 1.86**. Lifting the cap means replacing `NcbiblastxCommandline` / `NcbimakeblastdbCommandline` with plain `subprocess` calls. |
+| `requires-python = ">=3.9,<3.12"` | Matches the interpreter range the pinned scientific stack supports. |
+
+`pandas` and `numpy` are bounded only below the next major (`<3`); the
+data-processing modules were verified against pandas 2.3 and numpy 2.4.
+
+## Releasing to PyPI
+
+Releases are published by `.github/workflows/publish.yml` when a GitHub release
+is published. It uses **PyPI Trusted Publishing** (OIDC), so no API token is
+stored in the repository; the workflow builds the sdist and wheel, runs
+`twine check --strict`, installs the wheel into a clean virtualenv and runs
+`eefinder --version` before uploading.
+
+The one-time setup on PyPI (*Manage project → Publishing*, or *Add a pending
+publisher* for the first ever release) registers the publisher as owner
+`WallauBioinfo`, repository `EEfinder`, workflow `publish.yml`, environment
+`pypi`.
+
+To cut a release:
+
+```bash
+# 1. bump [project].version in pyproject.toml, commit
+# 2. tag and publish a GitHub release -- the workflow does the rest
+git tag v1.1.2 && git push origin v1.1.2
+gh release create v1.1.2 --generate-notes
+```
+
+To check the artefacts by hand before trusting the workflow:
+
+```bash
+python -m build
+twine check --strict dist/*
+twine upload --repository testpypi dist/*     # TestPyPI first
+```
+
+```{warning}
+A version published to PyPI is **immutable** — it cannot be overwritten or
+re-uploaded, only yanked. Verify on TestPyPI before the real upload, and bump
+the version rather than trying to replace a bad release.
 ```
 
 ## Building the docs locally
@@ -76,8 +123,8 @@ sphinx-build -b html docs docs/_build/html
 # open docs/_build/html/index.html
 ```
 
-`docs/conf.py` reads the version straight out of `setup.py`, so the docs build
-does not need EEfinder — or BLAST, DIAMOND and bedtools — installed.
+`docs/conf.py` reads the version straight out of `pyproject.toml`, so the docs
+build does not need EEfinder — or BLAST, DIAMOND and bedtools — installed.
 
 ## Read the Docs
 

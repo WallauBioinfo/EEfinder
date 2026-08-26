@@ -3,22 +3,20 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-import re
 from pathlib import Path
 
+try:
+    import tomllib  # Python 3.11+
+except ModuleNotFoundError:  # pragma: no cover - Python < 3.11
+    import tomli as tomllib
+
 # -- Version ------------------------------------------------------------------
-# Read the version from setup.py rather than importing the installed package --
-# the docs build does not install EEfinder itself (it would pull in BLAST,
-# DIAMOND and bedtools, which are not pip-installable).
-_setup_py = Path(__file__).parent.parent / "setup.py"
-_match = re.search(
-    r"""^\s*version\s*=\s*["']([^"']+)["']""",
-    _setup_py.read_text(),
-    re.MULTILINE,
-)
-if _match is None:  # pragma: no cover - defensive
-    raise RuntimeError(f"Could not find a version= assignment in {_setup_py}")
-release = _match.group(1)
+# Read the version from pyproject.toml rather than importing the installed
+# package -- the docs build does not install EEfinder itself (it would pull in
+# BLAST, DIAMOND and bedtools, which are not pip-installable).
+_pyproject = Path(__file__).parent.parent / "pyproject.toml"
+with open(_pyproject, "rb") as _f:
+    release = tomllib.load(_f)["project"]["version"]
 version = release
 
 # -- Project information ------------------------------------------------------
