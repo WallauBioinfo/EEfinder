@@ -1,25 +1,67 @@
-import pandas as pd
-import csv
-import os
-import re
+"""Filter a translated-search tabular result down to non-redundant hits."""
+
+from __future__ import annotations
+
 import glob
+import os
 import shutil
+
+import pandas as pd
+
+#: Standard BLAST/DIAMOND ``outfmt 6`` columns, in order.
+OUTFMT6_COLUMNS = [
+    "qseqid",
+    "sseqid",
+    "pident",
+    "length",
+    "mismatch",
+    "gapopen",
+    "qstart",
+    "qend",
+    "sstart",
+    "send",
+    "evalue",
+    "bitscore",
+]
+
+#: Columns of the filtered table, i.e. outfmt6 plus EEfinder annotations.
+FILTERED_COLUMNS = OUTFMT6_COLUMNS + ["sense", "bed_name", "tag"]
+
+#: Minimum alignment length (aa) for a hit to be retained.
+MIN_HIT_LENGTH = 33
+
+#: Rows processed per chunk when streaming very large result tables.
+CHUNK_SIZE = 200_000
 
 
 class FilterTable:
-    """
-    Receives a blastx result and filter based on query ID and ranges of qstart and qend.
+    """Collapse redundant translated-search hits into a filtered table.
 
-    Keyword arguments:
-    blast_result: input blastx result
-    rangejunction: range for filter redundant hits
-    tag: HOST or EE, tells which blastx is
-    out_dir: output directory, parsed by -od
+    For each query, hits falling in the same ``rangejunction``-sized window on
+    the same strand are deduplicated (the highest-bitscore hit wins, since the
+    table is pre-sorted by bitscore). Negative-strand hits have their
+    coordinates normalised so ``qstart < qend``. Hits shorter than
+    :data:`MIN_HIT_LENGTH` are dropped.
+
+    Writes ``{blast_result}.filtred`` and, for EE searches, the
+    ``{blast_result}.filtred.bed`` coordinate file. Runs on instantiation.
+
+    Parameters
+    ----------
+    blast_result : str
+        Path to the raw ``outfmt 6`` table.
+    rangejunction : int
+        Window size (nt) used to merge redundant hits, from ``--range_junction``.
+    tag : str
+        ``"EE"`` for the endogenous-element search or ``"HOST"`` for the
+        host-gene bait search; controls how ``bed_name`` is built.
+    out_dir : str
+        Output directory, used for scratch chunk files.
     """
 
     def __init__(
         self, blast_result: str, rangejunction: int, tag: str, out_dir: str
-    ) -> object:
+    ) -> None:
         self.blast_result = blast_result
         self.rangejunction = rangejunction
         self.tag = tag
@@ -27,105 +69,66 @@ class FilterTable:
 
         self.filter_blast()
 
+    def _annotate_chunk(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Assign strand, normalise coordinates and build ``bed_name``/``tag``."""
+        df["sense"] = df["sense"].astype(object)
+        df.loc[df["qstart"].astype(int) > df["qend"].astype(int), "sense"] = "neg"
+        df.loc[df["qend"].astype(int) > df["qstart"].astype(int), "sense"] = "pos"
+
+        # Normalise negative-strand hits so start < end.
+        neg = df["sense"] == "neg"
+        df.loc[neg, ["qstart", "qend"]] = df.loc[neg, ["qend", "qstart"]].values
+
+        if self.tag == "EE":
+            df["tag"] = "EE"
+            df["bed_name"] = df.apply(
+                lambda x: f"{x['qseqid']}:{x['qstart']}-{x['qend']}", axis=1
+            )
+        else:
+            df["tag"] = "HOST"
+            df["bed_name"] = df["qseqid"]
+
+        df["evalue"] = pd.to_numeric(df["evalue"], downcast="float")
+        df = df[df.length >= MIN_HIT_LENGTH]
+        return df[FILTERED_COLUMNS]
+
     def filter_blast(self) -> None:
-        header_outfmt6 = [
-            "qseqid",
-            "sseqid",
-            "pident",
-            "length",
-            "mismatch",
-            "gapopen",
-            "qstart",
-            "qend",
-            "sstart",
-            "send",
-            "evalue",
-            "bitscore",
-        ]  # creates a blast header output in format = 6
+        """Run the full filter: annotate, deduplicate and write outputs."""
         df = pd.read_csv(
-            self.blast_result, sep="\t", header=None, names=header_outfmt6
+            self.blast_result, sep="\t", header=None, names=OUTFMT6_COLUMNS
         ).sort_values(by="bitscore", ascending=False)
         df["sense"] = ""
         df["bed_name"] = ""
         df["tag"] = ""
-        df["new_qstart"] = df["qstart"]
-        df["new_qend"] = df["qend"]
-        df.to_csv(self.blast_result + ".csv", sep="\t")
-        chunks = df = pd.read_csv(
-            f"{self.blast_result}.csv", sep="\t", chunksize=200000
-        )
-        count = 0
+        df.to_csv(f"{self.blast_result}.csv", sep="\t")
+
         tmp_path = f"{self.out_dir}/tmp/"
-        if os.path.exists(tmp_path) == False:
-            os.mkdir(tmp_path)
-        for df in chunks:
-            df["sense"] = df["sense"].astype(object)
-            df.loc[
-                df["qstart"].astype(int) > df["qend"].values.astype(int), "sense"
-            ] = "neg"
-            df.loc[
-                df["qend"].values.astype(int) > df["qstart"].astype(int), "sense"
-            ] = "pos"
-            df.loc[df["sense"] == "neg", "new_qstart"] = df["qend"]
-            df.loc[df["sense"] == "neg", "new_qend"] = df["qstart"]
-            df.loc[df["sense"] == "neg", "qstart"] = df["new_qstart"]
-            df.loc[df["sense"] == "neg", "qend"] = df["new_qend"]
-            df.drop(columns=["new_qstart", "new_qend"], inplace=True)
-            if self.tag == "EE":
-                df["tag"] = "EE"
-                df["bed_name"] = df.apply(
-                    lambda x: "%s:%s-%s" % (x["qseqid"], x["qstart"], x["qend"]), axis=1
-                )
-            else:
-                df["tag"] = "HOST"
-                df["bed_name"] = df["qseqid"]
-            pd.options.display.float_format = "{:,.2f}".format
-            df["evalue"] = pd.to_numeric(df["evalue"], downcast="float")
-            df = df[df.length >= 33]
-            header = [
-                "qseqid",
-                "sseqid",
-                "pident",
-                "length",
-                "mismatch",
-                "gapopen",
-                "qstart",
-                "qend",
-                "sstart",
-                "send",
-                "evalue",
-                "bitscore",
-                "sense",
-                "bed_name",
-                "tag",
-            ]
-            df = df[header]
-            with open(f"{tmp_path}chunk.{count}.tsv", "w") as chunk_writer:
-                df.to_csv(chunk_writer, sep="\t", index=False)
-            count += 1
-        all_chunks = glob.glob(f"{tmp_path}/*.tsv")
-        final_filtred_file = pd.DataFrame()
-        chunks_list = []
-        for chunk in all_chunks:
-            df = pd.read_csv(chunk, sep="\t")
-            chunks_list.append(df)
-        final_filtred_file = pd.concat(chunks_list, ignore_index=True)
-        final_filtred_file["qstart_rng"] = final_filtred_file.qstart.floordiv(
-            self.rangejunction
+        os.makedirs(tmp_path, exist_ok=True)
+
+        chunks = pd.read_csv(f"{self.blast_result}.csv", sep="\t", chunksize=CHUNK_SIZE)
+        for count, chunk in enumerate(chunks):
+            annotated = self._annotate_chunk(chunk)
+            annotated.to_csv(f"{tmp_path}chunk.{count}.tsv", sep="\t", index=False)
+
+        filtered = pd.concat(
+            (pd.read_csv(chunk, sep="\t") for chunk in glob.glob(f"{tmp_path}/*.tsv")),
+            ignore_index=True,
         )
-        final_filtred_file["qend_rng"] = final_filtred_file.qend.floordiv(
-            self.rangejunction
-        )
-        final_filtred_file = (
-            final_filtred_file.drop_duplicates(subset=["qseqid", "qstart_rng", "sense"])
-            .drop_duplicates(subset=["qseqid", "qstart_rng", "sense"])
-            .sort_values(by=["qseqid"])
-        )
-        final_filtred_file.to_csv(
-            f"{self.blast_result}.filtred", sep="\t", index=False, columns=header
+        # Merge hits that share a strand and fall in the same coordinate window.
+        filtered["qstart_rng"] = filtered.qstart.floordiv(self.rangejunction)
+        filtered["qend_rng"] = filtered.qend.floordiv(self.rangejunction)
+        filtered = filtered.drop_duplicates(
+            subset=["qseqid", "qstart_rng", "sense"]
+        ).sort_values(by=["qseqid"])
+
+        filtered.to_csv(
+            f"{self.blast_result}.filtred",
+            sep="\t",
+            index=False,
+            columns=FILTERED_COLUMNS,
         )
         if self.tag == "EE":
-            final_filtred_file.to_csv(
+            filtered.to_csv(
                 f"{self.blast_result}.filtred.bed",
                 header=False,
                 sep="\t",

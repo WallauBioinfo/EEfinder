@@ -19,7 +19,13 @@ of them shell out to tools that are not in `env.yml` (`cd-hit-est`, `mafft`,
 
 Builds the `-mt` metadata table for a bacterial protein FASTA by querying Entrez
 for each accession found in the headers. See
-[Acquiring databases](databases.md#bacterial-database-and-metadata).
+[Acquiring databases](get-databases.md).
+
+```{note}
+`eefinder get-databases bacteria` now builds the bacterial FASTA **and** its
+metadata CSV in one step, so this script is only needed for a protein set that
+did not come from `get-databases`.
+```
 
 ```bash
 python accessory_scripts/bac_retriever.py -in <proteins.fa> -em <email> -key <api_key>

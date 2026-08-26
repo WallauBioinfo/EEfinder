@@ -1,16 +1,21 @@
 # EEfinder
 
-EEfinder is a tool/python package that automatizes several tasks related to identification of Endogenous Elements present on Eukaryotic Genomes.
+EEfinder is a Python CLI and package that automates the identification of
+**Endogenous Elements (EEs)** — virus- or bacteria-derived sequences integrated
+into eukaryotic genomes — by combining similarity search with genomic-junction
+reasoning.
 
 #### Install
 
-EEfinder drives BLAST, DIAMOND and bedtools, which are not pip-installable — install them first, then the package.
+EEfinder drives BLAST, DIAMOND, bedtools, the NCBI `datasets` CLI and cd-hit,
+which are not pip-installable — install them first, then the package.
 
 ##### From PyPI
 
 ```bash
 conda create -n EEfinder -c conda-forge -c bioconda \
-  "python>=3.9,<3.12" "blast>=2.5" "diamond>=2.0.15" "bedtools>=2.27"
+  "python>=3.9,<3.12" "blast>=2.5" "diamond>=2.0.15" "bedtools>=2.27" \
+  ncbi-datasets-cli cd-hit
 conda activate EEfinder
 
 pip install eefinder
@@ -18,7 +23,9 @@ pip install eefinder
 
 ##### From source
 
-Cloning also gives you `env.yml`, which pins the exact versions EEfinder was developed and tested against (BLAST 2.5.0, DIAMOND 2.0.15, bedtools 2.27.1), plus the example data in `test_files/`.
+Cloning also gives you `env.yml`, which pins the exact versions EEfinder is
+developed and tested against (BLAST 2.17.0, DIAMOND 2.2.3, bedtools 2.31.1,
+ncbi-datasets-cli 18.36.0, cd-hit 4.8.1), plus the example data in `test_files/`.
 
 ```bash
 git clone https://github.com/WallauBioinfo/EEfinder.git
@@ -33,7 +40,22 @@ pip install .
 ```bash
 eefinder --version
 
-#eefinder, version 1.1.2
+#eefinder, version 2.0.0
+```
+
+#### Usage
+
+EEfinder is a command group with two commands — `get-databases` to acquire the
+reference data and `screening` to run the pipeline:
+
+```bash
+# download the reference databases
+eefinder get-databases virus -od db/ -pr virus
+eefinder get-databases host -tx "Aedes aegypti" -od db/ -pr host
+
+# run the pipeline
+eefinder screening -in genome.fasta -od results/ \
+  -db db/virus.fa -mt db/virus.csv -bt db/host.fa
 ```
 
 #### Documentation

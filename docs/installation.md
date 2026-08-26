@@ -1,22 +1,21 @@
 # Installation
 
 EEfinder is a Python package that drives several external bioinformatics
-binaries. Those binaries are **not** pip-installable, so a `pip install` alone
-is never a complete installation — the conda/mamba environment built from the
-bundled `env.yml` provides them.
+binaries. Those binaries are **not** pip-installable, so the supported route is a
+conda/micromamba environment built from the bundled `env.yml`.
 
 ## Requirements
 
 | Dependency | Role | Provided by |
 |------------|------|-------------|
 | Python 3.9 | runtime | `env.yml` |
-| BLAST 2.5.0 (`blastx`, `makeblastdb`) | similarity search + database build | `env.yml` (`blast`) |
-| DIAMOND 2.0.15 (`diamond`) | fast alternative to BLAST | `env.yml` (`diamond`) |
-| bedtools 2.27.1 | sequence extraction, merging, flank extraction | `env.yml` (`bedtools`) |
-| biopython, pandas, numpy, click | Python runtime deps | `env.yml` (pip) |
-
-EEfinder was developed and tested against the BLAST and DIAMOND versions pinned
-above; `env.yml` installs exactly those.
+| BLAST (`blastx`/`blastp`/`makeblastdb`) | similarity search + database build | `env.yml` (`blast`) |
+| DIAMOND (`diamond`) | fast alternative to BLAST | `env.yml` (`diamond`) |
+| bedtools | sequence extraction / merging | `env.yml` (`bedtools`) |
+| NCBI datasets CLI (`datasets`) | database download (`get-databases`) | `env.yml` (`ncbi-datasets-cli`, pinned to 18.36.0) |
+| cd-hit | dedup for `--translation_method gv-rv` **and** the `get-databases` `--cluster` step (on by default) | `env.yml` (`cd-hit`) |
+| pyrodigal-gv / pyrodigal-rv | protein prediction (`gv`/`rv`/`gv-rv`) | `env.yml` (pip) |
+| biopython (<1.86), pandas (<3), numpy (<3), click | Python runtime deps | `env.yml` (pip) |
 
 ## Install from PyPI
 
@@ -25,59 +24,57 @@ Install the external binaries first, then EEfinder itself:
 ```bash
 # 1. the binaries (conda-forge / bioconda)
 conda create -n EEfinder -c conda-forge -c bioconda \
-  "python>=3.9,<3.12" "blast>=2.5" "diamond>=2.0.15" "bedtools>=2.27"
+  "python>=3.9,<3.12" "blast>=2.5" "diamond>=2.0.15" "bedtools>=2.27" \
+  ncbi-datasets-cli cd-hit
 conda activate EEfinder
 
 # 2. the package
 pip install eefinder
 ```
 
-## Install from source
+This is the quickest route, but it resolves the binaries to whatever versions
+are current. To get the versions EEfinder is tested against, install from source
+with `env.yml` as below.
 
-Cloning gives you `env.yml` — which pins the exact versions EEfinder was tested
-against — plus the example data in `test_files/`:
+## Install from source (recommended)
 
 ```bash
 git clone https://github.com/WallauBioinfo/EEfinder.git
 cd EEfinder
 
-conda env create -f env.yml     # or: mamba env create -f env.yml
-conda activate EEfinder
+micromamba env create -f env.yml     # or: conda env create -f env.yml
+micromamba activate EEfinder
 
-pip install .                   # or `pip install -e .` for development
+pip install .                        # or `pip install -e .` for development
 ```
 
 ## Verify the installation
 
 ```bash
 eefinder --version
-# eefinder, version 1.1.2
+# eefinder, version 2.0.0
 
 eefinder --help
-# Usage: eefinder [OPTIONS]
-#   This tool predict regions of Endogenous Elements in Eukaryote Genomes.
+# Usage: eefinder [OPTIONS] COMMAND [ARGS]...
+#   screening       Run the EEfinder screening pipeline on a genome.
+#   get-databases   Download RefSeq protein databases (and metadata) ...
 ```
 
-Then check that the external binaries are on `PATH` inside the activated
-environment:
+## Development install
+
+To run the test suite and format the code, add the development dependencies:
 
 ```bash
-blastx -version
-diamond --version
-bedtools --version
+pip install ".[dev]"                  # pytest + black
+# or, equivalently:
+pip install -r requirements-dev.txt
 ```
 
-```{note}
-The Python dependencies are resolved by pip, but two of them are bounded on
-purpose: **Biopython is capped below 1.86**, which removed the
-`Bio.Blast.Applications` wrappers this version relies on, and Python is capped
-below 3.12. Both bounds are declared in `pyproject.toml`, so pip will pick
-compatible versions for you.
+See the [Developer guide](developer-guide.md) and [Testing](testing.md) pages
+for details.
+
+```{tip}
+When EEfinder is installed **outside** its source tree, the run log's
+dependency-drift check needs to find the reference `env.yml`. Point it there
+with `export EEFINDER_ENV_YML=/path/to/env.yml`.
 ```
-
-## Next steps
-
-- [Acquiring databases](databases.md) — the three reference inputs EEfinder
-  needs.
-- [Running EEfinder](running.md) — the example run against the bundled
-  `test_files/`.

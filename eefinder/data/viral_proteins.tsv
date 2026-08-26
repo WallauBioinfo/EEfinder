@@ -1,0 +1,68 @@
+suggested_name	current_name	match_type	molecule_type_scope	notes
+RdRp	rdrp	contains	RNA	any name containing "RdRp" (case-insensitive after normalisation)
+RdRp	rna dependent rna polymerase	contains	RNA	spelled-out; also inside compound names
+RdRp	rna directed rna polymerase	contains	RNA	NCBI variant spelling
+RdRp	rna dependant rna polymerase	contains	RNA	common misspelling ("dependant")
+RdRp	rna polymerase	exact	RNA	exact only: avoids "rna polymerase sigma factor/beta subunit" in phages
+RdRp	l polymerase	contains	-ssRNA	(-)RNA "L polymerase" / "L polymerase protein" / "L polymerase RdRp"
+RdRp	l protein	exact	-ssRNA	(-)RNA "large" protein carries the RdRp
+RdRp	l	exact	-ssRNA	single-letter L; exact + scope is mandatory
+RdRp	large protein	exact	-ssRNA
+RdRp	large structural protein	exact	-ssRNA
+RdRp	l polyprotein	exact	-ssRNA	(-)RNA "L polyprotein" carries the RdRp
+RdRp	nsp12	exact	+ssRNA/Coronaviridae	coronavirus RdRp subunit
+Nucleocapsid Protein	nucleocapsid	contains	any	any "...nucleocapsid..." name (e.g. "structural nucleocapsid protein", "nucleocapsid protein p3/N", "50 kDa protein nucleocapsid protein")
+Nucleocapsid Protein	nucleoprotein	contains	any	any "...nucleoprotein..." name (e.g. "nucleoprotein N", "pre-histone-like nucleoprotein")
+Nucleocapsid Protein	n protein	exact	-ssRNA
+Nucleocapsid Protein	n	exact	-ssRNA	single-letter N; exact + scope mandatory
+Phosphoprotein	phosphoprotein	contains	-ssRNA	catches "putative phosphoprotein", "phosphoprotein P"
+Phosphoprotein	p protein	exact	-ssRNA
+Matrix protein	matrix protein	contains	-ssRNA	catches "putative matrix protein", "matrix protein M/1/2"
+Matrix protein	matrix	exact	-ssRNA
+Matrix protein	m protein	exact	-ssRNA
+Glycoprotein	g protein	exact	-ssRNA	single-letter G designation; exact + scope mandatory
+Glycoprotein	glycoprotein	contains	any	any "...glycoprotein..." name (envelope/membrane/surface/spike/EEV/structural/non-structural, GP1-5, etc.)
+Glycoprotein	glycoproteins	contains	any	plural form
+Glycoprotein	spike	contains	any	"spike", "spike protein", "spike structural protein", "tail spike protein"
+Fusion Protein	fusion protein	exact	-ssRNA	paramyxo/pneumo F; do not merge into G
+Fusion Protein	fusion glycoprotein	exact	-ssRNA
+Capsid Protein	capsid	contains	+ssRNA; dsRNA	any "...capsid..." name (e.g. "capsid", "capsid protein C", "capsid (core) protein", "capsid prot")
+Capsid Protein	coat protein	contains	+ssRNA; dsRNA	catches "putative coat protein", "major coat protein", "minor coat protein"
+Capsid Protein	cp	exact	+ssRNA; dsRNA	abbreviation; exact + scope mandatory
+Capsid Protein	major capsid protein	exact	+ssRNA; dsRNA	NOTE: in dsDNA phages MCP is a different context (see below)
+Polyprotein	polyprotein	exact	+ssRNA	NOTE: a precursor, not a mature product; flag for splitting
+Movement protein	movement protein	exact	+ssRNA	plant viruses
+VPg	vpg	exact	+ssRNA	genome-linked protein
+VPg	genome linked protein	contains	+ssRNA
+Main Protease	main protease	exact	+ssRNA
+Main Protease	3c like protease	exact	+ssRNA
+Main Protease	3c protease	exact	+ssRNA
+Helicase	helicase	exact	RNA
+Helicase	ci protein	exact	+ssRNA	potyvirus cylindrical inclusion = helicase
+Reverse Transcriptase	reverse transcriptase	contains	RT	catches "putative reverse transcriptase"
+Reverse Transcriptase	rt	exact	RT	exact + scope mandatory
+Reverse Transcriptase	pol protein	exact	RT
+Reverse Transcriptase	pol	exact	RT
+Reverse Transcriptase	pol polyprotein	exact	RT
+Gag	gag protein	exact	RT
+Gag	gag	exact	RT
+Gag	gag polyprotein	exact	RT
+Env	env protein	exact	RT
+Env	envelope protein	exact	RT
+Env	env	exact	RT
+integrase (IN)	integrase	contains	RT; dsDNA	catches "putative integrase", "site-specific integrase", "phage integrase"
+Major Capsid Protein	major capsid protein	exact	dsDNA
+Portal Protein	portal protein	exact	dsDNA
+Terminase Large Subunit	terminase large subunit	exact	dsDNA
+Terminase Small Subunit	terminase small subunit	exact	dsDNA
+Tail Fiber Protein	tail fiber protein	exact	dsDNA
+Tape Measure Protein	tail length tape measure protein	exact	dsDNA
+Tape Measure Protein	tape measure protein	exact	dsDNA
+Baseplate Protein	baseplate wedge subunit	exact	dsDNA
+Baseplate Protein	baseplate hub	exact	dsDNA
+Endolysin	endolysin	exact	dsDNA	lysis
+Holin	holin	exact	dsDNA	lysis
+Spanin	rz like spanin	exact	dsDNA	lysis
+DNA Polymerase	dna polymerase	exact	dsDNA; ssDNA
+DNA Primase	dna primase	exact	dsDNA
+DNA Helicase	dna helicase	exact	dsDNA

@@ -1,16 +1,45 @@
 scripts/__pycache__/
+__pycache__/
 *.pyc
+output/
+
+# BLAST / DIAMOND database indexes
 *.pin
 *.phr
 *.psq
-output/
+*.pdb
+*.pjs
+*.pot
+*.ptf
+*.pto
+*.ndb
+*.nhr
+*.nin
+*.nsq
+*.dmnd
+*.fai
 
-docs/_build/
-
-# Build artifacts
-dist/
-build/
+# Python build / test artifacts
 *.egg-info/
+.pytest_cache/
+build/
+dist/
+results_test/
 
+# Sphinx documentation build output
+docs/_build/
 # macOS
 .DS_Store
+
+# Run outputs and scratch databases produced while testing
+results/
+results_*/
+teste_*/
+db/
+test_db/
+test_db_host/
+
+# Nextflow working files
+.nextflow/
+.nextflow.log*
+work/

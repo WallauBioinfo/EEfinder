@@ -83,10 +83,24 @@ consequence of that.
   side of every element, for characterising the integration site — neighbouring
   transposable elements, host genes and the integration junction itself.
 
+- **Selectable translation methods.** Besides the six-frame translation above,
+  the genome can be searched through **predicted proteins** instead
+  (`--translation_method gv`/`rv`/`gv-rv`, using pyrodigal-gv / pyrodigal-rv and
+  `blastp`), with the amino-acid coordinates traced back to contig nucleotides so
+  the output schema is unchanged. See
+  [Translation methods](translation-methods.md).
+
+- **Reproducible reference data.** `get-databases` builds the `-db`/`-mt`/`-bt`
+  inputs from NCBI RefSeq with the `datasets` CLI, records the fate of every
+  downloaded accession in a tracking table, and can bound a build to a date
+  (`--released-before`) or leave a branch of the taxonomy out before it is ever
+  downloaded (`--exclude-taxon`). See [Acquiring databases](get-databases.md).
+
 - **Auditable runs.** A JSON `eefinder.log` records the resolved arguments, the
-  parameters used at each step and per-step timing; by default every
-  intermediate file is preserved under `tmp_files/`, so any step of the analysis
-  can be re-examined.
+  parameters used at each step and per-step timing, plus the detected dependency
+  versions flagged against the `env.yml` pins; by default every intermediate file
+  is preserved under `tmp_files/`, so any step of the analysis can be
+  re-examined.
 
 ## Documentation contents
 
@@ -94,11 +108,14 @@ consequence of that.
 :maxdepth: 2
 
 installation
-databases
-running
+get-databases
+screening
+translation-methods
+overlap
 custom-arguments
 output
 accessory-scripts
+testing
 developer-guide
 ```
 

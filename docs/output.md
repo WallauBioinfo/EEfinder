@@ -1,7 +1,7 @@
 # Outputs
 
-A run writes its main results directly into `--outdir`, plus a JSON run log and
-(unless `--removetmp`) an archive of intermediates.
+A `screening` run writes its main results directly into `--outdir`, plus a JSON
+run log and (unless `--removetmp`) an archive of intermediates.
 
 ## Main outputs
 
@@ -9,22 +9,15 @@ A run writes its main results directly into `--outdir`, plus a JSON run log and
 |------|----------|
 | `PREFIX.EEs.fa` | Endogenous element nucleotide sequences. |
 | `PREFIX.EEs.tax.tsv` | Endogenous element taxonomy table (one row per element). |
+| `PREFIX.EEs.gff3` | Endogenous element annotation in GFF3 format. |
 | `PREFIX.EEs.flanks.fa` | Endogenous elements plus flanking regions (`--flank` nt each side). |
 | `eefinder.log` | JSON run summary (see below). |
 
-With `--clean_masked`, the mask-cleaned equivalents are written alongside them:
+With `--clean_masked`, the mask-cleaned equivalents are also written:
 `PREFIX.EEs.cleaned.fa` and `PREFIX.EEs.cleaned.tax.tsv`.
 
-```text
-outdir/
-├── eefinder.log
-├── PREFIX.EEs.fa
-├── PREFIX.EEs.tax.tsv
-├── PREFIX.EEs.flanks.fa
-├── PREFIX.EEs.cleaned.fa          # only with --clean_masked
-├── PREFIX.EEs.cleaned.tax.tsv     # only with --clean_masked
-└── tmp_files/                     # unless --removetmp
-```
+With `--overlap longest|targets`, the elements filtered out of the final results
+are preserved under `tmp_outputs/` as `PREFIX.EEs.removed.{fa,tax.tsv}`.
 
 ## The taxonomy table (`PREFIX.EEs.tax.tsv`)
 
@@ -32,37 +25,49 @@ outdir/
 |--------|---------|
 | `Element-ID` | `CONTIG:START-END` identifier of the element (BED-style, 0-based half-open). The run prefix is **not** part of it — see the note below. |
 | `Sense` | Strand of the element, `pos` or `neg`. |
-| `Protein-IDs` | Accession(s) of the supporting reference protein(s), each followed by `\|` and the percent identity of its hit. |
+| `Protein-IDs` | Accession(s) of the best-matching reference protein(s). |
 | `Protein-Products` | Product name(s) from the metadata CSV. |
-| `Molecule_type` | Genome composition of the source (e.g. `ssRNA(+)`, `dsDNA-RT`). |
+| `Molecule_type` | Genome composition of the source (e.g. `ssRNA(+)`). |
 | `Family` / `Genus` / `Species` | Taxonomic assignment from the metadata CSV. |
 | `Host` | Host recorded for the reference. |
-| `Overlaped_Element_ID` | Comma-separated element(s) of a **different** family this one overlaps (within 100 nt), if any. |
-| `tag` | `overlaped` when `Overlaped_Element_ID` is non-empty, otherwise `unique`. |
-| `Average_pident` | Mean of the percent identities listed in `Protein-IDs`, rounded to one decimal. |
-
-An element merged from several fragments carries all its supporting references:
-`Protein-IDs` entries are separated by ` | `, while the parallel taxonomy columns
-(`Protein-Products`, `Genus`, `Species`, `Host`) join their values with ` AND `.
-
-```text
-Element-ID           Sense  Protein-IDs                                Family          Genus                            tag        Average_pident
-ctg_1913:1754-2689   neg    YP_006732334.1|30.573 | NP_068729.1|28.239 Caulimoviridae  Soymovirus AND Caulimovirus      overlaped  29.4
-ctg_1913:70282-70728 neg    YP_009666257.1|30.719                      Chuviridae      Scarabeuvirus                    unique     30.7
-```
-
-Missing metadata is filled rather than left blank: an unresolved `Family`,
-`Genus` or `Species` becomes `Unclassified`, and an unresolved `Host` becomes
-`Undefined`.
+| `Overlaped_Element_ID` | Element(s) this one overlaps, if any. |
+| `tag` | `overlaped` or `unique`. |
+| `Average_pident` | Mean percent identity of the hits backing the element. |
 
 ```{note}
-The two places an element is named use two spellings. The taxonomy table's
+The three places an element is named use two spellings. The taxonomy table's
 `Element-ID` drops the run prefix (`ctg_1913:1754-2689`), while the `EEs.fa` /
-`EEs.flanks.fa` headers carry it
+`EEs.flanks.fa` headers and the GFF3 `ID` attribute carry it
 (`Ae_aeg_Aag2_ctg_1913/ctg_1913:1754-2689`), so the sequences cross-reference the
 genome the run was given. Prepend `{prefix}/` to an `Element-ID` to match a
 FASTA record.
 ```
+
+## The GFF3 annotation (`PREFIX.EEs.gff3`)
+
+Each row of the taxonomy table becomes one feature, sorted by sequence id then
+start. The `Element-ID` supplies the sequence id and the coordinates, converted
+from the BED-style 0-based half-open range EEfinder carries internally to GFF3's
+1-based inclusive convention. `Average_pident` becomes the feature score, and
+`--analysis` selects the feature type (`endogenous_viral_element` or
+`endogenous_bacterial_element`).
+
+Column 9 carries the taxonomy as attributes — reserved tags capitalised per the
+spec, custom tags lower-case:
+
+| Attribute | Source column |
+|-----------|---------------|
+| `ID` | `Element-ID`, prefixed with the run prefix |
+| `Name`, `species` | `Species` |
+| `family` / `genus` | `Family` / `Genus` |
+| `molecule_type` | `Molecule_type` |
+| `product` | `Protein-Products` |
+| `protein_ids` | `Protein-IDs` |
+| `host` | `Host` |
+| `overlap_status` | `tag` (`overlaped` / `unique`) |
+
+GFF3-reserved characters (`;`, `=`, `&`, `,`, tabs, newlines) are
+percent-encoded in attribute values.
 
 ## The cleaned outputs (`--clean_masked`)
 
@@ -76,65 +81,44 @@ adds a view rather than replacing one.
 
 `eefinder.log` is a JSON document recording:
 
-- `arguments` — the resolved run arguments;
-- `start_time`, `end_time`, `total_time_minutes` — wall-clock timing of the run;
-- `steps_information` — one entry per pipeline step, each with its own start/end
-  time, duration and a human-readable message describing what it did with which
-  parameters.
+- `eefinder_version` — the installed EEfinder version;
+- `arguments` — the resolved run arguments (including `translation_method`);
+- `dependencies` — detected versions of bedtools, BLAST, DIAMOND, python, numpy
+  and pandas, each flagged if it differs from the `env.yml` pin;
+- per-step and total timing information.
 
-```json
-{
-    "arguments": {
-        "genome_file": "test_files/Ae_aeg_Aag2_ctg_1913.fasta",
-        "prefix": "Ae_aeg_Aag2_ctg_1913",
-        "outdir": "results_test",
-        "mode": "blastx",
-        "length": 1000,
-        "...": "..."
-    },
-    "start_time": "2024-10-01 12:00:00",
-    "total_time_minutes": "1.8421",
-    "steps_information": [
-        {
-            "step": "Prepare input data",
-            "total_time_minutes": "0.0032",
-            "message": "Ae_aeg_Aag2_ctg_1913 prefix included in ... sequences header ..."
-        }
-    ]
-}
+```{tip}
+When EEfinder is installed outside its source tree, point the dependency-drift
+check at the reference file with `export EEFINDER_ENV_YML=/path/to/env.yml`.
 ```
 
 ## Intermediate files (`tmp_files/`)
 
 Unless `--removetmp` is given, the intermediates are archived under `tmp_files/`.
 Their names accrete suffixes as they pass through the pipeline, so you can trace
-exactly which step produced each file:
+exactly which step produced each file. The prefixing and length filtering happen
+in one pass, so there is a single `PREFIX.rn.fmt` and no intermediate `PREFIX.rn`:
 
 ```text
-tmp_files/
-├── PREFIX.rn                        # headers prefixed with PREFIX/
-├── PREFIX.rn.fmt                    # contigs below --length removed
-├── PREFIX.rn.fmt.fai                # samtools index written by bedtools getfasta
-├── PREFIX.rn.fmt.rn.fmt.lenght      # contig lengths, for bedtools slop
-├── PREFIX.rn.fmt.blastx             # main similarity search
-├── PREFIX.rn.fmt.blastx.csv         # the same hits with the working columns added
-├── PREFIX.rn.fmt.blastx.filtred     # redundant-hit filter (--range_junction)
-├── PREFIX.rn.fmt.blastx.filtred.bed
-├── PREFIX.rn.fmt.blastx.filtred.bed.fasta                    # putative EEs
-├── PREFIX.rn.fmt.blastx.filtred.bed.fasta.blastx             # host-bait search
-├── PREFIX.rn.fmt.blastx.filtred.bed.fasta.blastx.csv
-├── PREFIX.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred
-├── ....filtred.concat               # EE + host hits, ranked by bitscore
-├── ....concat.nr                    # best hit per element, host winners dropped
-├── ....concat.nr.tax                # joined with the -mt metadata
-├── ....tax.bed                      # annotated with the --merge_level taxon
-├── ....tax.bed.merge                # bedtools merge -d --limit
-├── ....merge.fmt                    # annotation stripped back to coordinates
-├── ....merge.fmt.fa.bed
-└── ....merge.fmt.fa.bed.flank       # coordinates grown by --flank
+outdir/
+├── eefinder.log
+├── PREFIX.EEs.fa
+├── PREFIX.EEs.tax.tsv
+├── PREFIX.EEs.gff3
+├── PREFIX.EEs.flanks.fa
+└── tmp_files/
+    ├── PREFIX.rn.fmt                 # prefixed headers + length-filtered
+    ├── PREFIX.rn.fmt.blastx          # similarity search (main)
+    ├── PREFIX.rn.fmt.blastx.filtred  # redundant-hit filter
+    ├── PREFIX.rn.fmt.blastx.filtred.bed
+    ├── PREFIX.rn.fmt.blastx.filtred.bed.fasta          # putative EEs
+    ├── PREFIX.rn.fmt.blastx.filtred.bed.fasta.blastx   # host-bait search
+    ├── ...
+    └── PREFIX.rn.fmt.blastx.filtred.bed.fasta.blastx.filtred.concat.nr.tax.bed.merge...
 ```
 
-The three merged-element files that become the main outputs
-(`....merge.fmt.fa`, `....merge.fmt.fa.tax` and `....merge.fmt.fa.bed.flank.fasta`)
-are renamed into `PREFIX.EEs.fa`, `PREFIX.EEs.tax.tsv` and
-`PREFIX.EEs.flanks.fa` rather than archived.
+With the prediction-based translation methods (`gv`/`rv`/`gv-rv`), the
+predicted-protein coordinates TSVs also appear here (e.g.
+`PREFIX.rn.fmt.pred.coords.tsv` for the main search and
+`PREFIX.rn.fmt.blastx.filtred.bed.fasta.pred.coords.tsv` for the host-bait
+search) — evidence that the translation method was applied to both searches.

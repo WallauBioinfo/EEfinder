@@ -15,9 +15,12 @@ def print_paper_info(version: str):
 
 def print_end_info():
     click.secho("Thank You for use EEfinder!", fg="green")
-    click.secho("Please Cite: Dias, Y. J. M., Dezordi, F. Z., & Wallau, G. L. (2024). "
-                +"EEFinder: A general-purpose tool for identification of bacterial and viral endogenized elements in eukaryotic genomes. "
-                +"Computational and Structural Biotechnology Journal. https://doi.org/10.1016/j.csbj.2024.10.012", fg="green")
+    click.secho(
+        "Please Cite: Dias, Y. J. M., Dezordi, F. Z., & Wallau, G. L. (2024). "
+        + "EEFinder: A general-purpose tool for identification of bacterial and viral endogenized elements in eukaryotic genomes. "
+        + "Computational and Structural Biotechnology Journal. https://doi.org/10.1016/j.csbj.2024.10.012",
+        fg="green",
+    )
     print("\n")
 
 

@@ -1,0 +1,9 @@
+# Development dependencies for EEfinder (testing + linting).
+# Install into the EEfinder conda environment with:
+#     pip install -r requirements-dev.txt
+#
+# Runtime dependencies (biopython, pandas, numpy, click) and the external
+# binaries (blast, diamond, bedtools) come from env.yml.
+
+pytest==9.1.1
+black==26.5.1

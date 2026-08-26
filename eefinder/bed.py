@@ -1,21 +1,36 @@
-import pandas as pd
-import numpy as np
+"""BED construction and bedtools wrappers used across the pipeline.
+
+The bedtools-backed steps (:class:`GetFasta`, :class:`MergeBed`,
+:class:`BedFlank`) shell out to the ``bedtools`` binary; the remaining classes
+manipulate coordinates with pandas / string parsing only.
+"""
+
+from __future__ import annotations
+
+import re
 import shlex
 import subprocess
-import re
+
+import numpy as np
+import pandas as pd
 
 
 class GetFasta:
-    """
-    This function execute the bedtools getfasta.
+    """Extract sequences for BED intervals via ``bedtools getfasta``.
 
-    Keyword arguments:
-    input_file: input_file, parsed with -in argument.
-    bed_file: bed file, genereated along the pipeline
-    out_file: output file
+    Runs on instantiation.
+
+    Parameters
+    ----------
+    input_file : str
+        FASTA to extract from (parsed from ``--genome_file`` upstream).
+    bed_file : str
+        BED file of intervals to extract.
+    out_file : str
+        Output FASTA path.
     """
 
-    def __init__(self, input_file: str, bed_file: str, out_file: str) -> object:
+    def __init__(self, input_file: str, bed_file: str, out_file: str) -> None:
         self.input_file = input_file
         self.bed_file = bed_file
         self.out_file = out_file
@@ -23,145 +38,152 @@ class GetFasta:
         self.get_fasta()
 
     def get_fasta(self) -> None:
-        get_fasta = f"bedtools getfasta -fi {self.input_file} -bed {self.bed_file} -fo {self.out_file}"
-        get_fasta = shlex.split(get_fasta)
-        cmd_get_fasta = subprocess.Popen(
-            get_fasta, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+        """Run ``bedtools getfasta``."""
+        cmd = (
+            f"bedtools getfasta "
+            f"-fi {self.input_file} "
+            f"-bed {self.bed_file} "
+            f"-fo {self.out_file}"
         )
-        cmd_get_fasta.wait()
+        subprocess.run(
+            shlex.split(cmd),
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
 
 
 class GetAnnotBed:
-    """
-    Create a bed file that will be used to merge truncated EVEs of the same
-    family in the same sense based on a limite length treshold.
+    """Build an annotated BED so truncated EEs of a taxon can be merged.
 
-    Keyword arguments:
-    blast_tax_info: csv file generated in the get_taxonomy_info function on get_taxonomy.py
-    merge_level: genus or family, choose which level going to merge nearby elements
+    Elements are named ``contig|Family|Genus|sense`` (genus level) or
+    ``contig|Family|sense`` (family level) so that ``bedtools merge`` joins only
+    neighbouring hits of the same taxon and strand. Writes
+    ``{blast_tax_info}.bed``. Runs on instantiation.
+
+    Parameters
+    ----------
+    blast_tax_info : str
+        Taxonomy signature CSV from :class:`~eefinder.get_taxonomy.GetTaxonomy`.
+    merge_level : str
+        ``"genus"`` or ``"family"``; the level at which to merge, from
+        ``--merge_level``.
     """
 
-    def __init__(self, blast_tax_info: str, merge_level: str) -> object:
+    def __init__(self, blast_tax_info: str, merge_level: str) -> None:
         self.blast_tax_info = blast_tax_info
         self.merge_level = merge_level
 
         self.get_annotated_bed()
 
     def get_annotated_bed(self) -> None:
-        df_blast_tax_info = pd.read_csv(self.blast_tax_info, sep=",")
-        df_blast_tax_info["qseqid"] = df_blast_tax_info["qseqid"].str.replace(
-            r"\:.*", "", regex=True
-        )
-        df_blast_tax_info["sseqid"] = (
-            df_blast_tax_info["sseqid"]
-            + "|"
-            + df_blast_tax_info["sense"]
-            + "|"
-            + df_blast_tax_info["pident"].astype(str)
-        )
-        df_blast_tax_info["Family"] = df_blast_tax_info["Family"].fillna("Unknown")
-        df_blast_tax_info["Genus"] = df_blast_tax_info["Genus"].fillna("Unknown")
+        """Compute the merge-friendly element names and write the BED file."""
+        df = pd.read_csv(self.blast_tax_info, sep=",")
+        df["qseqid"] = df["qseqid"].str.replace(r"\:.*", "", regex=True)
+        df["sseqid"] = df["sseqid"] + "|" + df["sense"] + "|" + df["pident"].astype(str)
+        df["Family"] = df["Family"].fillna("Unknown")
+        df["Genus"] = df["Genus"].fillna("Unknown")
 
         if self.merge_level == "genus":
-            df_blast_tax_info["formated_name"] = np.where(
-                df_blast_tax_info["Genus"] != "Unknown",
-                df_blast_tax_info["qseqid"]
+            df["formated_name"] = np.where(
+                df["Genus"] != "Unknown",
+                df["qseqid"]
                 + "|"
-                + df_blast_tax_info["Family"]
+                + df["Family"]
                 + "|"
-                + df_blast_tax_info["Genus"]
+                + df["Genus"]
                 + "|"
-                + df_blast_tax_info["sense"],
-                df_blast_tax_info["qseqid"]
-                + "|"
-                + df_blast_tax_info["sseqid"]
-                + "|"
-                + df_blast_tax_info["Genus"],
+                + df["sense"],
+                df["qseqid"] + "|" + df["sseqid"] + "|" + df["Genus"],
             )
         else:
-            df_blast_tax_info["formated_name"] = np.where(
-                df_blast_tax_info["Family"] != "Unknown",
-                df_blast_tax_info["qseqid"]
-                + "|"
-                + df_blast_tax_info["Family"]
-                + "|"
-                + df_blast_tax_info["sense"],
-                df_blast_tax_info["qseqid"]
-                + "|"
-                + df_blast_tax_info["sseqid"]
-                + "|"
-                + df_blast_tax_info["Family"],
+            df["formated_name"] = np.where(
+                df["Family"] != "Unknown",
+                df["qseqid"] + "|" + df["Family"] + "|" + df["sense"],
+                df["qseqid"] + "|" + df["sseqid"] + "|" + df["Family"],
             )
-        bed_blast_info = df_blast_tax_info[
-            ["formated_name", "qstart", "qend", "sseqid"]
-        ].copy()
-        bed_blast_info = bed_blast_info.sort_values(
-            ["formated_name", "qstart"], ascending=(True, True)
-        )
-        bed_blast_info.to_csv(
-            f"{self.blast_tax_info}.bed", index=False, header=False, sep="\t"
-        )
+
+        bed = df[["formated_name", "qstart", "qend", "sseqid"]].copy()
+        bed = bed.sort_values(["formated_name", "qstart"], ascending=(True, True))
+        bed.to_csv(f"{self.blast_tax_info}.bed", index=False, header=False, sep="\t")
 
 
 class RemoveAnnotation:
-    """
-    Remove the annotated information generate into the get_annotated_bed function.
+    """Strip the ``|Family|Genus|sense`` annotation from merged BED names.
 
-    Keyword arguments:
-    bed_annotated_merged_file: tsv file generated in the merge_bedfile function on bed_merge.py
+    Writes ``{bed_annotated_merged_file}.fmt``. Runs on instantiation.
+
+    Parameters
+    ----------
+    bed_annotated_merged_file : str
+        Merged BED file produced by :class:`MergeBed`.
     """
 
-    def __init__(self, bed_annotated_merged_file: str) -> object:
+    def __init__(self, bed_annotated_merged_file: str) -> None:
         self.bed_annotated_merged_file = bed_annotated_merged_file
 
         self.reformat_bed()
 
     def reformat_bed(self) -> None:
-        df_merge_file = pd.read_csv(
-            self.bed_annotated_merged_file, sep="\t", header=None
-        )
-        df_merge_file.iloc[:, 0] = df_merge_file.iloc[:, 0].str.replace(
-            "\|.*", "", regex=True
-        )
-        df_merge_file.to_csv(
-            f"{self.bed_annotated_merged_file}.fmt", index=False, header=False, sep="\t"
+        """Reduce the first column back to the bare contig name."""
+        df = pd.read_csv(self.bed_annotated_merged_file, sep="\t", header=None)
+        df.iloc[:, 0] = df.iloc[:, 0].str.replace(r"\|.*", "", regex=True)
+        df.to_csv(
+            f"{self.bed_annotated_merged_file}.fmt",
+            index=False,
+            header=False,
+            sep="\t",
         )
 
 
 class MergeBed:
-    """
-    Execute the bedtools merge.
+    """Merge nearby intervals of the same annotated name via ``bedtools merge``.
 
-    Keyword arguments:
-    bed_annotated_file: annotated bed file created at get_annotated_bed function
-    limit_merge: Limit of bases to merge regions, parsed with -lm argument
+    Writes ``{bed_annotated_file}.merge``. Runs on instantiation.
+
+    Parameters
+    ----------
+    bed_annotated_file : str
+        Annotated BED from :class:`GetAnnotBed`.
+    limit_merge : int
+        Maximum gap (nt) between intervals to merge, from ``--limit``.
     """
 
-    def __init__(self, bed_annotated_file: str, limit_merge: int) -> object:
+    def __init__(self, bed_annotated_file: str, limit_merge: int) -> None:
         self.bed_annotated_file = bed_annotated_file
         self.limit_merge = limit_merge
 
         self.merge_bed()
 
     def merge_bed(self) -> None:
-        bed_merge_output = open(f"{self.bed_annotated_file}.merge", "w")
-        bed_merge_cmd = f'bedtools merge -d {int(self.limit_merge)} -i {self.bed_annotated_file} -c 4 -o collapse -delim " AND "'
-        bed_merge_cmd = shlex.split(bed_merge_cmd)
-        bed_merge_process = subprocess.Popen(bed_merge_cmd, stdout=bed_merge_output)
-        bed_merge_process.wait()
+        """Run ``bedtools merge`` collapsing the annotation column."""
+        cmd = (
+            f"bedtools merge "
+            f"-d {int(self.limit_merge)} "
+            f"-i {self.bed_annotated_file} "
+            f"-c 4 "
+            f"-o collapse "
+            f'-delim " AND "'
+        )
+        with open(f"{self.bed_annotated_file}.merge", "w") as merge_output:
+            subprocess.run(shlex.split(cmd), stdout=merge_output)
 
 
 class BedFlank:
-    """
-    Extract flanking regions of EEs using bedtools slop.
+    """Extend intervals by a flank on each side via ``bedtools slop``.
 
-    Keyword arguments:
-    input_file: bed file generated by get_bed function
-    lenght_file: lenght file produced by get_length function
-    flank_region: desired lenght regions for extraction, parsed from
+    Writes ``{input_file}.flank``. Runs on instantiation.
+
+    Parameters
+    ----------
+    input_file : str
+        BED file from :class:`GetBed`.
+    length_file : str
+        Genome length index from :class:`~eefinder.get_length.GetLength`.
+    flank_region : int
+        Number of bases to add on each side, from ``--flank``.
     """
 
-    def __init__(self, input_file: str, length_file: str, flank_region: int) -> object:
+    def __init__(self, input_file: str, length_file: str, flank_region: int) -> None:
         self.input_file = input_file
         self.length_file = length_file
         self.flank_region = flank_region
@@ -169,38 +191,43 @@ class BedFlank:
         self.bedtools_flank()
 
     def bedtools_flank(self) -> None:
+        """Run ``bedtools slop`` to add the flanking regions."""
+        cmd = (
+            f"bedtools slop "
+            f"-i {self.input_file} "
+            f"-g {self.length_file} "
+            f"-b {int(self.flank_region)}"
+        )
         with open(f"{self.input_file}.flank", "w") as flank_out:
-            bed_flank_cmd = f"bedtools slop -i {self.input_file} -g {self.length_file} -b {str(self.flank_region)}"
-            bed_flank_cmd = shlex.split(bed_flank_cmd)
-            bed_flank_process = subprocess.Popen(bed_flank_cmd, stdout=flank_out)
-            bed_flank_process.wait()
+            subprocess.run(shlex.split(cmd), stdout=flank_out)
 
 
 class GetBed:
-    """
-    Create a bed file from fasta file using replace logic.
+    """Derive a BED file from ``>contig:start-end`` FASTA headers.
 
-    Keyword arguments:
-    input_file: fasta file for desired bed file
+    Writes ``{input_file}.bed``. Runs on instantiation.
+
+    Parameters
+    ----------
+    input_file : str
+        FASTA whose headers encode ``contig:start-end`` coordinates.
     """
 
-    def __init__(self, input_file: str) -> object:
+    def __init__(self, input_file: str) -> None:
         self.input_file = input_file
 
         self.get_bed()
 
     def get_bed(self) -> None:
-        with open(f"{self.input_file}", "r") as repeat_eves, open(
-            f"{self.input_file}.bed", "w"
-        ) as repeat_eves_bed_out:
-            repeat_eves_lines = repeat_eves.readlines()
-            for line in repeat_eves_lines:
-                if ">" in line:
-                    line_name = line.replace(">", "")
-                    line_name = re.sub(":.*", "", line_name).rstrip("\n")
-                    line_start = re.sub(".*:", "", line)
-                    line_start = re.sub("-.*", "", line_start).rstrip("\n")
-                    line_end = re.sub(".*-", "", line).rstrip("\n")
-                    repeat_eves_bed_out.write(
-                        f"{line_name}\t{line_start}\t{line_end}\n"
-                    )
+        """Parse each header into ``contig<TAB>start<TAB>end``."""
+        with open(self.input_file) as fasta_in:
+            headers = [
+                line[1:].rstrip("\n") for line in fasta_in if line.startswith(">")
+            ]
+
+        with open(f"{self.input_file}.bed", "w") as bed_out:
+            for header in headers:
+                # rpartition on ":" so contig names containing "-" are kept whole.
+                contig, _, coords = header.rpartition(":")
+                start, _, end = coords.partition("-")
+                bed_out.write(f"{contig}\t{start}\t{end}\n")

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "eefinder"
-version = "1.1.2"
+version = "2.0.0"
 description = "Identification of endogenous viral and bacterial elements in eukaryotic genomes"
 readme = "README.md"
 requires-python = ">=3.9,<3.12"
@@ -38,13 +38,19 @@ classifiers = [
 ]
 dependencies = [
     "click>=8.1",
-    "biopython>=1.79,<1.86",  # Bio.Blast.Applications removido no 1.86
+    "biopython>=1.79,<1.86",  # Bio.Blast.Applications removed in 1.86
     "pandas>=1.4,<3",
     "numpy>=1.22,<3",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "black>=24.3",
+    "pytest>=8.0",
+]
+
 [project.scripts]
-eefinder = "eefinder.scripts.main:main"
+eefinder = "eefinder.scripts.main:cli"
 
 [project.urls]
 Homepage = "https://github.com/WallauBioinfo/EEfinder"
@@ -63,4 +69,21 @@ include = [
     "/env.yml",
     "/README.md",
     "/LICENSE",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py39", "py310"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+markers = [
+    "integration: end-to-end runs of the eefinder CLI (require blast/diamond/bedtools on PATH)",
+]
+filterwarnings = [
+    # pandas 1.5.x internally calls np.find_common_type, deprecated in numpy
+    # 1.25; the call lives in pandas, not EEfinder, and is fixed in pandas >= 2.
+    # Scope the ignore to this exact message so real warnings still surface.
+    "ignore:np.find_common_type is deprecated:DeprecationWarning",
 ]
