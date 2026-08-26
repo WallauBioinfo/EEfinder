@@ -1,0 +1,19 @@
+/* EEfinder documentation — small tweaks on top of the RTD theme. */
+
+/* Give wide tables (CLI option references, blastx schemas) a horizontal
+   scrollbar instead of overflowing the content column. */
+.wy-table-responsive table td,
+.wy-table-responsive table th {
+    white-space: normal;
+}
+
+/* Centre and constrain the conceptual figures pulled from the wiki. */
+.rst-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Slightly tighter inline code so accreted filenames stay readable. */
+.rst-content code.literal {
+    font-size: 0.85em;
+}

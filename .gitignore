@@ -4,3 +4,5 @@ scripts/__pycache__/
 *.phr
 *.psq
 output/
+
+docs/_build/

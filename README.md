@@ -22,7 +22,9 @@ eefinder --version
 #eefinder, version 1.1.1
 ```
 
-For more information, check [EEfinder Wiki here](https://github.com/WallauBioinfo/EEfinder/wiki)
+#### Documentation
+
+Full documentation is hosted on Read the Docs: **https://eefinder.readthedocs.io**
 
 #### Cite us
 
