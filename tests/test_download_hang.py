@@ -19,6 +19,8 @@ import pytest
 
 from eefinder.get_databases import GetDatabases
 
+from conftest import binaries_available
+
 PROTEIN = (
     ">YP_000001.1 glycoprotein [organism=Mivirus chuvi]\n"
     # Longer than cd-hit's throw-away length (-l 10), which would silently
@@ -141,6 +143,9 @@ class TestOutputsAreCleanedUp:
         produced = sorted(p.name for p in (tmp_path / "db").iterdir())
         assert produced == ["chuvi.csv", "chuvi.fa", "chuvi.log", "chuvi.tracking.tsv"]
 
+    @pytest.mark.skipif(
+        not binaries_available("cd-hit"), reason="requires cd-hit on PATH"
+    )
     def test_clustering_keeps_the_cluster_composition(self, tmp_path, exiting_datasets):
         _download(tmp_path, exiting_datasets, stall_timeout=60, cluster=True)
         clusters = tmp_path / "db" / "chuvi.clstr"
