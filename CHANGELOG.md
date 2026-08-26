@@ -123,10 +123,12 @@ a full test suite, a Read-the-Docs docs and a `pyproject.toml` build.
 - **GitHub Actions workflow** (`.github/workflows/tests.yml`) running the
   binary-free unit tests (`pytest -m "not integration"`) on every pull request to
   `master`, installing only the pip deps (no BLAST/DIAMOND/bedtools).
-- **Read-the-Docs documentation site** under `docs/` (Sphinx + MyST +
-  `sphinx_rtd_theme`, `.readthedocs.yaml`) with pages for installation,
-  `get-databases`, running the pipeline, translation methods, overlap resolution,
-  custom arguments, outputs, testing and a developer guide (builds warning-clean).
+- **Documentation pages for the 2.0.0 features.** The Read-the-Docs site
+  (Sphinx + MyST + `sphinx_rtd_theme`, `.readthedocs.yaml`) arrived in 1.1.2;
+  2.0.0 adds `get-databases`, translation methods, overlap resolution and
+  testing pages, rewrites the pipeline page around the `screening` command, and
+  audits the existing pages against the code. `databases.md` and `running.md`
+  are folded into `get-databases.md` and `screening.md`. Builds warning-clean.
 - **`CLAUDE.md`** project guidance and **`CHANGELOG.md`** (this file).
 - **Progress reporting for `get-databases`** (`eefinder/progress.py`). The
   `datasets` CLI draws its own transfer progress and EEfinder was swallowing it
@@ -193,36 +195,27 @@ a full test suite, a Read-the-Docs docs and a `pyproject.toml` build.
   console entry point is the `cli` group, so the pipeline is invoked as
   **`eefinder screening <options>`** instead of `eefinder <options>`. Options are
   otherwise unchanged. **(Breaking.)**
-- **`--merge_level` default changed from `genus` to `family`**; the default GFF3
-  feature type is `endogenous_viral_element` (was `translated_nucleotide_match`).
-- **Packaging metadata aligned with the PyPI release workflow** added upstream
-  (`.github/workflows/publish.yml`, Trusted Publishing). `pyproject.toml` gained
-  the MIT `license`/`license-files`, maintainers, URLs, the full classifier set,
-  `requires-python = ">=3.9,<3.12"` and an sdist manifest. The console script
-  stays `eefinder.scripts.main:cli` (the 2.0.0 CLI is a click **group**; the
-  pre-2.0 `main` entry point no longer exists). Verified end to end:
-  `python -m build`, `twine check --strict`, install into a clean venv, and
-  `eefinder --version` → `eefinder, version 2.0.0`.
+- **`--merge_level` default changed from `genus` to `family`.**
+- **Packaging.** The console script is repointed at the `cli` group (above);
+  1.1.2's packaging metadata (MIT `license`/`license-files`, maintainers, URLs,
+  classifiers, `requires-python = ">=3.9,<3.12"`, the sdist manifest) and its
+  `publish.yml` Trusted Publishing workflow are otherwise unchanged. The release
+  path is verified end to end: `python -m build`, `twine check --strict`,
+  install into a clean venv, `eefinder --version` → `eefinder, version 2.0.0`.
 - **Dependency bounds corrected.** `biopython` is capped at `<1.86`, which
   **removed** `Bio.Blast.Applications` — still used by `make_database.py` and
   `similarity_analysis.py`. `pandas`/`numpy` were relaxed from `<2` to `<3`
   after confirming the unit suite passes in full against pandas 2.3 / numpy 2.2.
-- **`eefinder/__init__.py` no longer calls `sys.exit(1)`** when the package
-  metadata is missing; it falls back to `__version__ = "unknown"`, so importing
-  from a source tree (or during a docs build) no longer kills the process.
-- **Build system migrated to `pyproject.toml`** (hatchling backend, `[project]`
-  table with runtime deps + `dev` extra + the `eefinder` console script);
-  `setup.py`/`MANIFEST.in` removed. `pyproject.toml` also holds the black + pytest
-  config. `pip install .` now pulls the Python runtime deps (click, biopython,
-  pandas<2, numpy<2); the external binaries still come from `env.yml`.
+- **`pyproject.toml` extended.** The hatchling build and the `[project]` table
+  arrived in 1.1.2; 2.0.0 adds the `dev` extra (pytest + black), the black and
+  pytest configuration, and points the console script at the `cli` group instead
+  of the `main` command. `pip install .` pulls the Python runtime deps; the
+  external binaries still come from `env.yml`.
 - **Updated pinned tool versions in `env.yml`**: bedtools 2.27.1 → 2.31.1, BLAST
   2.5.0 → 2.17.0, DIAMOND 2.0.15 → 2.2.3, plus `ncbi-datasets-cli`, `cd-hit`,
   `pyrodigal-gv` and `pyrodigal-rv`. `env.yml` now pins only the direct
   dependencies and lets conda resolve the rest (the old frozen transitive pins
   conflicted with BLAST 2.17's openssl 3.x).
-- **`eefinder/__init__.py` resolves `__version__` via `importlib.metadata`**
-  instead of `pkg_resources`, removing the deprecation warning and the implicit
-  `setuptools` runtime pin.
 - **Refactored the pipeline for clean code, dataclasses, NumPy-style docstrings
   and type hints throughout**, without changing default-path outputs (verified
   byte-identical on `test_files/`): the run-log dicts became the `StepInfo` /
@@ -233,9 +226,10 @@ a full test suite, a Read-the-Docs docs and a `pyproject.toml` build.
   per line.
 
 ### Removed
-- **`setup.py` and `MANIFEST.in`** — build metadata moved to `pyproject.toml`.
-- **The top-level pipeline invocation `eefinder <options>`** — use
-  `eefinder screening <options>`. **(Breaking.)**
+- **The top-level pipeline invocation `eefinder <options>`** — the console entry
+  point is now the `cli` group, so the pipeline is `eefinder screening
+  <options>`. In 1.1.2 the entry point was the single `main` command, which ran
+  the pipeline directly. **(Breaking.)**
 
 ### Fixed
 - **`--clean_masked` produced an empty cleaned taxonomy table.** Cleaned FASTA
@@ -290,5 +284,5 @@ a full test suite, a Read-the-Docs docs and a `pyproject.toml` build.
   fail silently on newer `diamond` builds (subprocess stderr is discarded); verify
   the `diamond` build pinned in `env.yml` if a DIAMOND run produces no hits.
 
-[2.0.0]: https://github.com/WallauBioinfo/EEfinder/compare/v1.1.1...v2.0.0
-[1.1.1]: https://github.com/WallauBioinfo/EEfinder/releases/tag/v1.1.1
+[2.0.0]: https://github.com/WallauBioinfo/EEfinder/compare/v1.1.2...v2.0.0
+[1.1.2]: https://github.com/WallauBioinfo/EEfinder/releases/tag/v1.1.2
