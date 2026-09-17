@@ -1,6 +1,74 @@
 from datetime import datetime
 import re
 from pathlib import Path
+import pandas as pd
+from eefinder.log import logger
+
+EXPECTED_METADATA_COLUMNS = [
+    "Accession",
+    "Species",
+    "Genus",
+    "Family",
+    "Molecule_type",
+    "Protein",
+    "Host",
+]
+
+
+def check_metadata_columns(columns: list) -> list:
+    """
+    Check the columns of the metadata table parsed with -mt, which is read by column
+    position on the taxonomy steps.
+
+    Keyword arguments:
+    columns: column names of the metadata table, in file order
+
+    Raise a ValueError if any expected column is missing, warn if the expected columns
+    are present in a different order or with extra columns, and return the expected
+    columns in the order EEfinder needs them.
+    """
+    missing_columns = [
+        column for column in EXPECTED_METADATA_COLUMNS if column not in columns
+    ]
+    if missing_columns:
+        raise ValueError(
+            f"the metadata file does not have the column(s): {', '.join(missing_columns)}. "
+            f"The metadata file must have the columns: {', '.join(EXPECTED_METADATA_COLUMNS)}."
+        )
+
+    extra_columns = [
+        column for column in columns if column not in EXPECTED_METADATA_COLUMNS
+    ]
+    if extra_columns:
+        logger.warning(
+            f"The metadata file has extra column(s): {', '.join(extra_columns)}. "
+            "They will be ignored."
+        )
+
+    expected_columns_order = [
+        column for column in columns if column in EXPECTED_METADATA_COLUMNS
+    ]
+    if expected_columns_order != EXPECTED_METADATA_COLUMNS:
+        logger.warning(
+            f"The metadata file columns are not in the expected order: {', '.join(EXPECTED_METADATA_COLUMNS)}. "
+            "They will be reordered in memory, the metadata file is not modified."
+        )
+
+    return EXPECTED_METADATA_COLUMNS
+
+
+def check_metadata_file(metadata_file: str) -> list:
+    """
+    Check the header of the metadata table parsed with -mt, without loading the whole
+    table, so a malformed metadata file stops the run before the analysis starts.
+
+    Keyword arguments:
+    metadata_file: csv table with taxonomy and other metadata, parsed with -mt parameter
+    """
+    header = pd.read_csv(metadata_file, nrows=0).columns.tolist()
+
+    return check_metadata_columns(header)
+
 
 def check_outdir(outdir: str) -> str:
     if  outdir.endswith("/"):

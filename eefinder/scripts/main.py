@@ -10,7 +10,7 @@ import sys
 import json
 from eefinder.log import logger
 from eefinder.run_message import PaperInfo
-from eefinder.utils import check_outdir, step_info, running_info
+from eefinder.utils import check_metadata_file, check_outdir, step_info, running_info
 from eefinder.prepare_data import InsertPrefix
 from eefinder.clean_data import RemoveShortSequences, MaskClean
 from eefinder.make_database import MakeDB
@@ -188,6 +188,14 @@ def main(
         except Exception as err:
             click.secho(f"Failed to create prefix: {err}", err=True, fg="red")
             sys.exit(1)
+
+    try:
+        logger.info(f"Checking metadata file")
+        check_metadata_file(dbmetadata)
+
+    except Exception as err:
+        click.secho(f"Failed to check metadata file: {err}", err=True, fg="red")
+        sys.exit(1)
 
     try:
         logger.info(f"Creating output directory")
