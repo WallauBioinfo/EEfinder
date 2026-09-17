@@ -21,7 +21,7 @@ communicate through files on disk whose names accrete suffixes (`.rn`, `.fmt`,
 | `compare_results.py` | `CompareResults` — host-bait filtering. |
 | `get_taxonomy.py` | `GetTaxonomy` / `GetFinalTaxonomy` / `GetCleanedTaxonomy`. |
 | `tag_elements.py` | `TagElements` — overlap flags + `Average_pident`. |
-| `utils.py` | `check_outdir`, `step_info`, `running_info` — path and run-log helpers. |
+| `utils.py` | `check_metadata_columns`, `check_metadata_file`, `check_outdir`, `step_info`, `running_info` — input-validation, path and run-log helpers. |
 | `log.py` | The `eefinder` logger. |
 | `run_message.py` | The startup banner and the citation notice. |
 
@@ -35,8 +35,13 @@ communicate through files on disk whose names accrete suffixes (`.rn`, `.fmt`,
 - **The metadata CSV is read by column position.** `GetFinalTaxonomy` indexes
   into the joined table at fixed offsets (15–20), which assumes the seven-column
   `-mt` layout documented in
-  [Acquiring databases](databases.md#the-metadata-csv-format). Adding a column to
-  that file shifts every taxonomy assignment.
+  [Acquiring databases](databases.md#the-metadata-csv-format). That layout is
+  enforced rather than assumed: `check_metadata_columns` in `utils.py` holds the
+  canonical column list, errors on a missing column, and warns and reorders (or
+  drops extras) so `GetTaxonomy` always joins the columns in the order those
+  offsets expect. `check_metadata_file` runs the same check on the header alone,
+  from `main.py`, so a bad `-mt` fails before the similarity search. Changing the
+  expected columns means changing that list *and* the offsets together.
 - **The default `blastx` mode is the reliable path.** The DIAMOND modes can fail
   silently because the subprocess stderr is routed to `DEVNULL`; verify the
   `diamond` build (env pins `diamond=2.0.15`) if a DIAMOND run produces no hits.
@@ -97,8 +102,8 @@ To cut a release:
 ```bash
 # 1. bump [project].version in pyproject.toml, commit
 # 2. tag and publish a GitHub release -- the workflow does the rest
-git tag v1.1.2 && git push origin v1.1.2
-gh release create v1.1.2 --generate-notes
+git tag v1.1.3 && git push origin v1.1.3
+gh release create v1.1.3 --generate-notes
 ```
 
 To check the artefacts by hand before trusting the workflow:
@@ -114,6 +119,33 @@ A version published to PyPI is **immutable** — it cannot be overwritten or
 re-uploaded, only yanked. Verify on TestPyPI before the real upload, and bump
 the version rather than trying to replace a bad release.
 ```
+
+## The Bioconda package
+
+EEfinder is also distributed on Bioconda
+([`bioconda::eefinder`](https://anaconda.org/bioconda/eefinder)), whose recipe
+lives in
+[`bioconda-recipes/recipes/eefinder`](https://github.com/bioconda/bioconda-recipes/tree/master/recipes/eefinder)
+— not in this repository. It is the install route the documentation
+recommends, because on top of the Python dependencies its `run:` section
+requires `blast`, `diamond` and `bedtools`, so the binaries come with the
+package.
+
+Once a recipe build lands, Bioconda also publishes the matching
+[BioContainers image](https://quay.io/repository/biocontainers/eefinder)
+automatically — one tag per version *and build number*
+(`<version>--<build string>`), never a `latest` — so the container route needs
+no work in this repository either.
+
+A new PyPI release is normally picked up by Bioconda's autobump bot, which opens
+a PR bumping the version and the sdist hash. Two things still need attention
+there:
+
+- **Dependency changes do not propagate.** If a release changes the bounds in
+  `[project].dependencies` or `requires-python`, the recipe's `run:` section has
+  to be edited to match, in a PR to `bioconda-recipes`.
+- **The version there lags.** Until that PR is merged, `conda install` still
+  serves the previous release while PyPI already has the new one.
 
 ## Building the docs locally
 

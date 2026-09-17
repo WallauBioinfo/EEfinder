@@ -47,8 +47,8 @@ those two columns must be populated in `-mt` for merging to work as intended.
 ## The metadata CSV format
 
 `-mt` is the table that turns a protein accession into a taxonomic assignment.
-EEfinder reads it **by column position**, so it must have exactly these seven
-columns, in this order, with a header row:
+EEfinder reads it **by column position**, so it must have these seven columns,
+with a header row:
 
 ```text
 Accession,Species,Genus,Family,Molecule_type,Protein,Host
@@ -60,10 +60,21 @@ The `Accession` values must match the first token of the corresponding FASTA
 headers in `-db` (e.g. `>YP_009664712.1 N protein [Bas-Congo tibrovirus]`).
 `test_files/virus_subset.csv` is a working miniature example.
 
-```{warning}
-Extra, missing or reordered columns will not raise an error — they will produce
-a silently wrong taxonomy table, because the columns are addressed by index.
-Check the header before a full run.
+The header is checked before the analysis starts, and again when the taxonomy is
+assembled:
+
+| Header | Behaviour |
+|--------|-----------|
+| The seven columns, in the order above | The run proceeds silently. |
+| The seven columns, in a different order | A warning is logged and the columns are reordered in memory. The metadata file itself is never rewritten. |
+| Extra columns beyond the seven | A warning is logged and they are ignored. |
+| Any of the seven missing | The run stops with an error naming the missing column(s). |
+
+```{note}
+Column *names* are matched, so the header must spell them exactly as above —
+`Molecule_type`, not `Molecule type`. A file whose header is right but whose
+column order is not is handled for you; a file missing a column cannot be, which
+is why it is an error rather than a warning.
 ```
 
 ## Viral database and metadata

@@ -1,6 +1,7 @@
 import pandas as pd
 import re, csv
 from Bio import SeqIO
+from eefinder.utils import check_metadata_columns
 
 
 class GetTaxonomy:
@@ -21,6 +22,7 @@ class GetTaxonomy:
     def get_taxonomy(self) -> None:
         df_blast_file = pd.read_csv(self.blast_file, sep="\t")
         df_tax_file = pd.read_csv(self.tax_file)
+        df_tax_file = df_tax_file[check_metadata_columns(df_tax_file.columns.tolist())]
         df_tax_file.rename(columns={"Accession": "sseqid"}, inplace=True)
         df_merged = pd.merge(df_blast_file, df_tax_file, on="sseqid", how="left")
         df_merged.to_csv(f"{self.blast_file}.tax", index=False, header=True)

@@ -4,6 +4,7 @@ EEfinder exposes a **single command**. It takes a genome FASTA plus the
 protein database, its metadata CSV and the host-gene baits, and produces the
 endogenous element sequences, their taxonomy table and their flanking regions.
 
+(example-run)=
 ## Example run (with the bundled `test_files/`)
 
 The repository ships a small example dataset in
@@ -123,7 +124,8 @@ every intermediate can be inspected after the run (see
    against the host-gene baits and remove every element whose best host-bait hit
    scores higher than its best database hit.
 8. **GetTaxonomy** — left-join the surviving hits to the metadata CSV on the
-   protein accession.
+   protein accession, after checking its columns (see
+   [the required format](databases.md#the-metadata-csv-format)).
 9. **GetAnnotBed → MergeBed → RemoveAnnotation → GetFasta** — merge truncated
    fragments of the same taxon and sense within `--limit` nt, where "same taxon"
    is decided at `--merge_level`, then re-extract the merged sequences.
@@ -147,7 +149,7 @@ every intermediate can be inspected after the run (see
 | `-in/--genome_file` | Input genome FASTA (nucleotides). |
 | `-od/--outdir` | Output directory (created if missing). |
 | `-db/--database` | Reference protein database FASTA. This defines what the run searches for — commonly viral or bacterial proteins, but any donor lineage works. |
-| `-mt/--dbmetadata` | Protein metadata CSV for `-db`; supplies every taxonomic name in the output — see [the required format](databases.md#the-metadata-csv-format). |
+| `-mt/--dbmetadata` | Protein metadata CSV for `-db`; supplies every taxonomic name in the output. Its seven columns are validated before the run starts — see [the required format](databases.md#the-metadata-csv-format). |
 | `-bt/--hostgenesbaits` | Host-gene bait proteins FASTA — the background candidates are filtered against. |
 
 ### Search & filtering
